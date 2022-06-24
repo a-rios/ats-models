@@ -3,17 +3,11 @@
 
 """
 
-This code is adapted from AllenAI's Longformer
-summarization task:
-    https://github.com/allenai/longformer/blob/master/scripts/summarization.py
+This code is adapted from AllenAI's Longformer:
+    https://github.com/allenai/longformer/
 
 Note:
-    Annette Rios (arios@cl.uzh.ch) initially adapted it for long-document simplication.
-    Tannon Kew (kew@cl.uzh.ch) made minor changes for its
-    application in the ReAdvisor project for response
-    generation.
-
-Date: 04/06/2021
+    Authors: Annette Rios (arios@cl.uzh.ch) Tannon Kew (kew@cl.uzh.ch)
 
 """
 
@@ -38,6 +32,7 @@ import logging
 from transformers import MBartTokenizer, MBartForConditionalGeneration, MBartConfig
 from transformers.models.mbart.modeling_mbart import shift_tokens_right
 import datasets
+from typing import Optional
 from functools import partial
 from .data import CustomDataset
 
@@ -256,12 +251,27 @@ class FineTuner(pl.LightningModule):
        'monitor': self.args.early_stopping_metric
         }
 
+    def set_datasets(self, train_set: CustomDataset, dev_set: CustomDataset, test_set: Optional[CustomDataset]):
+        self.train_set = train_set
+        self.dev_set = dev_set
+        if test_set is not None:
+            self.test_set = test_set
+
+    def set_test_set(self, test_set: CustomDataset):
+        self.test_set = test_set
+
     def _get_dataloader(self, current_dataloader, split_name, is_train):
         if current_dataloader is not None:
             return current_dataloader
 
-        dataset = CustomDataset(inputs=self.datasets[split_name + "_source"], labels=self.datasets[split_name + "_target"] , name=split_name, tokenizer=self.tokenizer,
-                                       max_input_len=self.args.max_input_len, max_output_len=self.args.max_output_len, src_lang=self.args.src_lang, tgt_lang=self.args.tgt_lang, tags_included=self.args.tags_included)
+        if split_name == "train":
+            dataset = self.train_set
+        elif split_name == "dev":
+            dataset = self.dev_set
+        elif split_name == "test":
+            dataset = self.test_set
+        else:
+            self.log(f"Invalid split name: {split_name}")
 
         sampler = torch.utils.data.distributed.DistributedSampler(dataset, shuffle=is_train)
 
@@ -274,7 +284,7 @@ class FineTuner(pl.LightningModule):
         return self.train_dataloader_object
 
     def val_dataloader(self):
-        self.val_dataloader_object = self._get_dataloader(self.val_dataloader_object, 'val', is_train=False)
+        self.val_dataloader_object = self._get_dataloader(self.val_dataloader_object, 'dev', is_train=False)
         return self.val_dataloader_object
 
     def test_dataloader(self):
@@ -302,8 +312,8 @@ class FineTuner(pl.LightningModule):
         #data
         parser.add_argument("--train_source", type=str, default=None,  help="Path to the source train file.")
         parser.add_argument("--train_target", type=str, default=None, help="Path to the target train file.")
-        parser.add_argument("--val_source", type=str, default=None, help="Path to the source validation file.")
-        parser.add_argument("--val_target", type=str, default=None, help="Path to the target validation file.")
+        parser.add_argument("--dev_source", type=str, default=None, help="Path to the source validation file.")
+        parser.add_argument("--dev_target", type=str, default=None, help="Path to the target validation file.")
         parser.add_argument("--test_source", type=str, default=None, help="Path to the source test file (to evaluate after training is finished).")
         parser.add_argument("--test_target", type=str, default=None, help="Path to the target test file (to evaluate after training is finished).")
         parser.add_argument("--src_lang", type=str, default=None, help="Source language tag (optional, for multilingual batches, preprocess text files to include language tags.")
@@ -373,8 +383,40 @@ def main(args):
                 print(name + ":" + str(param.data.shape))
         exit(0)
 
+    train_set = CustomDataset(src_file=args.train_source,
+                              tgt_file=args.train_target,
+                              name="train",
+                              tokenizer=model.tokenizer,
+                              max_input_len=args.max_input_len,
+                              max_output_len=args.max_output_len,
+                              src_lang=args.src_lang,
+                              tgt_lang=args.tgt_lang,
+                              tags_included=args.tags_included
+        )
 
-    model.datasets = datasets.load_dataset('text', data_files={'train_source': args.train_source, 'train_target': args.train_target, 'val_source': args.val_source, 'val_target': args.val_target, 'test_source': args.test_source, 'test_target': args.test_target })
+    dev_set = CustomDataset(src_file=args.dev_source,
+                              tgt_file=args.dev_target,
+                              name="dev",
+                              tokenizer=model.tokenizer,
+                              max_input_len=args.max_input_len,
+                              max_output_len=args.max_output_len,
+                              src_lang=args.src_lang,
+                              tgt_lang=args.tgt_lang,
+                              tags_included=args.tags_included
+        )
+
+    test_set = CustomDataset(src_file=args.test_source,
+                              tgt_file=args.test_target,
+                              name="test",
+                              tokenizer=model.tokenizer,
+                              max_input_len=args.max_input_len,
+                              max_output_len=args.max_output_len,
+                              src_lang=args.src_lang,
+                              tgt_lang=args.tgt_lang,
+                              tags_included=args.tags_included
+        )
+
+    model.set_datasets(train_set=train_set, dev_set=dev_set, test_set=test_set)
 
     if args.wandb:
         logger = WandbLogger(project=args.wandb, entity=args.wandb_entity)

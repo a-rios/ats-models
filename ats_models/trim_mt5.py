@@ -1,3 +1,15 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+
+This code is adapted from AllenAI's Longformer:
+    https://github.com/allenai/longformer/
+
+Note:
+    Authors: Annette Rios (arios@cl.uzh.ch)
+
+"""
 import argparse
 import logging
 import os

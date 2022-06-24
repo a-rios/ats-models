@@ -1,11 +1,19 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+
+Note:
+    Authors: Annette Rios (arios@cl.uzh.ch)
+
+"""
+
 import torch
 from torch.utils.data import DataLoader, Dataset
 import re
 
 class CustomDataset(Dataset):
-    def __init__(self, inputs, labels, name, tokenizer, max_input_len, max_output_len, src_lang, tgt_lang, tags_included):
-        self.inputs = inputs
-        self.labels = labels
+    def __init__(self, src_file, tgt_file, name, tokenizer, max_input_len, max_output_len, src_lang, tgt_lang, tags_included):
         self.name = name # train, val, test
         self.tokenizer = tokenizer
         self.max_input_len = max_input_len
@@ -14,12 +22,19 @@ class CustomDataset(Dataset):
         self.tgt_lang = tgt_lang
         self.tags_included = tags_included
 
+        with open(src_file, 'r') as f:
+            self.inputs =  f.readlines()
+        self.labels = None
+        if tgt_file is not None:
+            with open(tgt_file, 'r') as f:
+                self.labels =  f.readlines()
+
     def __len__(self):
         return len(self.inputs)
 
     def __getitem__(self, idx):
-        source = self.inputs[idx]['text']
-        target = self.labels[idx]['text']
+        source = self.inputs[idx]
+        target = self.labels[idx]
 
         ## mbart tokenizer implementation expects only a single source and target language, so we have to do an ugly workaround here
         ## source needs to be src_lang x x x </s> src_lang
