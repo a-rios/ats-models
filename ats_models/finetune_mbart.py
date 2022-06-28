@@ -63,6 +63,7 @@ def label_smoothed_nll_loss(lprobs, target, epsilon, ignore_index=-100):
     loss = (1.0 - epsilon) * nll_loss + eps_i * smooth_loss
     return loss, nll_loss
 
+# TODO: separate this, clean up
 def get_eval_scores(gold_strs, generated_strs, remove_tgt_tag=False, vloss=None):
     if vloss is None:
         vloss = torch.zeros(len(gold_strs))
@@ -96,7 +97,7 @@ def get_eval_scores(gold_strs, generated_strs, remove_tgt_tag=False, vloss=None)
             'decoded' : generated_strs}
 
 
-class FineTuner(pl.LightningModule):
+class MBartTrainer(pl.LightningModule):
 
     def __init__(self, params):
         super().__init__()
@@ -299,6 +300,11 @@ class FineTuner(pl.LightningModule):
         )
         return model
 
+    def on_load_checkpoint(self, checkpoint) -> None:
+        self.config = MBartConfig.from_pretrained(os.path.join(self.args.save_dir, self.args.save_prefix))
+        self.load_state_dict(checkpoint['state_dict'])
+        print(f"Loaded state dict from checkpoint.")
+
 
     @staticmethod
     def add_model_specific_args(parser, root_dir):
@@ -375,7 +381,7 @@ def main(args):
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(args.seed)
 
-    model = FineTuner(args)
+    model = MBartTrainer(args)
 
     if args.print_params:
         for name, param in model.named_parameters():
@@ -430,7 +436,7 @@ def main(args):
         model.lr_mode='min'
     early_stop_callback = EarlyStopping(monitor=args.early_stopping_metric, min_delta=args.min_delta, patience=args.patience, verbose=True, mode=model.lr_mode) # metrics: val_loss, bleu, rougeL
 
-    checkpoint_name = "checkpoint{{epoch:02d}}_{{{}".format(args.early_stopping_metric)
+    checkpoint_name = "{{epoch:02d}}_{{{}".format(args.early_stopping_metric)
     checkpoint_name += ':.5f}'
 
     checkpoint_callback = ModelCheckpoint(
@@ -446,7 +452,7 @@ def main(args):
     trainer = pl.Trainer(accelerator=args.accelerator, devices=args.devices, strategy='ddp_find_unused_parameters_false' if torch.cuda.is_available() else None,
                          track_grad_norm=-1,
                          max_epochs=args.max_epochs if not args.debug else 100,
-                         max_steps=None if not args.debug else 1,
+                         max_steps=-1 if not args.debug else 1,
                          replace_sampler_ddp=False,
                          accumulate_grad_batches=args.grad_accum,
                          val_check_interval=args.val_every if not args.debug else 1,
@@ -471,7 +477,7 @@ def main(args):
 
 if __name__ == "__main__":
     main_arg_parser = argparse.ArgumentParser(description="Fine-tune MBart")
-    parser = FineTuner.add_model_specific_args(main_arg_parser, os.getcwd())
+    parser = MBartTrainer.add_model_specific_args(main_arg_parser, os.getcwd())
     args = parser.parse_args()
     main(args)
 
