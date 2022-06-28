@@ -27,22 +27,19 @@ from pytorch_lightning.callbacks import TQDMProgressBar
 from pytorch_lightning.plugins import DDPPlugin
 
 from transformers import MBartTokenizer, MBartForConditionalGeneration, MBartConfig
-from transformers.models.mbart.modeling_mbart import shift_tokens_right
 import datasets
 from typing import Optional
 from functools import partial
 
 from .data import CustomDatasetForInference
-from .finetune_mbart import MBartTrainer, get_eval_scores
+from .finetune_mbart import MBartTrainer
+from .metrics import label_smoothed_nll_loss, get_eval_scores
 
 class Inference(pl.LightningModule):
 
     def __init__(self, args):
         super().__init__()
         self.args = args
-        self.src_lang = self.args.src_lang
-        self.tgt_lang = self.args.tgt_lang
-        self.tags_included = self.args.tags_included
 
         self.config = MBartConfig.from_pretrained(self.args.model_path)
         self.tokenizer = MBartTokenizer.from_pretrained(self.args.tokenizer, use_fast=True)
@@ -56,28 +53,12 @@ class Inference(pl.LightningModule):
         for p in self.model.parameters():
             p.requires_grad = False
 
-        input_ids, ref, decoder_start_tokens  = batch # ref: tensor with ids, tgt_lang id at end after </s>; decoder_start_tokens: tgt_lang labels
+        input_ids, ref, decoder_start_tokens  = batch # ref: string; decoder_start_tokens: tgt_lang labels
         input_ids, attention_mask = CustomDatasetForInference.prepare_input(input_ids, self.tokenizer.pad_token_id)
-        assert (decoder_start_tokens is not None or self.tgt_lang is not None), "Need either reference with target labels or list of target labels (multilingual batches), else --tgt_lang needs to be set"
-        if ref is not None:
-            shifted = shift_tokens_right(ref, self.config.pad_token_id) # (in: output_ids, eos_token_id, tgt_lang_id out: tgt_lang_id, output_ids, eos_token_id)
-            decoder_start_token_ids = shifted.narrow(dim=1, start=0, length=1)
+        assert (decoder_start_tokens is not None or self.test_set.tgt_lang is not None), "Need either reference with target labels or list of target labels (multilingual batches), else --tgt_lang needs to be set"
 
-            generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
-                                            use_cache=True, max_length=self.args.max_output_len,
-                                            num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_start_token_ids=decoder_start_token_ids,
-                                            do_sample=self.args.do_sample,
-                                            temperature=self.args.temperature,
-                                            top_k=self.args.top_k,
-                                            top_p=self.args.top_p,
-                                            repetition_penalty=self.args.repetition_penalty,
-                                            length_penalty=self.args.length_penalty,
-                                            num_return_sequences=self.args.num_return_sequences,
-                                            output_scores=True if self.args.output_to_json else self.args.output_scores,
-                                            return_dict_in_generate=True if self.args.output_to_json else self.args.return_dict_in_generate)
-
-        elif ref is None and decoder_start_tokens is not None: # no reference but list of target language tags given
-            decoder_start_token_ids = torch.tensor([self.tokenizer.convert_tokens_to_ids(tag) for tag in decoder_start_tokens], device=inputs.device)
+        if decoder_start_tokens is not None: # no reference but list of target language tags given
+            decoder_start_token_ids = torch.tensor([self.tokenizer.convert_tokens_to_ids(tag) for tag in decoder_start_tokens], device=input_ids.device)
             generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
                                             use_cache=True, max_length=self.args.max_output_len,
                                             num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_start_token_ids=decoder_start_token_ids,
@@ -111,8 +92,8 @@ class Inference(pl.LightningModule):
                 for sample in generated_strs:
                     f.write(sample + "\n")
 
-            if self.args.test_target is not None:
-                return get_eval_scores(ref, generated_strs, self.tags_included)
+            if self.test_set.reference is not None: # no ref = set of None
+                return get_eval_scores(ref, generated_strs)
             else:
                 return {'decoded' : generated_strs}
 
@@ -129,8 +110,8 @@ class Inference(pl.LightningModule):
 
             for batch_i in range(len(batch_source_strs)):
                 src_str = batch_source_strs[batch_i]
-                if self.args.test_target:
-                    ref_str = ' '.join(ref[batch_i].split(' ')[1:]) if self.tags_included else ref[batch_i]
+                if self.test_set.reference:
+                    ref_str = ' '.join(ref[batch_i].split(' ')[1:]) if self.test_set.tgt_tags_included else ref[batch_i]
                 else:
                     ref_str = None
 
@@ -157,8 +138,8 @@ class Inference(pl.LightningModule):
                 with open(self.args.translation, 'a') as f:
                     f.write(json_line+"\n")
 
-            if self.args.test_target is not None:
-                return get_eval_scores(ref, generated_strs, self.tags_included)
+            if self.test_set.reference is not None:
+                return get_eval_scores(ref, generated_strs)
 
             else:
                 return {'decoded' : generated_strs}
@@ -168,7 +149,7 @@ class Inference(pl.LightningModule):
         for p in self.model.parameters():
             p.requires_grad = True
 
-        if self.args.test_target is not None:
+        if self.test_set.reference is not None:
             names = ['rouge1', 'rouge2', 'rougeL', 'rougeLsum', 'bleu']
             metrics = []
             for name in names:
@@ -199,14 +180,6 @@ class Inference(pl.LightningModule):
         self.test_dataloader_object = self._get_dataloader(self.test_dataloader_object, 'test', is_train=False)
         return self.test_dataloader_object
 
-    def configure_ddp(self, model, device_ids):
-        model = LightningDistributedDataParallel(
-            model,
-            device_ids=device_ids,
-            find_unused_parameters=False
-        )
-        return model
-
     def on_load_checkpoint(self, checkpoint) -> None:
         self.load_state_dict(checkpoint['state_dict'])
         print(f"Loaded state dict from checkpoint.")
@@ -225,12 +198,10 @@ class Inference(pl.LightningModule):
         parser.add_argument("--target_tags", type=str, default=None, help="If test_target is not given: provide path to file with list of target tags (one per sample in test_source).")
         parser.add_argument("--src_lang", type=str, default=None, help="Source language tag (optional, for multilingual batches, preprocess text files to include language tags.")
         parser.add_argument("--tgt_lang", type=str, default=None, help="Target language tag (optional, for multilingual batches, preprocess text files to include language tags.")
-        parser.add_argument("--tags_included", action='store_true', help="Text files already contain special tokens (language tags and </s>. Source:  src_tag seq, Target:  tgt_tag seq. Note: actual source sequence is seq src_tag </s>, will be changed internally after possibly clipping sequence to given max_length.")
-        parser.add_argument("--infer_target_tags", action="store_true", default=False, help="If test_target is not given and target language tags can be inferred from the source language tags provided with --tags_included (e.g. de_DE -> de_DE). This save having a dedicated text file in which the tags are explicitly specified.")
+        parser.add_argument("--tgt_tags_included", action='store_true', help="Target text files contain language tags (first token in each line).")
+        parser.add_argument("--src_tags_included", action='store_true', help="Source text files contain language tags (first token in each line).")
         parser.add_argument("--max_input_len", type=int, default=512, help="maximum num of wordpieces, if unspecified, will use number of encoder positions from model config.")
         parser.add_argument("--max_output_len", type=int, default=512, help="maximum num of wordpieces, if unspecified, will use number of decoder positions from model config.")
-        parser.add_argument("--wandb", type=str, default=None, help="WandB project name to use if logging fine-tuning with WandB.")
-        parser.add_argument("--wandb_entity", type=str, default=None, help="WandB account name to use if logging fine-tuning with WandB.")
 
         parser.add_argument("--batch_size", type=int, default=16, help="Batch size")
         parser.add_argument("--num_workers", type=int, default=0, help="Number of data loader workers")
@@ -287,7 +258,8 @@ def main(args):
                                          max_output_len=args.max_output_len,
                                          src_lang=args.src_lang,
                                          tgt_lang=args.tgt_lang,
-                                         tags_included=args.tags_included,
+                                         src_tags_included=args.src_tags_included,
+                                         tgt_tags_included=args.tgt_tags_included,
                                          target_tags=args.target_tags)
 
 

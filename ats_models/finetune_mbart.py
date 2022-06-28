@@ -35,67 +35,11 @@ import datasets
 from typing import Optional
 from functools import partial
 from .data import CustomDataset
+from .metrics import label_smoothed_nll_loss, get_eval_scores
 
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
-
-
-def label_smoothed_nll_loss(lprobs, target, epsilon, ignore_index=-100):
-    """From fairseq"""
-    if target.dim() == lprobs.dim() - 1:
-        target = target.unsqueeze(-1)
-    nll_loss = -lprobs.gather(dim=-1, index=target)
-    smooth_loss = -lprobs.sum(dim=-1, keepdim=True)
-    if ignore_index is not None:
-        pad_mask = target.eq(ignore_index)
-        nll_loss.masked_fill_(pad_mask, 0.0)
-        smooth_loss.masked_fill_(pad_mask, 0.0)
-        count = (~pad_mask).sum()
-    else:
-        nll_loss = nll_loss.squeeze(-1)
-        smooth_loss = smooth_loss.squeeze(-1)
-        count = nll_loss.numel()
-
-    nll_loss = nll_loss.sum() / count
-    smooth_loss = smooth_loss.sum() / count
-    eps_i = epsilon / lprobs.size(-1)
-    loss = (1.0 - epsilon) * nll_loss + eps_i * smooth_loss
-    return loss, nll_loss
-
-# TODO: separate this, clean up
-def get_eval_scores(gold_strs, generated_strs, remove_tgt_tag=False, vloss=None):
-    if vloss is None:
-        vloss = torch.zeros(len(gold_strs))
-    if remove_tgt_tag: # not needed with skip_special_tokens?
-        # remove tags from target text
-        # print(gold_strs)
-        gold_strs = [' '.join(r.split(' ')[1:]) for r in gold_strs]
-    scorer = rouge_scorer.RougeScorer(rouge_types=['rouge1', 'rouge2', 'rougeL', 'rougeLsum'], use_stemmer=False)
-    rouge1 = rouge2 = rougel = rougelsum = 0.0
-    for ref, pred in zip(gold_strs, generated_strs):
-        score = scorer.score(ref, pred)
-        rouge1 += score['rouge1'].fmeasure
-        rouge2 += score['rouge2'].fmeasure
-        rougel += score['rougeL'].fmeasure
-        rougelsum += score['rougeLsum'].fmeasure
-    rouge1 /= len(generated_strs)
-    rouge2 /= len(generated_strs)
-    rougel /= len(generated_strs)
-    rougelsum /= len(generated_strs)
-    if gold_strs is None or gold_strs == "":
-        print("gold ", gold_strs)
-        print("generated ", generated_strs)
-    bleu = sacrebleu.corpus_bleu(generated_strs, [gold_strs])
-
-    return {'vloss': vloss,
-            'rouge1': vloss.new_zeros(1) + rouge1,
-            'rouge2': vloss.new_zeros(1) + rouge2,
-            'rougeL': vloss.new_zeros(1) + rougel,
-            'rougeLsum': vloss.new_zeros(1) + rougelsum,
-            'bleu' : vloss.new_zeros(1) + bleu.score,
-            'decoded' : generated_strs}
-
 
 class MBartTrainer(pl.LightningModule):
 
@@ -117,12 +61,6 @@ class MBartTrainer(pl.LightningModule):
     def _load_pretrained(self):
         self.model = MBartForConditionalGeneration.from_pretrained(self.args.from_pretrained, config=self.config)
         self.tokenizer = MBartTokenizer.from_pretrained(self.args.tokenizer, use_fast=True)
-        if self.args.tags_included:
-            self.tokenizer = MBartTokenizer.from_pretrained(self.args.tokenizer, use_fast=True)
-        elif self.args.src_lang is not None and self.args.tgt_lang is not None:
-            self.tokenizer = MBartTokenizer.from_pretrained(self.args.tokenizer, use_fast=True, src_lang=self.args.src_lang, tgt_lang=self.args.tgt_lang)
-        else:
-            print(f"Either tags must be included as first token for each sample in input and output (--tags_included), or set for the entire corpus as --src_lang and --tgt_lang.")
 
     def _set_config(self):
         self.config = MBartConfig.from_pretrained(self.args.from_pretrained)
@@ -176,24 +114,23 @@ class MBartTrainer(pl.LightningModule):
         vloss = outputs[0]
         input_ids, output_ids = batch
         input_ids, attention_mask = CustomDataset.prepare_input(input_ids, self.tokenizer.pad_token_id)
-        if self.args.tags_included:
-            # get list of target language tags
-            # output_ids (batch_size, seq_len), with padding
+        # mixed target languages
+        if self.dev_set.tgt_tags_included:
             shifted = shift_tokens_right(output_ids, self.config.pad_token_id) # (in: output_ids, eos_token_id, tgt_lang_id out: tgt_lang_id, output_ids, eos_token_id)
             decoder_start_token_ids = shifted.narrow(dim=1, start=0, length=1)
             generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
                                             use_cache=True, max_length=self.args.max_output_len,
                                             num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_start_token_ids=decoder_start_token_ids)
-        else:
+        else: # only one target language in dev set
             generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
                                             use_cache=True, max_length=self.args.max_output_len,
-                                            num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_start_token_id=self.tokenizer.lang_code_to_id[self.tgt_lang])
+                                            num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_start_token_id=self.tokenizer.convert_tokens_to_ids(self.dev_set.tgt_lang))
 
         generated_str = self.tokenizer.batch_decode(generated_ids.tolist(), skip_special_tokens=True)
 
         gold_str = self.tokenizer.batch_decode(output_ids.tolist(), skip_special_tokens=True, clean_up_tokenization_spaces=True)
         # get scores as dict
-        scores = get_eval_scores(gold_str, generated_str, False, vloss) # with skip_special_tokens=True, no language tag
+        scores = get_eval_scores(gold_str, generated_str, vloss=vloss) # with skip_special_tokens=True, no language tag
 
         outfile = self.args.save_dir + "/" + args.save_prefix + "/_val_out_checkpoint_" + str(self.current_checkpoint)
 
@@ -234,7 +171,6 @@ class MBartTrainer(pl.LightningModule):
             self.best_checkpoint = self.current_checkpoint
             print("New best checkpoint {}, with {} {}.".format(self.best_checkpoint, self.best_metric, self.args.early_stopping_metric))
         self.current_checkpoint +=1
-
 
     def test_step(self, batch, batch_nb):
         return self.validation_step(batch, batch_nb)
@@ -292,14 +228,6 @@ class MBartTrainer(pl.LightningModule):
         self.test_dataloader_object = self._get_dataloader(self.test_dataloader_object, 'test', is_train=False)
         return self.test_dataloader_object
 
-    def configure_ddp(self, model, device_ids):
-        model = LightningDistributedDataParallel(
-            model,
-            device_ids=device_ids,
-            find_unused_parameters=False
-        )
-        return model
-
     def on_load_checkpoint(self, checkpoint) -> None:
         self.config = MBartConfig.from_pretrained(os.path.join(self.args.save_dir, self.args.save_prefix))
         self.load_state_dict(checkpoint['state_dict'])
@@ -324,7 +252,9 @@ class MBartTrainer(pl.LightningModule):
         parser.add_argument("--test_target", type=str, default=None, help="Path to the target test file (to evaluate after training is finished).")
         parser.add_argument("--src_lang", type=str, default=None, help="Source language tag (optional, for multilingual batches, preprocess text files to include language tags.")
         parser.add_argument("--tgt_lang", type=str, default=None, help="Target language tag (optional, for multilingual batches, preprocess text files to include language tags.")
-        parser.add_argument("--tags_included", action='store_true', help="Text files already contain special tokens (language tags and </s>. Source:  src_tag seq, Target:  tgt_tag seq. Note: actual source sequence is seq src_tag </s>, will be changed internally after possibly clipping sequence to given max_length.")
+        parser.add_argument("--tgt_tags_included", action='store_true', help="Target text files contain language tags (first token in each line).")
+        parser.add_argument("--src_tags_included", action='store_true', help="Source text files contain language tags (first token in each line).")
+
         parser.add_argument("--max_output_len", type=int, default=256, help="maximum num of wordpieces/summary. Used for training and testing")
         parser.add_argument("--max_input_len", type=int, default=512, help="maximum num of wordpieces/summary. Used for training and testing")
         parser.add_argument("--wandb", type=str, default=None, help="WandB project name to use if logging fine-tuning with WandB.")
@@ -397,7 +327,8 @@ def main(args):
                               max_output_len=args.max_output_len,
                               src_lang=args.src_lang,
                               tgt_lang=args.tgt_lang,
-                              tags_included=args.tags_included
+                              src_tags_included=args.src_tags_included,
+                              tgt_tags_included=args.tgt_tags_included
         )
 
     dev_set = CustomDataset(src_file=args.dev_source,
@@ -408,7 +339,8 @@ def main(args):
                               max_output_len=args.max_output_len,
                               src_lang=args.src_lang,
                               tgt_lang=args.tgt_lang,
-                              tags_included=args.tags_included
+                              src_tags_included=args.src_tags_included,
+                              tgt_tags_included=args.tgt_tags_included
         )
 
     test_set = CustomDataset(src_file=args.test_source,
@@ -419,7 +351,8 @@ def main(args):
                               max_output_len=args.max_output_len,
                               src_lang=args.src_lang,
                               tgt_lang=args.tgt_lang,
-                              tags_included=args.tags_included
+                              src_tags_included=args.src_tags_included,
+                              tgt_tags_included=args.tgt_tags_included
         )
 
     model.set_datasets(train_set=train_set, dev_set=dev_set, test_set=test_set)
