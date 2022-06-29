@@ -190,7 +190,7 @@ class Inference(pl.LightningModule):
     def add_model_specific_args(parser, root_dir):
         parser.add_argument("--model_path", type=str, help="Path to the checkpoint directory or model name")
         parser.add_argument("--checkpoint_name", type=str, help="Checkpoint in model_path to use.")
-        parser.add_argument("--tokenizer", type=str, help="Path to the tdecoder_start_token_idsokenizer directory.")
+        parser.add_argument("--tokenizer", type=str, help="Path to the tokenizer directory.")
 
         #data
         parser.add_argument("--test_source", type=str, default=None, help="Path to the source test file.")
