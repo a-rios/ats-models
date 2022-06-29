@@ -117,7 +117,7 @@ class MBartTrainer(pl.LightningModule):
             decoder_start_token_ids = decoder_input_ids.narrow(dim=1, start=0, length=1)
             generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
                                             use_cache=True, max_length=self.args.max_output_len,
-                                            num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_start_token_ids=decoder_start_token_ids)
+                                            num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_input_ids=decoder_start_token_ids)
         else: # only one target language in dev set
             generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
                                             use_cache=True, max_length=self.args.max_output_len,
@@ -392,16 +392,16 @@ def main(args):
                          limit_val_batches=args.val_percent_check,
                          limit_test_batches=args.test_percent_check,
                          logger=logger,
-                         checkpoint_callback=checkpoint_callback if not args.disable_checkpointing else False,
-                         progress_bar_refresh_rate=args.progress_bar_refresh_rate,
                          precision=32 if args.fp32 else 16, amp_backend='native',
-                         resume_from_checkpoint=args.resume_ckpt,
                          callbacks=[early_stop_callback, checkpoint_callback, progress_bar_callback]
                          )
     ## write config + tokenizer to save_dir
     model.model.save_pretrained(args.save_dir + "/" + args.save_prefix)
     model.tokenizer.save_pretrained(args.save_dir + "/" + args.save_prefix)
-    trainer.fit(model)
+    if args.resume_ckpt:
+        trainer.fit(model, ckpt_path=args.resume_ckpt)
+    else:
+        trainer.fit(model)
     print("Training ended. Best checkpoint {} with {} {}.".format(model.best_checkpoint, model.best_metric, args.early_stopping_metric))
     trainer.test(model)
 
