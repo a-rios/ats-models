@@ -61,7 +61,7 @@ class Inference(pl.LightningModule):
             decoder_start_token_ids = torch.tensor([self.tokenizer.convert_tokens_to_ids(tag) for tag in decoder_start_tokens], device=input_ids.device)
             generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
                                             use_cache=True, max_length=self.args.max_output_len,
-                                            num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_start_token_ids=decoder_start_token_ids,
+                                            num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_input_ids=decoder_start_token_ids,
                                             do_sample=self.args.do_sample,
                                             temperature=self.args.temperature,
                                             top_k=self.args.top_k,
@@ -190,7 +190,7 @@ class Inference(pl.LightningModule):
     def add_model_specific_args(parser, root_dir):
         parser.add_argument("--model_path", type=str, help="Path to the checkpoint directory or model name")
         parser.add_argument("--checkpoint_name", type=str, help="Checkpoint in model_path to use.")
-        parser.add_argument("--tokenizer", type=str, help="Path to the tokenizer directory.")
+        parser.add_argument("--tokenizer", type=str, help="Path to the tdecoder_start_token_idsokenizer directory.")
 
         #data
         parser.add_argument("--test_source", type=str, default=None, help="Path to the source test file.")
