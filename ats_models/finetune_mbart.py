@@ -69,11 +69,8 @@ class MBartTrainer(pl.LightningModule):
         self.config.activation_dropout = self.args.activation_dropout
         self.config.gradient_checkpointing = self.args.grad_ckpt
 
-    def forward(self, input_ids, output_ids):
+    def forward(self, input_ids, decoder_input_ids, labels):
         input_ids, attention_mask = CustomDataset.prepare_input(input_ids, self.tokenizer.pad_token_id)
-        decoder_input_ids = shift_tokens_right(output_ids, self.config.pad_token_id) # (in: output_ids, eos_token_id, tgt_lang_id out: tgt_lang_id, output_ids, eos_token_id)
-        labels = decoder_input_ids[:, 1:].clone()
-        decoder_input_ids = decoder_input_ids[:, :-1] # without eos/last pad
         decoder_attention_mask = (decoder_input_ids != self.tokenizer.pad_token_id)
 
         outputs = self.model(
@@ -112,12 +109,12 @@ class MBartTrainer(pl.LightningModule):
 
         outputs = self.forward(*batch)
         vloss = outputs[0]
-        input_ids, output_ids = batch
+        input_ids, decoder_input_ids, labels = batch
         input_ids, attention_mask = CustomDataset.prepare_input(input_ids, self.tokenizer.pad_token_id)
+
         # mixed target languages
         if self.dev_set.tgt_tags_included:
-            shifted = shift_tokens_right(output_ids, self.config.pad_token_id) # (in: output_ids, eos_token_id, tgt_lang_id out: tgt_lang_id, output_ids, eos_token_id)
-            decoder_start_token_ids = shifted.narrow(dim=1, start=0, length=1)
+            decoder_start_token_ids = decoder_input_ids.narrow(dim=1, start=0, length=1)
             generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
                                             use_cache=True, max_length=self.args.max_output_len,
                                             num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_start_token_ids=decoder_start_token_ids)
@@ -128,7 +125,8 @@ class MBartTrainer(pl.LightningModule):
 
         generated_str = self.tokenizer.batch_decode(generated_ids.tolist(), skip_special_tokens=True)
 
-        gold_str = self.tokenizer.batch_decode(output_ids.tolist(), skip_special_tokens=True, clean_up_tokenization_spaces=True)
+        gold_str = self.tokenizer.batch_decode(labels.tolist(), skip_special_tokens=True, clean_up_tokenization_spaces=True)
+
         # get scores as dict
         scores = get_eval_scores(gold_str, generated_str, vloss=vloss) # with skip_special_tokens=True, no language tag
 
