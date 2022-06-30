@@ -41,6 +41,15 @@ from .metrics import label_smoothed_nll_loss, get_eval_scores
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
+
+
+class LitProgressBar(TQDMProgressBar):
+        def init_validation_tqdm(self):
+            bar = super().init_validation_tqdm()
+            bar.set_description('running validation ...')
+            bar.disable = True
+            return bar
+
 class MBartTrainer(pl.LightningModule):
 
     def __init__(self, params):
@@ -100,7 +109,8 @@ class MBartTrainer(pl.LightningModule):
                             'input_size': batch[0].numel(),
                             'output_size': batch[1].numel(),
                             'mem': torch.cuda.memory_allocated(loss.device) / 1024 ** 3 if torch.cuda.is_available() else 0}
-        self.log('train-loss', loss, on_step=True, on_epoch=True, prog_bar=True, logger=False)
+        self.log('train-loss', loss, on_step=True, on_epoch=True, prog_bar=True, logger=True)
+        self.log('lr', lr, on_step=True, on_epoch=True, prog_bar=True, logger=True)
         return loss
 
     def validation_step(self, batch, batch_nb):
@@ -123,7 +133,7 @@ class MBartTrainer(pl.LightningModule):
                                             use_cache=True, max_length=self.args.max_output_len,
                                             num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_start_token_id=self.tokenizer.convert_tokens_to_ids(self.dev_set.tgt_lang))
 
-        generated_str = self.tokenizer.batch_decode(generated_ids.tolist(), skip_special_tokens=True)
+        generated_str = self.tokenizer.batch_decode(generated_ids.tolist(), skip_special_tokens=True, clean_up_tokenization_spaces=True)
 
         gold_str = self.tokenizer.batch_decode(labels.tolist(), skip_special_tokens=True, clean_up_tokenization_spaces=True)
 
@@ -255,8 +265,6 @@ class MBartTrainer(pl.LightningModule):
 
         parser.add_argument("--max_output_len", type=int, default=256, help="maximum num of wordpieces/summary. Used for training and testing")
         parser.add_argument("--max_input_len", type=int, default=512, help="maximum num of wordpieces/summary. Used for training and testing")
-        parser.add_argument("--wandb", type=str, default=None, help="WandB project name to use if logging fine-tuning with WandB.")
-        parser.add_argument("--wandb_entity", type=str, default=None, help="WandB account name to use if logging fine-tuning with WandB.")
 
         parser.add_argument("--batch_size", type=int, default=16, help="Batch size")
         parser.add_argument("--num_workers", type=int, default=0, help="Number of data loader workers")
@@ -278,7 +286,8 @@ class MBartTrainer(pl.LightningModule):
         parser.add_argument("--val_every", type=float, default=1.0, help="Number of training steps between validations in percent of an epoch.")
         parser.add_argument("--val_percent_check", default=1.00, type=float, help='Percent of validation data used')
         parser.add_argument("--train_percent_check", default=1.00, type=float, help='Percent of training data used (for testing) NOTE: not available in pytprch lightning==1.1.6')
-        parser.add_argument("--max_epochs", type=int, default=100000, help="Maximum number of epochs (will stop training even if patience for early stopping has not been reached).")
+        parser.add_argument("--max_epochs", type=int, default=100, help="Maximum number of epochs (will stop training even if patience for early stopping has not been reached). Default: 100.")
+        parser.add_argument("--max_steps", type=int, default=-1, help="Maximum number of steps (will stop training even if patience for early stopping has not been reached). Default: -1 (no maximum).")
         parser.add_argument("--early_stopping_metric", type=str, default='rougeL', help="Metric to be used for early stopping: vloss, rouge1, rouge2, rougeL, rougeLsum, bleu")
         parser.add_argument("--patience", type=int, default=10, help="Patience for early stopping.")
         parser.add_argument("--lr_reduce_patience", type=int, default=8, help="Patience for LR reduction in Plateau scheduler.")
@@ -295,9 +304,11 @@ class MBartTrainer(pl.LightningModule):
 
         #logging params
         parser.add_argument("--progress_bar_refresh_rate", type=int, default=0, help="How often to refresh progress bar (in steps). Value 0 disables progress bar.")
+        parser.add_argument("--disable_validation_bar", action='store_true', help="Do not print tqdm bar on validation.")
         parser.add_argument("--fp32", action='store_true', help="default is fp16. Use --fp32 to switch to fp32")
-        parser.add_argument("--debug", action='store_true', help="debug run")
         parser.add_argument("--print_params", action='store_true', help="Print parameter names and shapes.")
+        parser.add_argument("--wandb", type=str, default=None, help="WandB project name to use if logging fine-tuning with WandB.")
+        parser.add_argument("--wandb_entity", type=str, default=None, help="WandB account name to use if logging fine-tuning with WandB.")
 
         return parser
 
@@ -378,21 +389,25 @@ def main(args):
         monitor=args.early_stopping_metric,
         mode=model.lr_mode)
 
-    progress_bar_callback = TQDMProgressBar(refresh_rate=args.progress_bar_refresh_rate)
+    if args.disable_validation_bar:
+        progress_bar_callback = LitProgressBar(refresh_rate=args.progress_bar_refresh_rate)
+    else:
+        progress_bar_callback = TQDMProgressBar(refresh_rate=args.progress_bar_refresh_rate)
 
     trainer = pl.Trainer(accelerator=args.accelerator, devices=args.devices, strategy='ddp_find_unused_parameters_false' if torch.cuda.is_available() else None,
                          track_grad_norm=-1,
-                         max_epochs=args.max_epochs if not args.debug else 100,
-                         max_steps=-1 if not args.debug else 1,
+                         max_epochs=args.max_epochs,
+                         max_steps=args.max_steps,
                          replace_sampler_ddp=False,
                          accumulate_grad_batches=args.grad_accum,
-                         val_check_interval=args.val_every if not args.debug else 1,
+                         val_check_interval=args.val_every,
                          num_sanity_val_steps=args.num_sanity_val_steps,
-                         check_val_every_n_epoch=1 if not (args.debug) else 1,
+                         check_val_every_n_epoch=1,
                          limit_val_batches=args.val_percent_check,
                          limit_test_batches=args.test_percent_check,
                          logger=logger,
                          precision=32 if args.fp32 else 16, amp_backend='native',
+                         enable_progress_bar=True,
                          callbacks=[early_stop_callback, checkpoint_callback, progress_bar_callback]
                          )
     ## write config + tokenizer to save_dir

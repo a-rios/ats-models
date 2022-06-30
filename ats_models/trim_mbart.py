@@ -247,6 +247,7 @@ def main():
             with torch.no_grad():
                 model.model.shared.weight[new_tag_id] = init_embed
 
+        tokenizer.add_special_tokens({'additional_special_tokens': args.add_language_tags})
         print("saving tokenizer with new tags")
         tokenizer.save_pretrained(args.save_model_to)
         print("saving model with new tags")
@@ -262,13 +263,13 @@ def main():
         trg1 = "Das ist ein einfacher Test."
         trg2 = "Das ist ein zweiter einfacher Test."
 
-        batch: dict = tokenizer.prepare_seq2seq_batch(src_texts=[src1, src2], max_length=1024, truncation=False, padding="max_length", return_tensors="pt", tags_included=True)
+        batch: dict = tokenizer.prepare_seq2seq_batch(src_texts=[src1, src2], max_length=1024, truncation=False, padding="max_length", return_tensors="pt")
         print(batch)
 
         decoder_start_token_ids = [test_tag_id, test_tag_id]
         decoder_start_token_ids = torch.tensor(decoder_start_token_ids)
         print("decoder start ids ", decoder_start_token_ids)
-        translated_tokens = model.generate(**batch, decoder_start_token_ids=decoder_start_token_ids, use_cache=True, num_beams=2)
+        translated_tokens = model.generate(**batch, decoder_input_ids=decoder_start_token_ids, use_cache=True, num_beams=2)
         translation = tokenizer.batch_decode(translated_tokens, skip_special_tokens=True)[0]
         print(translation)
 

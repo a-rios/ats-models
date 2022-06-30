@@ -87,7 +87,7 @@ class Inference(pl.LightningModule):
                                             return_dict_in_generate=True if self.args.output_to_json else self.args.return_dict_in_generate)
 
         if not self.args.output_to_json:
-            generated_strs = self.tokenizer.batch_decode(generated_ids.tolist(), skip_special_tokens=True)
+            generated_strs = self.tokenizer.batch_decode(generated_ids.tolist(), skip_special_tokens=True, clean_up_tokenization_spaces=True)
             with open(self.args.translation, 'a') as f:
                 for sample in generated_strs:
                     f.write(sample + "\n")
@@ -101,10 +101,10 @@ class Inference(pl.LightningModule):
             # if running inference with self.args.batch_size
             # > 1, we need to make sure we pair the correct input sequence
             # with the correct returned hypotheses.
-            batch_hyp_strs = self.tokenizer.batch_decode(generated_ids.sequences.tolist(), skip_special_tokens=True)
+            batch_hyp_strs = self.tokenizer.batch_decode(generated_ids.sequences.tolist(), skip_special_tokens=True, clean_up_tokenization_spaces=True)
             #TODO: fix for beam_size=1
             batch_hyp_scores = generated_ids.sequences_scores.tolist()
-            batch_source_strs = self.tokenizer.batch_decode(input_ids.tolist(), skip_special_tokens=True)
+            batch_source_strs = self.tokenizer.batch_decode(input_ids.tolist(), skip_special_tokens=True, clean_up_tokenization_spaces=True)
 
             generated_strs = []
 
