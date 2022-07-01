@@ -25,7 +25,7 @@ import pytorch_lightning as pl
 from pytorch_lightning.loggers import TensorBoardLogger, WandbLogger
 from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.callbacks.early_stopping import EarlyStopping
-from pytorch_lightning.callbacks import TQDMProgressBar
+from pytorch_lightning.callbacks import TQDMProgressBar, LearningRateMonitor
 from pytorch_lightning.plugins import DDPPlugin
 
 import logging
@@ -46,7 +46,7 @@ logging.basicConfig(level=logging.INFO)
 class LitProgressBar(TQDMProgressBar):
         def init_validation_tqdm(self):
             bar = super().init_validation_tqdm()
-            bar.set_description('running validation ...')
+            bar.set_description('running validation')
             bar.disable = True
             return bar
 
@@ -104,6 +104,7 @@ class MBartTrainer(pl.LightningModule):
     def training_step(self, batch, batch_nb):
         output = self.forward(*batch)
         loss = output[0]
+
         lr = loss.new_zeros(1) + self.trainer.optimizers[0].param_groups[0]['lr']
         tensorboard_logs = {'train_loss': loss, 'lr': lr,
                             'input_size': batch[0].numel(),
@@ -145,12 +146,12 @@ class MBartTrainer(pl.LightningModule):
         with open(outfile, 'a') as f:
             for sample in generated_str:
                 f.write(sample + "\n")
-        self.log('vloss', vloss, on_step=False, on_epoch=True, prog_bar=True)
-        self.log('bleu', scores['bleu'], on_step=False, on_epoch=True, prog_bar=True)
-        self.log('rouge1', scores['rouge1'], on_step=False, on_epoch=True, prog_bar=True)
-        self.log('rouge2', scores['rouge2'], on_step=False, on_epoch=True, prog_bar=True)
-        self.log('rougeL', scores['rougeL'], on_step=False, on_epoch=True, prog_bar=True)
-        self.log('rougeLsum', scores['rougeLsum'], on_step=False, on_epoch=True, prog_bar=True)
+        self.log('vloss', vloss, on_step=False, on_epoch=True, prog_bar=False)
+        self.log('bleu', scores['bleu'], on_step=False, on_epoch=True, prog_bar=False)
+        self.log('rouge1', scores['rouge1'], on_step=False, on_epoch=True, prog_bar=False)
+        self.log('rouge2', scores['rouge2'], on_step=False, on_epoch=True, prog_bar=False)
+        self.log('rougeL', scores['rougeL'], on_step=False, on_epoch=True, prog_bar=False)
+        self.log('rougeLsum', scores['rougeLsum'], on_step=False, on_epoch=True, prog_bar=False)
 
         return scores
 
@@ -167,7 +168,8 @@ class MBartTrainer(pl.LightningModule):
             metrics.append(metric)
         logs = dict(zip(*[names, metrics]))
         print("Evaluation on checkpoint [{}] ".format(self.current_checkpoint))
-        print(logs)
+        for m,v in logs.items():
+            print(f"{m}:{v}")
 
         ## save metric value + number of checkpoint if best
         if self.args.early_stopping_metric == 'vloss' and logs['vloss'] < self.best_metric:
@@ -189,12 +191,37 @@ class MBartTrainer(pl.LightningModule):
 
     def configure_optimizers(self):
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=self.args.lr)
-        self.scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer=self.optimizer, mode=self.lr_mode, factor=self.args.lr_reduce_factor, patience=self.args.lr_reduce_patience)
-        return {
-       'optimizer': self.optimizer,
-       'lr_scheduler': self.scheduler,
-       'monitor': self.args.early_stopping_metric
+        self.scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+            optimizer=self.optimizer,
+            mode=self.lr_mode,
+            factor=self.args.lr_reduce_factor,
+            patience=self.args.lr_reduce_patience,
+            cooldown=self.args.lr_cooldown,
+            verbose=True)
+
+
+        lr_scheduler_config = {
+            "scheduler": self.scheduler,
+            # The unit of the scheduler's step size, could also be 'step'.
+            # 'epoch' updates the scheduler on epoch end whereas 'step'
+            # updates it after a optimizer update.
+            "interval": "epoch",
+            # How many epochs/steps should pass between calls to
+            # `scheduler.step()`. 1 corresponds to updating the learning
+            # rate after every epoch/step.
+            "frequency": 1,
+            # Metric to to monitor for schedulers like `ReduceLROnPlateau`
+            "monitor": self.args.early_stopping_metric,
+            # If set to `True`, will enforce that the value specified 'monitor'
+            # is available when the scheduler is updated, thus stopping
+            # training if not found. If set to `False`, it will only produce a warning
+            "strict": True,
+            # If using the `LearningRateMonitor` callback to monitor the
+            # learning rate progress, this keyword can be used to specify
+            # a custom logged name
+            "name": "plateauLR",
         }
+        return [self.optimizer], [lr_scheduler_config]
 
     def set_datasets(self, train_set: CustomDataset, dev_set: CustomDataset, test_set: Optional[CustomDataset]):
         self.train_set = train_set
@@ -292,6 +319,7 @@ class MBartTrainer(pl.LightningModule):
         parser.add_argument("--patience", type=int, default=10, help="Patience for early stopping.")
         parser.add_argument("--lr_reduce_patience", type=int, default=8, help="Patience for LR reduction in Plateau scheduler.")
         parser.add_argument("--lr_reduce_factor", type=float, default=0.5, help="Learning rate reduce factor for Plateau scheduler.")
+        parser.add_argument("--lr_cooldown", type=int, default=0, help="Cooldown for Plateau scheduler (number of epochs to wait before resuming normal operation after lr has been reduced.).")
         parser.add_argument("--disable_checkpointing", action='store_true', help="No logging or checkpointing")
         parser.add_argument("--save_top_k", type=int, default=5, help="Number of best checkpoints to keep. Others will be removed.")
         parser.add_argument("--save_every_n_val_epochs", type=int, default=0, help="Number of validation epochs between checkpoints.")
@@ -389,6 +417,8 @@ def main(args):
         monitor=args.early_stopping_metric,
         mode=model.lr_mode)
 
+    lr_monitor_callback = LearningRateMonitor(logging_interval='step')
+
     if args.disable_validation_bar:
         progress_bar_callback = LitProgressBar(refresh_rate=args.progress_bar_refresh_rate)
     else:
@@ -408,7 +438,7 @@ def main(args):
                          logger=logger,
                          precision=32 if args.fp32 else 16, amp_backend='native',
                          enable_progress_bar=True,
-                         callbacks=[early_stop_callback, checkpoint_callback, progress_bar_callback]
+                         callbacks=[early_stop_callback, checkpoint_callback, progress_bar_callback, lr_monitor_callback]
                          )
     ## write config + tokenizer to save_dir
     model.model.save_pretrained(args.save_dir + "/" + args.save_prefix)
