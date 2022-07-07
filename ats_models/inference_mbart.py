@@ -158,7 +158,8 @@ class Inference(pl.LightningModule):
                 metrics.append(metric)
             logs = dict(zip(*[names, metrics]))
             print("Evaluation on provided reference [{}] ".format(self.args.test_target))
-            print(logs)
+            for m,v in logs.items():
+                print(f"{m}:{v}")
 
     def forward(self):
         pass
