@@ -1,0 +1,8 @@
+pytorch-lightning
+transformers
+torch==1.10.2
+tensorboardX
+rouge_score
+sacrebleu
+datasets==1.2.1
+sentencepiece
