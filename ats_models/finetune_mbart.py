@@ -30,7 +30,7 @@ from pytorch_lightning.plugins import DDPPlugin
 
 import logging
 from transformers import MBartTokenizer, MBartForConditionalGeneration, MBartConfig
-from transformers.models.mbart.modeling_mbart import shift_tokens_right
+from .longmbart.longformer_enc_dec import MLongformerEncoderDecoderForConditionalGeneration, MLongformerEncoderDecoderConfig
 import datasets
 from typing import Optional
 from functools import partial
@@ -55,6 +55,7 @@ class MBartTrainer(pl.LightningModule):
     def __init__(self, params):
         super().__init__()
         self.args = params
+        self.is_long_model = (self.args.attention_mode == 'sliding_chunks')
 
         if self.args.from_pretrained is not None: ## TODO check how to do this with resume_ckpt
             self._set_config()
@@ -68,18 +69,30 @@ class MBartTrainer(pl.LightningModule):
         self.save_hyperparameters()
 
     def _load_pretrained(self):
-        self.model = MBartForConditionalGeneration.from_pretrained(self.args.from_pretrained, config=self.config)
         self.tokenizer = MBartTokenizer.from_pretrained(self.args.tokenizer, use_fast=True)
+        if self.is_long_model:
+            self.model = MLongformerEncoderDecoderForConditionalGeneration.from_pretrained(self.args.from_pretrained, config=self.config)
+        else:
+            self.model = MBartForConditionalGeneration.from_pretrained(self.args.from_pretrained, config=self.config)
+
 
     def _set_config(self):
-        self.config = MBartConfig.from_pretrained(self.args.from_pretrained)
+        if self.is_long_model:
+            self.config = MLongformerEncoderDecoderConfig.from_pretrained(self.args.from_pretrained)
+            self.config.global_attention_indices = self.args.global_attention_indices
+        else:
+            self.config = MBartConfig.from_pretrained(self.args.from_pretrained)
+            self.config.attention_mode = 'n2'
+            self.config.attention_window = None
+            self.config.global_attention_indices = None
         self.config.attention_dropout = self.args.attention_dropout
         self.config.dropout = self.args.dropout
         self.config.activation_dropout = self.args.activation_dropout
         self.config.gradient_checkpointing = self.args.grad_ckpt
 
+
     def forward(self, input_ids, decoder_input_ids, labels):
-        input_ids, attention_mask = CustomDataset.prepare_input(input_ids, self.tokenizer.pad_token_id)
+        input_ids, attention_mask = CustomDataset.prepare_input(input_ids, self.is_long_model, self.config.attention_mode, self.config.attention_window, self.tokenizer.pad_token_id, self.config.global_attention_indices)
         decoder_attention_mask = (decoder_input_ids != self.tokenizer.pad_token_id)
 
         outputs = self.model(
@@ -121,7 +134,7 @@ class MBartTrainer(pl.LightningModule):
         outputs = self.forward(*batch)
         vloss = outputs[0]
         input_ids, decoder_input_ids, labels = batch
-        input_ids, attention_mask = CustomDataset.prepare_input(input_ids, self.tokenizer.pad_token_id)
+        input_ids, attention_mask = CustomDataset.prepare_input(input_ids, self.is_long_model, self.config.attention_mode, self.config.attention_window, self.tokenizer.pad_token_id, self.config.global_attention_indices)
 
         # mixed target languages
         if self.dev_set.tgt_tags_included:
@@ -306,6 +319,9 @@ class MBartTrainer(pl.LightningModule):
         parser.add_argument("--activation_dropout", type=float, default=0.0, help="activation_dropout")
         parser.add_argument("--label_smoothing", type=float, default=0.0, required=False)
         parser.add_argument("--min_delta", type=float, default=0.0, help="Minimum change in the monitored quantity to qualify as an improvement.")
+        parser.add_argument("--attention_mode", type=str, default='n2', required=True, help="Attention mode (n2=default mbart attention, sliding_chunks=longformer windowed attention. Default: n2.")
+        parser.add_argument("--attention_window", type=int, default=512, help="Attention window if using attention_mode=sliding_chunks. Default: 512.")
+        parser.add_argument("--global_attention_indices", type=int, nargs='+', default=[-1], required=False, help="List of indices of positions with global attention for longformer attention. Supports negative indices (-1 == last non-padding token). Default: [-1] == last source token (==lang_id) .")
 
         # Optimization params:
         #parser.add_argument("--warmup", type=int, default=1000, help="Number of warmup steps")

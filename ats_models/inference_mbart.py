@@ -27,6 +27,7 @@ from pytorch_lightning.callbacks import TQDMProgressBar
 from pytorch_lightning.plugins import DDPPlugin
 
 from transformers import MBartTokenizer, MBartForConditionalGeneration, MBartConfig
+from .longmbart.longformer_enc_dec import MLongformerEncoderDecoderForConditionalGeneration, MLongformerEncoderDecoderConfig
 import datasets
 from typing import Optional
 from functools import partial
@@ -40,10 +41,14 @@ class Inference(pl.LightningModule):
     def __init__(self, args):
         super().__init__()
         self.args = args
-
-        self.config = MBartConfig.from_pretrained(self.args.model_path)
         self.tokenizer = MBartTokenizer.from_pretrained(self.args.tokenizer, use_fast=True)
-        self.model = MBartForConditionalGeneration.from_pretrained(self.args.model_path, config=self.config)
+
+        if self.args.is_long:
+            self.config = MLongformerEncoderDecoderConfig.from_pretrained(self.args.model_path)
+            self.model = MLongformerEncoderDecoderForConditionalGeneration.from_pretrained(self.args.model_path, config=self.config)
+        else:
+            self.config = MBartConfig.from_pretrained(self.args.model_path)
+            self.model = MBartForConditionalGeneration.from_pretrained(self.args.model_path, config=self.config)
 
         self.max_input_len = self.args.max_input_len if self.args.max_input_len is not None else self.config.max_encoder_position_embeddings
         self.max_output_len = self.args.max_output_len if self.args.max_output_len is not None else self.config.max_decoder_position_embeddings
@@ -54,11 +59,11 @@ class Inference(pl.LightningModule):
             p.requires_grad = False
 
         input_ids, ref, decoder_start_tokens  = batch # ref: string; decoder_start_tokens: tgt_lang labels
-        input_ids, attention_mask = CustomDatasetForInference.prepare_input(input_ids, self.tokenizer.pad_token_id)
+        input_ids, attention_mask = CustomDatasetForInference.prepare_input(input_ids, self.args.is_long, self.config.attention_mode, self.config.attention_window, self.tokenizer.pad_token_id, self.config.global_attention_indices)
         assert (decoder_start_tokens is not None or self.test_set.tgt_lang is not None), "Need either reference with target labels or list of target labels (multilingual batches), else --tgt_lang needs to be set"
 
         if decoder_start_tokens is not None: # no reference but list of target language tags given
-            decoder_start_token_ids = torch.tensor([self.tokenizer.convert_tokens_to_ids(tag) for tag in decoder_start_tokens], device=input_ids.device)
+            decoder_start_token_ids = torch.tensor([self.tokenizer.convert_tokens_to_ids(tag) for tag in decoder_start_tokens], device=input_ids.device).unsqueeze(1)
             generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
                                             use_cache=True, max_length=self.args.max_output_len,
                                             num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_input_ids=decoder_start_token_ids,
@@ -192,6 +197,7 @@ class Inference(pl.LightningModule):
         parser.add_argument("--model_path", type=str, help="Path to the checkpoint directory or model name")
         parser.add_argument("--checkpoint_name", type=str, help="Checkpoint in model_path to use.")
         parser.add_argument("--tokenizer", type=str, help="Path to the tokenizer directory.")
+        parser.add_argument("--is_long", action='store_true', help="This is a model with longformer windowed attention.")
 
         #data
         parser.add_argument("--test_source", type=str, default=None, help="Path to the source test file.")

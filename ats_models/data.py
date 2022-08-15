@@ -2,10 +2,11 @@
 # -*- coding: utf-8 -*-
 
 """
-
 Note:
     Authors: Annette Rios (arios@cl.uzh.ch)
 
+prepare_long_input() adapted from:
+    https://github.com/allenai/longformer/
 """
 
 import torch
@@ -13,6 +14,8 @@ from torch.utils.data import DataLoader, Dataset
 import re
 from typing import Optional, List
 from transformers import MBartTokenizer
+from .longmbart.longformer_enc_dec import MLongformerEncoderDecoderForConditionalGeneration
+from .longmbart.sliding_chunks import pad_to_window_size
 
 class CustomDataset(Dataset):
     def __init__(self,
@@ -100,9 +103,29 @@ class CustomDataset(Dataset):
 
         return input_ids, decoder_input_ids, labels
 
-    def prepare_input(input_ids, pad_token_id):
+    def prepare_input(input_ids, is_long_model, attention_mode, attention_window, pad_token_id, global_attention_indices):
         attention_mask = torch.ones(input_ids.shape, dtype=torch.long, device=input_ids.device)
         attention_mask[input_ids == pad_token_id] = 0
+
+        # attention longformer: 1 local, 2 global, 0 none
+        if is_long_model:
+            index_of_last_nonpad = (attention_mask.ne(0).sum(dim=1) - 1).squeeze(-1)
+            for glob_i in global_attention_indices:
+                ## negative indices: discount from index_of_last_nonpad (only need to do this if batch_size > 1, otherwise there is no padding at this point and we can just use the negative indices directly
+                if glob_i < 0 and input_ids.shape[0] > 1:
+                    for i, last_nonpad in enumerate(index_of_last_nonpad): # i: iterator over samples in batch
+                        glob = int(last_nonpad) + glob_i +1
+                        attention_mask[i][int(glob)] = 2
+                # indices > 0
+                else:
+                    attention_mask[:, glob_i] = 2
+            if attention_mode == 'sliding_chunks':
+                half_padding_mod = attention_window[0]
+            elif attention_mode == 'sliding_chunks_no_overlap':
+                half_padding_mod = attention_window[0] / 2
+            else:
+                raise NotImplementedError
+            input_ids, attention_mask = pad_to_window_size(input_ids, attention_mask, half_padding_mod, pad_token_id)
         return input_ids, attention_mask
 
 
