@@ -33,7 +33,7 @@ from typing import Optional
 from functools import partial
 
 from .data import CustomDatasetForInference
-from .finetune_mbart import MBartTrainer
+from .finetune_mbart import MBartTrainer, remove_special_tokens
 from .metrics import label_smoothed_nll_loss, get_eval_scores
 
 class Inference(pl.LightningModule):
@@ -42,6 +42,10 @@ class Inference(pl.LightningModule):
         super().__init__()
         self.args = args
         self.tokenizer = MBartTokenizer.from_pretrained(self.args.tokenizer, use_fast=True)
+        if args.remove_special_tokens_containing:
+            print("special tokens before:", model.tokenizer.special_tokens_map)
+            model.tokenizer = remove_special_tokens(model.tokenizer, args.remove_special_tokens_containing)
+            print("special tokens after:", model.tokenizer.special_tokens_map)
 
         if self.args.is_long:
             self.config = MLongformerEncoderDecoderConfig.from_pretrained(self.args.model_path)
@@ -209,6 +213,7 @@ class Inference(pl.LightningModule):
         parser.add_argument("--src_tags_included", action='store_true', help="Source text files contain language tags (first token in each line).")
         parser.add_argument("--max_input_len", type=int, default=512, help="maximum num of wordpieces, if unspecified, will use number of encoder positions from model config.")
         parser.add_argument("--max_output_len", type=int, default=512, help="maximum num of wordpieces, if unspecified, will use number of decoder positions from model config.")
+        parser.add_argument("--remove_special_tokens_containing", type=str, nargs="+", help="Remove tokens from the special_tokens_map that contain this string")
 
         parser.add_argument("--batch_size", type=int, default=16, help="Batch size")
         parser.add_argument("--num_workers", type=int, default=0, help="Number of data loader workers")

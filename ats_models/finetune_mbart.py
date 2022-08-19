@@ -50,6 +50,20 @@ class LitProgressBar(TQDMProgressBar):
             bar.disable = True
             return bar
 
+def remove_special_tokens(tokenizer, special_token_substrings):
+    to_remove = set()
+    for contains_str in special_token_substrings:
+        to_remove = to_remove.union({
+            token for token in tokenizer.additional_special_tokens
+            if contains_str in token
+        })
+    tokenizer.additional_special_tokens = [
+        token for token in tokenizer.additional_special_tokens
+        if token not in to_remove
+    ]
+    tokenizer.special_tokens_map["additional_special_tokens"] = str(tokenizer.additional_special_tokens)
+    return tokenizer
+
 class MBartTrainer(pl.LightningModule):
 
     def __init__(self, params):
@@ -302,6 +316,7 @@ class MBartTrainer(pl.LightningModule):
         parser.add_argument("--tgt_lang", type=str, default=None, help="Target language tag (optional, for multilingual batches, preprocess text files to include language tags.")
         parser.add_argument("--tgt_tags_included", action='store_true', help="Target text files contain language tags (first token in each line).")
         parser.add_argument("--src_tags_included", action='store_true', help="Source text files contain language tags (first token in each line).")
+        parser.add_argument("--remove_special_tokens_containing", type=str, nargs="+", help="Remove tokens from the special_tokens_map that contain this string (e.g. xml tags).")
 
         parser.add_argument("--max_output_len", type=int, default=256, help="maximum num of wordpieces/summary. Used for training and testing")
         parser.add_argument("--max_input_len", type=int, default=512, help="maximum num of wordpieces/summary. Used for training and testing")
@@ -458,6 +473,12 @@ def main(args):
                          )
     ## write config + tokenizer to save_dir
     model.model.save_pretrained(args.save_dir + "/" + args.save_prefix)
+
+    if args.remove_special_tokens_containing:
+        print("special tokens before:", model.tokenizer.special_tokens_map)
+        model.tokenizer = remove_special_tokens(model.tokenizer, args.remove_special_tokens_containing)
+        print("special tokens after:", model.tokenizer.special_tokens_map)
+
     model.tokenizer.save_pretrained(args.save_dir + "/" + args.save_prefix)
     if args.resume_ckpt:
         trainer.fit(model, ckpt_path=args.resume_ckpt)
