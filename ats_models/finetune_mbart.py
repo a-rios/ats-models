@@ -34,7 +34,7 @@ from .longmbart.longformer_enc_dec import MLongformerEncoderDecoderForConditiona
 import datasets
 from typing import Optional
 from functools import partial
-from .data import CustomDataset
+from .data import CustomDataset, CustomDatasetUZHJson
 from .metrics import label_smoothed_nll_loss, get_eval_scores
 
 
@@ -312,6 +312,9 @@ class MBartTrainer(pl.LightningModule):
         parser.add_argument("--dev_target", type=str, default=None, help="Path to the target validation file.")
         parser.add_argument("--test_source", type=str, default=None, help="Path to the source test file (to evaluate after training is finished).")
         parser.add_argument("--test_target", type=str, default=None, help="Path to the target test file (to evaluate after training is finished).")
+        parser.add_argument("--train_jsons", type=str, nargs='+', default=None,  help="Path to UZH json file(s) with training data.")
+        parser.add_argument("--dev_jsons", type=str, nargs='+', default=None,  help="Path to UZH json file(s) with dev data.")
+        parser.add_argument("--test_jsons", type=str, nargs='+', default=None,  help="Path to UZH json file(s) with test data.")
         parser.add_argument("--src_lang", type=str, default=None, help="Source language tag (optional, for multilingual batches, preprocess text files to include language tags.")
         parser.add_argument("--tgt_lang", type=str, default=None, help="Target language tag (optional, for multilingual batches, preprocess text files to include language tags.")
         parser.add_argument("--tgt_tags_included", action='store_true', help="Target text files contain language tags (first token in each line).")
@@ -387,41 +390,64 @@ def main(args):
                 print(name + ":" + str(param.data.shape))
         exit(0)
 
-    train_set = CustomDataset(src_file=args.train_source,
-                              tgt_file=args.train_target,
+    if args.train_jsons is not None:
+        train_set = CustomDatasetUZHJson(json_files=args.train_jsons,
                               name="train",
                               tokenizer=model.tokenizer,
                               max_input_len=args.max_input_len,
-                              max_output_len=args.max_output_len,
-                              src_lang=args.src_lang,
-                              tgt_lang=args.tgt_lang,
-                              src_tags_included=args.src_tags_included,
-                              tgt_tags_included=args.tgt_tags_included
+                              max_output_len=args.max_output_len
         )
-
-    dev_set = CustomDataset(src_file=args.dev_source,
-                              tgt_file=args.dev_target,
+    else:
+        train_set = CustomDataset(src_file=args.train_source,
+                                tgt_file=args.train_target,
+                                name="train",
+                                tokenizer=model.tokenizer,
+                                max_input_len=args.max_input_len,
+                                max_output_len=args.max_output_len,
+                                src_lang=args.src_lang,
+                                tgt_lang=args.tgt_lang,
+                                src_tags_included=args.src_tags_included,
+                                tgt_tags_included=args.tgt_tags_included
+            )
+    if args.dev_jsons is not None:
+        dev_set = CustomDatasetUZHJson(json_files=args.dev_jsons,
                               name="dev",
                               tokenizer=model.tokenizer,
                               max_input_len=args.max_input_len,
-                              max_output_len=args.max_output_len,
-                              src_lang=args.src_lang,
-                              tgt_lang=args.tgt_lang,
-                              src_tags_included=args.src_tags_included,
-                              tgt_tags_included=args.tgt_tags_included
+                              max_output_len=args.max_output_len
         )
+    else:
+        dev_set = CustomDataset(src_file=args.dev_source,
+                                tgt_file=args.dev_target,
+                                name="dev",
+                                tokenizer=model.tokenizer,
+                                max_input_len=args.max_input_len,
+                                max_output_len=args.max_output_len,
+                                src_lang=args.src_lang,
+                                tgt_lang=args.tgt_lang,
+                                src_tags_included=args.src_tags_included,
+                                tgt_tags_included=args.tgt_tags_included
+            )
 
-    test_set = CustomDataset(src_file=args.test_source,
-                              tgt_file=args.test_target,
+    if args.test_jsons is not None:
+        test_set = CustomDatasetUZHJson(json_files=args.test_jsons,
                               name="test",
                               tokenizer=model.tokenizer,
                               max_input_len=args.max_input_len,
-                              max_output_len=args.max_output_len,
-                              src_lang=args.src_lang,
-                              tgt_lang=args.tgt_lang,
-                              src_tags_included=args.src_tags_included,
-                              tgt_tags_included=args.tgt_tags_included
+                              max_output_len=args.max_output_len
         )
+    else:
+        test_set = CustomDataset(src_file=args.test_source,
+                                tgt_file=args.test_target,
+                                name="test",
+                                tokenizer=model.tokenizer,
+                                max_input_len=args.max_input_len,
+                                max_output_len=args.max_output_len,
+                                src_lang=args.src_lang,
+                                tgt_lang=args.tgt_lang,
+                                src_tags_included=args.src_tags_included,
+                                tgt_tags_included=args.tgt_tags_included
+            )
 
     model.set_datasets(train_set=train_set, dev_set=dev_set, test_set=test_set)
 

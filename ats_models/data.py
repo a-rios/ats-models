@@ -12,6 +12,7 @@ prepare_long_input() adapted from:
 import torch
 from torch.utils.data import DataLoader, Dataset
 import re
+import json
 from typing import Optional, List
 from transformers import MBartTokenizer
 from .longmbart.longformer_enc_dec import MLongformerEncoderDecoderForConditionalGeneration
@@ -194,3 +195,67 @@ class CustomDatasetForInference(CustomDataset):
         input_ids = torch.nn.utils.rnn.pad_sequence(input_ids, batch_first=True, padding_value=pad_token_id)
 
         return input_ids, ref, target_tags
+
+class CustomDatasetUZHJson(CustomDataset):
+    def __init__(self,
+                 json_files:List[str],
+                 name: str,
+                 tokenizer: MBartTokenizer,
+                 max_input_len: int=1024,
+                 max_output_len: int=1024,
+                 remove_xml: Optional[bool]=False): # TODO parse xml and get raw text for this option
+        self.name = name # train, val, test
+        self.tokenizer = tokenizer
+        self.max_input_len = max_input_len
+        self.max_output_len = max_output_len
+        self.remove_xml = remove_xml
+        self.tgt_tags_included = True # language tags are added to the tensors from the json
+        self.tgt_lang = None
+
+        self.map_lang_ids = {'a1': 'de_A1', 'a2': 'de_A2', 'b1':'de_B1'}
+
+        self.inputs = [] # list of tuples (lang_id, sentence)
+        self.labels = [] # list of tuples (lang_id, sentence)
+
+        # TODO load json, parse into src-trg samples
+        for json_file in json_files:
+            with open(json_file, 'r') as f:
+                json_data = json.load(f)
+                for sample in json_data['segments']:
+                    source = sample['original']
+                    tgt_lang = list(sample.keys())[0]
+                    target = sample[tgt_lang]
+                    tgt_id = self.map_lang_ids[tgt_lang]
+                    self.inputs.append(("de_DE", source))
+                    self.labels.append((tgt_id, target))
+        assert len(self.inputs) == len(self.labels), f"Source and target have different number of samples: {len(self.inputs)} vs. {len(self.labels)}"
+
+    def __getitem__(self, idx):
+            """
+            mbart tokenizer implementation expects only a single source and target language, so we have to do an ugly workaround here
+            source needs to be src_lang x x x </s> src_lang
+            target needs to be x x x </s> tgt_lang -> this can be done with as_target_tokenizer, but only with language codes in MBartTokenizer.lang_code_to_id and only one target language per tokenizer
+            we just use the source tokenization and move the first token (tgt_lang) to the end
+            NOTE: only works if source tag is in MBartTokenizer.lang_code_to_id, otherwise would need a dummy code for source as well!
+            """
+            (src_lang, source) = self.inputs[idx]
+            (tgt_lang, target) = self.labels[idx]
+
+            self.tokenizer.src_lang= src_lang
+
+            input_ids = self.tokenizer(source, return_tensors="pt", max_length=self.max_input_len, truncation=True, padding=False)
+            labels = self.tokenizer(target, return_tensors="pt", max_length=self.max_output_len, truncation=True, padding=False)
+            input_ids = input_ids['input_ids'].squeeze()
+            labels = labels['input_ids'].squeeze()
+
+            # can't use shift_tokens_right from modeling_mbart with batch_sizes > 1, does not take padding into account. prepare sequences here, without padding
+            # input_ids: tokens, eos (2), lang_id
+            # from labels create:
+            # decoder_input = lang_id tokens
+            # labels = tokens eos (2)
+            decoder_input_ids = torch.roll(labels, shifts=1) # move lang_id to first position
+            decoder_input_ids[0] = self.tokenizer.convert_tokens_to_ids(tgt_lang) # exchange src_tag with trg_tag
+            decoder_input_ids = decoder_input_ids[:-1] # cut off eos
+            labels= labels[:-1] # cut off lang_id
+            return input_ids, decoder_input_ids, labels
+
