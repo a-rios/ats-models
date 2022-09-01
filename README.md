@@ -1,6 +1,6 @@
 # Models for Automatic Text Simplification (ATS)
 This repository contains code for the ATS models we use in the [Flagship Inclusive Information and Communication Technologies (IICT) project](https://www.iict.uzh.ch/en.html).
-This repository is an updated version of [longmbart](https://github.com/a-rios/longmbart), which is in turn based on [longformer](https://github.com/allenai/longformer).
+This repository is an updated version of [longmbart](https://github.com/a-rios/longmbart), which is in turn based on [longformer](https://github.com/allenai/longformer) and [huggingface transformers](https://github.com/huggingface/transformers).
 The code in this repository includes scripts to trim and fine-tune models based on mt5 [[2]](#[2]) and mBART [[3]](#[3]), and in case of the latter, an optional modification to use longformer attention [[1]](#[1]) in the encoder for long sequences. 
 
 ## Installation
