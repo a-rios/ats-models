@@ -1,5 +1,6 @@
 # Models for Automatic Text Simplification (ATS)
 This repository contains code for the ATS models we use in the [Flagship Inclusive Information and Communication Technologies (IICT) project](https://www.iict.uzh.ch/en.html).
+The repository contains code to trim and fine-tune models based on mt5 [2] and mBART [3], and in case of the latter, an optional modification to use longformer attention [1] in the encoder for long sequences.
 
 ## Installation
 Check out the repository:
@@ -200,3 +201,7 @@ combination of 2 of these options:
 ## References
 
 [1] Iz Beltagy and Matthew E. Peters and Arman Cohan (2020). [Longformer: The Long-Document Transformer](https://arxiv.org/abs/2004.05150). CoRR abs/2004.05150.
+
+[2] Linting Xue, Noah Constant, Adam Roberts, Mihir Kale, Rami Al-Rfou, Aditya Siddhant, Aditya Barua, and Colin Raffel. 2021. mT5: [A Massively Multilingual Pre-trained Text-to-Text Transformer.](https://aclanthology.org/2021.naacl-main.41/) In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 483–498, Online. Association for Computational Linguistics.
+
+[3] Yinhan Liu, Jiatao Gu, Naman Goyal, Xian Li, Sergey Edunov, Marjan Ghazvininejad, Mike Lewis, and Luke Zettlemoyer. 2020. [Multilingual Denoising Pre-training for Neural Machine Translation.](https://aclanthology.org/2020.tacl-1.47/) Transactions of the Association for Computational Linguistics, 8:726–742.
