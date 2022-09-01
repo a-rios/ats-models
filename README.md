@@ -51,7 +51,7 @@ For German, you can use the vocabulary lists provided in [vocab_lists](vocab_lis
 The script for mBART has some extra options to add new language tags, e.g. CEFR levels for text simplification. The embedding of these new tags can be initialized with an embedding of one of the pretrained tags, e.g. `de_DE`(if not set, they will be randomly initialized).
 The mBART conversion script also offers an option to add a list of additional items to the vocabulary (`--add_to_vocab`). 
 
-#### longmbart
+#### Longmbart
 Longmbart is mBART but with longformer attention in the encoder [1]:
 
 ```
@@ -229,7 +229,7 @@ Bibtex:
 ## References
 
 <div id="[1]">[1] Iz Beltagy and Matthew E. Peters and Arman Cohan (2020). [Longformer: The Long-Document Transformer](https://arxiv.org/abs/2004.05150). CoRR abs/2004.05150.</div>
-
+</br>
 <div id="[2]">[2] Linting Xue, Noah Constant, Adam Roberts, Mihir Kale, Rami Al-Rfou, Aditya Siddhant, Aditya Barua, and Colin Raffel. 2021. mT5: [A Massively Multilingual Pre-trained Text-to-Text Transformer.](https://aclanthology.org/2021.naacl-main.41/) In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 483–498, Online. Association for Computational Linguistics.</div>
-
+</br>
 <div id="[3]">[3] Yinhan Liu, Jiatao Gu, Naman Goyal, Xian Li, Sergey Edunov, Marjan Ghazvininejad, Mike Lewis, and Luke Zettlemoyer. 2020. [Multilingual Denoising Pre-training for Neural Machine Translation.](https://aclanthology.org/2020.tacl-1.47/) Transactions of the Association for Computational Linguistics, 8:726–742.</div>
