@@ -46,7 +46,8 @@ python -m ats_models.trim_mbart \
 
 For German, you can use the vocabulary lists provided in [vocab_lists](vocab_lists), for other languages, you have to create your own (one subword per line).
 
-The script for mBART has some extra options to add new language tags, e.g. CEFR levels for text simplification. The embedding of these new tags can be initialized an embedding of one of the pretrained tags, e.g. `de_DE`(if not set, they will be randomly initialized).
+The script for mBART has some extra options to add new language tags, e.g. CEFR levels for text simplification. The embedding of these new tags can be initialized with an embedding of one of the pretrained tags, e.g. `de_DE`(if not set, they will be randomly initialized).
+The mBART conversion script also offers an option to add a list of additional items to the vocabulary (`--add_to_vocab`). 
 
 #### longmbart
 Longmbart is mBART but with longformer windowed attention in the encoder:
@@ -63,6 +64,7 @@ python -m ats_models.convert_mbart2long \
 --add_language_tags de_A1 de_A2 de_B1 \
 --initialize_tags de_DE de_DE de_DE 
 ```
+
 
 ### Fine-Tuning
 
