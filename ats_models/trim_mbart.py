@@ -209,6 +209,11 @@ def main():
     parser.add_argument("--print-params",
                         action='store_true',
                         help="Print parameter names and shapes.")
+    parser.add_argument(
+        '--add_to_vocab',
+        type=str, nargs='+',
+        help='List of additional tokens to be added to the vocab.'
+    )
     parser.add_argument("--run_tests",
                         action='store_true', help="Run simple dummy tests to check with newly added tags.")
 
@@ -247,10 +252,18 @@ def main():
             with torch.no_grad():
                 model.model.shared.weight[new_tag_id] = init_embed
 
-        tokenizer.add_special_tokens({'additional_special_tokens': args.add_language_tags})
-        print("saving tokenizer with new tags")
+    if args.add_to_vocab is not None:
+        print("adding new tokens to vocab")
+        print("provided {} tokens".format(len(args.add_to_vocab)))
+        new_tokens = set(args.add_to_vocab) - set(tokenizer.get_vocab().keys())
+        print("number of tokens not yet part of vocab: {}".format(len(new_tokens)))
+        tokenizer.add_tokens(list(new_tokens))
+        model.resize_token_embeddings(len(tokenizer))
+
+    if args.add_language_tags is not None or args.add_to_vocab:
+        print("saving tokenizer with new tags/vocab")
         tokenizer.save_pretrained(args.save_model_to)
-        print("saving model with new tags")
+        print("saving model with new tags/vocab")
         model.save_pretrained(args.save_model_to)
 
     if args.run_tests:
@@ -260,21 +273,18 @@ def main():
         print("test tag ", test_tag)
         print("test tag id ", test_tag_id)
         print("src test id ", src_tag_id)
-        #print(tokenizer.lang_code_to_id)
-        #print(tokenizer.fairseq_tokens_to_ids)
         src1 = "Das ist ein Test."
         src2 = "Ein zweiter Test."
         trg1 = "Das ist ein einfacher Test."
         trg2 = "Das ist ein zweiter einfacher Test."
 
         tokenizer.src_lang="de_DE"
-        batch: dict = tokenizer(text=[src1, src2], max_length=20,  truncation=False, padding="max_length", return_tensors="pt")
-        print(batch)
+        batch: dict = tokenizer(text=[src1, src2], max_length=1024,  truncation=False, padding="max_length", return_tensors="pt")
 
         decoder_start_token_ids = [test_tag_id, test_tag_id]
         decoder_start_token_ids = torch.tensor(decoder_start_token_ids).unsqueeze(1)
         print("decoder start ids ", decoder_start_token_ids)
-        translated_tokens = model.generate(input_ids=batch['input_ids'], attention_mask=batch['attention_mask'], pad_token_id=tokenizer.pad_token_id, decoder_input_ids=decoder_start_token_ids, use_cache=True, num_beams=2)
+        translated_tokens = model.generate(**batch, decoder_input_ids=decoder_start_token_ids, use_cache=True, num_beams=2)
         translation = tokenizer.batch_decode(translated_tokens, skip_special_tokens=True)[0]
         print(translation)
 

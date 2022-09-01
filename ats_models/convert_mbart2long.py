@@ -252,7 +252,7 @@ def main():
     parser.add_argument(
         '--max_pos',
         type=int,
-        default=4096 * 4,
+        default=4096,
         help='maximum encoder positions'
     )
     parser.add_argument(
