@@ -90,10 +90,14 @@ The repository currently only has scripts for fine-tuning mBART based models, mt
        --tgt_tags_included \
        ```
     * if source or target is one language, setting `--src_lang` or `--tgt_lang` will be slightly faster than reading the tags from the text
+    * input can also be given as json files, however, currently the only supported format is the internal UZH json.
 * `--num_workers`: affects dataloader, depends on dataset size and available CPU, see [Pytorch Lightning docs](https://pytorch-lightning.readthedocs.io/en/latest/guides/speed.html)
+* the script has an option `--fp32` to fine-tune in fp32, default is fp16.
+* metrics supported for early stopping are: `vloss, rouge1, rouge2, rougeL, rougeLsum, bleu`
+* if you added special tokens to the vocabulary, you can remove them for the validation evaluation with `--remove_special_tokens_containing`. This is useful e.g. for xml tags if you do early stopping on rouge* or bleu scores.
 
 
-### mBART with standard attention:
+### mBART with standard attention example:
 
 ```
 python -m ats_models.finetune_mbart \
@@ -115,8 +119,8 @@ python -m ats_models.finetune_mbart \
 --grad_accum number-of-updates-for-gradient-accumulation \
 --num_workers number-of-workers \
 --accelerator gpu \
---devices 0 \
---seed 222 \
+--devices device-id \
+--seed seed-number \
 --attention_dropout 0.1 \
 --dropout 0.3 \
 --label_smoothing 0.2 \
@@ -125,17 +129,71 @@ python -m ats_models.finetune_mbart \
 --val_percent_check 1.0 \
 --test_percent_check 1.0 \
 --early_stopping_metric 'vloss' \
---patience 12 \
+--patience 10 \
 --min_delta 0.0005 \
 --lr_reduce_patience 8 \
 --lr_reduce_factor 0.5 \
 --grad_ckpt \
 --progress_bar_refresh_rate 10 \
---fp32 \
 --disable_validation_bar \
 --save_top_k 2
+
+combination of 2 of these options:
+--src_lang src-lang \
+--tgt_lang tgt-lang \
+--tgt_tags_included \
+--tgt_tags_included \
 ```
-### mBART with longformer attention:
+### mBART with longformer attention example:
+mBART with longformer attention has some additional options:
+* `--attention_mode` should be set to `sliding_chunks` (default is `n2`, which is the standard mBART attention)
+* `--attention_window`: the window size for full attention, see [1] for details
+* `--global_attention_indices`: optional, the indices that always have full attention. Default is to have full attention on the last non-padded position of the source (=language tag).
+
+```
+python -m ats_models.finetune_mbart \
+--from_pretrained path-to-trimmed-mbart \
+--tokenizer path-to-trimmed-mbart \
+--save_dir path-to-save-the-finetuned-model \
+--save_prefix name-of-model \
+--train_source train-file.src \
+--train_target train-file.trg \
+--dev_source dev-file.src \
+--dev_target dev-file.trg \
+--test_source test-file.src \
+--test_target test-file.trg \
+--max_output_len max-output-len (cannot be longer than 1024) \
+--max_input_len max-input-len (cannot be longer than what was set in the conversion script) \
+--attention_mode sliding_chunks \
+--attention_window window-size-for-full-attention (default: 512) \
+--batch_size batch-size \
+--grad_accum number-of-updates-for-gradient-accumulation \
+--num_workers number-of-workers \
+--accelerator gpu \
+--devices device-id \
+--seed seed-number \
+--attention_dropout 0.1 \
+--dropout 0.3 \
+--label_smoothing 0.2 \
+--lr 0.00003 \
+--val_every 1.0 \
+--val_percent_check 1.0 \
+--test_percent_check 1.0 \
+--early_stopping_metric 'vloss' \
+--patience 10 \
+--min_delta 0.0005 \
+--lr_reduce_patience 8 \
+--lr_reduce_factor 0.5 \
+--grad_ckpt \
+--disable_validation_bar \
+--progress_bar_refresh_rate 10
+
+combination of 2 of these options:
+--src_lang src-lang \
+--tgt_lang tgt-lang \
+--tgt_tags_included \
+--tgt_tags_included \
+```
 
 ### Inference
 
