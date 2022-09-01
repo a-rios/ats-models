@@ -92,7 +92,7 @@ The repository currently only has scripts for fine-tuning mBART based models, mt
        --tgt_tags_included \
        ```
     * if source or target is one language, setting `--src_lang` or `--tgt_lang` will be slightly faster than reading the tags from the text
-    * input can also be given as json files, however, currently the only supported format is the internal UZH json. The option `--remove_xml_in_json` will remove the xml markup to train a model on text only, without this option, the model will be trained to predict text with xml layout information according to the content of the json files.
+    * input can also be given as json files, however, currently the only supported format is the internal UZH json. The option `--remove_xml_in_json` will remove the xml markup to train a model on text only, without this option, the model will be trained to predict text with xml layout information according to the content of the json files. If using json as input, there is no need to specify source and target languages, as those are read from the json file itself.
        ```
        --train_jsons list-of-json-files \
        --dev_jsons list-of-json-files \
