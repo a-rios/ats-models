@@ -50,7 +50,7 @@ The script for mBART has some extra options to add new language tags, e.g. CEFR 
 The mBART conversion script also offers an option to add a list of additional items to the vocabulary (`--add_to_vocab`). 
 
 #### longmbart
-Longmbart is mBART but with longformer windowed attention in the encoder:
+Longmbart is mBART but with longformer attention in the encoder [1]:
 
 ```
 python -m ats_models.convert_mbart2long \
@@ -65,8 +65,80 @@ python -m ats_models.convert_mbart2long \
 --initialize_tags de_DE de_DE de_DE 
 ```
 
-
 ### Fine-Tuning
+The repository currently only has scripts for fine-tuning mBART based models, mt5 fine-tuning might be added in the future. Some general information on options:
+
+* language tags: mBART requieres source and target language tags:
+   * source and target language are fixed, i.e. all source and all target samples are in the same language : 
+     ```
+     --src_lang en_XX \
+     --tgt_lang de_DE \
+     ```
+    * tags are included in the text files as the first token in each sample:
+  
+      | source        | target      |
+      | ------------- |-------------|
+      | en_XX This is an example. | de_DE Dies ist ein Beispiel. |
+     
+       ```
+       --src_tags_included \
+       --tgt_tags_included \
+       ```
+    * options can be mixed, you can have a single source language and mixed target samples, in this case use:
+       ```
+       --src_lang your-lang \
+       --tgt_tags_included \
+       ```
+    * if source or target is one language, setting `--src_lang` or `--tgt_lang` will be slightly faster than reading the tags from the text
+* `--num_workers`: affects dataloader, depends on dataset size and available CPU, see [Pytorch Lightning docs](https://pytorch-lightning.readthedocs.io/en/latest/guides/speed.html)
+
+
+### mBART with standard attention:
+
+```
+python -m ats_models.finetune_mbart \
+--from_pretrained path-to-trimmed-mbart \
+--tokenizer path-to-trimmed-mbart \
+--save_dir path-to-save-the-finetuned-model \
+--save_prefix name-of-model \
+--train_source train-file.src \
+--train_target train-file.trg \
+--dev_source dev-file.src \
+--dev_target dev-file.trg \
+--test_source test-file.src \
+--test_target test-file.trg \
+--max_input_len max-input-len (cannot be longer than 1024) \
+--max_output_len max-output-len (cannot be longer than 1024)  \
+--src_lang "de_DE" \
+--tgt_tags_included \
+--batch_size batch-size \
+--grad_accum number-of-updates-for-gradient-accumulation \
+--num_workers number-of-workers \
+--accelerator gpu \
+--devices 0 \
+--seed 222 \
+--attention_dropout 0.1 \
+--dropout 0.3 \
+--label_smoothing 0.2 \
+--lr 0.00003 \
+--val_every 1.0 \
+--val_percent_check 1.0 \
+--test_percent_check 1.0 \
+--early_stopping_metric 'vloss' \
+--patience 12 \
+--min_delta 0.0005 \
+--lr_reduce_patience 8 \
+--lr_reduce_factor 0.5 \
+--grad_ckpt \
+--progress_bar_refresh_rate 10 \
+--fp32 \
+--disable_validation_bar \
+--save_top_k 2
+```
+### mBART with longformer attention:
 
 ### Inference
 
+## References
+
+[1] Iz Beltagy and Matthew E. Peters and Arman Cohan (2020). [Longformer: The Long-Document Transformer](https://arxiv.org/abs/2004.05150). CoRR abs/2004.05150.
