@@ -13,10 +13,15 @@ import torch
 from torch.utils.data import DataLoader, Dataset
 import re
 import json
+import logging
 from typing import Optional, List
 from transformers import MBartTokenizer
 from .longmbart.longformer_enc_dec import MLongformerEncoderDecoderForConditionalGeneration
 from .longmbart.sliding_chunks import pad_to_window_size
+from bs4 import BeautifulSoup
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
 
 class CustomDataset(Dataset):
     def __init__(self,
@@ -196,21 +201,20 @@ class CustomDatasetForInference(CustomDataset):
 
         return input_ids, ref, target_tags
 
-class CustomDatasetUZHJson(CustomDataset):
+class CustomDatasetUZHJson(CustomDataset): # TODO: make this more general to work with json for other language pairs
     def __init__(self,
                  json_files:List[str],
                  name: str,
                  tokenizer: MBartTokenizer,
                  max_input_len: int=1024,
                  max_output_len: int=1024,
-                 remove_xml: Optional[bool]=False): # TODO parse xml and get raw text for this option
+                 remove_xml: Optional[bool]=False):
         self.name = name # train, val, test
         self.tokenizer = tokenizer
         self.max_input_len = max_input_len
         self.max_output_len = max_output_len
         self.remove_xml = remove_xml
         self.tgt_tags_included = True # language tags are added to the tensors from the json
-        self.tgt_lang = None
 
         self.map_lang_ids = {'a1': 'de_A1', 'a2': 'de_A2', 'b1':'de_B1'}
 
@@ -218,17 +222,26 @@ class CustomDatasetUZHJson(CustomDataset):
         self.labels = [] # list of tuples (lang_id, sentence)
 
         # TODO load json, parse into src-trg samples
+        sample_count=0
         for json_file in json_files:
             with open(json_file, 'r') as f:
                 json_data = json.load(f)
                 for sample in json_data['segments']:
                     source = sample['original']
+                    sample_count += 1
                     tgt_lang = list(sample.keys())[0]
                     target = sample[tgt_lang]
-                    tgt_id = self.map_lang_ids[tgt_lang]
-                    self.inputs.append(("de_DE", source))
-                    self.labels.append((tgt_id, target))
+                    if tgt_lang in self.map_lang_ids.keys():
+                        tgt_lang = self.map_lang_ids[tgt_lang]
+                    if self.remove_xml:
+                        source, target = self._remove_xml(source, target)
+                    if not (self._is_empty(source) or self._is_empty(target)): # necessary, still some noisy samples in json that consist of only xml tags without content
+                        self.inputs.append(("de_DE", source))
+                        self.labels.append((tgt_lang, target))
         assert len(self.inputs) == len(self.labels), f"Source and target have different number of samples: {len(self.inputs)} vs. {len(self.labels)}"
+
+        if len(self.inputs) < sample_count:
+            logger.warn(f"{sample_count - len(self.inputs)} samples have been omitted from the {name} json dataset because either source or target was an empty string.")
 
     def __getitem__(self, idx):
             """
@@ -259,3 +272,11 @@ class CustomDatasetUZHJson(CustomDataset):
             labels= labels[:-1] # cut off lang_id
             return input_ids, decoder_input_ids, labels
 
+
+    def _remove_xml(self, source, target):
+        src_soup = BeautifulSoup(source, "html.parser")
+        trg_soup = BeautifulSoup(target, "html.parser")
+        return src_soup.text, trg_soup.text
+
+    def _is_empty(self, string):
+        return re.match('^[\s\t\n]*$', string)

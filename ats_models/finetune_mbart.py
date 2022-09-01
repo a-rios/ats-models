@@ -315,6 +315,7 @@ class MBartTrainer(pl.LightningModule):
         parser.add_argument("--train_jsons", type=str, nargs='+', default=None,  help="Path to UZH json file(s) with training data.")
         parser.add_argument("--dev_jsons", type=str, nargs='+', default=None,  help="Path to UZH json file(s) with dev data.")
         parser.add_argument("--test_jsons", type=str, nargs='+', default=None,  help="Path to UZH json file(s) with test data.")
+        parser.add_argument("--remove_xml_in_json", action="store_true", help="Remove xml markup from text if input is UZH json.")
         parser.add_argument("--src_lang", type=str, default=None, help="Source language tag (optional, for multilingual batches, preprocess text files to include language tags.")
         parser.add_argument("--tgt_lang", type=str, default=None, help="Target language tag (optional, for multilingual batches, preprocess text files to include language tags.")
         parser.add_argument("--tgt_tags_included", action='store_true', help="Target text files contain language tags (first token in each line).")
@@ -360,7 +361,6 @@ class MBartTrainer(pl.LightningModule):
         parser.add_argument('--grad_ckpt', action='store_true', help='Enable gradient checkpointing to save memory')
 
         ## inference params
-        parser.add_argument("--decoded", type=str, default='decoded.out', help="Output file to write decoded sequence to.")
         parser.add_argument("--beam_size", type=int, default=4, help="Beam size for inference when testing/validating. Default: 4.")
         parser.add_argument("--test_percent_check", default=1.00, type=float, help='Percent of test data used')
 
@@ -395,7 +395,8 @@ def main(args):
                               name="train",
                               tokenizer=model.tokenizer,
                               max_input_len=args.max_input_len,
-                              max_output_len=args.max_output_len
+                              max_output_len=args.max_output_len,
+                              remove_xml=args.remove_xml_in_json
         )
     else:
         train_set = CustomDataset(src_file=args.train_source,
@@ -414,7 +415,8 @@ def main(args):
                               name="dev",
                               tokenizer=model.tokenizer,
                               max_input_len=args.max_input_len,
-                              max_output_len=args.max_output_len
+                              max_output_len=args.max_output_len,
+                              remove_xml=args.remove_xml_in_json
         )
     else:
         dev_set = CustomDataset(src_file=args.dev_source,
@@ -434,7 +436,8 @@ def main(args):
                               name="test",
                               tokenizer=model.tokenizer,
                               max_input_len=args.max_input_len,
-                              max_output_len=args.max_output_len
+                              max_output_len=args.max_output_len,
+                              remove_xml=args.remove_xml_in_json
         )
     else:
         test_set = CustomDataset(src_file=args.test_source,
