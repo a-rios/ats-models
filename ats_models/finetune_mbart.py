@@ -396,6 +396,8 @@ def main(args):
                               tokenizer=model.tokenizer,
                               max_input_len=args.max_input_len,
                               max_output_len=args.max_output_len,
+                              src_lang=args.src_lang,
+                              tgt_lang=args.tgt_lang,
                               remove_xml=args.remove_xml_in_json
         )
     else:
@@ -416,6 +418,8 @@ def main(args):
                               tokenizer=model.tokenizer,
                               max_input_len=args.max_input_len,
                               max_output_len=args.max_output_len,
+                              src_lang=args.src_lang,
+                              tgt_lang=args.tgt_lang,
                               remove_xml=args.remove_xml_in_json
         )
     else:
@@ -437,6 +441,8 @@ def main(args):
                               tokenizer=model.tokenizer,
                               max_input_len=args.max_input_len,
                               max_output_len=args.max_output_len,
+                              src_lang=args.src_lang,
+                              tgt_lang=args.tgt_lang,
                               remove_xml=args.remove_xml_in_json
         )
     else:

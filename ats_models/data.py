@@ -208,11 +208,15 @@ class CustomDatasetUZHJson(CustomDataset): # TODO: make this more general to wor
                  tokenizer: MBartTokenizer,
                  max_input_len: int=1024,
                  max_output_len: int=1024,
+                 src_lang: Optional[str] =None,
+                 tgt_lang: Optional[str] = None,
                  remove_xml: Optional[bool]=False):
         self.name = name # train, val, test
         self.tokenizer = tokenizer
         self.max_input_len = max_input_len
         self.max_output_len = max_output_len
+        self.src_lang = src_lang
+        self.tgt_lang =tgt_lang
         self.remove_xml = remove_xml
         self.tgt_tags_included = True # language tags are added to the tensors from the json
 
@@ -221,8 +225,9 @@ class CustomDatasetUZHJson(CustomDataset): # TODO: make this more general to wor
         self.inputs = [] # list of tuples (lang_id, sentence)
         self.labels = [] # list of tuples (lang_id, sentence)
 
-        # TODO load json, parse into src-trg samples
         sample_count=0
+        src_id = "de_DE" if self.src_lang is None else self.src_lang
+
         for json_file in json_files:
             with open(json_file, 'r') as f:
                 json_data = json.load(f)
@@ -236,8 +241,9 @@ class CustomDatasetUZHJson(CustomDataset): # TODO: make this more general to wor
                     if self.remove_xml:
                         source, target = self._remove_xml(source, target)
                     if not (self._is_empty(source) or self._is_empty(target)): # necessary, still some noisy samples in json that consist of only xml tags without content
-                        self.inputs.append(("de_DE", source))
-                        self.labels.append((tgt_lang, target))
+                        tgt_id = tgt_lang if self.tgt_lang is None else self.tgt_lang
+                        self.inputs.append((src_id, source))
+                        self.labels.append((tgt_id, target))
         assert len(self.inputs) == len(self.labels), f"Source and target have different number of samples: {len(self.inputs)} vs. {len(self.labels)}"
 
         if len(self.inputs) < sample_count:
