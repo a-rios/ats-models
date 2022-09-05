@@ -177,6 +177,7 @@ class CustomDatasetForInference(CustomDataset):
         source = self.inputs[idx]
         decoder_start_token = None
         reference = None
+        target = None
         decoder_start_token = self.decoder_start_tokens[idx] if self.decoder_start_tokens is not None else self.tgt_lang
         src_lang = self.src_lang
         if self.src_tags_included:
