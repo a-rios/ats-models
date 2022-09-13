@@ -205,6 +205,56 @@ combination of 2 of these options:
 
 ### Inference
 
+Translating with a fine-tuned model is done with `inference_mbart.py`. If a reference translation is given, the script will calculate automatic metrics with [rouge_score](https://github.com/google-research/google-research/tree/master/rouge) and [sacrebleu](https://github.com/mjpost/sacrebleu). 
+The model needs a language tag for each sample, this can be set in the following ways:
+
+* source and target language are fixed, i.e. all source and all target samples are in the same language: 
+     ```
+     --src_lang en_XX \
+     --tgt_lang de_DE \
+     ```
+* tags are included in the text files as the first token in each sample:
+  
+      | source        | target      |
+      | ------------- |-------------|
+      | en_XX This is an example. | de_DE Dies ist ein Beispiel. |
+     
+       ```
+       --src_tags_included \
+       --tgt_tags_included \
+       ```
+ * if no reference is available but the target languages are mixed, target tags can be given as a separate input file, one tag per line (has to be same length as source text):
+      | source        | target      |
+      | ------------- |-------------|
+      | en_XX This is an example. | de_DE  |
+      | en_XX This is another example. | es_XX |
+      
+       ```
+       --target_tags file-with-tags \
+       ```
+Options can be mixed, same as for training, e.g. set one source language with `--src_lang` but different target languages with either `--tgt_tags_included` or `--target_tags`.
+
+Example for translating with mbart:
+```
+python -m ats_models.inference_mbart \
+--model_path path-to-fine-tuned-mbart \
+--checkpoint checkpoint-name \
+--tokenizer path-to-fine-tuned-mbart \
+--test_source file-to-be-translated \
+--src_lang en_XX \
+--tgt_lang de_DE \
+--max_input_len max-input-length \
+--max_output_len max-output-length \
+--batch_size batch-size \
+--num_workers 1 \
+--accelerator gpu \
+--devices device-id \
+--beam_size beam-size \
+--progress_bar_refresh_rate 1 \
+--translation path-to-output-file
+```
+The arguments for translating with a longmbart model are identical, but it needs the additional switch `--is_long`, otherwise the model will not be loaded correctly.
+
 ### Citation
 If you use code in this repository, please cite the following publication:
 
