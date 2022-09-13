@@ -221,7 +221,7 @@ combination of 2 of these options:
 
 ### Inference
 
-Translating with a fine-tuned model is done with `inference_mbart.py`. If a reference translation is given, the script will calculate automatic metrics with [rouge_score](https://github.com/google-research/google-research/tree/master/rouge) and [sacrebleu](https://github.com/mjpost/sacrebleu). 
+The script [inference_mbart.py](inference_mbart.py) provides the interface to translate new texts with a fine-tuned model. If a reference translation is given, the script will calculate automatic metrics with [rouge_score](https://github.com/google-research/google-research/tree/master/rouge) and [sacrebleu](https://github.com/mjpost/sacrebleu). 
 The model needs a language tag for each sample, this can be set in the following ways:
 
 * source and target language are fixed, i.e. all source and all target samples are in the same language: 
