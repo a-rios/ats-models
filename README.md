@@ -3,6 +3,22 @@ This repository contains code for the ATS models we use in the [Flagship Inclusi
 This repository is an updated version of [longmbart](https://github.com/a-rios/longmbart), which is in turn based on [longformer](https://github.com/allenai/longformer) and [huggingface transformers](https://github.com/huggingface/transformers).
 The code in this repository includes scripts to trim and fine-tune models based on mt5 [[2]](#[2]) and mBART [[3]](#[3]), and in case of the latter, an optional modification to use longformer attention [[1]](#[1]) in the encoder for long sequences. 
 
+Content:
+- [Installation](#installation)
+  * [Vocabulary lists for German](#vocabulary-lists-for-german)
+  * [Trimming and Conversion scripts](#trimming-and-conversion-scripts)
+    + [mt5](#mt5)
+    + [mBART](#mbart)
+    + [Longmbart](#longmbart)
+  * [Fine-Tuning](#fine-tuning)
+  * [mBART with standard attention example:](#mbart-with-standard-attention-example)
+  * [mBART with longformer attention example:](#mbart-with-longformer-attention-example)
+  * [Inference](#inference)
+  * [Citation](#citation)
+- [References](#references)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 ## Installation
 Check out the repository:
 ```
