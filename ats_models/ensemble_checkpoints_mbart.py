@@ -3,11 +3,11 @@
 
 """
 
-This code is adapted from AllenAI's Longformer:
-    https://github.com/allenai/longformer/
+This code is mostly adapted from transformers.generation_utils:
+    https://github.com/huggingface/transformers/blob/main/src/transformers/generation_utils.py
 
 Note:
-    Authors: Annette Rios (arios@cl.uzh.ch) Tannon Kew (kew@cl.uzh.ch)
+    Authors: Annette Rios (arios@cl.uzh.ch)
 
 """
 
@@ -45,7 +45,9 @@ from transformers.generation_stopping_criteria import StoppingCriteriaList
 from transformers.generation_logits_process import LogitsProcessorList
 from transformers.pytorch_utils import torch_int_div
 import torch.distributed as dist
-#from .beam_ensemble import EnsembleBeamSearchScorer
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
 
 class Ensemble(pl.LightningModule, GenerationMixin):
 
@@ -85,7 +87,7 @@ class Ensemble(pl.LightningModule, GenerationMixin):
         self.test_dataloader_object = None
         if self.args.ensemble_mode == 'linear':
             self._interpolation = self.linear_interpolation
-        elif ensemble_mode == 'log_linear':
+        elif self.args.ensemble_mode == 'log_linear':
             self._interpolation = self.log_linear_interpolation
         else:
             raise ValueError()
@@ -284,6 +286,7 @@ class Ensemble(pl.LightningModule, GenerationMixin):
 
         return model_kwargs
 
+    # code adapted from transformers.generation_utils.beam_search
     def ensemble_beam_search(
             self,
             input_ids: torch.LongTensor,
