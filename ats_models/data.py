@@ -91,12 +91,13 @@ class CustomDataset(Dataset):
         return input_ids, decoder_input_ids, labels
 
     def _get_tag(self, sample: str):
-        m = re.search('^(.._..)\s(.*)', sample)
+        m = re.search('^(.._[^\s\t]+)\s(.*)', sample)
         if m:
             tag = m.group(1)
             line = m.group(2)
         else:
             print(f"No tag found in line {sample} when --tags_included was set.")
+            exit(1)
         return tag, line
 
     @staticmethod
@@ -186,6 +187,8 @@ class CustomDatasetForInference(CustomDataset):
             reference = self.reference[idx]
             if self.tgt_tags_included:
                 decoder_start_token, target = self._get_tag(reference) # if tags are included in the reference, extract and set decoder_start_token
+            else:
+                target = reference
 
         assert src_lang is not None, "Source language tag needed: Either use --src_tags_included with input text where the first token in each line is the language tag, or use --src_lang to set the source language globally for all samples."
         self.tokenizer.src_lang= src_lang

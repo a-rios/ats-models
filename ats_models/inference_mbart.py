@@ -42,10 +42,6 @@ class Inference(pl.LightningModule):
         super().__init__()
         self.args = args
         self.tokenizer = MBartTokenizer.from_pretrained(self.args.tokenizer, use_fast=True)
-        if args.remove_special_tokens_containing:
-            print("special tokens before:", model.tokenizer.special_tokens_map)
-            model.tokenizer = remove_special_tokens(model.tokenizer, args.remove_special_tokens_containing)
-            print("special tokens after:", model.tokenizer.special_tokens_map)
 
         if self.args.is_long:
             self.config = MLongformerEncoderDecoderConfig.from_pretrained(self.args.model_path)
@@ -56,6 +52,12 @@ class Inference(pl.LightningModule):
 
         self.max_input_len = self.args.max_input_len if self.args.max_input_len is not None else self.config.max_encoder_position_embeddings
         self.max_output_len = self.args.max_output_len if self.args.max_output_len is not None else self.config.max_decoder_position_embeddings
+
+        if args.remove_special_tokens_containing:
+            print("special tokens before:", model.tokenizer.special_tokens_map)
+            model.tokenizer = remove_special_tokens(model.tokenizer, args.remove_special_tokens_containing)
+            print("special tokens after:", model.tokenizer.special_tokens_map)
+
         self.test_dataloader_object = None
 
     def test_step(self, batch, batch_nb):
@@ -189,11 +191,6 @@ class Inference(pl.LightningModule):
     def test_dataloader(self):
         self.test_dataloader_object = self._get_dataloader(self.test_dataloader_object, 'test', is_train=False)
         return self.test_dataloader_object
-
-    def on_load_checkpoint(self, checkpoint) -> None:
-        self.load_state_dict(checkpoint['state_dict'])
-        print(f"Loaded state dict from checkpoint.")
-
 
 
     @staticmethod
