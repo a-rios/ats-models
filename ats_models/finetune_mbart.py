@@ -455,9 +455,13 @@ def main(args):
 
     model.set_datasets(train_set=train_set, dev_set=dev_set, test_set=test_set)
 
-    # print validation source to model directory
+    # print validation source and reference to model directory
     with open(os.path.join(args.save_dir, args.save_prefix, "validation_source"), 'w') as f:
         for line in model.dev_set.inputs:
+            line = line[1].replace('\n', ' ')
+            f.write(line + "\n")
+    with open(os.path.join(args.save_dir, args.save_prefix, "validation_reference"), 'w') as f:
+        for line in model.dev_set.labels:
             line = line[1].replace('\n', ' ')
             f.write(line + "\n")
 
