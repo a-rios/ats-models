@@ -290,18 +290,13 @@ class MBartTrainer(pl.LightningModule):
         self.test_dataloader_object = self._get_dataloader(self.test_dataloader_object, 'test', is_train=False)
         return self.test_dataloader_object
 
-    def on_load_checkpoint(self, checkpoint) -> None:
-        self.config = MBartConfig.from_pretrained(os.path.join(self.args.save_dir, self.args.save_prefix))
-        self.load_state_dict(checkpoint['state_dict'])
-        print(f"Loaded state dict from checkpoint.")
-
-
     @staticmethod
     def add_model_specific_args(parser, root_dir):
         parser.add_argument("--tokenizer", type=str, help="Path to the tokenizer directory.")
         parser.add_argument("--save_dir", type=str, default='simplification', help="Directory to save models.")
         parser.add_argument("--save_prefix", type=str, default='test', help="subfolder in save_dir for this model")
         parser.add_argument("--resume_ckpt", type=str, help="Path of a checkpoint to resume from")
+        parser.add_argument("--pretrained_ckpt", type=str, default=None, help="Continue fine-tuning a trained checkpoint but start training from scratch, i.e. parameters, but not optimizer/lr schedulers etc.")
         parser.add_argument("--from_pretrained", type=str, default=None,  help="Path to a checkpoint to load model weights but not training state")
         parser.add_argument("--num_sanity_val_steps", type=int, default=0,  help="Number of evaluation sanity steps to run before starting the training. Default: 0.")
 
@@ -515,8 +510,13 @@ def main(args):
         print("special tokens after:", model.tokenizer.special_tokens_map)
 
     model.tokenizer.save_pretrained(args.save_dir + "/" + args.save_prefix)
-    if args.resume_ckpt:
+    if args.resume_ckpt: # load complete checkpoint, weights, optimizer + lr_scheduler states
         trainer.fit(model, ckpt_path=args.resume_ckpt)
+    elif args.pretrained_ckpt: # load parameter weights, but not optimizer/lr_scheduler states
+        checkpoint = torch.load(args.pretrained_ckpt)
+        model.load_state_dict(checkpoint['state_dict'])
+        del checkpoint
+        trainer.fit(model)
     else:
         trainer.fit(model)
     print("Training ended. Best checkpoint {} with {} {}.".format(model.best_checkpoint, model.best_metric, args.early_stopping_metric))
