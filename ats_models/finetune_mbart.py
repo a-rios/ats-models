@@ -194,7 +194,7 @@ class MBartTrainer(pl.LightningModule):
             metric /= self.trainer.world_size
             metrics.append(metric)
         logs = dict(zip(*[names, metrics]))
-        print("Evaluation on checkpoint [{}] ".format(self.current_checkpoint))
+        print("\nEvaluation on checkpoint [{}] ".format(self.current_checkpoint))
         for m,v in logs.items():
             print(f"{m}:{v}")
 
@@ -202,11 +202,11 @@ class MBartTrainer(pl.LightningModule):
         if self.args.early_stopping_metric == 'vloss' and logs['vloss'] < self.best_metric:
             self.best_metric = logs['vloss']
             self.best_checkpoint = self.current_checkpoint
-            print("New best checkpoint {}, with {} {}.".format(self.best_checkpoint, self.best_metric, self.args.early_stopping_metric))
+            print("New top-{} checkpoint {}, with {} {}.".format(self.args.save_top_k ,self.best_checkpoint, self.best_metric, self.args.early_stopping_metric))
         elif logs[self.args.early_stopping_metric] > self.best_metric:
             self.best_metric = logs[self.args.early_stopping_metric]
             self.best_checkpoint = self.current_checkpoint
-            print("New best checkpoint {}, with {} {}.".format(self.best_checkpoint, self.best_metric, self.args.early_stopping_metric))
+            print("New top-{} checkpoint {}, with {} {}.".format(self.args.save_top_k, self.best_checkpoint, self.best_metric, self.args.early_stopping_metric))
         self.current_checkpoint +=1
 
     def test_step(self, batch, batch_nb):
@@ -456,11 +456,15 @@ def main(args):
     model.set_datasets(train_set=train_set, dev_set=dev_set, test_set=test_set)
 
     # print validation source and reference to model directory
-    with open(os.path.join(args.save_dir, args.save_prefix, "validation_source"), 'w') as f:
+    validation_source_file=os.path.join(args.save_dir, args.save_prefix, "validation_source")
+    validation_reference_file=os.path.join(args.save_dir, args.save_prefix, "validation_reference")
+    os.makedirs(os.path.dirname(validation_source_file), exist_ok=True)
+
+    with open(validation_source_file, 'w') as f:
         for line in model.dev_set.inputs:
             line = line[1].replace('\n', ' ')
             f.write(line + "\n")
-    with open(os.path.join(args.save_dir, args.save_prefix, "validation_reference"), 'w') as f:
+    with open(validation_reference_file, 'w') as f:
         for line in model.dev_set.labels:
             line = line[1].replace('\n', ' ')
             f.write(line + "\n")
@@ -529,8 +533,8 @@ def main(args):
         trainer.fit(model)
     else:
         trainer.fit(model)
-    print("Training ended. Best checkpoint {} with {} {}.".format(model.best_checkpoint, model.best_metric, args.early_stopping_metric))
     trainer.test(model)
+    print("Training ended. Best checkpoint {}.".format(trainer.checkpoint_callback.best_model_path))
 
 
 if __name__ == "__main__":
