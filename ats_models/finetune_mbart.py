@@ -198,15 +198,6 @@ class MBartTrainer(pl.LightningModule):
         for m,v in logs.items():
             print(f"{m}:{v}")
 
-        ## save metric value + number of checkpoint if best
-        if self.args.early_stopping_metric == 'vloss' and logs['vloss'] < self.best_metric:
-            self.best_metric = logs['vloss']
-            self.best_checkpoint = self.current_checkpoint
-            print("New top-{} checkpoint {}, with {} {}.".format(self.args.save_top_k ,self.best_checkpoint, self.best_metric, self.args.early_stopping_metric))
-        elif logs[self.args.early_stopping_metric] > self.best_metric:
-            self.best_metric = logs[self.args.early_stopping_metric]
-            self.best_checkpoint = self.current_checkpoint
-            print("New top-{} checkpoint {}, with {} {}.".format(self.args.save_top_k, self.best_checkpoint, self.best_metric, self.args.early_stopping_metric))
         self.current_checkpoint +=1
 
     def test_step(self, batch, batch_nb):
@@ -468,6 +459,23 @@ def main(args):
         for line in model.dev_set.labels:
             line = line[1].replace('\n', ' ')
             f.write(line + "\n")
+
+    # if test set was set, print source and reference for test as well
+    if args.test_source is not None:
+        test_source_file=os.path.join(args.save_dir, args.save_prefix, "test_source")
+        os.makedirs(os.path.dirname(test_source_file), exist_ok=True)
+        with open(test_source_file, 'w') as f:
+            for line in model.test_set.inputs:
+                line = line[1].replace('\n', ' ')
+                f.write(line + "\n")
+
+    if args.test_target is not None:
+        test_reference_file=os.path.join(args.save_dir, args.save_prefix, "test_reference")
+        os.makedirs(os.path.dirname(test_source_file), exist_ok=True)
+        with open(test_reference_file, 'w') as f:
+            for line in model.test_set.labels:
+                line = line[1].replace('\n', ' ')
+                f.write(line + "\n")
 
     if args.wandb:
         logger = WandbLogger(project=args.wandb, entity=args.wandb_entity)

@@ -168,7 +168,7 @@ class CustomDatasetForInference(CustomDataset):
             assert len(self.inputs) == len(self.reference), f"Source and target have different number of samples: {len(self.inputs)} vs. {len(self.reference)}"
         if target_tags is not None:
             with open(target_tags, 'r') as f:
-                self.decoder_start_tokens =  f.readlines()
+                self.decoder_start_tokens =  [line.rstrip() for line in f.readlines()]
             assert len(self.inputs) == len(self.decoder_start_tokens), f"Source and target tags have different length, need one target language tag per input sample: {len(self.inputs)} vs. {len(self.decoder_start_tokens)}"
 
     def __len__(self):
@@ -192,18 +192,20 @@ class CustomDatasetForInference(CustomDataset):
 
         assert src_lang is not None, "Source language tag needed: Either use --src_tags_included with input text where the first token in each line is the language tag, or use --src_lang to set the source language globally for all samples."
         self.tokenizer.src_lang= src_lang
+        decoder_start_token_id = self.tokenizer.convert_tokens_to_ids(decoder_start_token)
 
         input_ids = self.tokenizer(source, return_tensors="pt", max_length=self.max_input_len, truncation=True, padding=False)
         input_ids = input_ids['input_ids'].squeeze()
 
-        return input_ids, target, decoder_start_token # return reference here (string) + decoder_start_token
+        return input_ids, decoder_start_token_id, target # return reference here (string) + decoder_start_token
 
     @staticmethod
     def collate_fn(batch, pad_token_id):
-        input_ids, ref, target_tags = list(zip(*batch))
+        input_ids, decoder_start_tokens, ref = list(zip(*batch))
         input_ids = torch.nn.utils.rnn.pad_sequence(input_ids, batch_first=True, padding_value=pad_token_id)
+        decoder_start_token_ids = torch.tensor([tag_id for tag_id in decoder_start_tokens], device=input_ids.device).unsqueeze(1)
 
-        return input_ids, ref, target_tags
+        return input_ids, decoder_start_token_ids, ref
 
 class CustomDatasetUZHJson(CustomDataset): # TODO: make this more general to work with json for other language pairs
     def __init__(self,
@@ -290,3 +292,62 @@ class CustomDatasetUZHJson(CustomDataset): # TODO: make this more general to wor
 
     def _is_empty(self, string):
         return re.match('^[\s\t\n]*$', string)
+
+
+class CustomInferenceDatasetUZHJson(CustomDatasetUZHJson): # TODO: make this more general to work with json for other language pairs
+    def __init__(self,
+                 json_files:List[str],
+                 name: str,
+                 tokenizer: MBartTokenizer,
+                 max_input_len: int=1024,
+                 max_output_len: int=1024,
+                 src_lang: Optional[str] =None,
+                 tgt_lang: Optional[str] = None,
+                 remove_xml: Optional[bool]=False):
+        super(CustomInferenceDatasetUZHJson, self).__init__( json_files,
+                                                    name,
+                                                    tokenizer,
+                                                    max_input_len,
+                                                    max_output_len,
+                                                    src_lang,
+                                                    tgt_lang,
+                                                    remove_xml)
+        self.reference = []
+        for tag, text in self.labels:
+            self.reference.append(text)
+
+    def __getitem__(self, idx):
+            """
+            mbart tokenizer implementation expects only a single source and target language, so we have to do an ugly workaround here
+            source needs to be src_lang x x x </s> src_lang
+            target needs to be x x x </s> tgt_lang -> this can be done with as_target_tokenizer, but only with language codes in MBartTokenizer.lang_code_to_id and only one target language per tokenizer
+            we just use the source tokenization and move the first token (tgt_lang) to the end
+            NOTE: only works if source tag is in MBartTokenizer.lang_code_to_id, otherwise would need a dummy code for source as well!
+            """
+            (src_lang, source) = self.inputs[idx]
+            (tgt_lang, target) = self.labels[idx]
+
+            self.tokenizer.src_lang= src_lang
+
+            input_ids = self.tokenizer(source, return_tensors="pt", max_length=self.max_input_len, truncation=True, padding=False)
+            #labels = self.tokenizer(target, return_tensors="pt", max_length=self.max_output_len, truncation=True, padding=False)
+            input_ids = input_ids['input_ids'].squeeze()
+            #labels = labels['input_ids'].squeeze()
+            decoder_start_token = self.tokenizer.convert_tokens_to_ids(tgt_lang)
+
+            # can't use shift_tokens_right from modeling_mbart with batch_sizes > 1, does not take padding into account. prepare sequences here, without padding
+            # input_ids: tokens, eos (2), lang_id
+            # from labels create:
+            # decoder_input = lang_id tokens
+            # labels = tokens eos (2)
+            #decoder_start_token = labels[-1:]
+            #labels= labels[:-1] # cut off lang_id
+            return input_ids, decoder_start_token, target
+
+    @staticmethod
+    def collate_fn(batch, pad_token_id):
+        input_ids, decoder_start_tokens, ref = list(zip(*batch))
+        input_ids = torch.nn.utils.rnn.pad_sequence(input_ids, batch_first=True, padding_value=pad_token_id)
+        decoder_start_token_ids = torch.tensor([tag_id for tag_id in decoder_start_tokens], device=input_ids.device).unsqueeze(1)
+
+        return input_ids, decoder_start_token_ids, ref

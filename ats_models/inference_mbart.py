@@ -32,7 +32,7 @@ import datasets
 from typing import Optional
 from functools import partial
 
-from .data import CustomDatasetForInference
+from .data import CustomDatasetForInference, CustomInferenceDatasetUZHJson
 from .finetune_mbart import MBartTrainer, remove_special_tokens
 from .metrics import label_smoothed_nll_loss, get_eval_scores
 
@@ -64,12 +64,12 @@ class Inference(pl.LightningModule):
         for p in self.model.parameters():
             p.requires_grad = False
 
-        input_ids, ref, decoder_start_tokens  = batch # ref: string; decoder_start_tokens: tgt_lang labels
+        input_ids, decoder_start_token_ids, ref = batch # ref: string; decoder_start_tokens: tgt_lang labels
         input_ids, attention_mask = CustomDatasetForInference.prepare_input(input_ids, self.args.is_long, self.config.attention_mode, self.config.attention_window, self.tokenizer.pad_token_id, self.config.global_attention_indices)
-        assert (decoder_start_tokens is not None or self.test_set.tgt_lang is not None), "Need either reference with target labels or list of target labels (multilingual batches), else --tgt_lang needs to be set"
+        assert (decoder_start_token_ids is not None or self.test_set.tgt_lang is not None), "Need either reference with target labels or list of target labels (multilingual batches), else --tgt_lang needs to be set"
 
-        if decoder_start_tokens is not None: # no reference but list of target language tags given
-            decoder_start_token_ids = torch.tensor([self.tokenizer.convert_tokens_to_ids(tag) for tag in decoder_start_tokens], device=input_ids.device).unsqueeze(1)
+        if decoder_start_token_ids is not None: # no reference but list of target language tags given
+            #decoder_start_token_ids = torch.tensor([self.tokenizer.convert_tokens_to_ids(tag) for tag in decoder_start_tokens], device=input_ids.device).unsqueeze(1)
             generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
                                             use_cache=True, max_length=self.args.max_output_len,
                                             num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_input_ids=decoder_start_token_ids,
@@ -211,6 +211,8 @@ class Inference(pl.LightningModule):
         parser.add_argument("--max_input_len", type=int, default=512, help="maximum num of wordpieces, if unspecified, will use number of encoder positions from model config.")
         parser.add_argument("--max_output_len", type=int, default=512, help="maximum num of wordpieces, if unspecified, will use number of decoder positions from model config.")
         parser.add_argument("--remove_special_tokens_containing", type=str, nargs="+", help="Remove tokens from the special_tokens_map that contain this string")
+        parser.add_argument("--test_jsons", type=str, nargs='+', default=None,  help="Path to UZH json file(s) with test data.")
+        parser.add_argument("--remove_xml_in_json", action="store_true", help="Remove xml markup from text if input is UZH json.")
 
         parser.add_argument("--batch_size", type=int, default=16, help="Batch size")
         parser.add_argument("--num_workers", type=int, default=0, help="Number of data loader workers")
@@ -259,17 +261,28 @@ def main(args):
         exit(0)
 
 
-    test_set = CustomDatasetForInference(src_file=args.test_source,
-                                         tgt_file=args.test_target,
-                                         name="test",
-                                         tokenizer=inference_model.tokenizer,
-                                         max_input_len=args.max_input_len,
-                                         max_output_len=args.max_output_len,
-                                         src_lang=args.src_lang,
-                                         tgt_lang=args.tgt_lang,
-                                         src_tags_included=args.src_tags_included,
-                                         tgt_tags_included=args.tgt_tags_included,
-                                         target_tags=args.target_tags)
+    if args.test_jsons is not None:
+        test_set = CustomInferenceDatasetUZHJson(json_files=args.test_jsons,
+                              name="test",
+                              tokenizer=inference_model.tokenizer,
+                              max_input_len=args.max_input_len,
+                              max_output_len=args.max_output_len,
+                              src_lang=args.src_lang,
+                              tgt_lang=args.tgt_lang,
+                              remove_xml=args.remove_xml_in_json
+        )
+    else:
+        test_set = CustomDatasetForInference(src_file=args.test_source,
+                                            tgt_file=args.test_target,
+                                            name="test",
+                                            tokenizer=inference_model.tokenizer,
+                                            max_input_len=args.max_input_len,
+                                            max_output_len=args.max_output_len,
+                                            src_lang=args.src_lang,
+                                            tgt_lang=args.tgt_lang,
+                                            src_tags_included=args.src_tags_included,
+                                            tgt_tags_included=args.tgt_tags_included,
+                                            target_tags=args.target_tags)
 
 
     inference_model.set_test_set(test_set)
