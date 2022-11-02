@@ -461,7 +461,7 @@ def main(args):
             f.write(line + "\n")
 
     # if test set was set, print source and reference for test as well
-    if args.test_source is not None:
+    if args.test_source is not None or args.test_jsons is not None:
         test_source_file=os.path.join(args.save_dir, args.save_prefix, "test_source")
         os.makedirs(os.path.dirname(test_source_file), exist_ok=True)
         with open(test_source_file, 'w') as f:
@@ -469,7 +469,7 @@ def main(args):
                 line = line[1].replace('\n', ' ')
                 f.write(line + "\n")
 
-    if args.test_target is not None:
+    if args.test_target is not None or args.test_jsons is not None:
         test_reference_file=os.path.join(args.save_dir, args.save_prefix, "test_reference")
         os.makedirs(os.path.dirname(test_source_file), exist_ok=True)
         with open(test_reference_file, 'w') as f:
