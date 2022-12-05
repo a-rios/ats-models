@@ -36,6 +36,24 @@ from .data import CustomDatasetForInference, CustomInferenceDatasetUZHJson
 from .finetune_mbart import MBartTrainer, remove_special_tokens
 from .metrics import label_smoothed_nll_loss, get_eval_scores
 
+from transformers.generation_beam_search import BeamSearchScorer
+from transformers.generation_logits_process import LogitsProcessorList
+from transformers.generation_stopping_criteria import StoppingCriteriaList
+from fudge import FUDGELogits
+from model import Model # TODO include this in repo
+
+from transformers import (
+    BeamSearchScorer,
+    LogitsProcessorList,
+    StoppingCriteriaList,
+    MaxLengthCriteria,
+    TopKLogitsWarper,
+    TemperatureLogitsWarper,
+    TopPLogitsWarper,
+    MinLengthLogitsProcessor,
+    RepetitionPenaltyLogitsProcessor
+)
+
 class Inference(pl.LightningModule):
 
     def __init__(self, args):
@@ -67,6 +85,16 @@ class Inference(pl.LightningModule):
         input_ids, decoder_start_token_ids, ref = batch # ref: string; decoder_start_tokens: tgt_lang labels
         input_ids, attention_mask = CustomDatasetForInference.prepare_input(input_ids, self.args.is_long, self.config.attention_mode, self.config.attention_window, self.tokenizer.pad_token_id, self.config.global_attention_indices)
         assert (decoder_start_token_ids is not None or self.test_set.tgt_lang is not None), "Need either reference with target labels or list of target labels (multilingual batches), else --tgt_lang needs to be set"
+
+        if self.args.decode_with_fudge:
+            if decoder_start_token_ids is None:
+                decoder_start_token_ids = self.tokenizer.convert_tokens_to_ids(self.testset.tgt_lang)
+
+            generated_ids = self._decode_with_fudge(input_ids=input_ids,
+                                    attention_mask=attention_mask,
+                                    decoder_input_ids=decoder_start_token_ids,
+                                    device=input_ids.device)
+
 
         if decoder_start_token_ids is not None: # no reference but list of target language tags given
             #decoder_start_token_ids = torch.tensor([self.tokenizer.convert_tokens_to_ids(tag) for tag in decoder_start_tokens], device=input_ids.device).unsqueeze(1)
@@ -192,13 +220,129 @@ class Inference(pl.LightningModule):
         self.test_dataloader_object = self._get_dataloader(self.test_dataloader_object, 'test', is_train=False)
         return self.test_dataloader_object
 
+    def _decode_with_fudge(self, input_ids: torch.Tensor,
+                           attention_mask: torch.Tensor,
+                           decoder_input_ids: torch.Tensor,
+                           device: torch.device):
+
+        batch_size=input_ids.shape[0]
+        input_ids = input_ids.repeat_interleave(self.args.beam_size, dim=0)
+        attention_mask = attention_mask.repeat_interleave(self.args.beam_size, dim=0)
+        decoder_input_ids = decoder_input_ids * torch.ones((self.args.beam_size*batch_size, 1), device=input_ids.device, dtype=input_ids.dtype)
+
+        # code based on https://github.com/ZurichNLP/SimpleFUDGE/blob/master/predict_simplify.py
+        model_kwargs = {'attention_mask': attention_mask, 'output_attentions': False, 'output_hidden_states': False, 'use_cache': True}
+        model_kwargs = self.model._prepare_encoder_decoder_kwargs_for_generation(
+                input_ids, model_kwargs, "input_ids"
+        )
+
+        logits_processor = LogitsProcessorList()
+
+        if self.args.fudge_lambda > 0.0:
+            # instantiate FUDGE logits processor
+            fudge_proc = FUDGELogits(
+                tokenizer=self.tokenizer,
+                conditioning_model=self.conditioning_model,
+                condition_lambda=self.args.fudge_lambda,
+                precondition_topk=self.args.precondition_topk,
+                batch_size=batch_size,
+                soft=self.args.soft,
+                vectorized=self.args.vectorized,
+                analysis_file=self.args.analysis_file,
+                )
+            logits_processor.insert(0, fudge_proc)
+
+        if self.args.repetition_penalty != 1.0:
+            logits_processor.insert(0, RepetitionPenaltyLogitsProcessor(self.args.repetition_penalty))
+        if self.args.min_output_len and self.args.beam_size > 1:
+            # min length logits processor needs to be before FUDGE
+            logits_processor.insert(0, MinLengthLogitsProcessor(self.args.min_output_len, eos_token_id=self.model.config.eos_token_id))
+        #print('Logits Processor List:', logits_processor)
+        stopping_criterion = StoppingCriteriaList([MaxLengthCriteria(max_length=self.test_set.max_output_len)])
+
+        if self.args.do_sample:
+            # instantiate logits warpers for multinomial sampling techniques
+            # default to temperature==1.0, i.e. no effect
+            logits_warper = LogitsProcessorList([TemperatureLogitsWarper(self.args.temperature)])
+
+            if self.args.top_k is not None and self.args.top_k > 0: # stochastic decoding with beam
+                logits_warper.insert(0, TopKLogitsWarper(self.args.top_k, min_tokens_to_keep=self.args.beam_size))
+            if self.args.top_p is not None and self.args.top_p < 1.0:
+                logits_warper.insert(0, TopPLogitsWarper(self.args.top_p, min_tokens_to_keep=self.args.beam_size))
+            if self.args.typical_p is not None:
+                logits_warper.insert(0, TypicalLogitsWarper(self.args.typical_p, min_tokens_to_keep=self.args.beam_size))
+                # print(logits_warper)
+
+            print('Logits Warper List:', logits_warper)
+
+        if self.args.beam_size > 1: # beam decoding
+
+            # breakpoint()
+            # instantiate a BeamSearchScorer
+            beam_scorer = BeamSearchScorer(
+                batch_size=batch_size,
+                num_beams=self.args.beam_size,
+                num_beam_hyps_to_keep=self.args.num_return_sequences,
+                length_penalty=self.args.length_penalty,
+                do_early_stopping=self.args.do_early_stopping,
+                num_beam_groups=self.args.num_beam_groups,
+                device=device,
+                )
+
+            if self.args.do_sample: # stochastic decoding with beam - uses beam_sample()
+                outputs = self.model.beam_sample(
+                    decoder_input_ids,
+                    beam_scorer,
+                    logits_processor=logits_processor,
+                    logits_warper=logits_warper,
+                    stopping_criteria=stopping_criterion,
+                    **model_kwargs
+                    )
+
+            else: # regular (greedy) beam search with FUDGE - uses beam_search()
+                outputs = self.model.beam_search(
+                    decoder_input_ids,
+                    beam_scorer,
+                    logits_processor=logits_processor,
+                    stopping_criteria=stopping_criterion,
+                    **model_kwargs
+                    )
+
+        else:
+
+            if self.args.do_sample: # simple sampling - no beam!
+                outputs = self.model.sample(
+                    decoder_input_ids,
+                    logits_processor=logits_processor,
+                    logits_warper=logits_warper,
+                    **model_kwargs
+                    )
+
+            else: # regular geedy decoding with FUDGE
+                # NOTE: should be the same as original implementation
+                # NOTE: greedy decoding fails with min_length_logits_processor!
+                outputs = self.model.greedy_search(
+                    decoder_input_ids,
+                    logits_processor=logits_processor,
+                    **model_kwargs
+                    )
+        return outputs
 
     @staticmethod
     def add_model_specific_args(parser, root_dir):
-        parser.add_argument("--model_path", type=str, help="Path to the checkpoint directory or model name")
+        parser.add_argument("--model_path", type=str, metavar='PATH', help="Path to the checkpoint directory or model name")
         parser.add_argument("--checkpoint_name", type=str, help="Checkpoint in model_path to use.")
         parser.add_argument("--tokenizer", type=str, help="Path to the tokenizer directory.")
         parser.add_argument("--is_long", action='store_true', help="This is a model with longformer windowed attention.")
+
+        # fudge params
+        parser.add_argument("--decode_with_fudge", action='store_true', help="Decode with FUDGE, set condition model.")
+        parser.add_argument("--condition_model", type=str, metavar='PATH', help="Condition model (classifier) for FUDGE.")
+        parser.add_argument("--fudge_lambda", type=float, default=1.0, help="Lambda for decoding with FUDGE (0 = no weight for condition model == standard decoding).")
+        parser.add_argument('--precondition_topk', type=int, default=200, help='consider top k outputs from gpt at each step before conditioning and re-pruning') # TODO do we need this at all?
+        parser.add_argument('--vectorized', action='store_true', help='whether or not to use the vectorized implementation of FUDGE logits_processor')
+        parser.add_argument('--soft', action='store_true', help="type of fudge: if True, all logits not in FUDGE's topk preselection are set to -inf and cannot be generated. Default: False, i.e. these logits are left untouched and could potential still be sampled.")
+        parser.add_argument('--analysis_file', type=str, metavar='PATH', default=None, help="File path, if given logits and pre-/post-fudge logits are written to file for analysis")
 
         #data
         parser.add_argument("--test_source", type=str, default=None, help="Path to the source test file.")
@@ -210,6 +354,7 @@ class Inference(pl.LightningModule):
         parser.add_argument("--src_tags_included", action='store_true', help="Source text files contain language tags (first token in each line).")
         parser.add_argument("--max_input_len", type=int, default=512, help="maximum num of wordpieces, if unspecified, will use number of encoder positions from model config.")
         parser.add_argument("--max_output_len", type=int, default=512, help="maximum num of wordpieces, if unspecified, will use number of decoder positions from model config.")
+        parser.add_argument("--min_output_len", type=int, default=None, help="minimum number of wordpieces in generated output.")
         parser.add_argument("--remove_special_tokens_containing", type=str, nargs="+", help="Remove tokens from the special_tokens_map that contain this string")
         parser.add_argument("--test_jsons", type=str, nargs='+', default=None,  help="Path to UZH json file(s) with test data.")
         parser.add_argument("--remove_xml_in_json", action="store_true", help="Remove xml markup from text if input is UZH json.")
@@ -223,7 +368,6 @@ class Inference(pl.LightningModule):
         parser.add_argument("--translation", type=str, default='decoded.out', help="Output file to write decoded sequence to.")
         parser.add_argument("--beam_size", type=int, default=4, help="Beam size for inference when testing/validating. Default: 4.")
         parser.add_argument("--test_percent_check", default=1.00, type=float, help='Percent of test data used')
-
         parser.add_argument("--output_to_json", default=False, action="store_true", help='If true, decoding output is a verbose JSONL containing, src, tgt, and scored model output hyps')
 
         # decoding strategy params (passed to model.generate() (in generation_utils.py))
@@ -236,6 +380,9 @@ class Inference(pl.LightningModule):
         parser.add_argument("--output_scores", default=False, action="store_true", help='Whether or not to return the prediction scores.')
         parser.add_argument("--num_return_sequences", default=1, type=int, help='The number of independently computed returned sequences for each element in the batch, i.e. N-best')
         parser.add_argument("--return_dict_in_generate", default=False, action="store_true", help='Whether or not to return a :class:`~transformers.file_utils.ModelOutput` instead of a plain tuple.')
+        parser.add_argument("--do_early_stopping", action='store_true', help='Stop the beam search when at least `beam_size` sentences are finished per batch.')
+        parser.add_argument("--num_beam_groups", type=int, default=1, help='Number of groups to divide `num_beams` into in order to ensure diversity among different groups of beams, see https://github.com/huggingface/transformers/blob/699e90437f984d69ad3c9b891dd2e9d0fc2cffe4/src/transformers/generation/beam_search.py#L150.')
+
 
         #logging params
         parser.add_argument("--progress_bar_refresh_rate", type=int, default=0, help="How often to refresh progress bar (in steps). Value 0 disables progress bar.")
@@ -253,6 +400,20 @@ def main(args):
 
     checkpoint_path=os.path.join(args.model_path, args.checkpoint_name)
     inference_model = Inference.load_from_checkpoint(checkpoint_path, args=args)
+
+    if args.decode_with_fudge:
+            if args.condition_model is not None:
+                condition_model_ckpt = os.path.join(args.condition_model, "model_best.pth.tar")
+                cp = torch.load(condition_model_ckpt) # map_location=self.args.device)
+                model_args = cp['args']
+                conditioning_model = Model(model_args, inference_model.tokenizer.pad_token_id, len(inference_model.tokenizer))
+                conditioning_model.load_state_dict(cp['state_dict'])
+                del cp
+                conditioning_model.eval()
+                inference_model.conditioning_model = conditioning_model
+            else:
+                print(f"--decode_with_fudge but path to --condition_model not set.")
+                exit(1)
 
     if args.print_params:
         for name, param in simplifier.named_parameters():

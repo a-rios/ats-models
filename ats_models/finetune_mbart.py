@@ -453,11 +453,13 @@ def main(args):
 
     with open(validation_source_file, 'w') as f:
         for line in model.dev_set.inputs:
-            line = line[1].replace('\n', ' ')
+            if args.dev_jsons is not None:
+                line = line[1].replace('\n', ' ')
             f.write(line + "\n")
     with open(validation_reference_file, 'w') as f:
         for line in model.dev_set.labels:
-            line = line[1].replace('\n', ' ')
+            if args.dev_jsons is not None:
+                line = line[1].replace('\n', ' ')
             f.write(line + "\n")
 
     # if test set was set, print source and reference for test as well
@@ -466,7 +468,8 @@ def main(args):
         os.makedirs(os.path.dirname(test_source_file), exist_ok=True)
         with open(test_source_file, 'w') as f:
             for line in model.test_set.inputs:
-                line = line[1].replace('\n', ' ')
+                if args.test_jsons is not None:
+                    line = line[1].replace('\n', ' ')
                 f.write(line + "\n")
 
     if args.test_target is not None or args.test_jsons is not None:
@@ -474,7 +477,8 @@ def main(args):
         os.makedirs(os.path.dirname(test_source_file), exist_ok=True)
         with open(test_reference_file, 'w') as f:
             for line in model.test_set.labels:
-                line = line[1].replace('\n', ' ')
+                if args.test_jsons is not None:
+                    line = line[1].replace('\n', ' ')
                 f.write(line + "\n")
 
     if args.wandb:
