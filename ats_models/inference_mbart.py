@@ -86,7 +86,7 @@ class Inference(pl.LightningModule):
         input_ids, attention_mask = CustomDatasetForInference.prepare_input(input_ids, self.args.is_long, self.config.attention_mode, self.config.attention_window, self.tokenizer.pad_token_id, self.config.global_attention_indices)
         assert (decoder_start_token_ids is not None or self.test_set.tgt_lang is not None), "Need either reference with target labels or list of target labels (multilingual batches), else --tgt_lang needs to be set"
 
-        if self.args.decode_with_fudge:
+        if self.args.decode_with_fudge and self.args.fudge_lambda > 0:
             if decoder_start_token_ids is None:
                 decoder_start_token_ids = self.tokenizer.convert_tokens_to_ids(self.testset.tgt_lang)
 
@@ -96,7 +96,7 @@ class Inference(pl.LightningModule):
                                     device=input_ids.device)
 
 
-        if decoder_start_token_ids is not None: # no reference but list of target language tags given
+        elif decoder_start_token_ids is not None: # no reference but list of target language tags given
             #decoder_start_token_ids = torch.tensor([self.tokenizer.convert_tokens_to_ids(tag) for tag in decoder_start_tokens], device=input_ids.device).unsqueeze(1)
             generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
                                             use_cache=True, max_length=self.args.max_output_len,
@@ -257,7 +257,7 @@ class Inference(pl.LightningModule):
         if self.args.min_output_len and self.args.beam_size > 1:
             # min length logits processor needs to be before FUDGE
             logits_processor.insert(0, MinLengthLogitsProcessor(self.args.min_output_len, eos_token_id=self.model.config.eos_token_id))
-        #print('Logits Processor List:', logits_processor)
+
         stopping_criterion = StoppingCriteriaList([MaxLengthCriteria(max_length=self.test_set.max_output_len)])
 
         if self.args.do_sample:
@@ -271,7 +271,6 @@ class Inference(pl.LightningModule):
                 logits_warper.insert(0, TopPLogitsWarper(self.args.top_p, min_tokens_to_keep=self.args.beam_size))
             if self.args.typical_p is not None:
                 logits_warper.insert(0, TypicalLogitsWarper(self.args.typical_p, min_tokens_to_keep=self.args.beam_size))
-                # print(logits_warper)
 
             print('Logits Warper List:', logits_warper)
 
@@ -338,7 +337,7 @@ class Inference(pl.LightningModule):
         # fudge params
         parser.add_argument("--decode_with_fudge", action='store_true', help="Decode with FUDGE, set condition model.")
         parser.add_argument("--condition_model", type=str, metavar='PATH', help="Condition model (classifier) for FUDGE.")
-        parser.add_argument("--fudge_lambda", type=float, default=1.0, help="Lambda for decoding with FUDGE (0 = no weight for condition model == standard decoding).")
+        parser.add_argument("--fudge_lambda", type=float, default=0.0, help="Lambda for decoding with FUDGE (0 = no weight for condition model == standard decoding).")
         parser.add_argument('--precondition_topk', type=int, default=200, help='consider top k outputs from gpt at each step before conditioning and re-pruning') # TODO do we need this at all?
         parser.add_argument('--vectorized', action='store_true', help='whether or not to use the vectorized implementation of FUDGE logits_processor')
         parser.add_argument('--soft', action='store_true', help="type of fudge: if True, all logits not in FUDGE's topk preselection are set to -inf and cannot be generated. Default: False, i.e. these logits are left untouched and could potential still be sampled.")
