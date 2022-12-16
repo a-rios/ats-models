@@ -220,23 +220,43 @@ class Inference(pl.LightningModule):
         self.test_dataloader_object = self._get_dataloader(self.test_dataloader_object, 'test', is_train=False)
         return self.test_dataloader_object
 
+    # this code is based on https://github.com/ZurichNLP/SimpleFUDGE/blob/master/predict_simplify.py
     def _decode_with_fudge(self, input_ids: torch.Tensor,
                            attention_mask: torch.Tensor,
                            decoder_input_ids: torch.Tensor,
                            device: torch.device):
 
         batch_size=input_ids.shape[0]
-        input_ids = input_ids.repeat_interleave(self.args.beam_size, dim=0)
-        attention_mask = attention_mask.repeat_interleave(self.args.beam_size, dim=0)
-        decoder_input_ids = decoder_input_ids * torch.ones((self.args.beam_size*batch_size, 1), device=input_ids.device, dtype=input_ids.dtype)
-
-        # code based on https://github.com/ZurichNLP/SimpleFUDGE/blob/master/predict_simplify.py
         model_kwargs = {'attention_mask': attention_mask, 'output_attentions': False, 'output_hidden_states': False, 'use_cache': True}
         model_kwargs = self.model._prepare_encoder_decoder_kwargs_for_generation(
                 input_ids, model_kwargs, "input_ids"
         )
 
         logits_processor = LogitsProcessorList()
+        logits_processor = self.model._get_logits_processor(
+            repetition_penalty=self.args.repetition_penalty,
+            no_repeat_ngram_size=None,
+            encoder_no_repeat_ngram_size=None,
+            input_ids_seq_length=decoder_input_ids.shape[-1],
+            encoder_input_ids=decoder_input_ids,
+            bad_words_ids=None,
+            min_length=0,
+            max_length=self.args.max_output_len,
+            eos_token_id=self.model.config.eos_token_id,
+            forced_bos_token_id=None,
+            forced_eos_token_id=None,
+            prefix_allowed_tokens_fn=None,
+            num_beams=self.args.beam_size,
+            num_beam_groups=self.args.num_beam_groups,
+            diversity_penalty=None,
+            remove_invalid_values=None,
+            exponential_decay_length_penalty=None,
+            logits_processor=logits_processor,
+            renormalize_logits=None,
+            suppress_tokens=None,
+            begin_suppress_tokens=None,
+            forced_decoder_ids=None,
+        )
 
         if self.args.fudge_lambda > 0.0:
             # instantiate FUDGE logits processor
@@ -251,12 +271,6 @@ class Inference(pl.LightningModule):
                 analysis_file=self.args.analysis_file,
                 )
             logits_processor.insert(0, fudge_proc)
-
-        if self.args.repetition_penalty != 1.0:
-            logits_processor.insert(0, RepetitionPenaltyLogitsProcessor(self.args.repetition_penalty))
-        if self.args.min_output_len and self.args.beam_size > 1:
-            # min length logits processor needs to be before FUDGE
-            logits_processor.insert(0, MinLengthLogitsProcessor(self.args.min_output_len, eos_token_id=self.model.config.eos_token_id))
 
         stopping_criterion = StoppingCriteriaList([MaxLengthCriteria(max_length=self.test_set.max_output_len)])
 
@@ -299,6 +313,8 @@ class Inference(pl.LightningModule):
                     )
 
             else: # regular (greedy) beam search with FUDGE - uses beam_search()
+                decoder_input_ids, model_kwargs = self.model._expand_inputs_for_generation(
+                    decoder_input_ids, expand_size=self.args.beam_size, is_encoder_decoder=self.model.config.is_encoder_decoder, **model_kwargs)
                 outputs = self.model.beam_search(
                     decoder_input_ids,
                     beam_scorer,
@@ -306,7 +322,6 @@ class Inference(pl.LightningModule):
                     stopping_criteria=stopping_criterion,
                     **model_kwargs
                     )
-
         else:
 
             if self.args.do_sample: # simple sampling - no beam!
@@ -446,12 +461,13 @@ def main(args):
 
 
     inference_model.set_test_set(test_set)
+    progress_bar_callback = TQDMProgressBar(refresh_rate=args.progress_bar_refresh_rate)
 
     trainer = pl.Trainer(accelerator=args.accelerator, devices=args.devices, strategy='ddp_find_unused_parameters_false' if torch.cuda.is_available() else None,
                          replace_sampler_ddp=False,
                          limit_test_batches=args.test_percent_check,
                          logger=None,
-                         progress_bar_refresh_rate=args.progress_bar_refresh_rate,
+                         callbacks=[progress_bar_callback],
                          precision=32 if args.fp32 else 16, amp_backend='native',
                          )
 

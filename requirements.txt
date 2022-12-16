@@ -1,4 +1,4 @@
-pytorch-lightning
+pytorch_lightning
 transformers
 torch==1.10.2
 tensorboardX
