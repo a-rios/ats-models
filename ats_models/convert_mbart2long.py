@@ -22,8 +22,8 @@ import sentencepiece as spm
 from transformers import MBartTokenizer, MBartForConditionalGeneration
 
 
-from .longmbart.sliding_chunks import pad_to_window_size
-from .longmbart.longformer_enc_dec import MLongformerEncoderDecoderForConditionalGeneration, MLongformerEncoderDecoderConfig, LongformerSelfAttentionForMBart
+from .long_models.sliding_chunks import pad_to_window_size
+from .long_models.longformer_mbart import MLongformerEncoderDecoderForConditionalGeneration, MLongformerEncoderDecoderConfig, LongformerSelfAttentionForMBart
 
 import torch
 

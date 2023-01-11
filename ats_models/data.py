@@ -16,8 +16,8 @@ import json
 import logging
 from typing import Optional, List
 from transformers import MBartTokenizer
-from .longmbart.longformer_enc_dec import MLongformerEncoderDecoderForConditionalGeneration
-from .longmbart.sliding_chunks import pad_to_window_size
+from .long_models.longformer_mbart import MLongformerEncoderDecoderForConditionalGeneration
+from .long_models.sliding_chunks import pad_to_window_size
 from bs4 import BeautifulSoup
 
 logger = logging.getLogger(__name__)

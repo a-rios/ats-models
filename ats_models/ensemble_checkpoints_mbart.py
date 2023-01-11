@@ -27,7 +27,7 @@ from pytorch_lightning.callbacks import TQDMProgressBar
 from pytorch_lightning.plugins import DDPPlugin
 
 from transformers import MBartTokenizer, MBartForConditionalGeneration, MBartConfig
-from .longmbart.longformer_enc_dec import MLongformerEncoderDecoderForConditionalGeneration, MLongformerEncoderDecoderConfig
+from .long_models.longformer_mbart import MLongformerEncoderDecoderForConditionalGeneration, MLongformerEncoderDecoderConfig
 from .inference_mbart import Inference
 import datasets
 from typing import Optional, Callable, Tuple, Iterable, Union, List, Dict, Any
