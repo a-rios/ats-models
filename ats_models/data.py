@@ -15,13 +15,17 @@ import re
 import json
 import logging
 from typing import Optional, List
-from transformers import MBartTokenizer
+from transformers import MBartTokenizer, BartTokenizer
 from .long_models.longformer_mbart import MLongformerEncoderDecoderForConditionalGeneration
 from .long_models.sliding_chunks import pad_to_window_size
 from bs4 import BeautifulSoup
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
+
+##################
+# mBART datasets #
+##################
 
 class CustomDataset(Dataset):
     def __init__(self,
@@ -245,7 +249,7 @@ class CustomDatasetUZHJson(CustomDataset): # TODO: make this more general to wor
                     if tgt_lang in self.map_lang_ids.keys():
                         tgt_lang = self.map_lang_ids[tgt_lang]
                     if self.remove_xml:
-                        source, target = self._remove_xml(source, target)
+                        source, target = self._remove_xml(source, target) # TODO: should we remove linebreaks from string?
                     if not (self._is_empty(source) or self._is_empty(target)): # necessary, still some noisy samples in json that consist of only xml tags without content
                         tgt_id = tgt_lang if self.tgt_lang is None else self.tgt_lang
                         self.inputs.append((src_id, source))
@@ -351,3 +355,190 @@ class CustomInferenceDatasetUZHJson(CustomDatasetUZHJson): # TODO: make this mor
         decoder_start_token_ids = torch.tensor([tag_id for tag_id in decoder_start_tokens], device=input_ids.device).unsqueeze(1)
 
         return input_ids, decoder_start_token_ids, ref
+
+
+##################
+# BART datasets #
+##################
+
+
+class CustomBartDataset(CustomDataset):
+    def __init__(self,
+                 src_file:str,
+                 tgt_file: Optional[str],
+                 name: str,
+                 tokenizer: BartTokenizer,
+                 max_input_len: int=1024,
+                 max_output_len: int=1024):
+        self.name = name # train, val, test
+        self.tokenizer = tokenizer
+        self.max_input_len = max_input_len
+        self.max_output_len = max_output_len
+
+        with open(src_file, 'r') as f:
+            self.inputs =  f.readlines()
+        with open(tgt_file, 'r') as f:
+            self.labels =  f.readlines()
+        assert len(self.inputs) == len(self.labels), f"Source and target have different number of samples: {len(self.inputs)} vs. {len(self.labels)}"
+
+    def __getitem__(self, idx):
+        """
+        source: bos (0) x x x .. eos (2)
+        target:
+        """
+        source = self.inputs[idx]
+        target = self.labels[idx]
+
+        input_ids = self.tokenizer(source, return_tensors="pt", max_length=self.max_input_len, truncation=True, padding=False)
+        labels = self.tokenizer(target, return_tensors="pt", max_length=self.max_output_len, truncation=True, padding=False)
+        input_ids = input_ids['input_ids'].squeeze() # bos tokens eos
+        labels = labels['input_ids'].squeeze() # bos tokens eos -> tokens eos
+
+        # need to create decoder_input_ids after, shift_tokens_right as called in BartModel uses the input ids to create decoder inputs.. we need to create them from labels
+        # input_ids: bos (0) tokens, eos (2), ready from tokenizer
+        # labels = bos tokens eos -> tokens eos (2) +1 pad
+        # decoder_input_ids: this is a weird one...
+        # decoder_start_token_id in bart config is 2 (==eos), used in shift_tokens_right in forward pass.. results in 'eos bos' at start, weird?? seems to be just bos in fairseq: https://github.com/facebookresearch/fairseq/blob/5d7ed6ab4f92d20ad10f8f792b8703e260a938ac/fairseq/models/bart/hub_interface.py#L123
+        # testing with only bos for now
+        # decoder_input = labels: bos tokens eos
+        decoder_input_ids = labels.clone()
+        labels = torch.roll(labels, shifts=-1) # move bos to last position
+        labels[-1] = self.tokenizer.pad_token_id
+        return input_ids, decoder_input_ids, labels
+
+
+    @staticmethod
+    def collate_fn(batch, pad_token_id):
+        input_ids, decoder_input_ids, labels = list(zip(*batch))
+
+        input_ids = torch.nn.utils.rnn.pad_sequence(input_ids, batch_first=True, padding_value=pad_token_id)
+        decoder_input_ids = torch.nn.utils.rnn.pad_sequence(decoder_input_ids, batch_first=True, padding_value=pad_token_id)
+        labels = torch.nn.utils.rnn.pad_sequence(labels, batch_first=True, padding_value=pad_token_id)
+
+        return input_ids, decoder_input_ids, labels
+
+
+class CustomBartDatasetForInference(CustomDataset):
+    def __init__(self,
+                 src_file:str,
+                 tgt_file: Optional[str],
+                 name: str,
+                 tokenizer: BartTokenizer,
+                 max_input_len: int=1024,
+                 max_output_len: int=1024):
+        self.name = name # train, val, test
+        self.tokenizer = tokenizer
+        self.max_input_len = max_input_len
+        self.max_output_len = max_output_len
+        self.reference = None
+
+        with open(src_file, 'r') as f:
+            self.inputs =  f.readlines()
+        if tgt_file is not None:
+            with open(tgt_file, 'r') as f:
+                self.reference =  f.readlines()
+            assert len(self.inputs) == len(self.reference), f"Source and target have different number of samples: {len(self.inputs)} vs. {len(self.reference)}"
+
+    def __getitem__(self, idx):
+        source = self.inputs[idx]
+        reference = None
+        if self.reference is not None:
+            reference = self.reference[idx]
+
+        input_ids = self.tokenizer(source, return_tensors="pt", max_length=self.max_input_len, truncation=True, padding=False)
+        input_ids = input_ids['input_ids'].squeeze()
+
+        return input_ids, reference # return reference here (string, optional, will calculate metrics if provided)
+
+    @staticmethod
+    def collate_fn(batch, pad_token_id):
+        input_ids, ref = list(zip(*batch))
+        input_ids = torch.nn.utils.rnn.pad_sequence(input_ids, batch_first=True, padding_value=pad_token_id)
+
+        return input_ids, ref
+
+
+class CustomBartDatasetUZHJson(CustomDatasetUZHJson):
+    def __init__(self,
+                 json_files:List[str],
+                 name: str,
+                 tokenizer: BartTokenizer,
+                 max_input_len: int=1024,
+                 max_output_len: int=1024,
+                 remove_xml: Optional[bool]=False):
+        self.name = name # train, val, test
+        self.tokenizer = tokenizer
+        self.max_input_len = max_input_len
+        self.max_output_len = max_output_len
+        self.remove_xml = remove_xml
+
+        self.inputs = [] # list of tuples (lang_id, sentence)
+        self.labels = [] # list of tuples (lang_id, sentence)
+
+        sample_count=0
+
+        for json_file in json_files:
+            with open(json_file, 'r') as f:
+                json_data = json.load(f)
+                for sample in json_data['segments']:
+                    source = sample['original']
+                    sample_count += 1
+                    tgt_lang = list(sample.keys())[0]
+                    target = sample[tgt_lang] # TODO: not yet done, check what the key for the simplified text is in the English json
+                    if self.remove_xml:
+                        source, target = self._remove_xml(source, target) # TODO: should we remove linebreaks from string?
+                    if not (self._is_empty(source) or self._is_empty(target)): # necessary, still some noisy samples in json that consist of only xml tags without content
+
+                        self.inputs.append(source)
+                        self.labels.append(target)
+        assert len(self.inputs) == len(self.labels), f"Source and target have different number of samples: {len(self.inputs)} vs. {len(self.labels)}"
+
+        if len(self.inputs) < sample_count:
+            logger.warn(f"{sample_count - len(self.inputs)} samples have been omitted from the {name} json dataset because either source or target was an empty string.")
+
+    def __getitem__(self, idx):
+            source = self.inputs[idx]
+            target = self.labels[idx]
+
+            input_ids = self.tokenizer(source, return_tensors="pt", max_length=self.max_input_len, truncation=True, padding=False)
+            labels = self.tokenizer(target, return_tensors="pt", max_length=self.max_output_len, truncation=True, padding=False)
+            input_ids = input_ids['input_ids'].squeeze()
+            labels = labels['input_ids'].squeeze() # should be 'tokens eos(2), TODO check
+            decoder_input_ids = labels.clone()
+            labels = torch.roll(labels, shifts=-1) # move bos to last position
+            labels[-1] = self.tokenizer.pad_token_id # replace bos with pad
+            return input_ids, decoder_input_ids, labels
+
+class CustomBartInferenceDatasetUZHJson(CustomBartDatasetUZHJson): # TODO: make this more general to work with json for other language pairs
+    def __init__(self,
+                 json_files:List[str],
+                 name: str,
+                 tokenizer: BartTokenizer,
+                 max_input_len: int=1024,
+                 max_output_len: int=1024,
+                 remove_xml: Optional[bool]=False):
+        super(CustomBartInferenceDatasetUZHJson, self).__init__( json_files,
+                                                    name,
+                                                    tokenizer,
+                                                    max_input_len,
+                                                    max_output_len,
+                                                    remove_xml)
+        self.reference = []
+        for text in self.labels:
+            self.reference.append(text)
+
+    def __getitem__(self, idx):
+            source = self.inputs[idx]
+            target = self.labels[idx]
+
+            input_ids = self.tokenizer(source, return_tensors="pt", max_length=self.max_input_len, truncation=True, padding=False)
+            input_ids = input_ids['input_ids'].squeeze()
+
+            return input_ids, target
+
+    @staticmethod
+    def collate_fn(batch, pad_token_id):
+        input_ids, ref = list(zip(*batch))
+        input_ids = torch.nn.utils.rnn.pad_sequence(input_ids, batch_first=True, padding_value=pad_token_id)
+
+        return input_ids, ref

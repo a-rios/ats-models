@@ -29,12 +29,13 @@ from pytorch_lightning.callbacks import TQDMProgressBar, LearningRateMonitor
 from pytorch_lightning.plugins import DDPPlugin
 
 import logging
-from transformers import MBartTokenizer, MBartForConditionalGeneration, MBartConfig
+from transformers import MBartTokenizer, MBartForConditionalGeneration, MBartConfig, BartTokenizer, BartForConditionalGeneration, BartConfig
 from .long_models.longformer_mbart import MLongformerEncoderDecoderForConditionalGeneration, MLongformerEncoderDecoderConfig
+from .long_models.longformer_bart import LongformerEncoderDecoderForConditionalGeneration, LongformerEncoderDecoderConfig
 import datasets
-from typing import Optional
+from typing import Optional, Union
 from functools import partial
-from .data import CustomDataset, CustomDatasetUZHJson
+from .data import CustomDataset, CustomDatasetUZHJson, CustomBartDataset, CustomBartDatasetUZHJson
 from .metrics import label_smoothed_nll_loss, get_eval_scores
 
 
@@ -83,22 +84,40 @@ class MBartTrainer(pl.LightningModule):
         self.save_hyperparameters()
 
     def _load_pretrained(self):
-        self.tokenizer = MBartTokenizer.from_pretrained(self.args.tokenizer, use_fast=True)
-        if self.is_long_model:
-            self.model = MLongformerEncoderDecoderForConditionalGeneration.from_pretrained(self.args.from_pretrained, config=self.config)
-        else:
-            self.model = MBartForConditionalGeneration.from_pretrained(self.args.from_pretrained, config=self.config)
+        if self.args.model_type == 'mbart':
+            self.tokenizer = MBartTokenizer.from_pretrained(self.args.tokenizer, use_fast=True)
+            if self.is_long_model:
+                self.model = MLongformerEncoderDecoderForConditionalGeneration.from_pretrained(self.args.from_pretrained, config=self.config)
+            else:
+                self.model = MBartForConditionalGeneration.from_pretrained(self.args.from_pretrained, config=self.config)
+        else: # load bart
+            self.tokenizer = BartTokenizer.from_pretrained(self.args.tokenizer, use_fast=True)
+            if self.is_long_model:
+                self.model = LongformerEncoderDecoderForConditionalGeneration.from_pretrained(self.args.from_pretrained, config=self.config)
+            else:
+                self.model = BartForConditionalGeneration.from_pretrained(self.args.from_pretrained, config=self.config)
+
 
 
     def _set_config(self):
-        if self.is_long_model:
-            self.config = MLongformerEncoderDecoderConfig.from_pretrained(self.args.from_pretrained)
-            self.config.global_attention_indices = self.args.global_attention_indices
-        else:
-            self.config = MBartConfig.from_pretrained(self.args.from_pretrained)
-            self.config.attention_mode = 'n2'
-            self.config.attention_window = None
-            self.config.global_attention_indices = None
+        if self.args.model_type == 'mbart':
+            if self.is_long_model:
+                self.config = MLongformerEncoderDecoderConfig.from_pretrained(self.args.from_pretrained)
+                self.config.global_attention_indices = self.args.global_attention_indices
+            else:
+                self.config = MBartConfig.from_pretrained(self.args.from_pretrained)
+                self.config.attention_mode = 'n2'
+                self.config.attention_window = None
+                self.config.global_attention_indices = None
+        else: #bart
+            if self.is_long_model:
+                self.config = LongformerEncoderDecoderConfig.from_pretrained(self.args.from_pretrained)
+                self.config.global_attention_indices = self.args.global_attention_indices
+            else:
+                self.config = BartConfig.from_pretrained(self.args.from_pretrained)
+                self.config.attention_mode = 'n2'
+                self.config.attention_window = None
+                self.config.global_attention_indices = None
         self.config.attention_dropout = self.args.attention_dropout
         self.config.dropout = self.args.dropout
         self.config.activation_dropout = self.args.activation_dropout
@@ -157,9 +176,13 @@ class MBartTrainer(pl.LightningModule):
                                             use_cache=True, max_length=self.args.max_output_len,
                                             num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_input_ids=decoder_start_token_ids)
         else: # only one target language in dev set
+            if self.args.model_type == "mbart":
+                decoder_start_token_id = self.tokenizer.convert_tokens_to_ids(self.dev_set.tgt_lang)
+            else:
+                decoder_start_token_id = self.tokenizer.bos_token_id
             generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
                                             use_cache=True, max_length=self.args.max_output_len,
-                                            num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_start_token_id=self.tokenizer.convert_tokens_to_ids(self.dev_set.tgt_lang))
+                                            num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_start_token_id=decoder_start_token_id)
 
         generated_str = self.tokenizer.batch_decode(generated_ids.tolist(), skip_special_tokens=True, clean_up_tokenization_spaces=True)
 
@@ -241,13 +264,13 @@ class MBartTrainer(pl.LightningModule):
         }
         return [self.optimizer], [lr_scheduler_config]
 
-    def set_datasets(self, train_set: CustomDataset, dev_set: CustomDataset, test_set: Optional[CustomDataset]):
+    def set_datasets(self, train_set: Union[CustomDataset, CustomBartDataset], dev_set: Union[CustomDataset, CustomBartDataset], test_set: Optional[Union[CustomDataset, CustomBartDataset]]):
         self.train_set = train_set
         self.dev_set = dev_set
         if test_set is not None:
             self.test_set = test_set
 
-    def set_test_set(self, test_set: CustomDataset):
+    def set_test_set(self, test_set: Union[CustomDataset, CustomBartDataset]):
         self.test_set = test_set
 
     def _get_dataloader(self, current_dataloader, split_name, is_train):
@@ -290,6 +313,7 @@ class MBartTrainer(pl.LightningModule):
         parser.add_argument("--pretrained_ckpt", type=str, default=None, help="Continue fine-tuning a trained checkpoint but start training from scratch, i.e. parameters, but not optimizer/lr schedulers etc.")
         parser.add_argument("--from_pretrained", type=str, default=None,  help="Path to a checkpoint to load model weights but not training state")
         parser.add_argument("--num_sanity_val_steps", type=int, default=0,  help="Number of evaluation sanity steps to run before starting the training. Default: 0.")
+        parser.add_argument("--model_type", type=str, default='mbart', help="Model type, either mbart or bart.")
 
         #data
         parser.add_argument("--train_source", type=str, default=None,  help="Path to the source train file.")
@@ -376,73 +400,124 @@ def main(args):
                 print(name + ":" + str(param.data.shape))
         exit(0)
 
-    if args.train_jsons is not None:
-        train_set = CustomDatasetUZHJson(json_files=args.train_jsons,
-                              name="train",
-                              tokenizer=model.tokenizer,
-                              max_input_len=args.max_input_len,
-                              max_output_len=args.max_output_len,
-                              src_lang=args.src_lang,
-                              tgt_lang=args.tgt_lang,
-                              remove_xml=args.remove_xml_in_json
-        )
-    else:
-        train_set = CustomDataset(src_file=args.train_source,
-                                tgt_file=args.train_target,
+    if args.model_type == "mbart":
+        if args.train_jsons is not None:
+            train_set = CustomDatasetUZHJson(json_files=args.train_jsons,
                                 name="train",
                                 tokenizer=model.tokenizer,
                                 max_input_len=args.max_input_len,
                                 max_output_len=args.max_output_len,
                                 src_lang=args.src_lang,
                                 tgt_lang=args.tgt_lang,
-                                src_tags_included=args.src_tags_included,
-                                tgt_tags_included=args.tgt_tags_included
+                                remove_xml=args.remove_xml_in_json
             )
-    if args.dev_jsons is not None:
-        dev_set = CustomDatasetUZHJson(json_files=args.dev_jsons,
-                              name="dev",
-                              tokenizer=model.tokenizer,
-                              max_input_len=args.max_input_len,
-                              max_output_len=args.max_output_len,
-                              src_lang=args.src_lang,
-                              tgt_lang=args.tgt_lang,
-                              remove_xml=args.remove_xml_in_json
-        )
-    else:
-        dev_set = CustomDataset(src_file=args.dev_source,
-                                tgt_file=args.dev_target,
+        else:
+            train_set = CustomDataset(src_file=args.train_source,
+                                    tgt_file=args.train_target,
+                                    name="train",
+                                    tokenizer=model.tokenizer,
+                                    max_input_len=args.max_input_len,
+                                    max_output_len=args.max_output_len,
+                                    src_lang=args.src_lang,
+                                    tgt_lang=args.tgt_lang,
+                                    src_tags_included=args.src_tags_included,
+                                    tgt_tags_included=args.tgt_tags_included
+                )
+        if args.dev_jsons is not None:
+            dev_set = CustomDatasetUZHJson(json_files=args.dev_jsons,
                                 name="dev",
                                 tokenizer=model.tokenizer,
                                 max_input_len=args.max_input_len,
                                 max_output_len=args.max_output_len,
                                 src_lang=args.src_lang,
                                 tgt_lang=args.tgt_lang,
-                                src_tags_included=args.src_tags_included,
-                                tgt_tags_included=args.tgt_tags_included
+                                remove_xml=args.remove_xml_in_json
             )
+        else:
+            dev_set = CustomDataset(src_file=args.dev_source,
+                                    tgt_file=args.dev_target,
+                                    name="dev",
+                                    tokenizer=model.tokenizer,
+                                    max_input_len=args.max_input_len,
+                                    max_output_len=args.max_output_len,
+                                    src_lang=args.src_lang,
+                                    tgt_lang=args.tgt_lang,
+                                    src_tags_included=args.src_tags_included,
+                                    tgt_tags_included=args.tgt_tags_included
+                )
 
-    if args.test_jsons is not None:
-        test_set = CustomDatasetUZHJson(json_files=args.test_jsons,
-                              name="test",
-                              tokenizer=model.tokenizer,
-                              max_input_len=args.max_input_len,
-                              max_output_len=args.max_output_len,
-                              src_lang=args.src_lang,
-                              tgt_lang=args.tgt_lang,
-                              remove_xml=args.remove_xml_in_json
-        )
-    else:
-        test_set = CustomDataset(src_file=args.test_source,
-                                tgt_file=args.test_target,
+        if args.test_jsons is not None:
+            test_set = CustomDatasetUZHJson(json_files=args.test_jsons,
                                 name="test",
                                 tokenizer=model.tokenizer,
                                 max_input_len=args.max_input_len,
                                 max_output_len=args.max_output_len,
                                 src_lang=args.src_lang,
                                 tgt_lang=args.tgt_lang,
-                                src_tags_included=args.src_tags_included,
-                                tgt_tags_included=args.tgt_tags_included
+                                remove_xml=args.remove_xml_in_json
             )
+        else:
+            test_set = CustomDataset(src_file=args.test_source,
+                                    tgt_file=args.test_target,
+                                    name="test",
+                                    tokenizer=model.tokenizer,
+                                    max_input_len=args.max_input_len,
+                                    max_output_len=args.max_output_len,
+                                    src_lang=args.src_lang,
+                                    tgt_lang=args.tgt_lang,
+                                    src_tags_included=args.src_tags_included,
+                                    tgt_tags_included=args.tgt_tags_included
+                )
+    else: # bart
+        if args.train_jsons is not None:
+            train_set = CustomBartDatasetUZHJson(json_files=args.train_jsons,
+                                name="train",
+                                tokenizer=model.tokenizer,
+                                max_input_len=args.max_input_len,
+                                max_output_len=args.max_output_len,
+                                remove_xml=args.remove_xml_in_json
+            )
+        else:
+            train_set = CustomBartDataset(src_file=args.train_source,
+                                    tgt_file=args.train_target,
+                                    name="train",
+                                    tokenizer=model.tokenizer,
+                                    max_input_len=args.max_input_len,
+                                    max_output_len=args.max_output_len
+                )
+        if args.dev_jsons is not None:
+            dev_set = CustomBartDatasetUZHJson(json_files=args.dev_jsons,
+                                name="dev",
+                                tokenizer=model.tokenizer,
+                                max_input_len=args.max_input_len,
+                                max_output_len=args.max_output_len,
+                                remove_xml=args.remove_xml_in_json
+            )
+        else:
+            dev_set = CustomBartDataset(src_file=args.dev_source,
+                                    tgt_file=args.dev_target,
+                                    name="dev",
+                                    tokenizer=model.tokenizer,
+                                    max_input_len=args.max_input_len,
+                                    max_output_len=args.max_output_len
+                )
+
+        if args.test_jsons is not None:
+            test_set = CustomBartDatasetUZHJson(json_files=args.test_jsons,
+                                name="test",
+                                tokenizer=model.tokenizer,
+                                max_input_len=args.max_input_len,
+                                max_output_len=args.max_output_len,
+                                remove_xml=args.remove_xml_in_json
+            )
+        else:
+            test_set = CustomBartDataset(src_file=args.test_source,
+                                    tgt_file=args.test_target,
+                                    name="test",
+                                    tokenizer=model.tokenizer,
+                                    max_input_len=args.max_input_len,
+                                    max_output_len=args.max_output_len
+                )
 
     model.set_datasets(train_set=train_set, dev_set=dev_set, test_set=test_set)
 
@@ -455,12 +530,12 @@ def main(args):
         for line in model.dev_set.inputs:
             if args.dev_jsons is not None:
                 line = line[1].replace('\n', ' ')
-            f.write(line + "\n")
+            f.write(line.strip() + "\n")
     with open(validation_reference_file, 'w') as f:
         for line in model.dev_set.labels:
             if args.dev_jsons is not None:
                 line = line[1].replace('\n', ' ')
-            f.write(line + "\n")
+            f.write(line.strip() + "\n")
 
     # if test set was set, print source and reference for test as well
     if args.test_source is not None or args.test_jsons is not None:
@@ -470,7 +545,7 @@ def main(args):
             for line in model.test_set.inputs:
                 if args.test_jsons is not None:
                     line = line[1].replace('\n', ' ')
-                f.write(line + "\n")
+                f.write(line.strip() + "\n")
 
     if args.test_target is not None or args.test_jsons is not None:
         test_reference_file=os.path.join(args.save_dir, args.save_prefix, "test_reference")
@@ -479,7 +554,7 @@ def main(args):
             for line in model.test_set.labels:
                 if args.test_jsons is not None:
                     line = line[1].replace('\n', ' ')
-                f.write(line + "\n")
+                f.write(line.strip() + "\n")
 
     if args.wandb:
         logger = WandbLogger(project=args.wandb, entity=args.wandb_entity)
