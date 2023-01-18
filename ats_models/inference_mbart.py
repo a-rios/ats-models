@@ -26,13 +26,14 @@ from pytorch_lightning.loggers import TensorBoardLogger, WandbLogger
 from pytorch_lightning.callbacks import TQDMProgressBar
 from pytorch_lightning.plugins import DDPPlugin
 
-from transformers import MBartTokenizer, MBartForConditionalGeneration, MBartConfig
+from transformers import MBartTokenizer, MBartForConditionalGeneration, MBartConfig, BartTokenizer, BartForConditionalGeneration, BartConfig
 from .long_models.longformer_mbart import MLongformerEncoderDecoderForConditionalGeneration, MLongformerEncoderDecoderConfig
+from .long_models.longformer_bart import LongformerEncoderDecoderForConditionalGeneration, LongformerEncoderDecoderConfig
 import datasets
-from typing import Optional
+from typing import Optional, Union
 from functools import partial
 
-from .data import CustomDatasetForInference, CustomInferenceDatasetUZHJson
+from .data import CustomDatasetForInference, CustomInferenceDatasetUZHJson, CustomBartDatasetForInference, CustomBartInferenceDatasetUZHJson
 from .finetune_mbart import MBartTrainer, remove_special_tokens
 from .metrics import label_smoothed_nll_loss, get_eval_scores
 
@@ -59,14 +60,23 @@ class Inference(pl.LightningModule):
     def __init__(self, args):
         super().__init__()
         self.args = args
-        self.tokenizer = MBartTokenizer.from_pretrained(self.args.tokenizer, use_fast=True)
 
-        if self.args.is_long:
-            self.config = MLongformerEncoderDecoderConfig.from_pretrained(self.args.model_path)
-            self.model = MLongformerEncoderDecoderForConditionalGeneration.from_pretrained(self.args.model_path, config=self.config)
-        else:
-            self.config = MBartConfig.from_pretrained(self.args.model_path)
-            self.model = MBartForConditionalGeneration.from_pretrained(self.args.model_path, config=self.config)
+        if self.args.model_type == 'mbart':
+            self.tokenizer = MBartTokenizer.from_pretrained(self.args.tokenizer, use_fast=True)
+            if self.args.is_long:
+                self.config = MLongformerEncoderDecoderConfig.from_pretrained(self.args.model_path)
+                self.model = MLongformerEncoderDecoderForConditionalGeneration.from_pretrained(self.args.model_path, config=self.config)
+            else:
+                self.config = MBartConfig.from_pretrained(self.args.model_path)
+                self.model = MBartForConditionalGeneration.from_pretrained(self.args.model_path, config=self.config)
+        else: #bart
+            self.tokenizer = BartTokenizer.from_pretrained(self.args.tokenizer, use_fast=True)
+            if self.args.is_long:
+                self.config = LongformerEncoderDecoderConfig.from_pretrained(self.args.model_path)
+                self.model = LongformerEncoderDecoderForConditionalGeneration.from_pretrained(self.args.model_path, config=self.config)
+            else:
+                self.config = BartConfig.from_pretrained(self.args.model_path)
+                self.model = BartForConditionalGeneration.from_pretrained(self.args.model_path, config=self.config)
 
         self.max_input_len = self.args.max_input_len if self.args.max_input_len is not None else self.config.max_encoder_position_embeddings
         self.max_output_len = self.args.max_output_len if self.args.max_output_len is not None else self.config.max_decoder_position_embeddings
@@ -82,13 +92,20 @@ class Inference(pl.LightningModule):
         for p in self.model.parameters():
             p.requires_grad = False
 
-        input_ids, decoder_start_token_ids, ref = batch # ref: string; decoder_start_tokens: tgt_lang labels
+        if self.args.model_type == "mbart":
+            input_ids, decoder_start_token_ids, ref = batch # ref: string; decoder_start_tokens: tgt_lang labels
+            assert (decoder_start_token_ids is not None or self.test_set.tgt_lang is not None), "Need either reference with target labels or list of target labels (multilingual batches), else --tgt_lang needs to be set"
+        else: # bart
+            input_ids, ref = batch
+            decoder_start_token_ids = None
         input_ids, attention_mask = CustomDatasetForInference.prepare_input(input_ids, self.args.is_long, self.config.attention_mode, self.config.attention_window, self.tokenizer.pad_token_id, self.config.global_attention_indices)
-        assert (decoder_start_token_ids is not None or self.test_set.tgt_lang is not None), "Need either reference with target labels or list of target labels (multilingual batches), else --tgt_lang needs to be set"
 
         if self.args.decode_with_fudge and self.args.fudge_lambda > 0:
             if decoder_start_token_ids is None:
-                decoder_start_token_ids = self.tokenizer.convert_tokens_to_ids(self.testset.tgt_lang)
+                if self.args.model_type == "mbart":
+                    decoder_start_token_ids = self.tokenizer.convert_tokens_to_ids(self.testset.tgt_lang)
+                else: #bart
+                    decoder_start_token_ids = self.tokenizer.bos_token_id
 
             generated_ids = self._decode_with_fudge(input_ids=input_ids,
                                     attention_mask=attention_mask,
@@ -114,7 +131,7 @@ class Inference(pl.LightningModule):
         else: # no reference, need either decoder_start_tokens (--target_tags) for multilingual batches or --tgt_lang
             generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
                                             use_cache=True, max_length=self.max_input_len,
-                                            num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_start_token_id=self.tokenizer.convert_tokens_to_ids(self.testset.tgt_lang),
+                                            num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_start_token_id=self.tokenizer.convert_tokens_to_ids(self.testset.tgt_lang) if self.args.model_type == "mbart" else self.tokenizer.bos_token_id,
                                             do_sample=self.args.do_sample,
                                             temperature=self.args.temperature,
                                             top_k=self.args.top_k,
@@ -203,7 +220,7 @@ class Inference(pl.LightningModule):
     def forward(self):
         pass
 
-    def set_test_set(self, test_set: CustomDatasetForInference):
+    def set_test_set(self, test_set: Union[CustomDatasetForInference, CustomBartDatasetForInference]):
         self.test_set = test_set
 
     def _get_dataloader(self, current_dataloader, split_name, is_train):
@@ -214,7 +231,7 @@ class Inference(pl.LightningModule):
 
         return DataLoader(self.test_set, batch_size=self.args.batch_size, shuffle=False,
                           num_workers=self.args.num_workers, sampler=sampler,
-                          collate_fn=partial(CustomDatasetForInference.collate_fn, pad_token_id=self.tokenizer.pad_token_id))
+                          collate_fn=partial(self.test_set.collate_fn, pad_token_id=self.tokenizer.pad_token_id))
 
     def test_dataloader(self):
         self.test_dataloader_object = self._get_dataloader(self.test_dataloader_object, 'test', is_train=False)
@@ -223,7 +240,7 @@ class Inference(pl.LightningModule):
     # this code is based on https://github.com/ZurichNLP/SimpleFUDGE/blob/master/predict_simplify.py
     def _decode_with_fudge(self, input_ids: torch.Tensor,
                            attention_mask: torch.Tensor,
-                           decoder_input_ids: torch.Tensor,
+                           decoder_input_ids: torch.Tensor, # TODO: check decoder_input_ids
                            device: torch.device):
 
         batch_size=input_ids.shape[0]
@@ -348,6 +365,7 @@ class Inference(pl.LightningModule):
         parser.add_argument("--checkpoint_name", type=str, help="Checkpoint in model_path to use.")
         parser.add_argument("--tokenizer", type=str, help="Path to the tokenizer directory.")
         parser.add_argument("--is_long", action='store_true', help="This is a model with longformer windowed attention.")
+        parser.add_argument("--model_type", type=str, default='mbart', help="Model type, either mbart or bart.")
 
         # fudge params
         parser.add_argument("--decode_with_fudge", action='store_true', help="Decode with FUDGE, set condition model.")
@@ -436,28 +454,45 @@ def main(args):
         exit(0)
 
 
-    if args.test_jsons is not None:
-        test_set = CustomInferenceDatasetUZHJson(json_files=args.test_jsons,
-                              name="test",
-                              tokenizer=inference_model.tokenizer,
-                              max_input_len=args.max_input_len,
-                              max_output_len=args.max_output_len,
-                              src_lang=args.src_lang,
-                              tgt_lang=args.tgt_lang,
-                              remove_xml=args.remove_xml_in_json
-        )
-    else:
-        test_set = CustomDatasetForInference(src_file=args.test_source,
-                                            tgt_file=args.test_target,
-                                            name="test",
-                                            tokenizer=inference_model.tokenizer,
-                                            max_input_len=args.max_input_len,
-                                            max_output_len=args.max_output_len,
-                                            src_lang=args.src_lang,
-                                            tgt_lang=args.tgt_lang,
-                                            src_tags_included=args.src_tags_included,
-                                            tgt_tags_included=args.tgt_tags_included,
-                                            target_tags=args.target_tags)
+    if args.model_type == "mbart":
+        if args.test_jsons is not None:
+            test_set = CustomInferenceDatasetUZHJson(json_files=args.test_jsons,
+                                name="test",
+                                tokenizer=inference_model.tokenizer,
+                                max_input_len=args.max_input_len,
+                                max_output_len=args.max_output_len,
+                                src_lang=args.src_lang,
+                                tgt_lang=args.tgt_lang,
+                                remove_xml=args.remove_xml_in_json
+            )
+        else:
+            test_set = CustomDatasetForInference(src_file=args.test_source,
+                                                tgt_file=args.test_target,
+                                                name="test",
+                                                tokenizer=inference_model.tokenizer,
+                                                max_input_len=args.max_input_len,
+                                                max_output_len=args.max_output_len,
+                                                src_lang=args.src_lang,
+                                                tgt_lang=args.tgt_lang,
+                                                src_tags_included=args.src_tags_included,
+                                                tgt_tags_included=args.tgt_tags_included,
+                                                target_tags=args.target_tags)
+    else: # bart
+        if args.test_jsons is not None:
+            test_set = CustomBartInferenceDatasetUZHJson(json_files=args.test_jsons,
+                                name="test",
+                                tokenizer=inference_model.tokenizer,
+                                max_input_len=args.max_input_len,
+                                max_output_len=args.max_output_len,
+                                remove_xml=args.remove_xml_in_json
+            )
+        else:
+            test_set = CustomBartDatasetForInference(src_file=args.test_source,
+                                                tgt_file=args.test_target,
+                                                name="test",
+                                                tokenizer=inference_model.tokenizer,
+                                                max_input_len=args.max_input_len,
+                                                max_output_len=args.max_output_len)
 
 
     inference_model.set_test_set(test_set)

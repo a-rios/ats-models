@@ -170,19 +170,15 @@ class MBartTrainer(pl.LightningModule):
         input_ids, attention_mask = CustomDataset.prepare_input(input_ids, self.is_long_model, self.config.attention_mode, self.config.attention_window, self.tokenizer.pad_token_id, self.config.global_attention_indices)
 
         # mixed target languages
-        if self.dev_set.tgt_tags_included:
+        if self.args.model_type == "mbart" and self.dev_set.tgt_tags_included:
             decoder_start_token_ids = decoder_input_ids.narrow(dim=1, start=0, length=1)
             generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
                                             use_cache=True, max_length=self.args.max_output_len,
                                             num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_input_ids=decoder_start_token_ids)
         else: # only one target language in dev set
-            if self.args.model_type == "mbart":
-                decoder_start_token_id = self.tokenizer.convert_tokens_to_ids(self.dev_set.tgt_lang)
-            else:
-                decoder_start_token_id = self.tokenizer.bos_token_id
             generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
                                             use_cache=True, max_length=self.args.max_output_len,
-                                            num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_start_token_id=decoder_start_token_id)
+                                            num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_start_token_id=self.tokenizer.convert_tokens_to_ids(self.dev_set.tgt_lang) if self.args.model_type == "mbart" else self.tokenizer.bos_token_id)
 
         generated_str = self.tokenizer.batch_decode(generated_ids.tolist(), skip_special_tokens=True, clean_up_tokenization_spaces=True)
 
