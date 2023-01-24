@@ -236,17 +236,19 @@ class MBartTrainer(pl.LightningModule):
             cooldown=self.args.lr_cooldown,
             verbose=True)
 
+        interval = "step" if args.val_check_interval is not None else "epoch"
+        frequency = args.val_check_interval if args.val_check_interval is not None else args.check_val_every_n_epoch
 
         lr_scheduler_config = {
             "scheduler": self.scheduler,
             # The unit of the scheduler's step size, could also be 'step'.
             # 'epoch' updates the scheduler on epoch end whereas 'step'
             # updates it after a optimizer update.
-            "interval": "epoch",
+            "interval": interval,
             # How many epochs/steps should pass between calls to
             # `scheduler.step()`. 1 corresponds to updating the learning
             # rate after every epoch/step.
-            "frequency": 1,
+            "frequency": frequency,
             # Metric to to monitor for schedulers like `ReduceLROnPlateau`
             "monitor": self.args.early_stopping_metric,
             # If set to `True`, will enforce that the value specified 'monitor'
@@ -322,6 +324,7 @@ class MBartTrainer(pl.LightningModule):
         parser.add_argument("--dev_jsons", type=str, nargs='+', default=None,  help="Path to UZH json file(s) with dev data.")
         parser.add_argument("--test_jsons", type=str, nargs='+', default=None,  help="Path to UZH json file(s) with test data.")
         parser.add_argument("--remove_xml_in_json", action="store_true", help="Remove xml markup from text if input is UZH json.")
+        parser.add_argument("--remove_linebreaks_in_json", action="store_true", help="Remove linebreaks from text if input is UZH json.")
         parser.add_argument("--src_lang", type=str, default=None, help="Source language tag (optional, for multilingual batches, preprocess text files to include language tags.")
         parser.add_argument("--tgt_lang", type=str, default=None, help="Target language tag (optional, for multilingual batches, preprocess text files to include language tags.")
         parser.add_argument("--tgt_tags_included", action='store_true', help="Target text files contain language tags (first token in each line).")
@@ -351,7 +354,8 @@ class MBartTrainer(pl.LightningModule):
         # Optimization params:
         #parser.add_argument("--warmup", type=int, default=1000, help="Number of warmup steps")
         parser.add_argument("--lr", type=float, default=0.00003, help="Initial learning rate")
-        parser.add_argument("--val_every", type=float, default=1.0, help="Number of training steps between validations in percent of an epoch.")
+        parser.add_argument("--check_val_every_n_epoch", type=int, default=None, help="How often to check the validation set in number of epochs.")
+        parser.add_argument("--val_check_interval", type=int, help="How often to check the validation set in number of updates.")
         parser.add_argument("--val_percent_check", default=1.00, type=float, help='Percent of validation data used')
         parser.add_argument("--train_percent_check", default=1.00, type=float, help='Percent of training data used (for testing) NOTE: not available in pytprch lightning==1.1.6')
         parser.add_argument("--max_epochs", type=int, default=100, help="Maximum number of epochs (will stop training even if patience for early stopping has not been reached). Default: 100.")
@@ -405,7 +409,8 @@ def main(args):
                                 max_output_len=args.max_output_len,
                                 src_lang=args.src_lang,
                                 tgt_lang=args.tgt_lang,
-                                remove_xml=args.remove_xml_in_json
+                                remove_xml=args.remove_xml_in_json,
+                                remove_linebreaks=args.remove_linebreaks_in_json
             )
         else:
             train_set = CustomDataset(src_file=args.train_source,
@@ -427,7 +432,8 @@ def main(args):
                                 max_output_len=args.max_output_len,
                                 src_lang=args.src_lang,
                                 tgt_lang=args.tgt_lang,
-                                remove_xml=args.remove_xml_in_json
+                                remove_xml=args.remove_xml_in_json,
+                                remove_linebreaks=args.remove_linebreaks_in_json
             )
         else:
             dev_set = CustomDataset(src_file=args.dev_source,
@@ -450,7 +456,8 @@ def main(args):
                                 max_output_len=args.max_output_len,
                                 src_lang=args.src_lang,
                                 tgt_lang=args.tgt_lang,
-                                remove_xml=args.remove_xml_in_json
+                                remove_xml=args.remove_xml_in_json,
+                                remove_linebreaks=args.remove_linebreaks_in_json
             )
         else:
             test_set = CustomDataset(src_file=args.test_source,
@@ -471,7 +478,8 @@ def main(args):
                                 tokenizer=model.tokenizer,
                                 max_input_len=args.max_input_len,
                                 max_output_len=args.max_output_len,
-                                remove_xml=args.remove_xml_in_json
+                                remove_xml=args.remove_xml_in_json,
+                                remove_linebreaks=args.remove_linebreaks_in_json
             )
         else:
             train_set = CustomBartDataset(src_file=args.train_source,
@@ -487,7 +495,8 @@ def main(args):
                                 tokenizer=model.tokenizer,
                                 max_input_len=args.max_input_len,
                                 max_output_len=args.max_output_len,
-                                remove_xml=args.remove_xml_in_json
+                                remove_xml=args.remove_xml_in_json,
+                                remove_linebreaks=args.remove_linebreaks_in_json
             )
         else:
             dev_set = CustomBartDataset(src_file=args.dev_source,
@@ -504,7 +513,8 @@ def main(args):
                                 tokenizer=model.tokenizer,
                                 max_input_len=args.max_input_len,
                                 max_output_len=args.max_output_len,
-                                remove_xml=args.remove_xml_in_json
+                                remove_xml=args.remove_xml_in_json,
+                                remove_linebreaks=args.remove_linebreaks_in_json
             )
         else:
             test_set = CustomBartDataset(src_file=args.test_source,
@@ -588,9 +598,9 @@ def main(args):
                          max_steps=args.max_steps,
                          replace_sampler_ddp=False,
                          accumulate_grad_batches=args.grad_accum,
-                         val_check_interval=args.val_every,
                          num_sanity_val_steps=args.num_sanity_val_steps,
-                         check_val_every_n_epoch=1,
+                         val_check_interval=args.val_check_interval,
+                         check_val_every_n_epoch=args.check_val_every_n_epoch,
                          limit_val_batches=args.val_percent_check,
                          limit_test_batches=args.test_percent_check,
                          logger=logger,

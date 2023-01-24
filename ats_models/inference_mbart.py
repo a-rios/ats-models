@@ -390,6 +390,7 @@ class Inference(pl.LightningModule):
         parser.add_argument("--remove_special_tokens_containing", type=str, nargs="+", help="Remove tokens from the special_tokens_map that contain this string")
         parser.add_argument("--test_jsons", type=str, nargs='+', default=None,  help="Path to UZH json file(s) with test data.")
         parser.add_argument("--remove_xml_in_json", action="store_true", help="Remove xml markup from text if input is UZH json.")
+        parser.add_argument("--remove_linebreaks_in_json", action="store_true", help="Remove linebreaks from text if input is UZH json.")
 
         parser.add_argument("--batch_size", type=int, default=16, help="Batch size")
         parser.add_argument("--num_workers", type=int, default=0, help="Number of data loader workers")
@@ -463,7 +464,8 @@ def main(args):
                                 max_output_len=args.max_output_len,
                                 src_lang=args.src_lang,
                                 tgt_lang=args.tgt_lang,
-                                remove_xml=args.remove_xml_in_json
+                                remove_xml=args.remove_xml_in_json,
+                                remove_linebreaks=args.remove_linebreaks_in_json
             )
         else:
             test_set = CustomDatasetForInference(src_file=args.test_source,
@@ -484,7 +486,8 @@ def main(args):
                                 tokenizer=inference_model.tokenizer,
                                 max_input_len=args.max_input_len,
                                 max_output_len=args.max_output_len,
-                                remove_xml=args.remove_xml_in_json
+                                remove_xml=args.remove_xml_in_json,
+                                remove_linebreaks=args.remove_linebreaks_in_json
             )
         else:
             test_set = CustomBartDatasetForInference(src_file=args.test_source,

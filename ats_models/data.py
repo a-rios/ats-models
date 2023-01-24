@@ -220,7 +220,8 @@ class CustomDatasetUZHJson(CustomDataset): # TODO: make this more general to wor
                  max_output_len: int=1024,
                  src_lang: Optional[str] =None,
                  tgt_lang: Optional[str] = None,
-                 remove_xml: Optional[bool]=False):
+                 remove_xml: Optional[bool]=False,
+                 remove_linebreaks: Optional[bool]=False):
         self.name = name # train, val, test
         self.tokenizer = tokenizer
         self.max_input_len = max_input_len
@@ -228,6 +229,7 @@ class CustomDatasetUZHJson(CustomDataset): # TODO: make this more general to wor
         self.src_lang = src_lang
         self.tgt_lang =tgt_lang
         self.remove_xml = remove_xml
+        self.remove_linebreaks = remove_linebreaks
         self.tgt_tags_included = True # language tags are added to the tensors from the json
 
         self.map_lang_ids = {'a1': 'de_A1', 'a2': 'de_A2', 'b1':'de_B1'}
@@ -250,6 +252,11 @@ class CustomDatasetUZHJson(CustomDataset): # TODO: make this more general to wor
                         tgt_lang = self.map_lang_ids[tgt_lang]
                     if self.remove_xml:
                         source, target = self._remove_xml(source, target) # TODO: should we remove linebreaks from string?
+                    if self.remove_linebreaks:
+                        source = source.replace('\n', ' ')
+                        source = source.replace('  ', ' ')
+                        target = target.replace('\n', ' ')
+                        target = target.replace('  ', ' ')
                     if not (self._is_empty(source) or self._is_empty(target)): # necessary, still some noisy samples in json that consist of only xml tags without content
                         tgt_id = tgt_lang if self.tgt_lang is None else self.tgt_lang
                         self.inputs.append((src_id, source))
