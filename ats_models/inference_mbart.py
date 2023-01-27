@@ -40,8 +40,10 @@ from .metrics import label_smoothed_nll_loss, get_eval_scores
 from transformers.generation_beam_search import BeamSearchScorer
 from transformers.generation_logits_process import LogitsProcessorList
 from transformers.generation_stopping_criteria import StoppingCriteriaList
-from fudge import FUDGELogits
-from model import Model # TODO include this in repo
+# from fudge import FUDGELogits
+from .fudge import FUDGELogits
+from .fudge_classifier import FudgeClassifier
+# from model import Model # TODO include this in repo
 
 from transformers import (
     BeamSearchScorer,
@@ -284,7 +286,7 @@ class Inference(pl.LightningModule):
                 precondition_topk=self.args.precondition_topk,
                 batch_size=batch_size,
                 soft=self.args.soft,
-                vectorized=self.args.vectorized,
+                # vectorized=self.args.vectorized,
                 analysis_file=self.args.analysis_file,
                 )
             logits_processor.insert(0, fudge_proc)
@@ -370,9 +372,10 @@ class Inference(pl.LightningModule):
         # fudge params
         parser.add_argument("--decode_with_fudge", action='store_true', help="Decode with FUDGE, set condition model.")
         parser.add_argument("--condition_model", type=str, metavar='PATH', help="Condition model (classifier) for FUDGE.")
+        parser.add_argument("--condition_model_checkpoint", type=str, metavar='PATH', help="Condition model checkpoint.")
         parser.add_argument("--fudge_lambda", type=float, default=0.0, help="Lambda for decoding with FUDGE (0 = no weight for condition model == standard decoding).")
         parser.add_argument('--precondition_topk', type=int, default=200, help='consider top k outputs from gpt at each step before conditioning and re-pruning') # TODO do we need this at all?
-        parser.add_argument('--vectorized', action='store_true', help='whether or not to use the vectorized implementation of FUDGE logits_processor')
+        # parser.add_argument('--vectorized', action='store_true', help='whether or not to use the vectorized implementation of FUDGE logits_processor')
         parser.add_argument('--soft', action='store_true', help="type of fudge: if True, all logits not in FUDGE's topk preselection are set to -inf and cannot be generated. Default: False, i.e. these logits are left untouched and could potential still be sampled.")
         parser.add_argument('--analysis_file', type=str, metavar='PATH', default=None, help="File path, if given logits and pre-/post-fudge logits are written to file for analysis")
 
@@ -436,10 +439,13 @@ def main(args):
 
     if args.decode_with_fudge:
             if args.condition_model is not None:
-                condition_model_ckpt = os.path.join(args.condition_model, "model_best.pth.tar")
+                # condition_model_ckpt = os.path.join(args.condition_model, "model_best.pth.tar")
+                condition_model_ckpt = os.path.join(args.condition_model, args.condition_model_checkpoint)
                 cp = torch.load(condition_model_ckpt) # map_location=self.args.device)
-                model_args = cp['args']
-                conditioning_model = Model(model_args, inference_model.tokenizer.pad_token_id, len(inference_model.tokenizer))
+                # model_args = cp['args']
+                model_args = cp['hyper_parameters']['params']
+                # conditioning_model = Model(model_args, inference_model.tokenizer.pad_token_id, len(inference_model.tokenizer))
+                conditioning_model = FudgeClassifier(model_args)
                 conditioning_model.load_state_dict(cp['state_dict'])
                 del cp
                 conditioning_model.eval()

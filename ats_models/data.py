@@ -14,6 +14,7 @@ from torch.utils.data import DataLoader, Dataset
 import re
 import json
 import logging
+import random
 from typing import Optional, List
 from transformers import MBartTokenizer, BartTokenizer
 from .long_models.longformer_mbart import MLongformerEncoderDecoderForConditionalGeneration
@@ -314,7 +315,8 @@ class CustomInferenceDatasetUZHJson(CustomDatasetUZHJson): # TODO: make this mor
                  max_output_len: int=1024,
                  src_lang: Optional[str] =None,
                  tgt_lang: Optional[str] = None,
-                 remove_xml: Optional[bool]=False):
+                 remove_xml: Optional[bool]=False,
+                 remove_linebreaks: Optional[bool]=False):
         super(CustomInferenceDatasetUZHJson, self).__init__( json_files,
                                                     name,
                                                     tokenizer,
@@ -322,7 +324,8 @@ class CustomInferenceDatasetUZHJson(CustomDatasetUZHJson): # TODO: make this mor
                                                     max_output_len,
                                                     src_lang,
                                                     tgt_lang,
-                                                    remove_xml)
+                                                    remove_xml,
+                                                    remove_linebreaks)
         self.reference = []
         for tag, text in self.labels:
             self.reference.append(text)
@@ -364,9 +367,9 @@ class CustomInferenceDatasetUZHJson(CustomDatasetUZHJson): # TODO: make this mor
         return input_ids, decoder_start_token_ids, ref
 
 
-##################
-# BART datasets #
-##################
+###################
+#  BART datasets  #
+###################
 
 
 class CustomBartDataset(CustomDataset):
@@ -549,3 +552,79 @@ class CustomBartInferenceDatasetUZHJson(CustomBartDatasetUZHJson): # TODO: make 
         input_ids = torch.nn.utils.rnn.pad_sequence(input_ids, batch_first=True, padding_value=pad_token_id)
 
         return input_ids, ref
+
+###################
+#  FUDGE datasets #
+###################
+class FudgeDatasetJson(CustomDatasetUZHJson):
+    def __init__(self,
+                 json_files:List[str],
+                 name: str,
+                 tokenizer: MBartTokenizer,
+                 max_input_len: int=1024,
+                 tgt_lang: Optional[str] = None,
+                 remove_xml: Optional[bool]=False,
+                 remove_linebreaks: Optional[bool] = False,
+                 seed: Optional[int] = 42):
+        self.name = name # train, val, test
+        self.tokenizer = tokenizer
+        self.max_input_len = max_input_len
+        self.tgt_lang = tgt_lang
+        self.remove_xml = remove_xml
+        self.remove_linebreaks = remove_linebreaks
+        self.seed = seed
+        self.inv_map_lang_ids = { 'de_A1' : 'a1',  'de_A2': 'a2', 'de_B1' : 'b1'}
+
+        positive_samples = dict() # list of tuples (sentence, 1)
+        negative_samples = dict() # list of tuples (sentence, 0)
+
+        for json_file in json_files:
+            with open(json_file, 'r') as f:
+                json_data = json.load(f)
+                for sample in json_data['segments']:
+                    source = sample['original']
+                    tgt_lang = list(sample.keys())[0]
+                    target = sample[tgt_lang]
+                    if self.remove_xml:
+                        source, target = self._remove_xml(source, target) # TODO: should we remove linebreaks from string?
+                    if self.remove_linebreaks:
+                        source = source.replace('\n', ' ')
+                        source = source.replace('  ', ' ')
+                        target = target.replace('\n', ' ')
+                        target = target.replace('  ', ' ')
+                    if not (self._is_empty(source) or self._is_empty(target)): # necessary, still some noisy samples in json that consist of only xml tags without content
+                        # if json has target level in its name, these are the positive samples
+                        if self.inv_map_lang_ids[self.tgt_lang] in json_file:
+                            positive_samples[target] =1
+                        else:
+                            negative_samples[target] = 0
+                        negative_samples[target] = 0
+        # dedup
+        self.negative_samples_list = []
+        for neg_sample in negative_samples:
+            if neg_sample not in positive_samples:
+                self.negative_samples_list.append((neg_sample, 0))
+        self.positive_samples_list = [(pos_sample, 1) for pos_sample in positive_samples.keys()]
+
+        # TODO limit number of negative samples to positive samples? or use all?
+        self.inputs = self.positive_samples_list + self.negative_samples_list # sample here or leave it to dataloader (dataloader shuffles only train sets)?
+        # random.Random(self.seed).shuffle(self.inputs)
+
+
+    def __getitem__(self, idx):
+            (sample, label) = self.inputs[idx]
+            input_ids = self.tokenizer(sample, return_tensors="pt", max_length=self.max_input_len, truncation=True, padding=False)
+            input_ids = input_ids['input_ids'].squeeze()
+            # input_ids: tokens, eos (2), lang_id -> cut off language id for classifier
+            input_ids = input_ids[:-1]
+            label = torch.tensor([label], dtype=input_ids.dtype)
+            return input_ids, label
+
+    @staticmethod
+    def collate_fn(batch, pad_token_id):
+        samples, labels = list(zip(*batch))
+        samples = torch.nn.utils.rnn.pad_sequence(samples, batch_first=True, padding_value=pad_token_id)
+        # stack labels
+        labels = torch.stack(labels) # shape (batch, 1)
+        labels = labels.squeeze(1)
+        return samples, labels

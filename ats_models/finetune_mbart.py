@@ -72,7 +72,7 @@ class MBartTrainer(pl.LightningModule):
         self.args = params
         self.is_long_model = (self.args.attention_mode == 'sliding_chunks')
 
-        if self.args.from_pretrained is not None: ## TODO check how to do this with resume_ckpt
+        if self.args.from_pretrained is not None:
             self._set_config()
             self._load_pretrained()
 
@@ -631,7 +631,7 @@ def main(args):
 
 
 if __name__ == "__main__":
-    main_arg_parser = argparse.ArgumentParser(description="Fine-tune MBart")
+    main_arg_parser = argparse.ArgumentParser(description="Fine-tune MBart/Bart")
     parser = MBartTrainer.add_model_specific_args(main_arg_parser, os.getcwd())
     args = parser.parse_args()
     main(args)
