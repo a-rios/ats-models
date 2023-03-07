@@ -68,6 +68,9 @@ class Inference(pl.LightningModule):
             if self.args.is_long:
                 self.config = MLongformerEncoderDecoderConfig.from_pretrained(self.args.model_path)
                 self.model = MLongformerEncoderDecoderForConditionalGeneration.from_pretrained(self.args.model_path, config=self.config)
+                # for compatibility with models trained with old longmbart code: add default global_attention_indices to config
+                if not hasattr(self.config, "global_attention_indices"):
+                    self.config.global_attention_indices = [-1]
             else:
                 self.config = MBartConfig.from_pretrained(self.args.model_path)
                 self.model = MBartForConditionalGeneration.from_pretrained(self.args.model_path, config=self.config)
