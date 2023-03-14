@@ -29,12 +29,9 @@ def main(args):
                 tgt_txt = t.read()
                 src_txt = re.sub('[^\S\n\r]+', ' ', src_txt)
                 tgt_txt = re.sub('[^\S\n\r]+', ' ', tgt_txt)
-                segment = {args.src_tag : re.sub('\n+', '\n', src_txt), # replace multiple newlines with one
-                           args.tgt_tag : re.sub('\n+', '\n', tgt_txt),
+                segment = {args.tgt_tag : re.sub('\n+', '\n', tgt_txt),# replace multiple newlines with one
+                           args.src_tag : re.sub('\n+', '\n', src_txt)
                     }
-                # segment = {args.src_tag : src_txt,
-                #            args.tgt_tag : repr(tgt_txt)
-                #     }
                 segments.append(segment)
     else: #monolingual
         for filename in os.listdir(args.input_dir):
