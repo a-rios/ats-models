@@ -35,6 +35,8 @@ from functools import partial
 from .data import FudgeDatasetJson
 from .finetune_mbart import LitProgressBar
 
+from sklearn.metrics import roc_curve, roc_auc_score, accuracy_score, precision_recall_fscore_support
+
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
@@ -58,7 +60,6 @@ class FudgeLSTM(pl.LightningModule):
     def forward(self, inputs):
         lengths = torch.where(inputs == self.tokenizer.pad_token_id, 0, 1).sum(dim=1)
         inputs = self.embed(inputs) # batch x seq x hidden_dim
-        #print("len 3 ", lengths)
         inputs = pack_padded_sequence(inputs.permute(1, 0, 2), lengths.cpu(), enforce_sorted=False)
         rnn_output, _ = self.rnn(inputs)
         rnn_output, _ = pad_packed_sequence(rnn_output)
@@ -80,7 +81,6 @@ class FudgeClassifier(pl.LightningModule):
         self.num_not_improved = 0
         self.save_hyperparameters()
         self.init_model()
-        # self.ce = torch.nn.CrossEntropyLoss(ignore_index=self.tokenizer.pad_token_id)
         self.bce = torch.nn.BCEWithLogitsLoss()
         self.set_metrics()
 
@@ -106,15 +106,14 @@ class FudgeClassifier(pl.LightningModule):
         max_seqlen = torch.max(lengths)
         expanded_lengths = lengths.unsqueeze(0).repeat((max_seqlen, 1))  # [[2, 3, 1], [2, 3, 1], [2, 3, 1]]
         indices = torch.arange(max_seqlen).unsqueeze(1).repeat((1, lengths.size(0))).to(lengths.device)  # [[0, 0, 0], [1, 1, 1], [2, 2, 2]]
-        return expanded_lengths > indices  # pad locations are 0. #[[1, 1, 1], [1, 1, 0], [0, 1, 0]]. seqlen x bs
+        return expanded_lengths > indices  # pad locations are 0. #[[1, 1, 1], [1, 1, 0], [0, 1, 0]]. seqlen x bs # lengths: bs. Ex: [2, 3, 1]
 
     def forward(self, inputs, labels):
         predictions, lengths = self.model(inputs) # predictions: (batch_size, seq_len)
         if labels is not None:
-            labels = labels.unsqueeze(1).expand(-1, predictions.shape[1]).to(dtype=predictions.dtype) # (batch_size, seq_len): learn for all positions at once
-            padding_mask = self.create_padding_mask(lengths)
+            labels = labels.unsqueeze(1).expand(-1, predictions.shape[1]).to(dtype=labels.dtype) # (batch_size, seq_len): learn for all positions at once
+            padding_mask = self.create_padding_mask(lengths).permute(1,0)
             loss = self.bce(predictions.flatten()[padding_mask.flatten()==1], labels.flatten().float()[padding_mask.flatten()==1])
-        # loss = self.ce(predictions, labels)
             return loss, predictions
         else: # during inference
             return predictions
@@ -175,7 +174,7 @@ class FudgeClassifier(pl.LightningModule):
         print(result)
 
     def configure_optimizers(self):
-        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=self.args.lr, weight_decay=self.args.weight_decay)
+        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=self.args.lr)
         interval = "step" if args.val_check_interval is not None else "epoch"
         frequency = args.val_check_interval if args.val_check_interval is not None else args.check_val_every_n_epoch
 
@@ -266,17 +265,20 @@ class FudgeClassifier(pl.LightningModule):
 # TODO maybe better use another scheduler e.g. self.scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(self.optimizer, T_max=10)
     @staticmethod
     def add_model_specific_args(parser, root_dir):
-        parser.add_argument("--pretrained_model_path", type=str, help="Path to the generator model directory (need to load tokenizer/initialize embeddings).")
-        parser.add_argument("--train_jsons", type=str, nargs='+', default=None,  help="Path to UZH json file(s) with training data.")
-        parser.add_argument("--dev_jsons", type=str, nargs='+', default=None,  help="Path to UZH json file(s) with dev data.")
+        parser.add_argument("--pretrained_model_path", type=str, required=True, help="Path to the generator model directory (need to load tokenizer/initialize embeddings).")
+        parser.add_argument("--train_jsons", type=str, nargs='+', required=True, default=None,  help="Path to UZH json file(s) with training data.")
+        parser.add_argument("--dev_jsons", type=str, nargs='+', required=True, default=None,  help="Path to UZH json file(s) with dev data.")
         parser.add_argument("--test_jsons", type=str, nargs='+', default=None,  help="Path to UZH json file(s) with test data.")
+        parser.add_argument("--print_train", action='store_true',  help="Print training data to train.pos/neg in model folder for debugging.")
         parser.add_argument("--remove_xml_in_json", action="store_true", help="Remove xml markup from text if input is UZH json.")
         parser.add_argument("--remove_linebreaks_in_json", action="store_true", help="Remove linebreaks from text if input is UZH json.")
-        parser.add_argument("--tgt_lang", type=str, default=None, help="Target language tag (optional, for multilingual batches, preprocess text files to include language tags.")
-        parser.add_argument("--max_input_len", type=int, default=4096, help="maximum number of wordpieces in input. Longer sequences will be truncated.")
+        parser.add_argument("--tgt_lang", type=str, required=True, default=None, help="If multiple target languages in json files, use tgt_lang as the True class.")
+        parser.add_argument("--max_input_len", type=int, default=4096, help="maximum number of wordpieces in input. Longer sequences will be truncated. Default: 4096.")
+        parser.add_argument("--min_input_len", type=int, default=3, help="minimum number of words in input (full words, not pieces). Shorter sequences will be discarded. Default: 3.")
 
-        parser.add_argument("--save_dir", type=str, metavar='PATH', help="Directory to save model.")
-        parser.add_argument("--save_prefix", type=str, default='test', help="subfolder in save_dir for this model")
+
+        parser.add_argument("--save_dir", type=str, metavar='PATH', required=True, help="Directory to save model.")
+        parser.add_argument("--save_prefix", type=str, default='fudge', help="subfolder in save_dir for this model")
         parser.add_argument("--resume_ckpt", type=str, help="Path of a checkpoint to resume from")
 
         parser.add_argument("--num_sanity_val_steps", type=int, default=0,  help="Number of evaluation sanity steps to run before starting the training. Default: 0.")
@@ -298,10 +300,9 @@ class FudgeClassifier(pl.LightningModule):
         parser.add_argument("--lr_scheduler", type=str, default='cosine', help="Learning Rate scheduler (either 'plateau', 'cosine' (=ReduceLROnPlateau or CosineAnnealingLR).")
         parser.add_argument("--lr_reduce_patience", type=int, default=8, help="Patience for LR reduction in Plateau scheduler.")
         parser.add_argument("--lr_reduce_factor", type=float, default=0.5, help="Learning rate reduce factor for Plateau scheduler.")
-        parser.add_argument('--weight_decay', type=float, default=0.0003, help='weight decay for optimizer')
         parser.add_argument("--lr_cooldown", type=int, default=0, help="Cooldown for Plateau scheduler (number of epochs to wait before resuming normal operation after lr has been reduced.).")
         parser.add_argument("--disable_checkpointing", action='store_true', help="No logging or checkpointing")
-        parser.add_argument("--save_top_k", type=int, default=5, help="Number of best checkpoints to keep. Others will be removed.")
+        parser.add_argument("--save_top_k", type=int, default=1, help="Number of best checkpoints to keep. Others will be removed.")
         parser.add_argument("--save_every_n_val_epochs", type=int, default=0, help="Number of validation epochs between checkpoints.")
         parser.add_argument('--grad_ckpt', action='store_true', help='Enable gradient checkpointing to save memory')
         parser.add_argument("--progress_bar_refresh_rate", type=int, default=0, help="How often to refresh progress bar (in steps). Value 0 disables progress bar.")
@@ -339,15 +340,28 @@ def main(args):
                                 name="train",
                                 tokenizer=model.tokenizer,
                                 max_input_len=args.max_input_len,
-                                tgt_lang=args.tgt_lang,
+                                tgt_tag=args.tgt_lang,
                                 remove_xml=args.remove_xml_in_json,
                                 remove_linebreaks=args.remove_linebreaks_in_json,
                                 seed=args.seed)
+    if args.print_train:
+        with open(os.path.join(args.save_dir, args.save_prefix, "train.pos"), 'w') as f:
+            for sample in train_set.positive_samples_list:
+                f.write(sample[0])
+                if args.remove_linebreaks_in_json:
+                    f.write("\n")
+
+        with open(os.path.join(args.save_dir, args.save_prefix, "train.neg"), 'w') as f:
+            for sample in train_set.negative_samples_list:
+                f.write(sample[0])
+                if args.remove_linebreaks_in_json:
+                    f.write("\n")
+
     dev_set = FudgeDatasetJson(json_files=args.dev_jsons,
                                 name="dev",
                                 tokenizer=model.tokenizer,
                                 max_input_len=args.max_input_len,
-                                tgt_lang=args.tgt_lang,
+                                tgt_tag=args.tgt_lang,
                                 remove_xml=args.remove_xml_in_json,
                                 remove_linebreaks=args.remove_linebreaks_in_json,
                                 seed=args.seed)
@@ -357,7 +371,7 @@ def main(args):
                                     name="test",
                                     tokenizer=model.tokenizer,
                                     max_input_len=args.max_input_len,
-                                    tgt_lang=args.tgt_lang,
+                                    tgt_tag=args.tgt_lang,
                                     remove_xml=args.remove_xml_in_json,
                                     remove_linebreaks=args.remove_linebreaks_in_json,
                                     seed=args.seed)
@@ -369,6 +383,9 @@ def main(args):
         logger = TensorBoardLogger(save_dir=os.path.join(args.save_dir, args.save_prefix), name="tensorboard_logs")
 
     print(args)
+    with open(os.path.join(args.save_dir, args.save_prefix, "arguments.txt"), 'w') as f:
+        for k, v in args.__dict__.items():
+            f.write(f"{k}: {v}\n")
 
     model.lr_mode='max'
     if args.monitored_metric == 'vloss':

@@ -256,8 +256,10 @@ class CustomDatasetUZHJson(CustomDataset): # TODO: make this more general to wor
                     if self.remove_linebreaks:
                         source = source.replace('\n', ' ')
                         source = source.replace('  ', ' ')
+                        source = source.strip()
                         target = target.replace('\n', ' ')
                         target = target.replace('  ', ' ')
+                        target = target.strip()
                     if not (self._is_empty(source) or self._is_empty(target)): # necessary, still some noisy samples in json that consist of only xml tags without content
                         tgt_id = tgt_lang if self.tgt_lang is None else self.tgt_lang
                         self.inputs.append((src_id, source))
@@ -298,9 +300,12 @@ class CustomDatasetUZHJson(CustomDataset): # TODO: make this more general to wor
 
 
     def _remove_xml(self, source, target):
-        src_soup = BeautifulSoup(source, "html.parser")
-        trg_soup = BeautifulSoup(target, "html.parser")
-        return src_soup.text, trg_soup.text
+        if source is None:
+            return None, BeautifulSoup(target, "html.parser").text
+        else:
+            src_soup = BeautifulSoup(source, "html.parser")
+            trg_soup = BeautifulSoup(target, "html.parser")
+            return src_soup.text, trg_soup.text
 
     def _is_empty(self, string):
         return re.match('^[\s\t\n]*$', string)
@@ -562,14 +567,16 @@ class FudgeDatasetJson(CustomDatasetUZHJson):
                  name: str,
                  tokenizer: MBartTokenizer,
                  max_input_len: int=1024,
-                 tgt_lang: Optional[str] = None,
+                 min_input_len: int=3,
+                 tgt_tag: str = None,
                  remove_xml: Optional[bool]=False,
                  remove_linebreaks: Optional[bool] = False,
                  seed: Optional[int] = 42):
         self.name = name # train, val, test
         self.tokenizer = tokenizer
         self.max_input_len = max_input_len
-        self.tgt_lang = tgt_lang
+        self.min_input_len = min_input_len
+        self.tgt_tag = tgt_tag
         self.remove_xml = remove_xml
         self.remove_linebreaks = remove_linebreaks
         self.seed = seed
@@ -582,41 +589,50 @@ class FudgeDatasetJson(CustomDatasetUZHJson):
             with open(json_file, 'r') as f:
                 json_data = json.load(f)
                 for sample in json_data['segments']:
-                    source = sample['original']
+                    source = sample['original'] if 'original' in sample else None
                     tgt_lang = list(sample.keys())[0]
                     target = sample[tgt_lang]
                     if self.remove_xml:
-                        source, target = self._remove_xml(source, target) # TODO: should we remove linebreaks from string?
+                        source, target = self._remove_xml(source, target)
                     if self.remove_linebreaks:
-                        source = source.replace('\n', ' ')
-                        source = source.replace('  ', ' ')
+                        if source is not None:
+                            source = source.replace('\n', ' ')
+                            source = source.replace('  ', ' ')
+                            source = source.strip()
                         target = target.replace('\n', ' ')
                         target = target.replace('  ', ' ')
-                    if not (self._is_empty(source) or self._is_empty(target)): # necessary, still some noisy samples in json that consist of only xml tags without content
-                        # if json has target level in its name, these are the positive samples
-                        if self.inv_map_lang_ids[self.tgt_lang] in json_file:
-                            positive_samples[target] =1
+                        target = target.strip()
+                    if not (source is None or self._is_empty(source)) and len(source.split(' ')) > self.min_input_len:
+                        negative_samples[source] = 0
+                    if not self._is_empty(target) and len(target.split(' ')) > self.min_input_len: # necessary, still some noisy samples in json that consist of only xml tags without content
+                        # if json has target level in its name, these are the positive samples if tgt_lang == given tgt_tag
+                        if self.inv_map_lang_ids[self.tgt_tag] == tgt_lang:
+                            positive_samples[target] = 1
                         else:
                             negative_samples[target] = 0
-                        negative_samples[target] = 0
         # dedup
         self.negative_samples_list = []
+        d = 0
+        print(len(negative_samples))
         for neg_sample in negative_samples:
             if neg_sample not in positive_samples:
                 self.negative_samples_list.append((neg_sample, 0))
+            else:
+                d +=1
+        print(f"{d} duplicates: removed from negative_samples")
         self.positive_samples_list = [(pos_sample, 1) for pos_sample in positive_samples.keys()]
 
         # TODO limit number of negative samples to positive samples? or use all?
         self.inputs = self.positive_samples_list + self.negative_samples_list # sample here or leave it to dataloader (dataloader shuffles only train sets)?
+        print(f"Created {self.name} data set with total {len(self.inputs)} samples, {len(self.positive_samples_list)} positive and {len(self.negative_samples_list)} negative.")
+        # exit(0)
         # random.Random(self.seed).shuffle(self.inputs)
 
 
     def __getitem__(self, idx):
             (sample, label) = self.inputs[idx]
-            input_ids = self.tokenizer(sample, return_tensors="pt", max_length=self.max_input_len, truncation=True, padding=False)
+            input_ids = self.tokenizer(sample, return_tensors="pt", max_length=self.max_input_len, truncation=True, padding=False, add_special_tokens=False)
             input_ids = input_ids['input_ids'].squeeze()
-            # input_ids: tokens, eos (2), lang_id -> cut off language id for classifier
-            input_ids = input_ids[:-1]
             label = torch.tensor([label], dtype=input_ids.dtype)
             return input_ids, label
 
