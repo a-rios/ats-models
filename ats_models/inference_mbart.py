@@ -37,9 +37,10 @@ from .data import CustomDatasetForInference, CustomInferenceDatasetUZHJson, Cust
 from .finetune_mbart import MBartTrainer, remove_special_tokens
 from .metrics import label_smoothed_nll_loss, get_eval_scores
 
-from transformers.generation_beam_search import BeamSearchScorer
-from transformers.generation_logits_process import LogitsProcessorList
-from transformers.generation_stopping_criteria import StoppingCriteriaList
+from transformers.generation.beam_search import BeamSearchScorer
+from transformers.generation.logits_process import LogitsProcessorList
+from transformers.generation.stopping_criteria import StoppingCriteriaList
+from transformers.generation.configuration_utils import GenerationConfig
 # from fudge import FUDGELogits
 from .fudge import FUDGELogits
 from .fudge_classifier import FudgeClassifier
@@ -105,6 +106,44 @@ class Inference(pl.LightningModule):
             decoder_start_token_ids = None
         input_ids, attention_mask = CustomDatasetForInference.prepare_input(input_ids, self.args.is_long, self.config.attention_mode, self.config.attention_window, self.tokenizer.pad_token_id, self.config.global_attention_indices)
 
+        decoder_start_token_id = None
+        if decoder_start_token_ids is None: # if no per sample start token given, set decoder_start_token_id to tgt_lang for mbart or bos_token_id for bart
+            decoder_start_token_id=self.tokenizer.convert_tokens_to_ids(self.testset.tgt_lang) if self.args.model_type == "mbart" else self.tokenizer.bos_token_id
+
+        generation_config = GenerationConfig(
+                            decoder_start_token_id=decoder_start_token_id,
+                            repetition_penalty=self.args.repetition_penalty,
+                            no_repeat_ngram_size=None,
+                            encoder_no_repeat_ngram_size=None,
+                            bad_words_ids=None,
+                            min_length=0,
+                            max_length=self.args.max_output_len,
+                            eos_token_id=self.model.config.eos_token_id,
+                            pad_token_id=self.tokenizer.pad_token_id,
+                            forced_bos_token_id=None,
+                            forced_eos_token_id=None,
+                            num_beams=self.args.beam_size,
+                            nums_beam_groups=self.args.num_beam_groups,
+                            diversity_penalty=None,
+                            remove_invalid_values=None,
+                            exponential_decay_length_penalty=None,
+                            renormalize_logits=None,
+                            suppress_tokens=None,
+                            begin_suppress_tokens=None,
+                            forced_decoder_ids=None,
+                            top_k=self.args.top_k,
+                            top_p=self.args.top_p,
+                            typical_p=self.args.typical_p,
+                            temperature=self.args.temperature,
+                            early_stopping=self.args.do_early_stopping,
+                            use_cache=True,
+                            do_sample=self.args.do_sample,
+                            num_return_sequences=self.args.num_return_sequences,
+                            output_scores=True if self.args.output_to_json else self.args.output_scores,
+                            return_dict_in_generate=True if self.args.output_to_json else self.args.return_dict_in_generate
+                            )
+        generation_config.validate()
+
         if self.args.decode_with_fudge and self.args.fudge_lambda > 0:
             if decoder_start_token_ids is None:
                 if self.args.model_type == "mbart":
@@ -115,37 +154,23 @@ class Inference(pl.LightningModule):
             generated_ids = self._decode_with_fudge(input_ids=input_ids,
                                     attention_mask=attention_mask,
                                     decoder_input_ids=decoder_start_token_ids,
-                                    device=input_ids.device)
+                                    device=input_ids.device,
+                                    generation_config=generation_config)
 
 
         elif decoder_start_token_ids is not None: # no reference but list of target language tags given
             #decoder_start_token_ids = torch.tensor([self.tokenizer.convert_tokens_to_ids(tag) for tag in decoder_start_tokens], device=input_ids.device).unsqueeze(1)
-            generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
-                                            use_cache=True, max_length=self.args.max_output_len,
-                                            num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_input_ids=decoder_start_token_ids,
-                                            do_sample=self.args.do_sample,
-                                            temperature=self.args.temperature,
-                                            top_k=self.args.top_k,
-                                            top_p=self.args.top_p,
-                                            repetition_penalty=self.args.repetition_penalty,
-                                            length_penalty=self.args.length_penalty,
-                                            num_return_sequences=self.args.num_return_sequences,
-                                            output_scores=True if self.args.output_to_json else self.args.output_scores,
-                                            return_dict_in_generate=True if self.args.output_to_json else self.args.return_dict_in_generate)
+            generated_ids = self.model.generate(input_ids=input_ids,
+                                                attention_mask=attention_mask,
+                                                generation_config=generation_config,
+                                                decoder_input_ids=decoder_start_token_ids
+                                        )
 
         else: # no reference, need either decoder_start_tokens (--target_tags) for multilingual batches or --tgt_lang
-            generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
-                                            use_cache=True, max_length=self.max_input_len,
-                                            num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_start_token_id=self.tokenizer.convert_tokens_to_ids(self.testset.tgt_lang) if self.args.model_type == "mbart" else self.tokenizer.bos_token_id,
-                                            do_sample=self.args.do_sample,
-                                            temperature=self.args.temperature,
-                                            top_k=self.args.top_k,
-                                            top_p=self.args.top_p,
-                                            repetition_penalty=self.args.repetition_penalty,
-                                            length_penalty=self.args.length_penalty,
-                                            num_return_sequences=self.args.num_return_sequences,
-                                            output_scores=True if self.args.output_to_json else self.args.output_scores,
-                                            return_dict_in_generate=True if self.args.output_to_json else self.args.return_dict_in_generate)
+            generated_ids = self.model.generate(input_ids=input_ids,
+                                                attention_mask=attention_mask,
+                                                generation_config=generation_config
+                                            )
 
         if not self.args.output_to_json:
             generated_strs = self.tokenizer.batch_decode(generated_ids.tolist(), skip_special_tokens=True, clean_up_tokenization_spaces=True)
@@ -246,7 +271,8 @@ class Inference(pl.LightningModule):
     def _decode_with_fudge(self, input_ids: torch.Tensor,
                            attention_mask: torch.Tensor,
                            decoder_input_ids: torch.Tensor, # TODO: check decoder_input_ids
-                           device: torch.device):
+                           device: torch.device,
+                           generation_config: GenerationConfig):
 
         batch_size=input_ids.shape[0]
         model_kwargs = {'attention_mask': attention_mask, 'output_attentions': False, 'output_hidden_states': False, 'use_cache': True}
@@ -256,28 +282,11 @@ class Inference(pl.LightningModule):
 
         logits_processor = LogitsProcessorList()
         logits_processor = self.model._get_logits_processor(
-            repetition_penalty=self.args.repetition_penalty,
-            no_repeat_ngram_size=None,
-            encoder_no_repeat_ngram_size=None,
+            generation_config=generation_config,
             input_ids_seq_length=decoder_input_ids.shape[-1],
             encoder_input_ids=decoder_input_ids,
-            bad_words_ids=None,
-            min_length=0,
-            max_length=self.args.max_output_len,
-            eos_token_id=self.model.config.eos_token_id,
-            forced_bos_token_id=None,
-            forced_eos_token_id=None,
             prefix_allowed_tokens_fn=None,
-            num_beams=self.args.beam_size,
-            num_beam_groups=self.args.num_beam_groups,
-            diversity_penalty=None,
-            remove_invalid_values=None,
-            exponential_decay_length_penalty=None,
             logits_processor=logits_processor,
-            renormalize_logits=None,
-            suppress_tokens=None,
-            begin_suppress_tokens=None,
-            forced_decoder_ids=None,
         )
 
         if self.args.fudge_lambda > 0.0:
@@ -294,33 +303,26 @@ class Inference(pl.LightningModule):
                 )
             logits_processor.insert(0, fudge_proc)
 
-        stopping_criterion = StoppingCriteriaList([MaxLengthCriteria(max_length=self.test_set.max_output_len)])
+        stopping_criteria = self.model._get_stopping_criteria(
+            generation_config=generation_config, stopping_criteria=[]
+        )
 
         if self.args.do_sample:
             # instantiate logits warpers for multinomial sampling techniques
             # default to temperature==1.0, i.e. no effect
-            logits_warper = LogitsProcessorList([TemperatureLogitsWarper(self.args.temperature)])
-
-            if self.args.top_k is not None and self.args.top_k > 0: # stochastic decoding with beam
-                logits_warper.insert(0, TopKLogitsWarper(self.args.top_k, min_tokens_to_keep=self.args.beam_size))
-            if self.args.top_p is not None and self.args.top_p < 1.0:
-                logits_warper.insert(0, TopPLogitsWarper(self.args.top_p, min_tokens_to_keep=self.args.beam_size))
-            if self.args.typical_p is not None:
-                logits_warper.insert(0, TypicalLogitsWarper(self.args.typical_p, min_tokens_to_keep=self.args.beam_size))
-
+            logits_warper = self._get_logits_warper(generation_config)
             print('Logits Warper List:', logits_warper)
 
         if self.args.beam_size > 1: # beam decoding
-
             # breakpoint()
             # instantiate a BeamSearchScorer
             beam_scorer = BeamSearchScorer(
                 batch_size=batch_size,
-                num_beams=self.args.beam_size,
-                num_beam_hyps_to_keep=self.args.num_return_sequences,
-                length_penalty=self.args.length_penalty,
-                do_early_stopping=self.args.do_early_stopping,
-                num_beam_groups=self.args.num_beam_groups,
+                num_beams=generation_config.num_beams,
+                num_beam_hyps_to_keep=generation_config.num_return_sequences,
+                length_penalty=generation_config.length_penalty,
+                do_early_stopping=generation_config.early_stopping,
+                num_beam_groups=generation_config.num_beam_groups,
                 device=device,
                 )
 
@@ -330,18 +332,18 @@ class Inference(pl.LightningModule):
                     beam_scorer,
                     logits_processor=logits_processor,
                     logits_warper=logits_warper,
-                    stopping_criteria=stopping_criterion,
+                    stopping_criteria=stopping_criteria,
                     **model_kwargs
                     )
 
             else: # regular (greedy) beam search with FUDGE - uses beam_search()
                 decoder_input_ids, model_kwargs = self.model._expand_inputs_for_generation(
-                    decoder_input_ids, expand_size=self.args.beam_size, is_encoder_decoder=self.model.config.is_encoder_decoder, **model_kwargs)
+                    input_ids=decoder_input_ids, expand_size=self.args.beam_size, is_encoder_decoder=self.model.config.is_encoder_decoder, **model_kwargs)
                 outputs = self.model.beam_search(
                     decoder_input_ids,
                     beam_scorer,
                     logits_processor=logits_processor,
-                    stopping_criteria=stopping_criterion,
+                    stopping_criteria=stopping_criteria,
                     **model_kwargs
                     )
         else:
@@ -414,6 +416,7 @@ class Inference(pl.LightningModule):
         parser.add_argument("--temperature", default=1.0, type=float, help='The value used to module the next token probabilities.')
         parser.add_argument("--top_k", default=50, type=int, help='The number of highest probability vocabulary tokens to keep for top-k-filtering.')
         parser.add_argument("--top_p", default=1.0, type=float, help='If set to float < 1, only the most probable tokens with probabilities that add up to :obj:`top_p` or higher are kept for generation.')
+        parser.add_argument("--typical_p", default=1.0, type=float, help='Local typicality measures how similar the conditional probability of predicting a target token next is to the expected conditional probability of predicting a random token next, given the partial text already generated. If set to float < 1, the smallest set of the most locally typical tokens with probabilities that add up to `typical_p` or higher are kept for generation.')
         parser.add_argument("--repetition_penalty", default=1.0, type=float, help='The parameter for repetition penalty. 1.0 means no penalty.')
         parser.add_argument("--length_penalty", default=1.0, type=float, help='Exponential penalty to the length. 1.0 means no penalty.')
         parser.add_argument("--output_scores", default=False, action="store_true", help='Whether or not to return the prediction scores.')
