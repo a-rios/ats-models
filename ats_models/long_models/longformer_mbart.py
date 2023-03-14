@@ -111,28 +111,28 @@ class LongMBartEncoder(MBartEncoder):
     def __init__(self, config: MBartConfig, embed_tokens: Optional[nn.Embedding] = None):
         super().__init__(config)
 
-        self.dropout = config.dropout
-        self.layerdrop = config.encoder_layerdrop
+        # self.dropout = config.dropout
+        # self.layerdrop = config.encoder_layerdrop
 
         embed_dim = config.d_model
-        self.padding_idx = config.pad_token_id
+        # self.padding_idx = config.pad_token_id
         self.max_source_positions = config.max_encoder_position_embeddings
-        self.embed_scale = math.sqrt(embed_dim) if config.scale_embedding else 1.0
+        # self.embed_scale = math.sqrt(embed_dim) if config.scale_embedding else 1.0
 
-        if embed_tokens is not None:
-            self.embed_tokens = embed_tokens
-        else:
-            self.embed_tokens = nn.Embedding(config.vocab_size, embed_dim, self.padding_idx)
+        # if embed_tokens is not None:
+        #     self.embed_tokens = embed_tokens
+        # else:
+        #     self.embed_tokens = nn.Embedding(config.vocab_size, embed_dim, self.padding_idx)
 
         self.embed_positions = MBartLearnedPositionalEmbedding(
             self.max_source_positions,
             embed_dim,
         )
         self.layers = nn.ModuleList([LongMBartEncoderLayer(config) for _ in range(config.encoder_layers)])
-        self.layernorm_embedding = nn.LayerNorm(embed_dim)
-        self.layer_norm = nn.LayerNorm(config.d_model)
-
-        self.gradient_checkpointing = False
+        # self.layernorm_embedding = nn.LayerNorm(embed_dim)
+        # self.layer_norm = nn.LayerNorm(config.d_model)
+        #
+        # self.gradient_checkpointing = False
         # Initialize weights and apply final processing
         self.post_init()
 
@@ -179,7 +179,7 @@ class LongMBartEncoder(MBartEncoder):
             output_hidden_states (`bool`, *optional*):
                 Whether or not to return the hidden states of all layers. See `hidden_states` under returned tensors
                 for more detail.
-            return_dict (`bool`, *optional*):
+            return_dict (`bool`, *optional*):hidden_states
                 Whether or not to return a [`~utils.ModelOutput`] instead of a plain tuple.
         """
         output_attentions = output_attentions if output_attentions is not None else self.config.output_attentions
@@ -281,11 +281,8 @@ class LongMBartModel(MBartModel):
     def __init__(self, config: MBartConfig):
         super().__init__(config)
 
-        padding_idx, vocab_size = config.pad_token_id, config.vocab_size
-        self.shared = nn.Embedding(vocab_size, config.d_model, padding_idx)
-
+        # decoder is defined in transformers.models.mbart.modeling_mbart.MBartModel
         self.encoder = LongMBartEncoder(config, self.shared)
-        self.decoder = MBartDecoder(config, self.shared)
 
         # Initialize weights and apply final processing
         self.post_init()

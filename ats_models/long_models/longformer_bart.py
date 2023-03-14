@@ -111,13 +111,8 @@ class LongBartEncoder(BartEncoder):
     def __init__(self, config: BartConfig, embed_tokens: Optional[nn.Embedding] = None):
         super().__init__(config)
 
-        self.dropout = config.dropout
-        self.layerdrop = config.encoder_layerdrop
-
         embed_dim = config.d_model
-        self.padding_idx = config.pad_token_id
         self.max_source_positions = config.max_encoder_position_embeddings
-        self.embed_scale = math.sqrt(embed_dim) if config.scale_embedding else 1.0
 
         self.embed_tokens = nn.Embedding(config.vocab_size, embed_dim, self.padding_idx)
 
@@ -129,9 +124,7 @@ class LongBartEncoder(BartEncoder):
             embed_dim,
         )
         self.layers = nn.ModuleList([LongBartEncoderLayer(config) for _ in range(config.encoder_layers)])
-        self.layernorm_embedding = nn.LayerNorm(embed_dim)
 
-        self.gradient_checkpointing = False
         # Initialize weights and apply final processing
         self.post_init()
 
@@ -279,11 +272,8 @@ class LongBartModel(BartModel):
     def __init__(self, config: BartConfig):
         super().__init__(config)
 
-        padding_idx, vocab_size = config.pad_token_id, config.vocab_size
-        self.shared = nn.Embedding(vocab_size, config.d_model, padding_idx)
-
+        # decoder is defined in transformers.models.bart.modeling_bart.BartModel
         self.encoder = LongBartEncoder(config, self.shared)
-        self.decoder = BartDecoder(config, self.shared)
 
         # Initialize weights and apply final processing
         self.post_init()
