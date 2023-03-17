@@ -345,6 +345,7 @@ def main(args):
                                 remove_linebreaks=args.remove_linebreaks_in_json,
                                 seed=args.seed)
     if args.print_train:
+        os.makedirs(os.path.dirname(os.path.join(args.save_dir, args.save_prefix, "train.pos")), exist_ok=True)
         with open(os.path.join(args.save_dir, args.save_prefix, "train.pos"), 'w') as f:
             for sample in train_set.positive_samples_list:
                 f.write(sample[0])

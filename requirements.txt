@@ -1,8 +1,8 @@
 pytorch_lightning
 transformers
-torch==1.10.2
+torch
 tensorboardX
 rouge_score
 sacrebleu
-datasets==1.2.1
+datasets
 sentencepiece
