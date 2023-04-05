@@ -77,7 +77,10 @@ class MBartTrainer(pl.LightningModule):
             self._load_pretrained()
 
         self.train_dataloader_object = self.val_dataloader_object = self.test_dataloader_object = None
-        self.current_checkpoint =0
+        if self.args.resume_ckpt is not None:
+            self.current_checkpoint = re.search(r'checkpoint=(\d+)_', self.args.resume_ckpt).group(1)
+        else:
+            self.current_checkpoint = 0
         self.best_checkpoint = None
         self.best_metric = 10000 if self.args.early_stopping_metric == 'vloss' else 0 ## keep track of best dev value of whatever metric is used in early stopping callback
         self.num_not_improved = 0
@@ -432,7 +435,7 @@ def main(args):
                                 max_output_len=args.max_output_len,
                                 src_lang=args.src_lang,
                                 tgt_lang=args.tgt_lang,
-                                remove_xml=args.remove_xml_in_json,
+                                remove_xml=args.remove_xml_iresume_ckptn_json,
                                 remove_linebreaks=args.remove_linebreaks_in_json
             )
         else:
@@ -574,7 +577,7 @@ def main(args):
         model.lr_mode='min'
     early_stop_callback = EarlyStopping(monitor=args.early_stopping_metric, min_delta=args.min_delta, patience=args.patience, verbose=True, mode=model.lr_mode) # metrics: val_loss, bleu, rougeL
 
-    checkpoint_name = "{{epoch:02d}}_{{{}".format(args.early_stopping_metric)
+    checkpoint_name = "{{checkpoint:02d}}_{{{}".format(args.early_stopping_metric)
     checkpoint_name += ':.5f}'
 
     checkpoint_callback = ModelCheckpoint(
