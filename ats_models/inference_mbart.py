@@ -24,7 +24,7 @@ from torch.utils.data import DataLoader, Dataset
 import pytorch_lightning as pl
 from pytorch_lightning.loggers import TensorBoardLogger, WandbLogger
 from pytorch_lightning.callbacks import TQDMProgressBar
-from pytorch_lightning.plugins import DDPPlugin
+from pytorch_lightning.strategies import DDPStrategy
 
 from transformers import MBartTokenizer, MBartForConditionalGeneration, MBartConfig, BartTokenizer, BartForConditionalGeneration, BartConfig
 from .long_models.longformer_mbart import MLongformerEncoderDecoderForConditionalGeneration, MLongformerEncoderDecoderConfig
@@ -93,6 +93,7 @@ class Inference(pl.LightningModule):
             print("special tokens after:", model.tokenizer.special_tokens_map)
 
         self.test_dataloader_object = None
+        self.test_step_outputs = []
 
     def test_step(self, batch, batch_nb):
         for p in self.model.parameters():
@@ -179,9 +180,9 @@ class Inference(pl.LightningModule):
                     f.write(sample + "\n")
 
             if self.test_set.reference is not None: # no ref = set of None
-                return get_eval_scores(ref, generated_strs)
+                self.test_step_outputs.append(get_eval_scores(ref, generated_strs))
             else:
-                return {'decoded' : generated_strs}
+                self.test_step_outputs.append({'decoded' : generated_strs})
 
         else:
             # if running inference with self.args.batch_size
@@ -224,14 +225,13 @@ class Inference(pl.LightningModule):
                 with open(self.args.translation, 'a') as f:
                     f.write(json_line+"\n")
 
-            if self.test_set.reference is not None:
-                return get_eval_scores(ref, generated_strs)
-
+            if self.test_set.reference is not None: # no ref = set of None
+                self.test_step_outputs.append(get_eval_scores(ref, generated_strs))
             else:
-                return {'decoded' : generated_strs}
+                self.test_step_outputs.append({'decoded' : generated_strs})
 
 
-    def test_epoch_end(self, outputs):
+    def on_test_epoch_end(self):
         for p in self.model.parameters():
             p.requires_grad = True
 
@@ -239,13 +239,14 @@ class Inference(pl.LightningModule):
             names = ['rouge1', 'rouge2', 'rougeL', 'rougeLsum', 'bleu']
             metrics = []
             for name in names:
-                scores = [x[name] for x in outputs]
+                scores = [x[name] for x in self.test_step_outputs]
                 metric = sum(scores)/len(scores)
                 metrics.append(metric)
             logs = dict(zip(*[names, metrics]))
             print("Evaluation on provided reference [{}] ".format(self.args.test_target))
             for m,v in logs.items():
                 print(f"{m}:{v}")
+        self.test_step_outputs.clear()
 
     def forward(self):
         pass
@@ -513,12 +514,12 @@ def main(args):
     inference_model.set_test_set(test_set)
     progress_bar_callback = TQDMProgressBar(refresh_rate=args.progress_bar_refresh_rate)
 
-    trainer = pl.Trainer(accelerator=args.accelerator, devices=args.devices, strategy='ddp_find_unused_parameters_false' if torch.cuda.is_available() else None,
-                         replace_sampler_ddp=False,
+    trainer = pl.Trainer(accelerator=args.accelerator, devices=args.devices,
+                         strategy='ddp_find_unused_parameters_false' if torch.cuda.is_available() else None,
                          limit_test_batches=args.test_percent_check,
                          logger=None,
                          callbacks=[progress_bar_callback],
-                         precision=32 if args.fp32 else 16, amp_backend='native',
+                         precision=32 if args.fp32 else "16-mixed",
                          )
 
     trainer.test(inference_model)

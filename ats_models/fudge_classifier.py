@@ -20,7 +20,7 @@ from pytorch_lightning.loggers import TensorBoardLogger, WandbLogger
 from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.callbacks.early_stopping import EarlyStopping
 from pytorch_lightning.callbacks import TQDMProgressBar, LearningRateMonitor
-from pytorch_lightning.plugins import DDPPlugin
+from pytorch_lightning.strategies import DDPStrategy
 
 from transformers import AutoTokenizer
 from torchmetrics import  Accuracy
@@ -83,6 +83,7 @@ class FudgeClassifier(pl.LightningModule):
         self.init_model()
         self.bce = torch.nn.BCEWithLogitsLoss()
         self.set_metrics()
+        self.validation_step_outputs = []
 
     def init_model(self):
         self.model = FudgeLSTM(self.args, self.tokenizer)
@@ -146,16 +147,17 @@ class FudgeClassifier(pl.LightningModule):
                   'accuracy' : accuracy
                   }
 
+        self.validation_step_outputs.append(scores)
         return scores
 
-    def validation_epoch_end(self, outputs):
+    def on_validation_epoch_end(self):
         for p in self.model.parameters():
             p.requires_grad = True
 
         names = ['vloss', 'accuracy']
         metrics = []
         for name in names:
-            metric = torch.stack([x[name] for x in outputs]).mean()
+            metric = torch.stack([x[name] for x in self.validation_step_outputs]).mean()
             torch.distributed.all_reduce(metric, op=torch.distributed.ReduceOp.SUM)
             metric /= self.trainer.world_size
             metrics.append(metric)
@@ -163,15 +165,14 @@ class FudgeClassifier(pl.LightningModule):
         print("\nEvaluation on checkpoint [{}] ".format(self.current_checkpoint))
         for m,v in logs.items():
             print(f"{m}:{v}")
-
         self.current_checkpoint +=1
+        self.validation_step_outputs.clear()
 
     def test_step(self, batch, batch_nb):
         return self.validation_step(batch, batch_nb)
 
     def test_epoch_end(self, outputs):
-        result = self.validation_epoch_end(outputs)
-        print(result)
+        self.validation_epoch_end(outputs)
 
     def configure_optimizers(self):
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=self.args.lr)
@@ -412,10 +413,8 @@ def main(args):
         progress_bar_callback = TQDMProgressBar(refresh_rate=args.progress_bar_refresh_rate)
 
     trainer = pl.Trainer(accelerator=args.accelerator, devices=args.devices, strategy='ddp_find_unused_parameters_false' if torch.cuda.is_available() else None,
-                         track_grad_norm=-1,
                          max_epochs=args.max_epochs,
                          max_steps=args.max_steps,
-                         replace_sampler_ddp=False,
                          accumulate_grad_batches=args.grad_accum,
                          num_sanity_val_steps=args.num_sanity_val_steps,
                          val_check_interval=args.val_check_interval,
@@ -423,7 +422,7 @@ def main(args):
                          limit_val_batches=args.val_percent_check,
                          limit_test_batches=1.0,
                          logger=logger,
-                         precision=32 if args.fp32 else 16, amp_backend='native',
+                         precision=32 if args.fp32 else "16-mixed",
                          enable_progress_bar=True,
                          callbacks=[early_stop_callback, checkpoint_callback, progress_bar_callback, lr_monitor_callback]
                          )
