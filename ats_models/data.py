@@ -260,6 +260,11 @@ class CustomDatasetUZHJson(CustomDataset): # TODO: make this more general to wor
                         target = target.replace('\n', ' ')
                         target = target.replace('  ', ' ')
                         target = target.strip()
+                    else:
+                        source = source.replace('\n', ' <capito:br/>')
+                        target = target.replace('\n', ' <capito:br/>')
+                        source = source.strip()
+                        target = target.strip()
                     if not (self._is_empty(source) or self._is_empty(target)): # necessary, still some noisy samples in json that consist of only xml tags without content
                         tgt_id = tgt_lang if self.tgt_lang is None else self.tgt_lang
                         self.inputs.append((src_id, source))
