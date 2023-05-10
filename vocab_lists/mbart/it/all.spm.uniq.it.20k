@@ -29,7 +29,6 @@ $
 -
 .
 ."
-.<
 /
 0
 0000
@@ -58,7 +57,6 @@ $
 9
 :
 ;
-<
 </
 =
 ="
@@ -141,7 +139,6 @@ Air
 Al
 Alb
 Alba
-Alex
 Ali
 All
 Alle
@@ -226,9 +223,7 @@ Bel
 Ben
 Benz
 Ber
-Berlin
 Best
-Bet
 Bi
 Big
 Bio
@@ -242,7 +237,6 @@ Bor
 Bos
 Bra
 Bri
-Bro
 Bru
 Bu
 Build
@@ -298,7 +292,6 @@ Ce
 Centr
 Ch
 Cha
-Chan
 Char
 Che
 Chi
@@ -344,7 +337,6 @@ DT
 DU
 Da
 Dan
-Data
 David
 Day
 De
@@ -353,7 +345,6 @@ Del
 Demo
 Den
 Der
-Dev
 Di
 Dia
 Diagnos
@@ -361,7 +352,6 @@ Die
 Digital
 Dis
 Do
-Document
 Dom
 Don
 Dr
@@ -476,7 +466,6 @@ FT
 FTA
 Fa
 Fac
-Facebook
 Fan
 Far
 Fe
@@ -487,7 +476,6 @@ Finan
 Fit
 Fo
 For
-Form
 Forum
 Foto
 Fra
@@ -519,7 +507,6 @@ GN
 GO
 GP
 GR
-GRA
 GRO
 GS
 GT
@@ -602,6 +589,7 @@ IFA
 IG
 IH
 II
+IK
 IL
 ILI
 IM
@@ -679,7 +667,6 @@ KI
 KS
 KY
 Ka
-Kar
 Kara
 Kas
 Ke
@@ -691,6 +678,7 @@ L
 LA
 LAND
 LAV
+LB
 LC
 LD
 LE
@@ -706,7 +694,6 @@ LIM
 LIN
 LINK
 LIO
-LL
 LM
 LO
 LOG
@@ -771,13 +758,11 @@ Mar
 Marc
 Mari
 Maria
-Mark
 Martin
 Mas
 Math
 Matt
 Max
-May
 Me
 Med
 Media
@@ -787,7 +772,6 @@ Mer
 Mes
 Met
 Mi
-Michael
 Michel
 Mil
 Mill
@@ -932,9 +916,7 @@ Pad
 Pal
 Pan
 Par
-Para
 Part
-Partner
 Pas
 Pass
 Pay
@@ -968,7 +950,6 @@ Pri
 Prim
 Prin
 Pro
-Programm
 Prov
 Pu
 Q
@@ -1069,7 +1050,6 @@ SU
 SV
 SW
 Sa
-Sab
 Sal
 Sam
 San
@@ -1087,7 +1067,6 @@ Sie
 Sign
 Sil
 Sky
-Smart
 So
 Sol
 Sor
@@ -1104,7 +1083,6 @@ Str
 Stra
 Straße
 Stream
-Studi
 Su
 Sub
 Sullivan
@@ -1178,7 +1156,6 @@ Trans
 Tre
 Tri
 Tro
-Trump
 Tu
 Tur
 U
@@ -1253,6 +1230,7 @@ Vor
 W
 WA
 WAS
+WB
 WE
 WG
 WI
@@ -1296,9 +1274,6 @@ ZN
 ZO
 Za
 Zi
-Zo
-Zu
-[
 ]
 ^
 _
@@ -2222,7 +2197,6 @@ corso
 cos
 cosa
 cot
-count
 court
 cov
 cover
@@ -2377,7 +2351,6 @@ dica
 dice
 dici
 dico
-dida
 die
 dien
 dier
@@ -3331,6 +3304,7 @@ idi
 idio
 idir
 ido
+idos
 ids
 idu
 ie
@@ -4879,6 +4853,7 @@ pc
 pdf
 pe
 pea
+peal
 pec
 ped
 peda
@@ -5058,6 +5033,7 @@ ppi
 pping
 ppo
 ppu
+ppy
 pr
 pra
 prat
@@ -5178,6 +5154,7 @@ quita
 quo
 quot
 quote
+qué
 qvist
 r
 ra
@@ -5476,7 +5453,6 @@ ru
 rub
 ruba
 rud
-ruf
 rug
 ruga
 rum
@@ -5485,6 +5461,7 @@ runner
 ruo
 rup
 rus
+rush
 rusi
 rut
 ruti
@@ -5515,7 +5492,6 @@ sai
 sak
 saka
 sal
-sala
 sali
 salu
 sam
@@ -6253,7 +6229,6 @@ twitter
 ty
 type
 tz
-tze
 tzen
 tzer
 tà
@@ -6307,6 +6282,7 @@ ulan
 ule
 uli
 ulia
+ulin
 ulio
 ull
 ulla
@@ -6335,7 +6311,6 @@ ungan
 unge
 ungen
 ungi
-ungs
 unha
 uni
 unica
@@ -6843,7 +6818,6 @@ zzo
 ö
 ög
 öl
-ön
 ör
 ört
 öt
@@ -7353,6 +7327,7 @@ zzo
 ▁Bernardo
 ▁Bernhard
 ▁Bert
+▁Berufs
 ▁Bes
 ▁Best
 ▁Bet
@@ -7783,6 +7758,7 @@ zzo
 ▁Claudio
 ▁Cle
 ▁Clean
+▁Clear
 ▁Clement
 ▁Clicca
 ▁Client
@@ -7841,6 +7817,7 @@ zzo
 ▁Compl
 ▁Completa
 ▁Compre
+▁Computer
 ▁Comunale
 ▁Comune
 ▁Comuni
@@ -8113,6 +8090,7 @@ zzo
 ▁Disney
 ▁Display
 ▁Dispo
+▁Disse
 ▁Distribu
 ▁District
 ▁Dit
@@ -8865,6 +8843,7 @@ zzo
 ▁Hen
 ▁Hend
 ▁Heng
+▁Henrik
 ▁Henry
 ▁Her
 ▁Herbert
@@ -8875,6 +8854,7 @@ zzo
 ▁Herren
 ▁Herz
 ▁Hi
+▁Hic
 ▁High
 ▁Highland
 ▁Hil
@@ -8978,6 +8958,7 @@ zzo
 ▁Ikea
 ▁Il
 ▁Ili
+▁Illustr
 ▁Im
 ▁Images
 ▁Immun
@@ -9016,6 +8997,7 @@ zzo
 ▁Infos
 ▁Infra
 ▁Ing
+▁Ingrid
 ▁Ini
 ▁Initiative
 ▁Inn
@@ -9024,6 +9006,7 @@ zzo
 ▁Innovation
 ▁Innsbruck
 ▁Inoltre
+▁Insa
 ▁Insight
 ▁Insomma
 ▁Instagram
@@ -9131,6 +9114,7 @@ zzo
 ▁Joel
 ▁Johan
 ▁Johann
+▁Johanna
 ▁Johannes
 ▁Johansson
 ▁John
@@ -9303,6 +9287,7 @@ zzo
 ▁Ku
 ▁Kul
 ▁Kun
+▁Kunst
 ▁Kup
 ▁Kur
 ▁Kurdistan
@@ -9493,6 +9478,7 @@ zzo
 ▁Lor
 ▁Lord
 ▁Lore
+▁Lorem
 ▁Loren
 ▁Lorenzo
 ▁Los
@@ -9703,6 +9689,7 @@ zzo
 ▁Mater
 ▁Material
 ▁Math
+▁Mathias
 ▁Mati
 ▁Matri
 ▁Matrix
@@ -11858,7 +11845,9 @@ zzo
 ▁Weil
 ▁Wein
 ▁Weiss
+▁Weiß
 ▁Wel
+▁Welcome
 ▁Well
 ▁Welt
 ▁Wen
@@ -12348,6 +12337,7 @@ zzo
 ▁appropriate
 ▁approved
 ▁approximately
+▁apps
 ▁appuntamenti
 ▁appuntamento
 ▁appunto
@@ -12427,6 +12417,7 @@ zzo
 ▁ass
 ▁assassin
 ▁assegna
+▁assess
 ▁assessment
 ▁assessor
 ▁assets
@@ -13691,6 +13682,7 @@ zzo
 ▁crowdfunding
 ▁cru
 ▁crucial
+▁cruise
 ▁crypto
 ▁ct
 ▁cu
@@ -14828,6 +14820,7 @@ zzo
 ▁fotografi
 ▁fotografia
 ▁fotografie
+▁fotos
 ▁fotovoltaic
 ▁found
 ▁foundation
@@ -15352,6 +15345,7 @@ zzo
 ▁incendi
 ▁incentiva
 ▁incentivo
+▁incep
 ▁inci
 ▁incide
 ▁incident
@@ -16180,6 +16174,7 @@ zzo
 ▁meteor
 ▁meteorologi
 ▁meter
+▁method
 ▁metodi
 ▁metodo
 ▁metodologi
@@ -16670,6 +16665,7 @@ zzo
 ▁ok
 ▁ol
 ▁olan
+▁old
 ▁ole
 ▁oli
 ▁olim
@@ -17534,6 +17530,7 @@ zzo
 ▁profet
 ▁profi
 ▁profil
+▁profile
 ▁profili
 ▁profilo
 ▁profit
@@ -18712,6 +18709,7 @@ zzo
 ▁sommer
 ▁son
 ▁sonda
+▁song
 ▁sono
 ▁sonora
 ▁sont
@@ -18766,6 +18764,7 @@ zzo
 ▁spara
 ▁spare
 ▁spart
+▁spas
 ▁spazi
 ▁spazio
 ▁spe
@@ -19968,6 +19967,7 @@ zzo
 ▁zin
 ▁zit
 ▁zo
+▁zombie
 ▁zona
 ▁zone
 ▁zoo
@@ -19991,9 +19991,9 @@ zzo
 ▁Š
 ▁Še
 ▁€
+▁▪
 ▁●
 ▁
-●
 
 
 

@@ -23,7 +23,6 @@ $
 '
 (
 (!)
-(*
 (?)
 )
 )(
@@ -386,7 +385,6 @@ Activ
 Actual
 Ad
 Adam
-Address
 Administr
 Administració
 Adobe
@@ -1274,7 +1272,6 @@ HANA
 HAND
 HAR
 HARA
-HARI
 HAS
 HAT
 HAY
@@ -1579,7 +1576,6 @@ JAS
 JC
 JD
 JE
-JEK
 JEM
 JEN
 JER
@@ -1665,7 +1661,6 @@ KS
 KT
 KTI
 KU
-KUL
 KUM
 KUR
 KV
@@ -3648,7 +3643,6 @@ aldea
 aldean
 aldi
 aldia
-aldus
 ale
 alem
 alen
@@ -6839,6 +6833,7 @@ gere
 geri
 geria
 gericht
+gerichte
 gers
 geräte
 ges
@@ -8204,7 +8199,6 @@ isti
 istic
 istica
 istico
-istik
 istin
 istische
 isto
@@ -9257,7 +9251,6 @@ legal
 legar
 lege
 legen
-leges
 legg
 legge
 legger
@@ -12623,7 +12616,6 @@ sala
 salah
 salam
 salar
-salg
 sali
 sallad
 salon
@@ -14492,7 +14484,6 @@ urnar
 uro
 uros
 urra
-urrak
 urre
 urri
 urs
@@ -15064,7 +15055,6 @@ welt
 wen
 wend
 wende
-wendung
 weni
 wens
 went
@@ -16881,6 +16871,7 @@ ză
 ▁Antti
 ▁Antwerpen
 ▁Antwort
+▁Antworten
 ▁Antón
 ▁Antônio
 ▁Anu
@@ -18212,6 +18203,7 @@ ză
 ▁Cesar
 ▁Cesto
 ▁Cet
+▁Cette
 ▁Ceza
 ▁Ch
 ▁Cha
@@ -20409,6 +20401,7 @@ ză
 ▁Gew
 ▁Gewalt
 ▁Gewerbe
+▁Gewinn
 ▁Gezi
 ▁Gh
 ▁Gha
@@ -21539,6 +21532,7 @@ ză
 ▁Janez
 ▁Jang
 ▁Janne
+▁Januar
 ▁Januari
 ▁January
 ▁Január
@@ -24445,6 +24439,7 @@ ză
 ▁PROFES
 ▁PROGRAM
 ▁PROJE
+▁PROJEKT
 ▁PROMO
 ▁PROTE
 ▁PRU
@@ -25270,6 +25265,7 @@ ză
 ▁Quer
 ▁Queremos
 ▁Quest
+▁Questa
 ▁Queste
 ▁Questi
 ▁Question
@@ -26242,6 +26238,7 @@ ză
 ▁Seoul
 ▁Sep
 ▁Sept
+▁Septem
 ▁September
 ▁Ser
 ▁Sera
@@ -28061,6 +28058,7 @@ ză
 ▁Vor
 ▁Vorbereitung
 ▁Vorlage
+▁Vorstellung
 ▁Vorteil
 ▁Vos
 ▁Votre
@@ -28960,6 +28958,7 @@ ză
 ▁aka
 ▁akademi
 ▁aktiv
+▁aktivit
 ▁aktiviti
 ▁aktuell
 ▁aktuelle
@@ -29677,6 +29676,7 @@ ză
 ▁aussi
 ▁austral
 ▁austriac
+▁auszu
 ▁aut
 ▁autem
 ▁autent
@@ -29992,6 +29992,7 @@ ză
 ▁becoming
 ▁bed
 ▁beda
+▁bede
 ▁bedel
 ▁bedste
 ▁been
@@ -30430,6 +30431,7 @@ ză
 ▁buy
 ▁buz
 ▁bv
+▁bw
 ▁by
 ▁bà
 ▁bá
@@ -30449,6 +30451,7 @@ ză
 ▁bón
 ▁bú
 ▁búsqueda
+▁bü
 ▁c
 ▁ca
 ▁cab
@@ -33404,6 +33407,8 @@ ză
 ▁ergo
 ▁eri
 ▁erit
+▁erkennen
+▁erleben
 ▁ernst
 ▁ero
 ▁eros
@@ -35137,6 +35142,7 @@ ză
 ▁harap
 ▁hard
 ▁hardcore
+▁hardt
 ▁hardware
 ▁hari
 ▁harmoni
@@ -35193,6 +35199,7 @@ ză
 ▁height
 ▁heil
 ▁heim
+▁heit
 ▁heiß
 ▁heißt
 ▁hel
@@ -36176,6 +36183,7 @@ ză
 ▁jackpot
 ▁jacuzzi
 ▁jag
+▁jah
 ▁jaj
 ▁jak
 ▁jalan
@@ -36497,6 +36505,7 @@ ză
 ▁kum
 ▁kun
 ▁kuna
+▁kunde
 ▁kunden
 ▁kung
 ▁kunst
@@ -38284,6 +38293,7 @@ ză
 ▁nes
 ▁nesciunt
 ▁nespo
+▁nesse
 ▁nessun
 ▁nesto
 ▁net
@@ -38488,6 +38498,7 @@ ză
 ▁nun
 ▁nunc
 ▁nunca
+▁nung
 ▁nuova
 ▁nuovamente
 ▁nuovo
@@ -41670,6 +41681,7 @@ ză
 ▁schade
 ▁schaffen
 ▁schafft
+▁schauen
 ▁schedule
 ▁schema
 ▁scheme
@@ -44056,6 +44068,7 @@ ză
 ▁vera
 ▁veramente
 ▁verano
+▁verantwortlich
 ▁verb
 ▁verba
 ▁verbal
@@ -44345,6 +44358,7 @@ ză
 ▁voor
 ▁voorkeur
 ▁vor
+▁vorbe
 ▁vos
 ▁vosotros
 ▁vostre
@@ -44933,9 +44947,7 @@ ză
 ▁
 ■
 □
-▪
 ▫
-►
 ▾
 ●
 ◡
@@ -44974,7 +44986,6 @@ ză
 
 
 
-
 
 
 

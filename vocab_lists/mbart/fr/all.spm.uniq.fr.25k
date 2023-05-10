@@ -35,7 +35,6 @@ $
 -
 .
 ."
-.<
 /
 0
 0000
@@ -259,7 +258,7 @@ Actual
 Ad
 Adam
 Administr
-Adresse
+Adobe
 Af
 Afrique
 Ag
@@ -330,7 +329,6 @@ Az
 Azur
 B
 BA
-BAL
 BAN
 BAR
 BAS
@@ -388,7 +386,6 @@ Benz
 Ber
 Berlin
 Best
-Bet
 Bi
 Big
 Bil
@@ -587,7 +584,6 @@ Daniel
 Dar
 Das
 Data
-Date
 David
 Day
 De
@@ -608,9 +604,7 @@ Digital
 Din
 Direct
 Dis
-Dit
 Do
-Document
 Dom
 Don
 Donald
@@ -743,7 +737,6 @@ Ev
 Event
 Ex
 Excel
-Expert
 Express
 F
 FA
@@ -805,9 +798,9 @@ Frank
 Free
 Fu
 Fun
-För
 G
 GA
+GAN
 GAR
 GB
 GC
@@ -996,7 +989,6 @@ IN
 INA
 IND
 INE
-INFO
 ING
 INGER
 INI
@@ -1172,7 +1164,6 @@ LG
 LGBT
 LI
 LIA
-LIC
 LICA
 LIE
 LIG
@@ -1222,7 +1213,6 @@ Live
 Lo
 Log
 London
-Lorem
 Los
 Louis
 Love
@@ -1259,7 +1249,6 @@ MH
 MI
 MIC
 MIN
-MIR
 MIT
 MK
 ML
@@ -1393,7 +1382,6 @@ Na
 Nar
 National
 Natur
-Nav
 Ne
 Net
 New
@@ -1405,7 +1393,6 @@ Non
 Nor
 Nord
 Not
-Note
 Nov
 Nu
 NÉ
@@ -1456,6 +1443,7 @@ ORI
 ORT
 OS
 OSA
+OSI
 OSS
 OST
 OT
@@ -1495,7 +1483,6 @@ Orang
 Ord
 Organ
 Orient
-Original
 Os
 Ouest
 Out
@@ -1606,12 +1593,9 @@ Pro
 Prof
 Profes
 Programm
-Project
 Protect
 Prov
 Pu
-Pub
-Public
 Q
 QA
 QE
@@ -1802,11 +1786,11 @@ Sen
 Ser
 Serie
 Service
+Sex
 Sha
 She
 Shi
 Sho
-Shop
 Si
 Sie
 Sign
@@ -1823,7 +1807,6 @@ Source
 Sp
 Spa
 Space
-Special
 Sport
 St
 Sta
@@ -1843,7 +1826,6 @@ Straße
 Stream
 Studi
 Su
-Sub
 Sullivan
 Sun
 Super
@@ -1931,12 +1913,10 @@ Tele
 Temp
 Ten
 Ter
-Test
 Text
 Th
 Tha
 The
-There
 Thi
 This
 Thomas
@@ -1963,7 +1943,6 @@ Trump
 Tu
 Tur
 Twitter
-Type
 TÉ
 U
 UA
@@ -2075,7 +2054,6 @@ Ve
 Vel
 Ven
 Ver
-Version
 Vi
 Via
 Vil
@@ -2106,7 +2084,6 @@ WL
 WM
 WN
 WO
-WP
 WR
 WS
 WT
@@ -2354,7 +2331,6 @@ akhir
 aki
 ako
 aks
-aktion
 aku
 al
 ala
@@ -2584,7 +2560,6 @@ argument
 ari
 aria
 arin
-aring
 ario
 aris
 arit
@@ -2692,7 +2667,6 @@ atti
 atto
 attu
 atu
-atum
 atur
 atus
 au
@@ -3536,6 +3510,7 @@ danie
 dano
 dant
 dar
+dara
 dari
 dary
 das
@@ -3633,7 +3608,6 @@ dice
 dici
 dict
 did
-dida
 die
 dien
 diens
@@ -4315,7 +4289,6 @@ forma
 format
 forme
 former
-formular
 formément
 forschung
 fort
@@ -5350,7 +5323,6 @@ ities
 itin
 itis
 ito
-itor
 itou
 itra
 its
@@ -5458,6 +5430,7 @@ jing
 jis
 jit
 jj
+jl
 jn
 jo
 job
@@ -5637,6 +5610,7 @@ kram
 kran
 krank
 krat
+kraut
 kre
 kreis
 kri
@@ -5785,7 +5759,6 @@ ledge
 lee
 leg
 lega
-lege
 legg
 legri
 leh
@@ -6882,6 +6855,7 @@ opinion
 opo
 opp
 oppa
+oppi
 opportunité
 ops
 opter
@@ -6890,6 +6864,7 @@ optimal
 option
 opéra
 opération
+oq
 or
 ora
 oral
@@ -7399,7 +7374,6 @@ puta
 puter
 py
 pyr
-pä
 pé
 pê
 pô
@@ -8265,7 +8239,6 @@ stad
 stadt
 stag
 stal
-stall
 stamme
 stan
 stance
@@ -8799,7 +8772,6 @@ tting
 ttle
 tto
 ttoman
-ttu
 tty
 tu
 tua
@@ -9318,6 +9290,7 @@ wagen
 wah
 wahi
 wahl
+wak
 wal
 wald
 wali
@@ -9363,6 +9336,7 @@ well
 welt
 wen
 wend
+wens
 went
 wer
 werk
@@ -9623,7 +9597,6 @@ zón
 {
 }
 §
-©
 «
 ­
 ®
@@ -9958,6 +9931,7 @@ zón
 ▁AT
 ▁ATP
 ▁AU
+▁AUTO
 ▁AV
 ▁AW
 ▁AZ
@@ -10265,8 +10239,10 @@ zón
 ▁Apo
 ▁Apollo
 ▁App
+▁Appartement
 ▁Apple
 ▁Application
+▁Apps
 ▁April
 ▁Après
 ▁Aqua
@@ -10638,6 +10614,7 @@ zón
 ▁Bergen
 ▁Berisha
 ▁Berlin
+▁Berliner
 ▁Berlusconi
 ▁Bern
 ▁Berna
@@ -10939,6 +10916,7 @@ zón
 ▁CAP
 ▁CAR
 ▁CAS
+▁CAT
 ▁CB
 ▁CBS
 ▁CC
@@ -11277,6 +11255,7 @@ zón
 ▁Club
 ▁Co
 ▁Coach
+▁Coaching
 ▁Coast
 ▁Coba
 ▁Coca
@@ -11373,6 +11352,7 @@ zón
 ▁Contr
 ▁Contra
 ▁Control
+▁Conven
 ▁Convention
 ▁Cook
 ▁Cool
@@ -11447,6 +11427,7 @@ zón
 ▁Cu
 ▁Cuba
 ▁Cui
+▁Cuir
 ▁Cul
 ▁Culture
 ▁Cum
@@ -11654,6 +11635,7 @@ zón
 ▁Din
 ▁Dina
 ▁Dinamo
+▁Ding
 ▁Dini
 ▁Dio
 ▁Diploma
@@ -11733,6 +11715,7 @@ zón
 ▁Douglas
 ▁Dow
 ▁Down
+▁Download
 ▁Dr
 ▁Dra
 ▁Drag
@@ -11861,6 +11844,7 @@ zón
 ▁Ego
 ▁Egypt
 ▁Eh
+▁Ehe
 ▁Ehren
 ▁Ei
 ▁Eiffel
@@ -12983,6 +12967,7 @@ zón
 ▁IN
 ▁IND
 ▁INFO
+▁INFORMA
 ▁ING
 ▁INS
 ▁INTER
@@ -13253,6 +13238,7 @@ zón
 ▁Jesus
 ▁Jet
 ▁Ji
+▁Jie
 ▁Jim
 ▁Jimmy
 ▁Jin
@@ -13447,6 +13433,7 @@ zón
 ▁Kazan
 ▁Kazi
 ▁Ke
+▁Keb
 ▁Keep
 ▁Keh
 ▁Keith
@@ -13533,6 +13520,7 @@ zón
 ▁Klo
 ▁Kloster
 ▁Klu
+▁Klub
 ▁Km
 ▁Knapp
 ▁Knight
@@ -13987,6 +13975,7 @@ zón
 ▁MED
 ▁MEDIA
 ▁MEL
+▁MERC
 ▁MES
 ▁MF
 ▁MG
@@ -14235,6 +14224,7 @@ zón
 ▁Medica
 ▁Medical
 ▁Medicine
+▁Medien
 ▁Medio
 ▁Medvedev
 ▁Meer
@@ -14693,6 +14683,7 @@ zón
 ▁New
 ▁Newcastle
 ▁News
+▁Newsletter
 ▁Newton
 ▁Next
 ▁Neymar
@@ -14957,6 +14948,7 @@ zón
 ▁PAN
 ▁PAP
 ▁PAR
+▁PARTI
 ▁PAS
 ▁PAT
 ▁PC
@@ -15257,10 +15249,12 @@ zón
 ▁Platz
 ▁Play
 ▁PlayStation
+▁Playboy
 ▁Player
 ▁Playstation
 ▁Plaza
 ▁Ple
+▁Please
 ▁Pli
 ▁Plo
 ▁Plu
@@ -15382,6 +15376,7 @@ zón
 ▁Pro
 ▁Proc
 ▁Process
+▁Procura
 ▁Produ
 ▁Product
 ▁Production
@@ -16391,6 +16386,7 @@ zón
 ▁State
 ▁Staten
 ▁States
+▁Stati
 ▁Station
 ▁Statist
 ▁Statistik
@@ -16553,6 +16549,7 @@ zón
 ▁TC
 ▁TD
 ▁TE
+▁TEM
 ▁TER
 ▁TH
 ▁THE
@@ -17071,6 +17068,7 @@ zón
 ▁Versailles
 ▁Versch
 ▁Version
+▁Versorgung
 ▁Ves
 ▁Vest
 ▁Vesti
@@ -17244,6 +17242,7 @@ zón
 ▁Weil
 ▁Wein
 ▁Weiss
+▁Weiter
 ▁Weiß
 ▁Wel
 ▁Welcome
@@ -20166,6 +20165,7 @@ zón
 ▁galva
 ▁gam
 ▁game
+▁gameplay
 ▁gamin
 ▁gaming
 ▁gamma
@@ -20423,6 +20423,7 @@ zón
 ▁hed
 ▁hein
 ▁hel
+▁held
 ▁hell
 ▁help
 ▁hen
@@ -20977,6 +20978,7 @@ zón
 ▁kot
 ▁kou
 ▁kr
+▁kra
 ▁kur
 ▁ky
 ▁kén
@@ -22067,6 +22069,7 @@ zón
 ▁pan
 ▁pana
 ▁pand
+▁pande
 ▁panel
 ▁pang
 ▁pani
@@ -24440,6 +24443,7 @@ zón
 ▁ultime
 ▁ultra
 ▁ultraviolet
+▁um
 ▁un
 ▁una
 ▁und
@@ -24978,12 +24982,9 @@ zón
 ▁►
 ▁●
 ▁
-■
 □
-▪
 ▶
 ►
-●
 
 
 
@@ -24993,7 +24994,6 @@ zón
 
 
 
-
 
 
 

@@ -22,7 +22,6 @@ $
 '
 (
 (!)
-(*
 (?)
 )
 )(
@@ -36,7 +35,6 @@ $
 +)
 ,
 -
-->
 .
 ."
 .<
@@ -1847,7 +1845,6 @@ Lock
 Log
 Lokomotiv
 London
-Lorem
 Los
 Louis
 Love
@@ -4488,7 +4485,6 @@ bite
 biti
 bito
 bitur
-biy
 biya
 biye
 biz
@@ -6830,6 +6826,7 @@ gerecht
 geri
 geria
 gericht
+gerichte
 gers
 geräte
 ges
@@ -9032,6 +9029,7 @@ kw
 kwa
 kwe
 kwenza
+kwi
 ky
 kyl
 kz
@@ -10407,7 +10405,6 @@ ndependentemente
 nder
 ndere
 ndet
-ndhu
 ndi
 ndid
 nding
@@ -15013,7 +15010,6 @@ welt
 wen
 wend
 wende
-wendung
 weni
 wens
 went
@@ -16781,6 +16777,7 @@ zə
 ▁Antti
 ▁Antwerpen
 ▁Antwort
+▁Antworten
 ▁Antón
 ▁Antônio
 ▁Anu
@@ -16834,6 +16831,7 @@ zə
 ▁Arbeid
 ▁Arbeit
 ▁Arbeitgeber
+▁Arbeitnehmer
 ▁Arbeits
 ▁Arbeitsplatz
 ▁Arbitra
@@ -18087,6 +18085,7 @@ zə
 ▁Cesar
 ▁Cesto
 ▁Cet
+▁Cette
 ▁Ceza
 ▁Ch
 ▁Cha
@@ -20199,6 +20198,7 @@ zə
 ▁Gew
 ▁Gewalt
 ▁Gewerbe
+▁Gewinn
 ▁Gezi
 ▁Gh
 ▁Gha
@@ -21339,6 +21339,7 @@ zə
 ▁Janez
 ▁Jang
 ▁Janne
+▁Januar
 ▁Januari
 ▁January
 ▁Japan
@@ -26012,6 +26013,7 @@ zə
 ▁Sep
 ▁Seperti
 ▁Sept
+▁Septem
 ▁September
 ▁Ser
 ▁Sera
@@ -26550,6 +26552,7 @@ zə
 ▁Studios
 ▁Studium
 ▁Study
+▁Stunde
 ▁Stunden
 ▁Stuttgart
 ▁Styl
@@ -27430,6 +27433,7 @@ zə
 ▁Ung
 ▁Unga
 ▁Ungaria
+▁Unge
 ▁Unha
 ▁Uni
 ▁Unicode
@@ -27820,6 +27824,7 @@ zə
 ▁Vor
 ▁Vorbereitung
 ▁Vorlage
+▁Vorstellung
 ▁Vorteil
 ▁Vos
 ▁Vou
@@ -28640,6 +28645,7 @@ zə
 ▁ake
 ▁akin
 ▁aktiv
+▁aktivit
 ▁aktiviti
 ▁aktu
 ▁aktuell
@@ -29274,6 +29280,7 @@ zə
 ▁aussi
 ▁austral
 ▁austriac
+▁auszu
 ▁aut
 ▁auta
 ▁aute
@@ -30009,6 +30016,7 @@ zə
 ▁bê
 ▁bò
 ▁bó
+▁bü
 ▁bērni
 ▁c
 ▁ca
@@ -32635,7 +32643,9 @@ zə
 ▁ergonomi
 ▁eri
 ▁erit
+▁erkennen
 ▁erlaubt
+▁erleben
 ▁ernst
 ▁ernstig
 ▁ero
@@ -34191,6 +34201,7 @@ zə
 ▁harap
 ▁hard
 ▁hardcore
+▁hardt
 ▁hardware
 ▁hari
 ▁harmoni
@@ -34237,6 +34248,7 @@ zə
 ▁hehe
 ▁hehehe
 ▁height
+▁heil
 ▁heim
 ▁heit
 ▁heißt
@@ -35114,6 +35126,7 @@ zə
 ▁jackpot
 ▁jacuzzi
 ▁jag
+▁jah
 ▁jak
 ▁jam
 ▁jamais
@@ -35421,6 +35434,7 @@ zə
 ▁kum
 ▁kun
 ▁kuna
+▁kunde
 ▁kunden
 ▁kung
 ▁kuni
@@ -37119,6 +37133,7 @@ zə
 ▁nesciunt
 ▁nese
 ▁nespo
+▁nesse
 ▁nessun
 ▁nessuna
 ▁nessuno
@@ -37316,6 +37331,7 @@ zə
 ▁numéro
 ▁nun
 ▁nunc
+▁nung
 ▁nuo
 ▁nuova
 ▁nuovamente
@@ -38439,6 +38455,7 @@ zə
 ▁polizia
 ▁pollution
 ▁polo
+▁polos
 ▁polvere
 ▁poly
 ▁polyester
@@ -39593,6 +39610,7 @@ zə
 ▁red
 ▁reda
 ▁redact
+▁redakti
 ▁redd
 ▁redde
 ▁reddit
@@ -40423,6 +40441,7 @@ zə
 ▁schade
 ▁schaffen
 ▁schafft
+▁schauen
 ▁scheda
 ▁schedule
 ▁schema
@@ -42982,6 +43001,7 @@ zə
 ▁vera
 ▁veramente
 ▁verano
+▁verantwortlich
 ▁verb
 ▁verba
 ▁verbal
@@ -43287,6 +43307,7 @@ zə
 ▁voor
 ▁voorkeur
 ▁vor
+▁vorbe
 ▁vore
 ▁vorrei
 ▁vos
@@ -43885,10 +43906,8 @@ zə
 ▁○
 ▁●
 ▁
-■
 □
 ▪
-►
 ▾
 ●
 ◦
@@ -43923,7 +43942,6 @@ zə
 
 
 
-
 
 
 

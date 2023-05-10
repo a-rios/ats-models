@@ -33,7 +33,6 @@ $
 -
 .
 ."
-.<
 /
 0
 0000
@@ -210,7 +209,6 @@ Activ
 Actual
 Ad
 Adam
-Address
 Af
 Ag
 Ah
@@ -222,7 +220,6 @@ Alex
 Ali
 All
 Alle
-Alt
 Am
 Amazon
 Amb
@@ -256,7 +253,6 @@ Associate
 At
 Atlant
 Au
-Audi
 Auf
 Aug
 August
@@ -454,7 +450,6 @@ Ci
 City
 Class
 Claude
-Click
 Cloud
 Club
 Co
@@ -553,11 +548,9 @@ Din
 Direct
 Dis
 Do
-Document
 Dom
 Don
 Donald
-Download
 Dr
 Dream
 Drive
@@ -644,6 +637,7 @@ ETF
 ETH
 ETI
 ETS
+ETTER
 EU
 EUR
 EV
@@ -745,7 +739,6 @@ Full
 Fun
 G
 GA
-GAL
 GAN
 GAR
 GAS
@@ -998,7 +991,6 @@ Imp
 In
 Indi
 India
-Industri
 Info
 Information
 Ing
@@ -1009,7 +1001,6 @@ Institut
 Intel
 Inter
 International
-Internet
 Invest
 IoT
 Is
@@ -1322,7 +1313,6 @@ Mus
 Music
 My
 Myanmar
-Mü
 N
 NA
 NAN
@@ -1444,6 +1434,7 @@ ORG
 ORI
 ORT
 OS
+OSA
 OSS
 OST
 OT
@@ -1562,7 +1553,6 @@ Petr
 Ph
 Philip
 Philosoph
-Phone
 Photo
 Pi
 Pie
@@ -1588,7 +1578,6 @@ Pra
 Pre
 President
 Press
-Previous
 Pri
 Prim
 Prin
@@ -1612,7 +1601,6 @@ Qa
 Qaeda
 Qo
 Qu
-Qual
 Quan
 Que
 Quest
@@ -1780,13 +1768,11 @@ STI
 STO
 STR
 SU
-SUM
 SV
 SW
 SX
 SY
 Sa
-Sab
 Saint
 Sal
 Sam
@@ -1824,7 +1810,6 @@ Sky
 Smart
 So
 Social
-Soft
 Software
 Sol
 Son
@@ -1970,7 +1955,6 @@ Thomas
 Ti
 Tim
 Time
-Tip
 To
 Tom
 Tool
@@ -2034,7 +2018,6 @@ USE
 UST
 UT
 UU
-UV
 UVA
 UX
 Ul
@@ -2203,7 +2186,6 @@ ZI
 ZN
 ZO
 ZS
-ZU
 ZV
 ZZ
 Za
@@ -2359,7 +2341,6 @@ al
 ala
 alach
 alam
-alan
 alarm
 ald
 alda
@@ -2538,6 +2519,7 @@ arri
 arrow
 ars
 arse
+arski
 art
 arta
 arte
@@ -4617,7 +4599,6 @@ ht
 hte
 hti
 html
-http
 https
 htu
 hty
@@ -4886,6 +4867,7 @@ infect
 inflammation
 info
 inform
+informati
 information
 ing
 inga
@@ -5295,6 +5277,7 @@ kom
 kon
 kone
 kong
+kontakt
 kop
 kor
 koro
@@ -5598,7 +5581,6 @@ lite
 liter
 liti
 litz
-lius
 liv
 live
 liver
@@ -6149,7 +6131,6 @@ nell
 nella
 nelle
 nelli
-nema
 nen
 nent
 neo
@@ -6585,7 +6566,6 @@ pair
 pak
 pal
 pala
-pali
 pall
 pam
 pan
@@ -8382,7 +8362,6 @@ uje
 ujo
 uk
 uka
-ukas
 uke
 uki
 ukka
@@ -8759,6 +8738,7 @@ wati
 way
 ways
 waz
+wazi
 wb
 wd
 we
@@ -9123,7 +9103,6 @@ zzy
 öp
 ör
 örf
-ört
 ös
 österreich
 öt
@@ -9684,6 +9663,7 @@ zzy
 ▁Aureli
 ▁Aurora
 ▁Aus
+▁Ausbildung
 ▁Auschwitz
 ▁Aussage
 ▁Austin
@@ -9941,6 +9921,7 @@ zzy
 ▁Berri
 ▁Berry
 ▁Bert
+▁Beruf
 ▁Berufs
 ▁Bes
 ▁Besi
@@ -10534,6 +10515,7 @@ zzy
 ▁Cita
 ▁Citi
 ▁Citizen
+▁Citroen
 ▁City
 ▁Ciudad
 ▁Civic
@@ -11315,6 +11297,7 @@ zzy
 ▁Ernest
 ▁Ernst
 ▁Ero
+▁Erste
 ▁Es
 ▁Esca
 ▁Escape
@@ -11738,6 +11721,7 @@ zzy
 ▁Ga
 ▁Gab
 ▁Gaba
+▁Gabi
 ▁Gabon
 ▁Gabriel
 ▁Gad
@@ -12267,6 +12251,7 @@ zzy
 ▁Holz
 ▁Hom
 ▁Home
+▁Homepage
 ▁Homo
 ▁Hon
 ▁Honda
@@ -12371,6 +12356,7 @@ zzy
 ▁INC
 ▁IND
 ▁INDIA
+▁INFO
 ▁INFORMA
 ▁ING
 ▁INS
@@ -12725,6 +12711,7 @@ zzy
 ▁Jupiter
 ▁Jur
 ▁Jura
+▁Juris
 ▁Jussi
 ▁Just
 ▁Justice
@@ -13291,6 +13278,7 @@ zzy
 ▁Loft
 ▁Log
 ▁Logi
+▁Login
 ▁Logo
 ▁Loh
 ▁Lois
@@ -13413,6 +13401,7 @@ zzy
 ▁MK
 ▁MM
 ▁MO
+▁MOD
 ▁MON
 ▁MONT
 ▁MORE
@@ -13797,6 +13786,7 @@ zzy
 ▁Minor
 ▁Minsk
 ▁Mint
+▁Minu
 ▁Minute
 ▁Mio
 ▁Mir
@@ -14066,6 +14056,7 @@ zzy
 ▁National
 ▁Nations
 ▁Nato
+▁Natur
 ▁Natura
 ▁Natural
 ▁Nature
@@ -14081,6 +14072,7 @@ zzy
 ▁Ne
 ▁Neben
 ▁Nec
+▁Neces
 ▁Ned
 ▁Nee
 ▁Need
@@ -14106,6 +14098,7 @@ zzy
 ▁Netherlands
 ▁Nett
 ▁Network
+▁Netzwerk
 ▁Neu
 ▁Neue
 ▁Neuro
@@ -14186,7 +14179,9 @@ zzy
 ▁Norwegian
 ▁Nos
 ▁Not
+▁Nota
 ▁Note
+▁Notebook
 ▁Nothing
 ▁Notre
 ▁Nou
@@ -14660,6 +14655,7 @@ zzy
 ▁Pis
 ▁Pisa
 ▁Pit
+▁Pita
 ▁Pitt
 ▁Pittsburgh
 ▁Pix
@@ -14697,6 +14693,7 @@ zzy
 ▁Pod
 ▁Podcast
 ▁Poetry
+▁Pogo
 ▁Poi
 ▁Point
 ▁Pois
@@ -15106,6 +15103,7 @@ zzy
 ▁Renault
 ▁Rend
 ▁Rene
+▁Reng
 ▁Rent
 ▁René
 ▁Rep
@@ -15358,6 +15356,7 @@ zzy
 ▁SPD
 ▁SPF
 ▁SPORT
+▁SPR
 ▁SR
 ▁SRL
 ▁SS
@@ -16214,6 +16213,7 @@ zzy
 ▁Tem
 ▁Temp
 ▁Temperatur
+▁Template
 ▁Temple
 ▁Tempo
 ▁Ten
@@ -16508,6 +16508,7 @@ zzy
 ▁Ukrain
 ▁Ukraine
 ▁Ul
+▁Ulla
 ▁Ulrich
 ▁Ultimate
 ▁Ultra
@@ -19546,6 +19547,7 @@ zzy
 ▁fac
 ▁faca
 ▁face
+▁facebook
 ▁faci
 ▁facial
 ▁facile
@@ -24934,6 +24936,7 @@ zzy
 ▁zum
 ▁zur
 ▁zusammen
+▁{
 ▁~
 ▁¡
 ▁£
@@ -24985,14 +24988,11 @@ zzy
 ▁▪
 ▁●
 ▁
-■
 □
-●
 
 
 
 
-
 
 
 

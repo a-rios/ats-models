@@ -34,7 +34,6 @@ $
 -
 .
 ."
-.<
 /
 0
 0000
@@ -92,7 +91,6 @@ $
 9
 :
 ;
-<
 </
 =
 ="
@@ -200,12 +198,10 @@ AZ
 AZA
 Ab
 Ac
-Activ
 Actual
 Ad
 Adam
 Administr
-Administració
 Aeroport
 Af
 Ag
@@ -298,7 +294,6 @@ BO
 BOL
 BOR
 BP
-BR
 BRA
 BRE
 BRI
@@ -367,6 +362,7 @@ CB
 CC
 CCC
 CCI
+CCM
 CD
 CE
 CEL
@@ -399,7 +395,6 @@ CN
 CO
 COM
 CON
-CONT
 COS
 CP
 CR
@@ -449,7 +444,6 @@ Cola
 Com
 Comp
 Con
-Consult
 Contact
 Continu
 Control
@@ -524,9 +518,7 @@ Digital
 Din
 Direct
 Dis
-Div
 Do
-Document
 Dom
 Don
 Donald
@@ -560,6 +552,7 @@ EF
 EFE
 EG
 EGA
+EGI
 EGO
 EGU
 EH
@@ -633,7 +626,6 @@ Ebre
 Eco
 Economia
 Ed
-Edit
 Educació
 Ein
 El
@@ -661,8 +653,6 @@ Euro
 Europa
 Europe
 European
-Ev
-Event
 Every
 Ex
 Execut
@@ -703,7 +693,6 @@ Far
 Fe
 Fel
 Fer
-Festival
 Fi
 Finan
 First
@@ -783,7 +772,6 @@ Grand
 Gre
 Green
 Gri
-Gro
 Group
 Gu
 Guard
@@ -957,7 +945,6 @@ Innen
 Instagram
 Institut
 Inter
-International
 Internet
 Invest
 IoT
@@ -998,7 +985,6 @@ Jun
 Just
 K
 KA
-KB
 KE
 KER
 KF
@@ -1019,12 +1005,10 @@ Kar
 Kara
 Kas
 Ke
-Key
 Ki
 Ko
 Kon
 Kr
-Kre
 Ku
 Kun
 Kur
@@ -1209,7 +1193,6 @@ Mul
 Mus
 Music
 My
-Mü
 N
 NA
 NAC
@@ -1324,7 +1307,6 @@ OUT
 OV
 OVA
 OVE
-OW
 OX
 OY
 Ob
@@ -1344,8 +1326,6 @@ Opera
 Or
 Ord
 Organ
-Orient
-Original
 Os
 Out
 P
@@ -1444,14 +1424,11 @@ Pri
 Prim
 Prin
 Pro
-Problem
 Prof
-Profes
 Program
 Protect
 Prov
 Pu
-Public
 Q
 QA
 QE
@@ -1642,9 +1619,7 @@ Space
 Sport
 St
 Sta
-Stand
 Star
-Start
 Stat
 Ste
 Step
@@ -1666,7 +1641,6 @@ TA
 TAC
 TAL
 TAN
-TAR
 TAS
 TB
 TC
@@ -1743,7 +1717,6 @@ Thomas
 Ti
 Tie
 Time
-Tip
 To
 Tom
 Top
@@ -1808,7 +1781,6 @@ Um
 Un
 Una
 Uni
-United
 Univers
 Up
 Ur
@@ -1910,7 +1882,6 @@ XI
 XO
 XT
 XX
-XXX
 XY
 Y
 YA
@@ -2180,7 +2151,6 @@ ang
 anga
 angan
 angel
-angl
 ango
 ani
 ania
@@ -2880,6 +2850,7 @@ cijo
 cil
 cili
 cilla
+cim
 cima
 cimento
 cimiento
@@ -3238,6 +3209,7 @@ dim
 dimension
 dimensional
 dimento
+dimo
 din
 dina
 dine
@@ -3601,6 +3573,7 @@ escenari
 escent
 esco
 escola
+escort
 escriptor
 escu
 ese
@@ -4005,7 +3978,6 @@ geri
 geria
 gers
 ges
-gesch
 gesellschaft
 gesetz
 gestion
@@ -4203,7 +4175,6 @@ halle
 hallen
 halter
 ham
-hama
 hammer
 han
 hana
@@ -4239,7 +4210,6 @@ hear
 hed
 hee
 heed
-heel
 heer
 hei
 heid
@@ -4640,7 +4610,6 @@ inten
 inter
 interdisciplinar
 interes
-internet
 intero
 interpret
 inti
@@ -5338,7 +5307,6 @@ los
 lose
 lot
 lott
-lotte
 lou
 lov
 lova
@@ -5722,6 +5690,7 @@ mpu
 mput
 ms
 mu
+mud
 mula
 mulo
 mult
@@ -5990,7 +5959,6 @@ nyol
 nyt
 nz
 nza
-nzi
 ná
 nám
 nç
@@ -6145,7 +6113,6 @@ opera
 operativ
 operator
 opi
-opia
 opo
 ops
 optim
@@ -6153,7 +6120,6 @@ or
 ora
 oral
 oran
-orario
 ord
 orde
 orden
@@ -6287,6 +6253,7 @@ pang
 pano
 pant
 panta
+pap
 papa
 par
 para
@@ -6333,7 +6300,6 @@ pel
 pela
 pele
 peli
-pell
 pen
 pena
 penda
@@ -6848,6 +6814,7 @@ restaurant
 reste
 ret
 reta
+retan
 rete
 reti
 reto
@@ -7137,6 +7104,7 @@ samt
 san
 sana
 sang
+sani
 sanitari
 sano
 sant
@@ -7569,6 +7537,7 @@ sy
 syk
 symbol
 syn
+sys
 sz
 szt
 sá
@@ -7776,7 +7745,6 @@ til
 tila
 tilan
 tile
-tili
 till
 tim
 tima
@@ -8093,7 +8061,6 @@ ulu
 uló
 um
 uma
-uman
 umas
 umba
 umbi
@@ -8764,7 +8731,6 @@ zón
 ándole
 ándonos
 ándose
-áp
 ár
 ára
 ário
@@ -8788,6 +8754,7 @@ zón
 ç
 ça
 ço
+çon
 ção
 è
 ència
@@ -8936,6 +8903,7 @@ zón
 ński
 ň
 š
+ša
 €
 ▁
 ▁!
@@ -8996,6 +8964,7 @@ zón
 ▁API
 ▁APP
 ▁AR
+▁ARM
 ▁ART
 ▁AS
 ▁ASEAN
@@ -9096,6 +9065,7 @@ zón
 ▁Agency
 ▁Agenda
 ▁Agent
+▁Agentur
 ▁Agosto
 ▁Agra
 ▁Agri
@@ -9113,6 +9083,7 @@ zón
 ▁Airbus
 ▁Aires
 ▁Airlines
+▁Airport
 ▁Airways
 ▁Aiz
 ▁Aj
@@ -9428,6 +9399,7 @@ zón
 ▁Aureli
 ▁Aurora
 ▁Aus
+▁Ausbildung
 ▁Auschwitz
 ▁Austin
 ▁Australia
@@ -9936,6 +9908,7 @@ zón
 ▁COME
 ▁COMP
 ▁CON
+▁CONS
 ▁COP
 ▁COR
 ▁CP
@@ -10662,6 +10635,7 @@ zón
 ▁Dimitri
 ▁Din
 ▁Dina
+▁Dinam
 ▁Dinamo
 ▁Dinas
 ▁Dini
@@ -10876,6 +10850,7 @@ zón
 ▁Eile
 ▁Ein
 ▁Eindhoven
+▁Einrichtung
 ▁Einstein
 ▁Eis
 ▁Eisen
@@ -11101,6 +11076,7 @@ zón
 ▁FE
 ▁FED
 ▁FEDER
+▁FER
 ▁FF
 ▁FI
 ▁FIA
@@ -11127,6 +11103,7 @@ zón
 ▁Fach
 ▁Faci
 ▁Facilita
+▁Fact
 ▁Factor
 ▁Factory
 ▁Facultad
@@ -11239,6 +11216,7 @@ zón
 ▁Finanz
 ▁Find
 ▁Fine
+▁Finger
 ▁Finland
 ▁Finn
 ▁Fiorentina
@@ -11419,6 +11397,7 @@ zón
 ▁GPS
 ▁GPU
 ▁GR
+▁GRA
 ▁GS
 ▁GSM
 ▁GT
@@ -11806,6 +11785,7 @@ zón
 ▁Heidelberg
 ▁Heidi
 ▁Heights
+▁Heil
 ▁Heim
 ▁Hein
 ▁Heinrich
@@ -11993,6 +11973,7 @@ zón
 ▁INC
 ▁IND
 ▁INFO
+▁INFORMA
 ▁ING
 ▁INS
 ▁INTER
@@ -12006,6 +11987,7 @@ zón
 ▁IT
 ▁IV
 ▁IX
+▁IZ
 ▁Ia
 ▁Ian
 ▁Iba
@@ -13641,6 +13623,7 @@ zón
 ▁Número
 ▁Núñez
 ▁O
+▁OB
 ▁OC
 ▁OF
 ▁OH
@@ -14091,6 +14074,7 @@ zón
 ▁Plas
 ▁Plat
 ▁Plataforma
+▁Platinum
 ▁Platz
 ▁Play
 ▁PlayStation
@@ -14351,6 +14335,7 @@ zón
 ▁RO
 ▁RP
 ▁RS
+▁RSS
 ▁RT
 ▁RTL
 ▁RTV
@@ -15052,6 +15037,7 @@ zón
 ▁Sko
 ▁Skri
 ▁Sky
+▁Skype
 ▁Sla
 ▁Slim
 ▁Slo
@@ -15312,6 +15298,7 @@ zón
 ▁Sánchez
 ▁São
 ▁Sé
+▁Sér
 ▁Sí
 ▁Só
 ▁Sólo
@@ -15727,6 +15714,7 @@ zón
 ▁United
 ▁Univers
 ▁Universal
+▁Universe
 ▁Universidad
 ▁Universidade
 ▁Universit
@@ -15835,6 +15823,7 @@ zón
 ▁Venez
 ▁Venezuela
 ▁Vent
+▁Ventil
 ▁Venus
 ▁Ver
 ▁Vera
@@ -15891,6 +15880,7 @@ zón
 ▁Village
 ▁Villar
 ▁Ville
+▁Vilnius
 ▁Vin
 ▁Vincent
 ▁Vinci
@@ -15983,6 +15973,7 @@ zón
 ▁Wan
 ▁Wand
 ▁Wandel
+▁Wander
 ▁Wang
 ▁Wann
 ▁Want
@@ -17568,6 +17559,7 @@ zón
 ▁civil
 ▁civile
 ▁civiliza
+▁cl
 ▁cla
 ▁clan
 ▁clandestin
@@ -18423,6 +18415,7 @@ zón
 ▁deriva
 ▁derivados
 ▁dermatit
+▁dermatolog
 ▁derrota
 ▁des
 ▁desa
@@ -18689,6 +18682,7 @@ zón
 ▁do
 ▁dob
 ▁doble
+▁doc
 ▁doce
 ▁docente
 ▁doctor
@@ -19040,6 +19034,7 @@ zón
 ▁eros
 ▁error
 ▁errores
+▁eru
 ▁erudit
 ▁es
 ▁esa
@@ -19330,6 +19325,7 @@ zón
 ▁fabul
 ▁fac
 ▁face
+▁facebook
 ▁fach
 ▁fachada
 ▁facial
@@ -19472,6 +19468,7 @@ zón
 ▁filme
 ▁filmes
 ▁filo
+▁filosof
 ▁filosofía
 ▁filtr
 ▁filtra
@@ -21771,6 +21768,7 @@ zón
 ▁op
 ▁opciones
 ▁opción
+▁open
 ▁oper
 ▁opera
 ▁operacion
@@ -23969,6 +23967,7 @@ zón
 ▁sólida
 ▁sólido
 ▁sólo
+▁són
 ▁sú
 ▁súper
 ▁t
@@ -24379,6 +24378,7 @@ zón
 ▁triste
 ▁triunfo
 ▁tro
+▁troca
 ▁trofe
 ▁trom
 ▁trombo
@@ -24645,6 +24645,7 @@ zón
 ▁verb
 ▁verbal
 ▁verbo
+▁verd
 ▁verdad
 ▁verdade
 ▁verdadera
@@ -24984,15 +24985,14 @@ zón
 ▁→
 ▁■
 ▁▪
+▁►
 ▁●
 ▁
 ■
 □
-●
 
 
 
-
 
 
 

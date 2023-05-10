@@ -31,7 +31,6 @@ $
 -
 .
 ."
-.<
 /
 0
 0000
@@ -51,7 +50,6 @@ $
 2009
 2010
 2014
-2015
 2016
 2017
 2018
@@ -69,7 +67,6 @@ $
 9
 :
 ;
-<
 </
 =
 ="
@@ -165,7 +162,6 @@ Andre
 Ant
 Anti
 Ap
-Apa
 Ar
 Aragó
 Archiv
@@ -300,7 +296,6 @@ Ce
 Centr
 Ch
 Cha
-Chan
 Char
 Che
 Chef
@@ -310,16 +305,13 @@ Cho
 Christian
 Ci
 Claude
-Club
 Co
 Col
 Cola
 Com
 Comp
 Con
-Contact
 Continu
-Control
 Cor
 Cre
 Cu
@@ -373,7 +365,6 @@ Die
 Direct
 Dis
 Do
-Document
 Dom
 Don
 Drive
@@ -500,12 +491,10 @@ Fit
 Flor
 Fo
 For
-Form
 Forum
 Foto
 Fra
 Franc
-Frank
 Fu
 Fun
 G
@@ -619,7 +608,6 @@ ILE
 IM
 IMA
 IME
-IMO
 IN
 INA
 INE
@@ -692,7 +680,6 @@ Kas
 Ke
 Ki
 Ko
-Kur
 KÖ
 L
 LA
@@ -730,7 +717,6 @@ Lib
 Life
 Live
 Lo
-Log
 Los
 Love
 Lu
@@ -776,7 +762,6 @@ Mar
 Marc
 Mari
 Maria
-Mark
 Mas
 Master
 Mat
@@ -809,7 +794,6 @@ Mont
 Mor
 Mos
 Mu
-Mus
 My
 N
 NA
@@ -888,16 +872,13 @@ Ob
 Observatori
 Occident
 Octubre
-Of
 Oh
 Ol
 On
 One
 Online
-Op
 Opera
 Or
-Ord
 Organ
 Os
 Out
@@ -945,7 +926,6 @@ Pen
 Per
 Pero
 Person
-Peter
 Petr
 Pi
 Pie
@@ -1068,7 +1048,6 @@ Se
 Secret
 Sen
 Ser
-Sex
 Sha
 She
 Si
@@ -1140,10 +1119,8 @@ Tech
 Tele
 Ten
 Ter
-Text
 Th
 The
-Thi
 Thomas
 Ti
 Tie
@@ -1216,7 +1193,6 @@ VV
 Va
 Val
 Van
-Var
 Ve
 Ven
 Ver
@@ -1248,7 +1224,6 @@ Web
 Wer
 West
 Wi
-Wie
 Will
 Win
 Wo
@@ -1451,13 +1426,13 @@ andre
 andro
 ane
 ang
-angel
 ango
 ani
 ania
 anie
 anima
 anja
+ann
 anna
 anne
 ano
@@ -1888,7 +1863,6 @@ cato
 cava
 cc
 cca
-cce
 cchi
 cchio
 cci
@@ -3079,6 +3053,7 @@ has
 hasa
 hasta
 hat
+hau
 haus
 hausen
 hay
@@ -3157,7 +3132,6 @@ how
 hr
 hre
 html
-http
 https
 hu
 hua
@@ -3245,6 +3219,7 @@ iert
 ierten
 ies
 iese
+iet
 if
 ifa
 ife
@@ -3305,6 +3280,7 @@ ilio
 ilish
 ill
 illa
+illant
 illard
 illas
 ille
@@ -3931,6 +3907,7 @@ lucina
 lud
 lugu
 lui
+lular
 lum
 lumina
 lun
@@ -4260,7 +4237,6 @@ nah
 najua
 nak
 nal
-nali
 nam
 nami
 nan
@@ -4991,7 +4967,6 @@ racia
 rad
 rada
 radi
-radio
 rado
 rador
 rados
@@ -5533,7 +5508,6 @@ span
 spar
 spe
 spec
-special
 specific
 specta
 spel
@@ -5637,7 +5611,6 @@ strum
 stró
 ström
 stu
-studi
 studie
 studio
 stup
@@ -5978,7 +5951,6 @@ txo
 ty
 tz
 tza
-tze
 tzen
 tzer
 tà
@@ -6146,7 +6118,6 @@ uti
 utili
 utin
 uto
-uts
 után
 uvi
 uvimos
@@ -6514,7 +6485,6 @@ zó
 zón
 ¡
 §
-©
 ­
 ®
 °
@@ -6850,6 +6820,7 @@ zón
 ▁Alca
 ▁Alcalde
 ▁Alde
+▁Aldri
 ▁Ale
 ▁Alegre
 ▁Alejandro
@@ -7243,6 +7214,7 @@ zón
 ▁Bernardo
 ▁Bernhard
 ▁Bert
+▁Berufs
 ▁Bes
 ▁Best
 ▁Bet
@@ -7436,8 +7408,10 @@ zón
 ▁CDU
 ▁CE
 ▁CEIP
+▁CEN
 ▁CEO
 ▁CF
+▁CH
 ▁CHP
 ▁CI
 ▁CIA
@@ -7585,6 +7559,7 @@ zón
 ▁Cent
 ▁Centenar
 ▁Center
+▁Centra
 ▁Central
 ▁Centre
 ▁Centro
@@ -7836,6 +7811,7 @@ zón
 ▁Craig
 ▁Cre
 ▁Crea
+▁Cream
 ▁Cred
 ▁Credit
 ▁Creek
@@ -8076,6 +8052,7 @@ zón
 ▁Drag
 ▁Dragon
 ▁Drake
+▁Drama
 ▁Dre
 ▁Dream
 ▁Drew
@@ -8399,6 +8376,7 @@ zón
 ▁Federación
 ▁Federal
 ▁Federico
+▁Feedback
 ▁Feijóo
 ▁Fel
 ▁Feld
@@ -8465,6 +8443,7 @@ zón
 ▁Flam
 ▁Flash
 ▁Fle
+▁Flexi
 ▁Flight
 ▁Flo
 ▁Flor
@@ -8705,6 +8684,7 @@ zón
 ▁Google
 ▁Gor
 ▁Gordon
+▁Gore
 ▁Got
 ▁Gott
 ▁Govern
@@ -8871,6 +8851,7 @@ zón
 ▁Hell
 ▁Helm
 ▁Helmut
+▁Help
 ▁Helsinki
 ▁Hem
 ▁Hen
@@ -8987,10 +8968,12 @@ zón
 ▁Hus
 ▁Hussein
 ▁Hut
+▁Huy
 ▁Hy
 ▁Hyundai
 ▁Hz
 ▁Há
+▁Hä
 ▁Hän
 ▁Hé
 ▁Hér
@@ -9606,6 +9589,7 @@ zón
 ▁Lor
 ▁Lord
 ▁Lore
+▁Lorem
 ▁Loren
 ▁Lorenzo
 ▁Los
@@ -9689,6 +9673,7 @@ zón
 ▁Madagascar
 ▁Made
 ▁Madeira
+▁Madeleine
 ▁Madison
 ▁Madonna
 ▁Madrid
@@ -9808,6 +9793,7 @@ zón
 ▁Mate
 ▁Matemática
 ▁Mater
+▁Materi
 ▁Material
 ▁Math
 ▁Mathe
@@ -9973,6 +9959,7 @@ zón
 ▁Moda
 ▁Mode
 ▁Model
+▁Moder
 ▁Modern
 ▁Modi
 ▁Modifica
@@ -9996,6 +9983,7 @@ zón
 ▁Monet
 ▁Mongolia
 ▁Monica
+▁Monika
 ▁Monitor
 ▁Mono
 ▁Monroe
@@ -10064,6 +10052,7 @@ zón
 ▁Mussolini
 ▁Must
 ▁Musta
+▁Musul
 ▁Mutu
 ▁Muy
 ▁My
@@ -10118,6 +10107,7 @@ zón
 ▁Natal
 ▁Natalia
 ▁Nathan
+▁Nation
 ▁National
 ▁Nations
 ▁Natur
@@ -10387,6 +10377,7 @@ zón
 ▁Pablo
 ▁Pac
 ▁Pach
+▁Pacient
 ▁Pacific
 ▁Pack
 ▁Paco
@@ -10464,6 +10455,7 @@ zón
 ▁Patrick
 ▁Patrimonio
 ▁Patriot
+▁Patro
 ▁Patron
 ▁Pau
 ▁Paul
@@ -11250,6 +11242,7 @@ zón
 ▁Shin
 ▁Shir
 ▁Sho
+▁Shop
 ▁Short
 ▁Show
 ▁Shu
@@ -11395,6 +11388,7 @@ zón
 ▁Star
 ▁Starbucks
 ▁Stars
+▁Start
 ▁State
 ▁Station
 ▁Statist
@@ -11491,6 +11485,7 @@ zón
 ▁Süd
 ▁T
 ▁TA
+▁TB
 ▁TC
 ▁TE
 ▁TI
@@ -11754,6 +11749,7 @@ zón
 ▁Técnico
 ▁Tí
 ▁Título
+▁Tó
 ▁Tú
 ▁U
 ▁UC
@@ -11764,6 +11760,7 @@ zón
 ▁UK
 ▁UM
 ▁UN
+▁UNA
 ▁UNESCO
 ▁UNI
 ▁UNICEF
@@ -12019,6 +12016,7 @@ zón
 ▁Werner
 ▁West
 ▁Westminster
+▁What
 ▁WhatsApp
 ▁Whatsapp
 ▁Wheel
@@ -19989,10 +19987,12 @@ zón
 ▁́
 ▁̈
 ▁€
+▁€.
 ▁€/
+▁■
+▁▪
 ▁●
 ▁
-■
 
 
 

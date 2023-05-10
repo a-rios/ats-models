@@ -24,7 +24,6 @@ $
 -
 .
 ."
-.<
 /
 0
 1
@@ -42,7 +41,6 @@ $
 9
 :
 ;
-<
 =
 ="
 >
@@ -85,7 +83,6 @@ Amérique
 An
 And
 Ang
-Ap
 App
 Ar
 Arabi
@@ -115,7 +112,6 @@ Bahn
 Bar
 Bas
 Be
-Ben
 Ber
 Bi
 Bild
@@ -140,10 +136,8 @@ Ca
 Can
 Car
 Ce
-Cha
 Chef
 Chi
-Christian
 Ci
 Claude
 Co
@@ -204,13 +198,11 @@ Esp
 Est
 Esta
 Esto
-Et
 Etat
 Euro
 Europa
 Europe
 European
-Every
 Ex
 F
 FA
@@ -258,12 +250,10 @@ HS
 HU
 Ha
 Har
-Hay
 He
 Her
 Hi
 Ho
-How
 I
 IC
 IP
@@ -276,7 +266,6 @@ Il
 Im
 Imp
 In
-Information
 Innen
 Institut
 Inter
@@ -292,8 +281,6 @@ Ju
 Jährige
 K
 Ka
-Kan
-Kar
 Ke
 Ki
 Ko
@@ -309,7 +296,6 @@ La
 Land
 Le
 Les
-Let
 Li
 Lo
 Los
@@ -327,21 +313,18 @@ MS
 MU
 Ma
 Mad
-Mai
 Mail
 Man
 Mar
 Mari
 Mark
 Me
-Men
 Mi
 Mit
 Mitglied
 Mo
 Mon
 Mu
-Mus
 My
 N
 NG
@@ -371,8 +354,6 @@ Occident
 Office
 Oh
 On
-One
-Op
 Or
 Organ
 Orient
@@ -391,13 +372,8 @@ PS
 PT
 Pa
 Par
-Para
 Part
-Pe
-People
 Per
-Pero
-Person
 Pierre
 Più
 Plat
@@ -411,10 +387,8 @@ Präsident
 Pu
 Q
 Qu
-Quan
 Que
 Quest
-Qui
 Quién
 Qué
 R
@@ -445,7 +419,6 @@ SP
 SU
 SV
 Sa
-Sal
 San
 Sch
 Se
@@ -484,10 +457,8 @@ Tag
 Te
 Team
 Tech
-Tele
 Ten
 Test
-Th
 That
 The
 There
@@ -496,7 +467,6 @@ Ti
 To
 Toutes
 Tra
-Tu
 Tur
 U
 UE
@@ -518,13 +488,11 @@ V
 VB
 VID
 VP
-Val
 Var
 Ver
 Verhältnis
 Vi
 Vo
-Vol
 Vor
 Vorsitzende
 W
@@ -540,7 +508,6 @@ Wer
 Westfalen
 What
 When
-Wie
 Wir
 Wo
 Württemberg
@@ -548,10 +515,8 @@ X
 Y
 You
 Z
-Za
 Ze
 Zu
-[
 ]
 _
 a
@@ -853,6 +818,7 @@ asi
 assa
 asse
 assemble
+assemblée
 assenza
 asset
 assist
@@ -1600,7 +1566,6 @@ efficienza
 eg
 ega
 eggia
-egli
 ego
 eh
 ehrt
@@ -1612,7 +1577,6 @@ einander
 eindruck
 einerseits
 einheit
-eit
 eiß
 ej
 ek
@@ -1956,6 +1920,7 @@ flu
 flug
 fluss
 fläche
+flüge
 fo
 fol
 fold
@@ -2288,7 +2253,6 @@ har
 hard
 harmoni
 has
-hat
 hau
 haupt
 haus
@@ -2316,6 +2280,7 @@ hil
 hilfe
 hin
 hinder
+hir
 histoire
 hiver
 hl
@@ -2749,7 +2714,6 @@ izo
 izza
 izzare
 izzata
-izzate
 izzati
 izzato
 izzazione
@@ -2823,7 +2787,6 @@ klar
 klasse
 kle
 kleid
-klusi
 klärung
 km
 know
@@ -3064,7 +3027,6 @@ location
 lock
 log
 loge
-logen
 logist
 logo
 loh
@@ -3083,7 +3045,6 @@ ls
 lt
 lta
 lte
-lti
 lu
 lucht
 lug
@@ -3181,7 +3142,6 @@ me
 med
 medi
 media
-medizin
 meer
 mehr
 meister
@@ -3338,6 +3298,7 @@ na
 nach
 nacht
 nacional
+nade
 nah
 nahme
 naire
@@ -3525,7 +3486,6 @@ occupe
 occuper
 oce
 och
-oder
 odi
 ody
 oeuvre
@@ -4079,9 +4039,11 @@ rillo
 rimin
 rin
 rina
+rine
 ring
 ringen
 ringer
+rini
 rino
 rio
 rion
@@ -4102,7 +4064,6 @@ rla
 rle
 rli
 rlo
-rma
 rmaßen
 rme
 rmi
@@ -4202,13 +4163,13 @@ sak
 sal
 sam
 same
-sammen
 sammlung
 samt
 san
 sang
 sant
 sar
+sari
 sas
 satz
 sau
@@ -4462,7 +4423,6 @@ ssimo
 ssing
 sso
 sson
-ssu
 ssum
 ssy
 ssystem
@@ -4549,6 +4509,7 @@ stret
 stri
 strict
 stro
+strom
 stru
 struct
 structure
@@ -4562,7 +4523,6 @@ stum
 stund
 stunden
 stur
-sty
 style
 stä
 städte
@@ -4599,7 +4559,6 @@ szeit
 sä
 sätze
 sé
-sí
 só
 t
 ta
@@ -4700,7 +4659,6 @@ tet
 teur
 teurs
 text
-tez
 tezza
 th
 tha
@@ -4926,15 +4884,12 @@ uge
 ugh
 ught
 ugu
-ui
 uille
 uit
 uk
 ul
 ula
-ular
 ulation
-uld
 ule
 uli
 ulla
@@ -5206,7 +5161,6 @@ welt
 wen
 wend
 wende
-wendung
 wer
 werfen
 werk
@@ -5334,7 +5288,6 @@ zional
 zionale
 zione
 zioni
-zir
 zis
 zle
 zo
@@ -5690,6 +5643,7 @@ züge
 ▁Allerdings
 ▁Alles
 ▁Allgemein
+▁Allianz
 ▁Alltag
 ▁Alm
 ▁Alonso
@@ -5724,6 +5678,7 @@ züge
 ▁Andrea
 ▁Andreas
 ▁Andrew
+▁Android
 ▁André
 ▁Andy
 ▁Anerkennung
@@ -5779,6 +5734,7 @@ züge
 ▁Arbeitgeber
 ▁Arbeitnehmer
 ▁Arbeits
+▁Arbeitsplatz
 ▁Archiv
 ▁Are
 ▁Arena
@@ -5847,6 +5803,7 @@ züge
 ▁Australia
 ▁Australian
 ▁Austria
+▁Auswahl
 ▁Auswirkungen
 ▁Aut
 ▁Auto
@@ -6015,6 +5972,7 @@ züge
 ▁Ble
 ▁Blick
 ▁Block
+▁Blu
 ▁Blue
 ▁Blut
 ▁Bo
@@ -6207,6 +6165,7 @@ züge
 ▁Chicago
 ▁Chief
 ▁Chiesa
+▁Children
 ▁Chile
 ▁China
 ▁Chine
@@ -6258,6 +6217,7 @@ züge
 ▁Como
 ▁Comp
 ▁Company
+▁Computer
 ▁Comune
 ▁Comuni
 ▁Comunidad
@@ -6326,6 +6286,7 @@ züge
 ▁Cur
 ▁Cy
 ▁Cámara
+▁Cé
 ▁Cô
 ▁D
 ▁DE
@@ -6797,6 +6758,7 @@ züge
 ▁Fried
 ▁Frieden
 ▁Friedrich
+▁Frist
 ▁Fro
 ▁From
 ▁Front
@@ -6877,6 +6839,7 @@ züge
 ▁Generation
 ▁Genova
 ▁Gent
+▁Geo
 ▁George
 ▁Georgi
 ▁Georgia
@@ -6933,6 +6896,7 @@ züge
 ▁Go
 ▁Gobierno
 ▁God
+▁Gol
 ▁Gold
 ▁Golden
 ▁Golf
@@ -7081,6 +7045,7 @@ züge
 ▁Hinsicht
 ▁Hinter
 ▁Hintergrund
+▁Hinweis
 ▁Hinweise
 ▁Hir
 ▁His
@@ -7204,6 +7169,7 @@ züge
 ▁International
 ▁Internet
 ▁Interview
+▁Investiga
 ▁Investition
 ▁Investment
 ▁Investor
@@ -7394,11 +7360,13 @@ züge
 ▁Kommunen
 ▁Kommunikation
 ▁Komp
+▁Kompetenz
 ▁Kon
 ▁Konf
 ▁Konflikt
 ▁Kong
 ▁Kontakt
+▁Kontroll
 ▁Kontrolle
 ▁Konzept
 ▁Konzern
@@ -7577,12 +7545,14 @@ züge
 ▁Ludwig
 ▁Luego
 ▁Luft
+▁Lug
 ▁Luigi
 ▁Luis
 ▁Luka
 ▁Lukas
 ▁Lula
 ▁Luna
+▁Lund
 ▁Luxembourg
 ▁Luxemburg
 ▁Ly
@@ -7626,6 +7596,7 @@ züge
 ▁Man
 ▁Management
 ▁Manager
+▁Manche
 ▁Manchester
 ▁Manda
 ▁Mange
@@ -8594,6 +8565,7 @@ züge
 ▁Serge
 ▁Sergio
 ▁Serie
+▁Serra
 ▁Service
 ▁Services
 ▁Servicio
@@ -8697,6 +8669,7 @@ züge
 ▁Sport
 ▁Sports
 ▁Spr
+▁Sprach
 ▁Sprache
 ▁Spre
 ▁Spring
@@ -8818,6 +8791,7 @@ züge
 ▁T
 ▁TV
 ▁Ta
+▁Tab
 ▁Tabel
 ▁Tag
 ▁Tage
@@ -8832,6 +8806,7 @@ züge
 ▁Talk
 ▁Tam
 ▁También
+▁Tampoc
 ▁Tan
 ▁Tank
 ▁Tanto
@@ -8862,6 +8837,7 @@ züge
 ▁Tempo
 ▁Ten
 ▁Tenemos
+▁Tengo
 ▁Tennis
 ▁Ter
 ▁Termin
@@ -9181,6 +9157,7 @@ züge
 ▁Walter
 ▁Wand
 ▁Wander
+▁Wann
 ▁War
 ▁Waren
 ▁Warum
@@ -9385,6 +9362,7 @@ züge
 ▁absolutamente
 ▁absolute
 ▁absolutely
+▁absolv
 ▁absorb
 ▁absurd
 ▁abu
@@ -9503,6 +9481,7 @@ züge
 ▁además
 ▁adequat
 ▁adesso
+▁adi
 ▁adicional
 ▁adjust
 ▁administra
@@ -9952,6 +9931,7 @@ züge
 ▁artículo
 ▁artículos
 ▁as
+▁ascend
 ▁ascolta
 ▁asegura
 ▁asegurar
@@ -10896,6 +10876,7 @@ züge
 ▁climat
 ▁climate
 ▁climatique
+▁climb
 ▁climático
 ▁clinic
 ▁clip
@@ -12417,6 +12398,7 @@ züge
 ▁electrónico
 ▁elegido
 ▁elegir
+▁elektronische
 ▁element
 ▁elementi
 ▁elemento
@@ -12651,6 +12633,7 @@ züge
 ▁esas
 ▁esattamente
 ▁esca
+▁escal
 ▁escala
 ▁escape
 ▁escena
@@ -12862,6 +12845,7 @@ züge
 ▁experiencia
 ▁experiment
 ▁expert
+▁expertise
 ▁expertos
 ▁experts
 ▁explain
@@ -13344,6 +13328,7 @@ züge
 ▁för
 ▁fördern
 ▁fútbol
+▁fühlen
 ▁fühlt
 ▁führen
 ▁führt
@@ -13602,6 +13587,7 @@ züge
 ▁govern
 ▁government
 ▁governo
+▁goût
 ▁gr
 ▁gra
 ▁grab
@@ -14805,6 +14791,7 @@ züge
 ▁lundi
 ▁lunedì
 ▁lunes
+▁lung
 ▁lunga
 ▁lungo
 ▁luoghi
@@ -15879,6 +15866,7 @@ züge
 ▁ottobre
 ▁ou
 ▁oublier
+▁oui
 ▁our
 ▁ourselves
 ▁out
@@ -16172,6 +16160,7 @@ züge
 ▁person
 ▁persona
 ▁personaggi
+▁personaje
 ▁personal
 ▁personale
 ▁personales
@@ -16396,6 +16385,7 @@ züge
 ▁poner
 ▁pong
 ▁pont
+▁ponte
 ▁pool
 ▁poor
 ▁pop
@@ -16600,6 +16590,7 @@ züge
 ▁presu
 ▁presun
 ▁presupuesto
+▁pret
 ▁pretend
 ▁pretende
 ▁pretty
@@ -16607,6 +16598,7 @@ züge
 ▁prevale
 ▁prevede
 ▁prevención
+▁prevenire
 ▁prevent
 ▁prevenzione
 ▁previa
@@ -16939,6 +16931,7 @@ züge
 ▁publicación
 ▁publicado
 ▁publication
+▁publicité
 ▁publique
 ▁publish
 ▁published
@@ -17113,6 +17106,7 @@ züge
 ▁raisons
 ▁rally
 ▁ram
+▁ramp
 ▁ran
 ▁rang
 ▁range
@@ -17198,6 +17192,7 @@ züge
 ▁recherche
 ▁recht
 ▁rechts
+▁rechtzeitig
 ▁reci
 ▁recibe
 ▁recibido
@@ -17519,6 +17514,7 @@ züge
 ▁returned
 ▁reuni
 ▁reuniones
+▁reunir
 ▁reunión
 ▁revanche
 ▁reveal
@@ -17660,6 +17656,7 @@ züge
 ▁roj
 ▁role
 ▁roll
+▁rom
 ▁roman
 ▁romp
 ▁rond
@@ -19282,6 +19279,7 @@ züge
 ▁ustedes
 ▁usual
 ▁usually
+▁usuario
 ▁usuarios
 ▁utenti
 ▁utile
@@ -19713,6 +19711,7 @@ züge
 ▁welche
 ▁welchen
 ▁welcher
+▁welches
 ▁welcome
 ▁well
 ▁weltweit
@@ -19886,6 +19885,7 @@ züge
 ▁§
 ▁©
 ▁«
+▁·
 ▁»
 ▁¿
 ▁À
