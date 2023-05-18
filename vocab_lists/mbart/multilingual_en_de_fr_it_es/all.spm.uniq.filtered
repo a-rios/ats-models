@@ -24,7 +24,6 @@ $
 '
 (
 (!)
-(*
 (?)
 )
 )(
@@ -1692,7 +1691,6 @@ Ju
 Jul
 Jun
 Just
-JÄ
 Jährige
 Järve
 K
@@ -1707,7 +1705,6 @@ KARI
 KAS
 KAT
 KATA
-KATEGORI
 KAWA
 KAZ
 KB
@@ -8958,7 +8955,6 @@ iet
 ieties
 ietis
 iewe
-iešu
 ieť
 if
 ifa
@@ -9367,7 +9363,6 @@ integr
 integra
 integrazione
 intele
-intellekt
 intelligence
 inten
 inter
@@ -13906,6 +13901,7 @@ piro
 pis
 pisan
 pisane
+pisanie
 pisano
 pisco
 pista
@@ -21210,6 +21206,7 @@ zə
 ▁/>
 ▁:
 ▁:)
+▁:-
 ▁;
 ▁<
 ▁=
@@ -24344,7 +24341,6 @@ zə
 ▁Dj
 ▁Dje
 ▁Dk
-▁Dkt
 ▁Dla
 ▁Dmitri
 ▁Dnes
@@ -24868,7 +24864,6 @@ zə
 ▁Epidemi
 ▁Episcopi
 ▁Episcopo
-▁Episcopus
 ▁Episod
 ▁Episode
 ▁Epistula
@@ -28800,7 +28795,6 @@ zə
 ▁Lyrics
 ▁Lys
 ▁Lywodraeth
-▁LÄ
 ▁Là
 ▁Lá
 ▁László
@@ -35491,7 +35485,6 @@ zə
 ▁Z
 ▁ZA
 ▁ZAGREB
-▁ZDA
 ▁Za
 ▁Zabal
 ▁Zach
@@ -37942,7 +37935,6 @@ zə
 ▁benefits
 ▁benefício
 ▁benefícios
-▁bener
 ▁benessere
 ▁benestar
 ▁beni
@@ -38579,7 +38571,6 @@ zə
 ▁buah
 ▁buchen
 ▁bud
-▁budapesti
 ▁budd
 ▁buddh
 ▁buddsoddi
@@ -39545,7 +39536,6 @@ zə
 ▁civili
 ▁civiliza
 ▁civilizaci
-▁civitate
 ▁ciò
 ▁ciągu
 ▁cl
@@ -44253,7 +44243,6 @@ zə
 ▁felt
 ▁fem
 ▁female
-▁femei
 ▁femenina
 ▁feminin
 ▁feminino
@@ -45023,7 +45012,6 @@ zə
 ▁fáil
 ▁fährt
 ▁fällt
-▁fält
 ▁få
 ▁får
 ▁fé
@@ -45156,7 +45144,6 @@ zə
 ▁ganga
 ▁gangbang
 ▁gange
-▁gangen
 ▁ganger
 ▁ganha
 ▁ganhar
@@ -45295,7 +45282,6 @@ zə
 ▁gegenseitig
 ▁gegenüber
 ▁gegevens
-▁gegn
 ▁gegründet
 ▁gehabt
 ▁gehad
@@ -47238,7 +47224,6 @@ zə
 ▁informat
 ▁informatic
 ▁informatie
-▁informatik
 ▁information
 ▁informations
 ▁informatique
@@ -48083,7 +48068,6 @@ zə
 ▁kalan
 ▁kalau
 ▁kalb
-▁kalba
 ▁kaldt
 ▁kale
 ▁kalendar
@@ -48192,6 +48176,7 @@ zə
 ▁kasa
 ▁kasaba
 ▁kasar
+▁kashe
 ▁kasi
 ▁kasih
 ▁kasoo
@@ -48648,7 +48633,6 @@ zə
 ▁kori
 ▁koro
 ▁koron
-▁korpo
 ▁korporat
 ▁korrekt
 ▁korri
@@ -48733,7 +48717,6 @@ zə
 ▁kristen
 ▁kristian
 ▁krit
-▁kriter
 ▁kriti
 ▁kritik
 ▁kritis
@@ -49246,7 +49229,6 @@ zə
 ▁lessons
 ▁let
 ▁leta
-▁lete
 ▁letech
 ▁leti
 ▁leto
@@ -51853,7 +51835,6 @@ zə
 ▁než
 ▁ng
 ▁nga
-▁nge
 ▁nghe
 ▁ngo
 ▁ngon
@@ -55666,7 +55647,6 @@ zə
 ▁pôsobia
 ▁pôsobí
 ▁pö
-▁pör
 ▁pú
 ▁públic
 ▁pública
@@ -56743,7 +56723,6 @@ zə
 ▁resum
 ▁resume
 ▁resurs
-▁resurse
 ▁ret
 ▁reta
 ▁retail
@@ -57163,7 +57142,6 @@ zə
 ▁rozšířen
 ▁ročník
 ▁rre
-▁rrit
 ▁rs
 ▁ru
 ▁rua
@@ -57936,6 +57914,7 @@ zə
 ▁sende
 ▁senden
 ▁sender
+▁sendes
 ▁sending
 ▁sendo
 ▁sendt
@@ -58411,7 +58390,6 @@ zə
 ▁situs
 ▁situé
 ▁située
-▁sitä
 ▁sitúa
 ▁sive
 ▁sivil
@@ -60484,7 +60462,6 @@ zə
 ▁timer
 ▁times
 ▁timid
-▁timme
 ▁timore
 ▁timp
 ▁timu
@@ -60526,7 +60503,6 @@ zə
 ▁tirk
 ▁tiro
 ▁tissu
-▁tisti
 ▁tisíc
 ▁tit
 ▁titan
@@ -60546,9 +60522,7 @@ zə
 ▁tiu
 ▁tiun
 ▁tivemos
-▁tiver
 ▁tiveram
-▁tivo
 ▁tiña
 ▁tj
 ▁tjekke
@@ -63535,7 +63509,6 @@ zə
 ▁{
 ▁}
 ▁~
-▁
 ▁
 ▁
 ▁
@@ -63799,7 +63772,6 @@ zə
 ▁în
 ▁îngriji
 ▁ó
-▁óg
 ▁óleo
 ▁ón
 ▁óptima
@@ -65161,7 +65133,6 @@ zə
 ▶
 ▸
 ►
-▾
 ◂
 ●
 ◗
@@ -65196,28 +65167,18 @@ zə
 
 
 
-
 
-
 
 
 
 
-
-
 
-
-
-
-
 
 
 
 
 
 
-
-
 
 
 
@@ -65226,12 +65187,10 @@ zə
 
 
 
-
 
 
 
 
-
 
 
 
@@ -65239,10 +65198,8 @@ zə
 
 
 
-
 
 
-
 
 
 ︎
@@ -65271,4 +65228,3 @@ zə
 🫧
 🫶
 󠁧󠁢󠁥󠁮󠁧󠁿
-􀀀

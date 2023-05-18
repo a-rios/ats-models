@@ -100,7 +100,6 @@ $
 A
 AA
 AB
-ABC
 AC
 ACA
 ACE
@@ -307,6 +306,7 @@ Brit
 Bro
 Bru
 Bu
+Bundes
 Bur
 C
 CA
@@ -346,6 +346,7 @@ CN
 CO
 COM
 CON
+CONT
 COS
 CP
 CR
@@ -414,7 +415,6 @@ DEF
 DEM
 DEN
 DER
-DES
 DF
 DG
 DH
@@ -607,7 +607,6 @@ GAR
 GB
 GC
 GE
-GEL
 GEM
 GEN
 GER
@@ -697,6 +696,7 @@ Histoire
 Ho
 Hol
 Holstein
+Home
 Hor
 Hu
 Hub
@@ -733,7 +733,6 @@ IGA
 IGN
 IH
 II
-III
 IJ
 IK
 IL
@@ -754,6 +753,7 @@ INS
 INT
 IO
 ION
+IOS
 IP
 IPA
 IQ
@@ -849,6 +849,7 @@ LB
 LC
 LD
 LE
+LEA
 LEC
 LER
 LES
@@ -884,6 +885,7 @@ Les
 Let
 Li
 Lib
+Lie
 Life
 Live
 Lo
@@ -906,7 +908,6 @@ MD
 ME
 MEN
 MENT
-MER
 MES
 MF
 MG
@@ -968,6 +969,7 @@ Milli
 Min
 Mini
 Minu
+Mis
 Miss
 Mit
 Mo
@@ -998,6 +1000,7 @@ NET
 NF
 NG
 NH
+NHK
 NI
 NICE
 NIS
@@ -1006,7 +1009,6 @@ NL
 NM
 NN
 NO
-NOR
 NOS
 NP
 NR
@@ -1118,7 +1120,6 @@ PH
 PHOTOS
 PI
 PIC
-PIE
 PJ
 PL
 PLA
@@ -1202,7 +1203,6 @@ Qué
 R
 RA
 RAC
-RAF
 RAI
 RAM
 RAN
@@ -1240,7 +1240,6 @@ RN
 RO
 ROM
 RON
-ROS
 RP
 RR
 RS
@@ -1297,6 +1296,7 @@ SION
 SIS
 SK
 SKA
+SKI
 SL
 SM
 SN
@@ -1360,7 +1360,6 @@ Sy
 T
 TA
 TAC
-TAL
 TAN
 TAS
 TB
@@ -1378,7 +1377,6 @@ TH
 THE
 TI
 TIC
-TIF
 TIM
 TION
 TIONS
@@ -1471,7 +1469,6 @@ USE
 UT
 UV
 UX
-UZ
 Ul
 Um
 Un
@@ -1539,7 +1536,6 @@ Wall
 War
 Was
 Wat
-Watch
 We
 Web
 Wer
@@ -1549,9 +1545,7 @@ Wie
 Wil
 William
 Win
-Wir
 Wo
-Work
 World
 Württemberg
 X
@@ -1565,12 +1559,14 @@ YS
 Ya
 Ye
 York
+Yosh
 You
 Z
 ZA
 ZE
 ZI
 ZO
+ZS
 Za
 Ze
 Zi
@@ -1792,11 +1788,11 @@ américa
 an
 ana
 anada
-anak
 analys
 analyse
 anan
 anc
+anca
 ance
 ances
 anche
@@ -1817,10 +1813,10 @@ andu
 ane
 ang
 anga
-angan
 ange
 angel
 anger
+angi
 angle
 ango
 ani
@@ -1990,7 +1986,6 @@ athlon
 ati
 atie
 atif
-ating
 ation
 ations
 atis
@@ -2166,7 +2161,6 @@ bes
 best
 bet
 beth
-betrieb
 bey
 bg
 bha
@@ -2180,7 +2174,6 @@ bid
 bie
 bier
 big
-bih
 bij
 bike
 bil
@@ -2247,6 +2240,7 @@ bona
 bond
 bone
 bonne
+bonus
 boo
 book
 boom
@@ -2476,6 +2470,7 @@ cht
 chten
 chter
 chu
+chwa
 chy
 chè
 ché
@@ -2543,7 +2538,6 @@ clan
 class
 clave
 cle
-clear
 cles
 client
 cliff
@@ -2709,7 +2703,6 @@ dary
 das
 dat
 date
-daten
 dato
 dav
 day
@@ -2748,6 +2741,7 @@ dessus
 det
 detto
 deur
+deutsche
 dev
 dex
 dez
@@ -3017,6 +3011,7 @@ engage
 enge
 enia
 enje
+enka
 enko
 enne
 eno
@@ -3066,7 +3061,6 @@ er
 era
 eran
 eras
-erat
 erd
 erde
 ere
@@ -3353,6 +3347,7 @@ ful
 full
 fum
 fun
+funk
 fur
 fus
 fusion
@@ -3363,7 +3358,6 @@ fâ
 fé
 fér
 fê
-fö
 g
 ga
 gaard
@@ -3381,6 +3375,7 @@ game
 gami
 gan
 ganda
+gane
 gang
 gani
 gano
@@ -3407,7 +3402,6 @@ ged
 gel
 gels
 gem
-geme
 gen
 gence
 gend
@@ -3427,7 +3421,6 @@ ges
 gesellschaft
 gesetz
 gestion
-gesundheit
 get
 gey
 gg
@@ -3644,6 +3637,7 @@ heng
 henti
 her
 here
+herr
 hes
 het
 heter
@@ -3731,6 +3725,7 @@ hri
 hro
 ht
 hte
+hti
 html
 http
 https
@@ -3837,7 +3832,6 @@ ieri
 ieron
 iers
 iert
-ierung
 ies
 if
 ifa
@@ -3947,6 +3941,7 @@ imu
 imus
 in
 ina
+inan
 inat
 inaugura
 inc
@@ -4215,7 +4210,6 @@ jel
 jen
 jer
 jero
-jes
 jet
 ji
 jia
@@ -4269,7 +4263,6 @@ kaya
 kaze
 ke
 kea
-kehr
 kel
 kele
 ken
@@ -4293,6 +4286,7 @@ kie
 kien
 kiewicz
 kil
+kilo
 kim
 kin
 kina
@@ -4329,7 +4323,6 @@ kota
 kou
 kov
 kova
-kovi
 kovic
 kovski
 kow
@@ -4348,12 +4341,12 @@ kry
 ks
 ksa
 ksana
-kse
 ksi
 ktion
 ku
 kuba
 kun
+kunst
 kur
 kus
 kush
@@ -4364,7 +4357,6 @@ ké
 l
 la
 lab
-label
 labor
 labora
 lac
@@ -4564,7 +4556,6 @@ liv
 live
 liver
 lix
-liz
 liza
 lk
 ll
@@ -4640,7 +4631,6 @@ ls
 lt
 lte
 lu
-lub
 luc
 luca
 luci
@@ -4677,6 +4667,7 @@ m
 ma
 mac
 machine
+macht
 mad
 mada
 madan
@@ -4694,7 +4685,6 @@ mais
 maj
 mak
 make
-makers
 mal
 mala
 male
@@ -4913,7 +4903,6 @@ motif
 motion
 motiv
 moto
-motor
 mount
 mouth
 moz
@@ -5044,6 +5033,7 @@ nent
 neo
 ner
 nera
+neri
 ners
 nes
 nese
@@ -5107,7 +5097,6 @@ niveau
 nivel
 nière
 nja
-nji
 nk
 nke
 nker
@@ -5142,6 +5131,7 @@ nov
 nova
 nove
 novic
+now
 ns
 nse
 nski
@@ -5313,6 +5303,7 @@ oor
 op
 opa
 open
+oper
 opi
 opinion
 opo
@@ -5464,6 +5455,7 @@ parta
 parte
 parti
 particulièrement
+partner
 party
 paru
 pas
@@ -5588,6 +5580,7 @@ player
 plaça
 ple
 plein
+pler
 ples
 plex
 pli
@@ -5663,7 +5656,6 @@ ppu
 ppä
 pr
 pra
-pras
 prat
 pre
 premi
@@ -5834,7 +5826,6 @@ rano
 rant
 ranta
 rante
-rantz
 rao
 rap
 rapport
@@ -5856,7 +5847,6 @@ raud
 rav
 rava
 rave
-ravin
 ravit
 rawat
 ray
@@ -5906,6 +5896,7 @@ remont
 ren
 rena
 rend
+rende
 rennen
 rent
 renta
@@ -6015,11 +6006,13 @@ riya
 riz
 rk
 rka
+rl
 rlo
 rma
 rman
 rme
 rmi
+rna
 rne
 rni
 rno
@@ -6088,8 +6081,8 @@ ru
 rub
 rud
 rudi
+ruf
 rug
-ruh
 ruit
 rum
 run
@@ -6099,7 +6092,6 @@ rup
 rur
 rus
 rush
-rust
 rut
 ruti
 ruv
@@ -6179,6 +6171,7 @@ schen
 scher
 schi
 schlag
+schluss
 schot
 schul
 schule
@@ -6349,7 +6342,6 @@ son
 song
 sons
 sor
-sorge
 sori
 sort
 sorti
@@ -6457,6 +6449,7 @@ stil
 still
 stille
 stiller
+stimmt
 stin
 stina
 stitu
@@ -6600,6 +6593,7 @@ tele
 teli
 tella
 telli
+telling
 tem
 tembea
 temp
@@ -6886,6 +6880,7 @@ tz
 tze
 tzen
 tzer
+tzi
 tán
 tâ
 té
@@ -6977,13 +6972,13 @@ ulus
 um
 uma
 umba
+umbi
 ume
 umi
 umine
 umise
 umo
 ums
-umu
 un
 una
 und
@@ -7004,7 +6999,6 @@ unk
 uno
 unt
 unter
-uomo
 up
 upa
 upan
@@ -7337,11 +7331,11 @@ wid
 wie
 wiec
 wig
-wij
 wijk
 wil
 will
 win
+wind
 wing
 wir
 wis
@@ -7456,6 +7450,8 @@ zani
 zanie
 zano
 zar
+zat
+zda
 ze
 zeit
 zek
@@ -7740,7 +7736,6 @@ zés
 ▁("
 ▁(*)
 ▁(+
-▁(=
 ▁(@
 ▁)
 ▁*
@@ -7969,7 +7964,6 @@ zés
 ▁Andrea
 ▁Andreas
 ▁Andrei
-▁Andrej
 ▁Andres
 ▁Andrew
 ▁Andri
@@ -7986,6 +7980,7 @@ zés
 ▁Ani
 ▁Anima
 ▁Animal
+▁Animation
 ▁Anita
 ▁Anja
 ▁Ankara
@@ -8177,6 +8172,7 @@ zés
 ▁Bah
 ▁Baha
 ▁Bahn
+▁Bahnhof
 ▁Bai
 ▁Baie
 ▁Baile
@@ -8194,6 +8190,7 @@ zés
 ▁Baltimore
 ▁Bam
 ▁Ban
+▁Bana
 ▁Band
 ▁Bang
 ▁Bangkok
@@ -8225,7 +8222,6 @@ zés
 ▁Bart
 ▁Barça
 ▁Bas
-▁Basa
 ▁Base
 ▁Basel
 ▁Bash
@@ -8435,7 +8431,6 @@ zés
 ▁Braga
 ▁Bran
 ▁Brand
-▁Brandenburg
 ▁Brasil
 ▁Brass
 ▁Bratislava
@@ -8493,6 +8488,7 @@ zés
 ▁Bug
 ▁Buhari
 ▁Buiten
+▁Buka
 ▁Bul
 ▁Bulg
 ▁Bulgari
@@ -8538,8 +8534,6 @@ zés
 ▁CF
 ▁CH
 ▁CHA
-▁CHF
-▁CHI
 ▁CI
 ▁CIA
 ▁CIG
@@ -8550,7 +8544,6 @@ zés
 ▁CNN
 ▁CO
 ▁COM
-▁COMP
 ▁CON
 ▁CONS
 ▁COP
@@ -9232,7 +9225,6 @@ zés
 ▁Eden
 ▁Edgar
 ▁Edi
-▁Edin
 ▁Edit
 ▁Edition
 ▁Edmund
@@ -9496,7 +9488,6 @@ zés
 ▁Financi
 ▁Financial
 ▁Finanz
-▁Find
 ▁Fine
 ▁Finland
 ▁Finn
@@ -9616,6 +9607,7 @@ zés
 ▁Fédération
 ▁Fél
 ▁Fü
+▁Für
 ▁G
 ▁GA
 ▁GB
@@ -9703,7 +9695,6 @@ zés
 ▁Gesellschaft
 ▁Gest
 ▁Gestion
-▁Gesundheit
 ▁Get
 ▁Gew
 ▁Gh
@@ -9827,6 +9818,7 @@ zés
 ▁Gu
 ▁Gua
 ▁Guan
+▁Guard
 ▁Guardian
 ▁Guardiola
 ▁Guatemala
@@ -9860,7 +9852,6 @@ zés
 ▁Gün
 ▁H
 ▁HA
-▁HARI
 ▁HBO
 ▁HC
 ▁HD
@@ -9868,7 +9859,6 @@ zés
 ▁HEL
 ▁HO
 ▁HR
-▁HS
 ▁Ha
 ▁Haa
 ▁Haar
@@ -9882,6 +9872,7 @@ zés
 ▁Hada
 ▁Hadi
 ▁Haf
+▁Hafta
 ▁Haftung
 ▁Hag
 ▁Hahn
@@ -9980,6 +9971,7 @@ zés
 ▁Her
 ▁Herald
 ▁Herbert
+▁Here
 ▁Heritage
 ▁Herman
 ▁Hermann
@@ -10109,7 +10101,6 @@ zés
 ▁II
 ▁III
 ▁IM
-▁IMP
 ▁IN
 ▁IND
 ▁INFO
@@ -10196,6 +10187,7 @@ zés
 ▁Intel
 ▁Intelligence
 ▁Inter
+▁Interface
 ▁Interna
 ▁International
 ▁Internet
@@ -10325,6 +10317,7 @@ zés
 ▁Johnny
 ▁Johnson
 ▁Join
+▁Joker
 ▁Jolie
 ▁Jon
 ▁Jonas
@@ -10365,13 +10358,13 @@ zés
 ▁Julian
 ▁Julie
 ▁Julio
-▁Julius
 ▁July
 ▁Jum
 ▁Jun
 ▁Juncker
 ▁June
 ▁Jung
+▁Juni
 ▁Junior
 ▁Jupiter
 ▁Jur
@@ -10389,7 +10382,6 @@ zés
 ▁Jürgen
 ▁K
 ▁KB
-▁KER
 ▁KL
 ▁KO
 ▁KP
@@ -10475,7 +10467,7 @@ zés
 ▁Ker
 ▁Kerk
 ▁Kern
-▁Kerst
+▁Kerry
 ▁Kes
 ▁Kevin
 ▁Key
@@ -10535,6 +10527,7 @@ zés
 ▁Kolle
 ▁Kolo
 ▁Kom
+▁Kommunikation
 ▁Komp
 ▁Kon
 ▁Kong
@@ -10555,6 +10548,7 @@ zés
 ▁Koz
 ▁Kr
 ▁Kra
+▁Kraft
 ▁Kraj
 ▁Kram
 ▁Kras
@@ -10578,7 +10572,6 @@ zés
 ▁Kry
 ▁Ku
 ▁Kub
-▁Kuch
 ▁Kul
 ▁Kultur
 ▁Kumar
@@ -10590,7 +10583,6 @@ zés
 ▁Kurdistan
 ▁Kurt
 ▁Kurz
-▁Kush
 ▁Kuu
 ▁Kwa
 ▁Ky
@@ -10603,7 +10595,6 @@ zés
 ▁Kü
 ▁L
 ▁LA
-▁LAN
 ▁LE
 ▁LED
 ▁LEO
@@ -10680,6 +10671,7 @@ zés
 ▁Lea
 ▁Leader
 ▁League
+▁Leben
 ▁Lebens
 ▁Lec
 ▁Led
@@ -10703,7 +10695,6 @@ zés
 ▁Leon
 ▁Leonard
 ▁Leonardo
-▁Leopard
 ▁Leopold
 ▁Lern
 ▁Les
@@ -10732,6 +10723,7 @@ zés
 ▁Liga
 ▁Light
 ▁Liik
+▁Like
 ▁Lili
 ▁Lille
 ▁Lily
@@ -10930,6 +10922,7 @@ zés
 ▁Main
 ▁Maine
 ▁Maintenant
+▁Maio
 ▁Mais
 ▁Maison
 ▁Maj
@@ -11122,6 +11115,7 @@ zés
 ▁Meri
 ▁Merk
 ▁Merkel
+▁Merkur
 ▁Mert
 ▁Mes
 ▁Mess
@@ -11229,7 +11223,6 @@ zés
 ▁Modern
 ▁Modi
 ▁Modifica
-▁Modul
 ▁Mog
 ▁Moh
 ▁Mohamed
@@ -11292,7 +11285,6 @@ zés
 ▁Mot
 ▁Moto
 ▁Motor
-▁Motorsport
 ▁Mou
 ▁Mount
 ▁Mountain
@@ -11339,6 +11331,7 @@ zés
 ▁Muy
 ▁My
 ▁Myanmar
+▁Myth
 ▁Mé
 ▁Média
 ▁Még
@@ -11644,7 +11637,6 @@ zés
 ▁POS
 ▁PP
 ▁PR
-▁PRI
 ▁PRO
 ▁PS
 ▁PSD
@@ -11784,7 +11776,6 @@ zés
 ▁Petit
 ▁Petr
 ▁Petra
-▁Petri
 ▁Petro
 ▁Petrol
 ▁Peugeot
@@ -11904,6 +11895,7 @@ zés
 ▁Post
 ▁Poste
 ▁Pot
+▁Potsdam
 ▁Potter
 ▁Pou
 ▁Pour
@@ -11974,7 +11966,6 @@ zés
 ▁Pré
 ▁Président
 ▁Psy
-▁Psycho
 ▁Psycholog
 ▁Pu
 ▁Publi
@@ -12041,6 +12032,7 @@ zés
 ▁RO
 ▁RP
 ▁RS
+▁RSS
 ▁RT
 ▁RTL
 ▁RU
@@ -12241,6 +12233,7 @@ zés
 ▁Rond
 ▁Roo
 ▁Room
+▁Rooney
 ▁Roosevelt
 ▁Roque
 ▁Ros
@@ -12299,6 +12292,7 @@ zés
 ▁Rü
 ▁S
 ▁SA
+▁SAL
 ▁SAM
 ▁SAR
 ▁SAS
@@ -12311,7 +12305,6 @@ zés
 ▁SEP
 ▁SET
 ▁SG
-▁SH
 ▁SI
 ▁SIM
 ▁SK
@@ -12346,6 +12339,7 @@ zés
 ▁Sac
 ▁Sach
 ▁Sache
+▁Sacra
 ▁Sad
 ▁Saddam
 ▁Saf
@@ -12438,6 +12432,7 @@ zés
 ▁Schi
 ▁Schie
 ▁Schiff
+▁Schl
 ▁Schlag
 ▁Schle
 ▁Schleswig
@@ -12483,15 +12478,16 @@ zés
 ▁See
 ▁Seg
 ▁Sei
+▁Seif
 ▁Seine
 ▁Sel
+▁Selbst
 ▁Sele
 ▁Selim
 ▁Selon
 ▁Sem
 ▁Semi
 ▁Sen
-▁Send
 ▁Seng
 ▁Senior
 ▁Senti
@@ -12634,6 +12630,7 @@ zés
 ▁Solid
 ▁Solidari
 ▁Solo
+▁Solution
 ▁Solutions
 ▁Som
 ▁Somali
@@ -12642,6 +12639,7 @@ zés
 ▁Song
 ▁Sony
 ▁Soo
+▁Sop
 ▁Sophia
 ▁Sophie
 ▁Sor
@@ -12687,12 +12685,12 @@ zés
 ▁Sri
 ▁St
 ▁Sta
-▁Staats
 ▁Stad
 ▁Stadium
 ▁Stadt
 ▁Staff
 ▁Stage
+▁Stal
 ▁Stalin
 ▁Stamp
 ▁Stan
@@ -12730,6 +12728,8 @@ zés
 ▁Steven
 ▁Stewart
 ▁Sti
+▁Stiftung
+▁Stig
 ▁Still
 ▁Sto
 ▁Stock
@@ -12739,6 +12739,7 @@ zés
 ▁Stoltenberg
 ▁Stone
 ▁Stop
+▁Stor
 ▁Store
 ▁Stories
 ▁Storm
@@ -12793,7 +12794,6 @@ zés
 ▁Support
 ▁Sur
 ▁Surf
-▁Surface
 ▁Surtout
 ▁Sus
 ▁Susan
@@ -12808,6 +12808,7 @@ zés
 ▁Swa
 ▁Swan
 ▁Swe
+▁Sweet
 ▁Swi
 ▁Swift
 ▁Swiss
@@ -12864,7 +12865,6 @@ zés
 ▁Taka
 ▁Take
 ▁Tal
-▁Tala
 ▁Tale
 ▁Talent
 ▁Taliban
@@ -13027,9 +13027,11 @@ zés
 ▁Toutefois
 ▁Tower
 ▁Town
+▁Toy
 ▁Toyota
 ▁Tr
 ▁Tra
+▁Track
 ▁Trade
 ▁Tradition
 ▁Tradu
@@ -13332,7 +13334,6 @@ zés
 ▁Weil
 ▁Wein
 ▁Weiss
-▁Weiß
 ▁Wel
 ▁Well
 ▁Welle
@@ -13418,6 +13419,7 @@ zés
 ▁XXI
 ▁XXIII
 ▁XXL
+▁XXX
 ▁Xa
 ▁Xan
 ▁Xavier
@@ -13438,7 +13440,6 @@ zés
 ▁Yar
 ▁Yaz
 ▁Ye
-▁Year
 ▁Yellow
 ▁Yen
 ▁Yer
@@ -13475,6 +13476,7 @@ zés
 ▁Zelen
 ▁Zem
 ▁Zen
+▁Zentral
 ▁Zer
 ▁Zero
 ▁Zi
@@ -13865,7 +13867,6 @@ zés
 ▁aspira
 ▁ass
 ▁assassin
-▁assess
 ▁assez
 ▁assign
 ▁assim
@@ -14171,6 +14172,7 @@ zés
 ▁bowl
 ▁box
 ▁boy
+▁boys
 ▁boîte
 ▁br
 ▁bra
@@ -14524,7 +14526,6 @@ zés
 ▁claus
 ▁cle
 ▁clean
-▁clear
 ▁cli
 ▁clic
 ▁cliché
@@ -14715,7 +14716,6 @@ zés
 ▁confident
 ▁confidential
 ▁configuration
-▁configure
 ▁confirm
 ▁confirma
 ▁confirmation
@@ -14949,6 +14949,7 @@ zés
 ▁créé
 ▁cu
 ▁cuba
+▁cubi
 ▁cui
 ▁cuillère
 ▁cuir
@@ -15621,6 +15622,7 @@ zés
 ▁faça
 ▁façon
 ▁fe
+▁feed
 ▁feedback
 ▁feeling
 ▁fein
@@ -16064,6 +16066,7 @@ zés
 ▁hali
 ▁hall
 ▁ham
+▁hamburger
 ▁han
 ▁hand
 ▁handi
@@ -16114,7 +16117,6 @@ zés
 ▁hit
 ▁ho
 ▁hoc
-▁hoch
 ▁hold
 ▁holding
 ▁holland
@@ -16351,6 +16353,7 @@ zés
 ▁insigni
 ▁insist
 ▁insiste
+▁inson
 ▁inspect
 ▁inspir
 ▁inspira
@@ -16392,7 +16395,6 @@ zés
 ▁interactive
 ▁interagir
 ▁interdit
-▁interest
 ▁interface
 ▁interna
 ▁international
@@ -16545,6 +16547,7 @@ zés
 ▁kayak
 ▁kaza
 ▁ke
+▁ket
 ▁key
 ▁kg
 ▁ki
@@ -16673,7 +16676,6 @@ zés
 ▁limite
 ▁limites
 ▁lin
-▁line
 ▁ling
 ▁linguis
 ▁lip
@@ -16819,7 +16821,6 @@ zés
 ▁malgré
 ▁malheureusement
 ▁mali
-▁malign
 ▁malé
 ▁mam
 ▁maman
@@ -17452,7 +17453,6 @@ zés
 ▁ouverte
 ▁ovat
 ▁over
-▁ovu
 ▁où
 ▁p
 ▁pa
@@ -17667,6 +17667,7 @@ zés
 ▁permettre
 ▁permis
 ▁permission
+▁permit
 ▁persi
 ▁persist
 ▁person
@@ -17895,6 +17896,7 @@ zés
 ▁postul
 ▁posé
 ▁pot
+▁pote
 ▁potential
 ▁potentiel
 ▁potentielle
@@ -18676,6 +18678,7 @@ zés
 ▁salut
 ▁salva
 ▁salve
+▁sama
 ▁same
 ▁samedi
 ▁samo
@@ -18748,6 +18751,7 @@ zés
 ▁secteur
 ▁section
 ▁sector
+▁see
 ▁segment
 ▁sein
 ▁sel
@@ -18819,7 +18823,6 @@ zés
 ▁she
 ▁shi
 ▁shoot
-▁shop
 ▁shopping
 ▁short
 ▁should
@@ -18973,7 +18976,6 @@ zés
 ▁sp
 ▁spa
 ▁space
-▁spaghetti
 ▁spam
 ▁spas
 ▁speaker
@@ -19038,6 +19040,7 @@ zés
 ▁ster
 ▁stick
 ▁stigma
+▁still
 ▁stimul
 ▁stip
 ▁stipula
@@ -19184,6 +19187,7 @@ zés
 ▁tablet
 ▁tablo
 ▁tac
+▁tad
 ▁tags
 ▁tai
 ▁taille
@@ -19357,7 +19361,6 @@ zés
 ▁ton
 ▁tonn
 ▁tons
-▁too
 ▁top
 ▁topo
 ▁tor
@@ -19410,7 +19413,6 @@ zés
 ▁traje
 ▁traject
 ▁tram
-▁trampolin
 ▁tran
 ▁tranquil
 ▁trans
@@ -19974,7 +19976,6 @@ zés
 ▁ô
 ▁œuvre
 ▁Še
-▁̈
 ▁€
 ▁€.
 ▁€/
@@ -19995,6 +19996,5 @@ zés
 
 
 
-
 
 

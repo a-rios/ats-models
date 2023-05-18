@@ -23,6 +23,7 @@ $
 '
 (
 (!)
+(?)
 )
 )(
 ),
@@ -1677,6 +1678,7 @@ KTI
 KTU
 KU
 KUL
+KUM
 KUP
 KUR
 KV
@@ -2029,6 +2031,7 @@ Mus
 Music
 My
 Myanmar
+MÄ
 Mü
 N
 NA
@@ -2157,7 +2160,6 @@ Nu
 Nuk
 Ny
 Nya
-NÄ
 O
 OA
 OB
@@ -2683,6 +2685,7 @@ SKA
 SKE
 SKI
 SKO
+SKRI
 SKU
 SL
 SM
@@ -2874,6 +2877,7 @@ TELE
 TEM
 TEN
 TER
+TERA
 TERI
 TES
 TET
@@ -2894,6 +2898,7 @@ TIES
 TIF
 TIG
 TIK
+TIKA
 TIL
 TIM
 TIN
@@ -3024,7 +3029,6 @@ TÁR
 TÄ
 TÉ
 TÓ
-TÖ
 TÜ
 Türkiye
 U
@@ -3114,6 +3118,7 @@ UTA
 UTC
 UTE
 UTI
+UTTA
 UTU
 UU
 UV
@@ -3696,6 +3701,7 @@ aktion
 aktiv
 aktiver
 aktual
+aktuell
 aku
 al
 ala
@@ -4473,6 +4479,7 @@ behörde
 bei
 beitrag
 bek
+bekannt
 beke
 bekend
 beker
@@ -4517,7 +4524,6 @@ besi
 best
 bestand
 beste
-bestimmungen
 bestätigung
 besuch
 besök
@@ -5521,6 +5527,7 @@ cī
 ců
 d
 da
+daagse
 daan
 dab
 daba
@@ -6454,7 +6461,6 @@ erie
 erien
 eriet
 erii
-erija
 erima
 erin
 ering
@@ -6663,7 +6669,6 @@ eza
 eze
 ezen
 ezer
-ezett
 ezh
 ezi
 ező
@@ -8218,7 +8223,6 @@ ies
 iese
 iet
 ieties
-iešu
 ieť
 if
 ifa
@@ -8484,6 +8488,7 @@ indu
 industri
 industria
 industrie
+indépendance
 ine
 ineen
 inek
@@ -8752,7 +8757,6 @@ iski
 isko
 iskt
 isku
-iskus
 isla
 islam
 islav
@@ -11881,6 +11885,7 @@ oleva
 olewa
 oli
 olie
+olimp
 olin
 olio
 olja
@@ -13267,6 +13272,7 @@ rei
 reich
 reichen
 reid
+reiden
 reif
 reik
 rein
@@ -13739,6 +13745,7 @@ rías
 rík
 rín
 río
+rî
 rò
 ró
 rób
@@ -14107,7 +14114,6 @@ sidi
 sidir
 sidor
 sie
-siehe
 sien
 sier
 sies
@@ -14380,6 +14386,7 @@ spot
 społeczn
 spr
 sprache
+sprak
 spray
 spre
 sprechen
@@ -14572,6 +14579,7 @@ str
 stra
 straat
 strada
+straf
 strahl
 stran
 strand
@@ -14615,6 +14623,7 @@ studi
 studie
 studier
 studio
+studium
 stuen
 stufe
 stuhl
@@ -14740,7 +14749,6 @@ systemen
 systemet
 sz
 sza
-szabad
 szak
 szcza
 szcze
@@ -14755,7 +14763,6 @@ szen
 szenia
 szenie
 szent
-sziget
 szk
 szki
 szko
@@ -16009,6 +16016,7 @@ uß
 uð
 uðu
 uč
+uš
 uše
 uži
 uș
@@ -16179,6 +16187,7 @@ verfahren
 vergadering
 verge
 vergleich
+verhalten
 verhältnis
 veri
 verit
@@ -16449,6 +16458,7 @@ vít
 víz
 vó
 või
+völ
 vý
 vých
 vým
@@ -17255,6 +17265,7 @@ ząc
 Ú
 Û
 Ü
+ÜK
 ÜL
 ÜN
 ÜR
@@ -17580,6 +17591,7 @@ ząc
 író
 ís
 ísima
+ísimo
 íska
 íssimo
 ística
@@ -19025,6 +19037,7 @@ ząc
 ▁Advisor
 ▁Advokat
 ▁Adwords
+▁Aenean
 ▁Aero
 ▁Af
 ▁Aff
@@ -19177,6 +19190,7 @@ ząc
 ▁Ali
 ▁Alice
 ▁Alimenta
+▁Aliquam
 ▁Alka
 ▁Alkohol
 ▁All
@@ -19381,6 +19395,7 @@ ząc
 ▁Antrag
 ▁Antropo
 ▁Antti
+▁Antwerpen
 ▁Antwort
 ▁Antworten
 ▁Antón
@@ -20425,6 +20440,7 @@ ząc
 ▁Bryn
 ▁Brytanii
 ▁Brz
+▁Brøndby
 ▁Brü
 ▁Brücke
 ▁Brüssel
@@ -21268,6 +21284,7 @@ ząc
 ▁Cup
 ▁Cur
 ▁Cura
+▁Curabitur
 ▁Curios
 ▁Curitiba
 ▁Current
@@ -21754,6 +21771,7 @@ ząc
 ▁Donald
 ▁Donat
 ▁Donc
+▁Donec
 ▁Dong
 ▁Donna
 ▁Donnerstag
@@ -22034,7 +22052,6 @@ ząc
 ▁Einfach
 ▁Einfluss
 ▁Einführung
-▁Eingang
 ▁Einheit
 ▁Einige
 ▁Einkauf
@@ -22046,7 +22063,7 @@ ząc
 ▁Einstein
 ▁Einstieg
 ▁Eintritt
-▁Einwilligung
+▁Einwohner
 ▁Einzel
 ▁Eis
 ▁Eisen
@@ -23058,6 +23075,7 @@ ząc
 ▁Gegensatz
 ▁Gegenteil
 ▁Geh
+▁Geheimnis
 ▁Geir
 ▁Geist
 ▁Gel
@@ -23790,6 +23808,7 @@ ząc
 ▁Hoch
 ▁Hochschul
 ▁Hochschule
+▁Hochzeit
 ▁Hockey
 ▁Hod
 ▁Hodi
@@ -24850,6 +24869,7 @@ ząc
 ▁Kenn
 ▁Kennedy
 ▁Kenneth
+▁Kenntnis
 ▁Kent
 ▁Kentucky
 ▁Kenya
@@ -25885,6 +25905,7 @@ ząc
 ▁Madura
 ▁Maduro
 ▁Mae
+▁Maecenas
 ▁Maendeleo
 ▁Maestro
 ▁Mag
@@ -27129,6 +27150,7 @@ ząc
 ▁Nuevo
 ▁Nuk
 ▁Nulla
+▁Nullam
 ▁Num
 ▁Numa
 ▁Number
@@ -27816,6 +27838,7 @@ ząc
 ▁Pfarr
 ▁Pflanzen
 ▁Pflege
+▁Pflicht
 ▁Ph
 ▁PhD
 ▁Pha
@@ -27824,6 +27847,7 @@ ząc
 ▁Phar
 ▁Pharma
 ▁Phase
+▁Phasellus
 ▁Phen
 ▁Phi
 ▁Phil
@@ -28053,6 +28077,7 @@ ząc
 ▁Possi
 ▁Posso
 ▁Post
+▁Posta
 ▁Poste
 ▁Posted
 ▁Postime
@@ -28416,6 +28441,7 @@ ząc
 ▁Quid
 ▁Quin
 ▁Quint
+▁Quisque
 ▁Quiz
 ▁Quo
 ▁Quod
@@ -29261,6 +29287,7 @@ ząc
 ▁Schedule
 ▁Schengen
 ▁Schi
+▁Schicksal
 ▁Schie
 ▁Schiff
 ▁Schl
@@ -29312,6 +29339,7 @@ ząc
 ▁Schön
 ▁Schönheit
 ▁Schü
+▁Schüler
 ▁Sci
 ▁Science
 ▁Scientific
@@ -30017,6 +30045,7 @@ ząc
 ▁Studios
 ▁Studium
 ▁Study
+▁Stunde
 ▁Stunden
 ▁Stuttgart
 ▁Stuur
@@ -30867,6 +30896,7 @@ ząc
 ▁Tür
 ▁Türk
 ▁Türkiye
+▁Türkçe
 ▁Tā
 ▁Tě
 ▁Tế
@@ -31217,6 +31247,7 @@ ząc
 ▁Verifica
 ▁Verk
 ▁Verkauf
+▁Verkehr
 ▁Verkehrs
 ▁Verkäufer
 ▁Verlag
@@ -31258,7 +31289,6 @@ ząc
 ▁Vesti
 ▁Veszprém
 ▁Vet
-▁Veter
 ▁Veteran
 ▁Veterinar
 ▁Vettel
@@ -31350,6 +31380,7 @@ ząc
 ▁Vittorio
 ▁Vitória
 ▁Viva
+▁Vivamus
 ▁Vive
 ▁Vivi
 ▁Vivo
@@ -31434,7 +31465,6 @@ ząc
 ▁Vázquez
 ▁Vân
 ▁Vä
-▁Väli
 ▁Välj
 ▁Välkommen
 ▁Vän
@@ -31729,6 +31759,7 @@ ząc
 ▁XII
 ▁XIII
 ▁XIV
+▁XIX
 ▁XL
 ▁XML
 ▁XP
@@ -32230,6 +32261,7 @@ ząc
 ▁adidas
 ▁adil
 ▁adipisci
+▁adipiscing
 ▁adipisicing
 ▁adja
 ▁adjudica
@@ -32453,6 +32485,7 @@ ząc
 ▁aktiva
 ▁aktive
 ▁aktivit
+▁aktiviti
 ▁aktivity
 ▁aktivt
 ▁aktual
@@ -32529,6 +32562,7 @@ ząc
 ▁alimentos
 ▁alin
 ▁aliqua
+▁aliquet
 ▁aliud
 ▁alkohol
 ▁all
@@ -32780,6 +32814,7 @@ ząc
 ▁annoncen
 ▁annoncer
 ▁annoncé
+▁annos
 ▁announced
 ▁anns
 ▁annual
@@ -33302,6 +33337,7 @@ ząc
 ▁aug
 ▁augmenta
 ▁augu
+▁augue
 ▁auguri
 ▁august
 ▁augusti
@@ -33953,6 +33989,7 @@ ząc
 ▁bi
 ▁bia
 ▁bianco
+▁bibendum
 ▁bibli
 ▁biblio
 ▁biblioteca
@@ -34049,6 +34086,7 @@ ząc
 ▁blanco
 ▁bland
 ▁blanda
+▁blandit
 ▁blank
 ▁blant
 ▁blas
@@ -35662,6 +35700,7 @@ ząc
 ▁consciente
 ▁consciência
 ▁consecra
+▁consectetuer
 ▁consectetur
 ▁consecu
 ▁consecuencia
@@ -35685,6 +35724,7 @@ ząc
 ▁consente
 ▁consenti
 ▁consequ
+▁consequat
 ▁consequatur
 ▁consequences
 ▁consequent
@@ -36209,6 +36249,7 @@ ząc
 ▁cursa
 ▁curso
 ▁cursos
+▁cursus
 ▁curta
 ▁curte
 ▁curtha
@@ -36363,6 +36404,7 @@ ząc
 ▁dans
 ▁danych
 ▁daoine
+▁dapibus
 ▁daquele
 ▁dar
 ▁dara
@@ -36574,7 +36616,6 @@ ząc
 ▁delle
 ▁dello
 ▁delo
-▁dels
 ▁delta
 ▁delu
 ▁dem
@@ -37074,6 +37115,7 @@ ząc
 ▁disfrute
 ▁disgwyl
 ▁disk
+▁diskrimin
 ▁diskuse
 ▁diskut
 ▁diskutera
@@ -37258,7 +37300,6 @@ ząc
 ▁dokonać
 ▁dokonca
 ▁dokončen
-▁doku
 ▁dokument
 ▁dokumente
 ▁dokumenty
@@ -37788,6 +37829,7 @@ ząc
 ▁eg
 ▁egal
 ▁egen
+▁eget
 ▁egg
 ▁eglwys
 ▁ego
@@ -37893,6 +37935,7 @@ ząc
 ▁elegante
 ▁elegido
 ▁elegir
+▁eleifend
 ▁elektr
 ▁elektri
 ▁elektrische
@@ -37910,6 +37953,7 @@ ząc
 ▁elemento
 ▁elementos
 ▁elements
+▁elementum
 ▁elementów
 ▁elenco
 ▁eles
@@ -38094,6 +38138,7 @@ ząc
 ▁enhance
 ▁enig
 ▁enige
+▁enim
 ▁enjeux
 ▁enjoy
 ▁enjoyed
@@ -38948,6 +38993,7 @@ ząc
 ▁fatto
 ▁fattura
 ▁fatura
+▁faucibus
 ▁fault
 ▁fauna
 ▁faut
@@ -39011,6 +39057,7 @@ ząc
 ▁felicidad
 ▁felicit
 ▁felicitat
+▁felis
 ▁feliz
 ▁fell
 ▁felles
@@ -39019,7 +39066,6 @@ ząc
 ▁felt
 ▁fem
 ▁female
-▁femei
 ▁femenina
 ▁feminin
 ▁feminino
@@ -39061,6 +39107,7 @@ ząc
 ▁fetish
 ▁fett
 ▁feu
+▁feugiat
 ▁feuille
 ▁fevereiro
 ▁few
@@ -39518,6 +39565,7 @@ ząc
 ▁friendship
 ▁frig
 ▁frigo
+▁fringilla
 ▁frio
 ▁fris
 ▁frische
@@ -40664,6 +40712,7 @@ ząc
 ▁hemos
 ▁hen
 ▁hende
+▁hendrerit
 ▁hene
 ▁henge
 ▁hep
@@ -41209,6 +41258,7 @@ ząc
 ▁imper
 ▁imperativ
 ▁imperator
+▁imperdiet
 ▁imperfect
 ▁imperi
 ▁imperial
@@ -42114,7 +42164,6 @@ ząc
 ▁kala
 ▁kalah
 ▁kalan
-▁kalba
 ▁kaldt
 ▁kale
 ▁kali
@@ -42492,7 +42541,6 @@ ząc
 ▁kori
 ▁koro
 ▁koron
-▁korpo
 ▁korrekt
 ▁kort
 ▁korte
@@ -42595,6 +42643,7 @@ ząc
 ▁kulmin
 ▁kult
 ▁kultur
+▁kultura
 ▁kulturelle
 ▁kulturo
 ▁kultúr
@@ -42661,6 +42710,7 @@ ząc
 ▁kya
 ▁kyl
 ▁kyselin
+▁kä
 ▁kämpfen
 ▁kär
 ▁kér
@@ -42763,6 +42813,7 @@ ząc
 ▁lançado
 ▁lançamento
 ▁lançou
+▁laoreet
 ▁lap
 ▁laps
 ▁lapse
@@ -42929,7 +42980,6 @@ ząc
 ▁less
 ▁lessons
 ▁let
-▁lete
 ▁letech
 ▁leti
 ▁letos
@@ -43237,6 +43287,7 @@ ząc
 ▁loop
 ▁lop
 ▁lor
+▁lorem
 ▁lorg
 ▁loro
 ▁lors
@@ -43317,6 +43368,7 @@ ząc
 ▁lup
 ▁lupa
 ▁lur
+▁lustig
 ▁lustr
 ▁lut
 ▁luta
@@ -43727,6 +43779,7 @@ ząc
 ▁matériaux
 ▁matériel
 ▁mau
+▁mauris
 ▁mauvaise
 ▁mawr
 ▁max
@@ -44006,6 +44059,7 @@ ząc
 ▁metros
 ▁mettre
 ▁metu
+▁metus
 ▁metà
 ▁meu
 ▁meus
@@ -44357,6 +44411,7 @@ ząc
 ▁montaña
 ▁monte
 ▁monter
+▁montes
 ▁month
 ▁monthly
 ▁months
@@ -44571,6 +44626,7 @@ ząc
 ▁mutation
 ▁mutu
 ▁mutual
+▁muu
 ▁mux
 ▁muy
 ▁muz
@@ -44759,6 +44815,7 @@ ząc
 ▁nas
 ▁nasa
 ▁nasc
+▁nascetur
 ▁nasi
 ▁nastav
 ▁nastąpi
@@ -44771,6 +44828,7 @@ ząc
 ▁national
 ▁nationale
 ▁nato
+▁natoque
 ▁natt
 ▁natten
 ▁natur
@@ -44991,6 +45049,7 @@ ząc
 ▁những
 ▁ni
 ▁nia
+▁nibh
 ▁nic
 ▁nice
 ▁nich
@@ -45223,6 +45282,7 @@ ząc
 ▁nun
 ▁nunc
 ▁nunca
+▁nung
 ▁nuo
 ▁nuova
 ▁nuovamente
@@ -45694,6 +45754,7 @@ ząc
 ▁oraz
 ▁orbit
 ▁orchestr
+▁orci
 ▁ord
 ▁ordain
 ▁orde
@@ -45913,7 +45974,6 @@ ząc
 ▁paix
 ▁paixão
 ▁pak
-▁paket
 ▁pakka
 ▁pako
 ▁pal
@@ -46072,6 +46132,7 @@ ząc
 ▁parto
 ▁partout
 ▁parts
+▁parturient
 ▁party
 ▁parve
 ▁parámetros
@@ -46217,6 +46278,7 @@ ząc
 ▁peligro
 ▁pell
 ▁pelle
+▁pellentesque
 ▁pelo
 ▁pelos
 ▁película
@@ -46228,6 +46290,7 @@ ząc
 ▁penal
 ▁penale
 ▁penalty
+▁penatibus
 ▁pence
 ▁pend
 ▁pendant
@@ -46256,6 +46319,7 @@ ząc
 ▁pensé
 ▁pensée
 ▁pent
+▁pentru
 ▁penu
 ▁people
 ▁peor
@@ -46910,6 +46974,7 @@ ząc
 ▁portfolio
 ▁portion
 ▁porto
+▁porttitor
 ▁portu
 ▁portuguesa
 ▁português
@@ -47298,6 +47363,7 @@ ząc
 ▁pret
 ▁pretend
 ▁pretende
+▁pretium
 ▁preto
 ▁pretty
 ▁preu
@@ -47971,6 +48037,7 @@ ząc
 ▁puls
 ▁pulsa
 ▁pulver
+▁pulvinar
 ▁pum
 ▁puma
 ▁pump
@@ -48995,6 +49062,7 @@ ząc
 ▁rhestr
 ▁rhodd
 ▁rhoi
+▁rhoncus
 ▁rhwng
 ▁rhwy
 ▁rhy
@@ -49034,6 +49102,7 @@ ząc
 ▁rider
 ▁ridic
 ▁ridiculous
+▁ridiculus
 ▁ridurre
 ▁riduzione
 ▁ridícul
@@ -49271,6 +49340,7 @@ ząc
 ▁ruta
 ▁rutin
 ▁rutina
+▁rutrum
 ▁ruwa
 ▁ry
 ▁ryb
@@ -49609,7 +49679,6 @@ ząc
 ▁schade
 ▁schaffen
 ▁schafft
-▁schauen
 ▁schedule
 ▁scheint
 ▁schema
@@ -49762,6 +49831,7 @@ ząc
 ▁seguro
 ▁seguros
 ▁según
+▁sehe
 ▁sehen
 ▁sehr
 ▁sei
@@ -49831,7 +49901,6 @@ ząc
 ▁sending
 ▁sendo
 ▁sendt
-▁sene
 ▁senere
 ▁seneste
 ▁seng
@@ -50383,6 +50452,7 @@ ząc
 ▁sociedade
 ▁society
 ▁società
+▁sociis
 ▁socio
 ▁socios
 ▁sociálnych
@@ -50391,6 +50461,7 @@ ząc
 ▁soco
 ▁sod
 ▁soda
+▁sodales
 ▁soddisfa
 ▁soddisfare
 ▁sof
@@ -50550,6 +50621,7 @@ ząc
 ▁současné
 ▁sover
 ▁soviet
+▁sovra
 ▁sowie
 ▁sowohl
 ▁soy
@@ -50989,6 +51061,7 @@ ząc
 ▁studi
 ▁studia
 ▁studie
+▁studier
 ▁studies
 ▁studio
 ▁study
@@ -51410,7 +51483,6 @@ ząc
 ▁talento
 ▁tales
 ▁tali
-▁talian
 ▁talk
 ▁talking
 ▁tall
@@ -51586,6 +51658,7 @@ ząc
 ▁tell
 ▁telle
 ▁telling
+▁tellus
 ▁telo
 ▁telt
 ▁teléfono
@@ -51875,6 +51948,7 @@ ząc
 ▁timu
 ▁tin
 ▁tinc
+▁tincidunt
 ▁tine
 ▁ting
 ▁tinha
@@ -52102,6 +52176,7 @@ ząc
 ▁traité
 ▁traje
 ▁traject
+▁trak
 ▁tram
 ▁trama
 ▁tramite
@@ -52199,6 +52274,7 @@ ząc
 ▁tren
 ▁trend
 ▁trendy
+▁trening
 ▁tres
 ▁trest
 ▁tret
@@ -52318,6 +52394,7 @@ ząc
 ▁tuloksia
 ▁tulos
 ▁tum
+▁tuma
 ▁tume
 ▁tumor
 ▁tun
@@ -52516,6 +52593,7 @@ ząc
 ▁ul
 ▁ulama
 ▁ull
+▁ullamcorper
 ▁ulos
 ▁ulterior
 ▁ulteriori
@@ -52525,6 +52603,7 @@ ząc
 ▁ultra
 ▁ultrapassa
 ▁ultraviolet
+▁ultricies
 ▁ulu
 ▁um
 ▁uma
@@ -52839,6 +52918,7 @@ ząc
 ▁variety
 ▁varios
 ▁various
+▁varius
 ▁variété
 ▁varje
 ▁varm
@@ -52921,6 +53001,7 @@ ząc
 ▁vendredi
 ▁vendu
 ▁vene
+▁venenatis
 ▁venera
 ▁venez
 ▁venezolano
@@ -53088,7 +53169,6 @@ ząc
 ▁vestig
 ▁vet
 ▁vete
-▁veter
 ▁veteran
 ▁veterinar
 ▁veterinár
@@ -53170,7 +53250,6 @@ ząc
 ▁vigtigt
 ▁vigueur
 ▁viking
-▁vikt
 ▁viktig
 ▁vil
 ▁vile
@@ -53272,6 +53351,7 @@ ząc
 ▁vivencia
 ▁viver
 ▁vivere
+▁viverra
 ▁vivi
 ▁vivienda
 ▁vivir
@@ -54490,6 +54570,7 @@ ząc
 ▁íntegra
 ▁ít
 ▁în
+▁îngriji
 ▁ó
 ▁óleo
 ▁ón
@@ -54550,7 +54631,6 @@ ząc
 ▁ü
 ▁über
 ▁überall
-▁überhaupt
 ▁übernehmen
 ▁übernimmt
 ▁übernommen
@@ -55771,9 +55851,7 @@ ząc
 █
 ■
 □
-▪
 ▸
-▾
 ◦
 ⠀
 ⤵
@@ -55786,11 +55864,7 @@ ząc
 
 
 
-
-
 
-
-
 
 
 
@@ -55808,6 +55882,7 @@ ząc
 
 
 
+
 
 
 

@@ -39,9 +39,12 @@ $
 0000
 1
 1000
+1950
 1962
 1964
+1972
 1973
+1976
 1977
 1980
 1981
@@ -150,11 +153,13 @@ AMU
 AN
 ANA
 ANC
+ANCE
 AND
 ANDE
 ANDO
 ANE
 ANI
+ANO
 ANT
 ANTE
 ANTI
@@ -233,6 +238,7 @@ Andorra
 Andre
 Ang
 Angel
+Anhalt
 Anna
 Ant
 Anti
@@ -247,7 +253,6 @@ Archiv
 Arquitect
 Art
 As
-Asia
 Assad
 Assemblea
 Associació
@@ -257,7 +262,6 @@ Atenció
 Au
 Audi
 Auditori
-Auf
 August
 Aus
 Austr
@@ -362,7 +366,6 @@ CB
 CC
 CCC
 CCI
-CCM
 CD
 CE
 CEL
@@ -395,6 +398,7 @@ CN
 CO
 COM
 CON
+CONT
 COS
 CP
 CR
@@ -444,6 +448,7 @@ Cola
 Com
 Comp
 Con
+Connect
 Contact
 Continu
 Control
@@ -458,6 +463,7 @@ D
 DA
 DAC
 DAH
+DAI
 DAN
 DAP
 DAR
@@ -481,6 +487,7 @@ DIC
 DIM
 DIS
 DJ
+DK
 DL
 DM
 DN
@@ -514,10 +521,12 @@ Det
 Di
 Dia
 Die
+Dienstleistungen
 Digital
 Din
 Direct
 Dis
+Div
 Do
 Dom
 Don
@@ -546,13 +555,11 @@ EDI
 EDO
 EE
 EEE
-EEN
 EER
 EF
 EFE
 EG
 EGA
-EGI
 EGO
 EGU
 EH
@@ -618,7 +625,6 @@ EUR
 EV
 EVA
 EVO
-EW
 EX
 EY
 EZ
@@ -653,7 +659,6 @@ Euro
 Europa
 Europe
 European
-Every
 Ex
 Execut
 Express
@@ -693,6 +698,7 @@ Far
 Fe
 Fel
 Fer
+Festival
 Fi
 Finan
 First
@@ -703,6 +709,7 @@ For
 Form
 Forum
 Foto
+Fr
 Fra
 Franc
 France
@@ -719,7 +726,6 @@ GAS
 GB
 GC
 GE
-GEL
 GEN
 GER
 GES
@@ -731,7 +737,6 @@ GI
 GIF
 GIN
 GK
-GLE
 GM
 GN
 GO
@@ -887,7 +892,6 @@ IMI
 IMO
 IN
 INA
-IND
 INE
 ING
 INGER
@@ -918,7 +922,6 @@ ITE
 ITO
 ITS
 ITU
-ITY
 IU
 IV
 IVA
@@ -956,7 +959,6 @@ Iz
 IÓN
 J
 JA
-JAK
 JAS
 JC
 JD
@@ -985,8 +987,10 @@ Jun
 Just
 K
 KA
+KAR
 KE
 KER
+KEY
 KF
 KG
 KH
@@ -1009,6 +1013,7 @@ Ki
 Ko
 Kon
 Kr
+Kre
 Ku
 Kun
 Kur
@@ -1039,7 +1044,6 @@ LF
 LG
 LI
 LIC
-LICA
 LIE
 LIM
 LINK
@@ -1049,7 +1053,6 @@ LL
 LM
 LN
 LO
-LOC
 LOM
 LON
 LOR
@@ -1097,6 +1100,7 @@ MCA
 MD
 ME
 MED
+MEI
 MEN
 MER
 MES
@@ -1109,7 +1113,6 @@ MI
 MIA
 MIR
 MIT
-MK
 ML
 MM
 MMA
@@ -1239,6 +1242,7 @@ NYA
 NZ
 Na
 Nar
+National
 Natur
 Nav
 Ne
@@ -1268,7 +1272,6 @@ OGA
 OI
 OJ
 OK
-OKU
 OL
 OLA
 OLI
@@ -1284,7 +1287,6 @@ ONG
 ONU
 OO
 OOL
-OOM
 OP
 OPA
 OPE
@@ -1335,6 +1337,7 @@ PAL
 PAN
 PAR
 PAS
+PAT
 PB
 PC
 PD
@@ -1348,7 +1351,6 @@ PHA
 PI
 PIA
 PIC
-PIE
 PJ
 PL
 PLE
@@ -1362,7 +1364,6 @@ PP
 PPA
 PR
 PRE
-PRES
 PRESS
 PRI
 PRO
@@ -1453,7 +1454,6 @@ RAF
 RAI
 RAM
 RAN
-RAP
 RAS
 RB
 RC
@@ -1502,6 +1502,7 @@ RV
 RW
 RY
 Ra
+Rad
 Radio
 Ray
 Re
@@ -1577,7 +1578,6 @@ STAT
 STE
 STEM
 STER
-STR
 SU
 SV
 SW
@@ -1623,6 +1623,7 @@ Star
 Stat
 Ste
 Step
+Stock
 Stop
 Str
 Stra
@@ -1641,6 +1642,7 @@ TA
 TAC
 TAL
 TAN
+TAR
 TAS
 TB
 TC
@@ -1660,7 +1662,6 @@ TH
 THE
 TI
 TIC
-TICA
 TIN
 TL
 TM
@@ -1750,6 +1751,7 @@ UI
 UK
 UL
 ULA
+ULE
 ULI
 ULO
 UM
@@ -1789,13 +1791,13 @@ V
 VA
 VAC
 VAL
-VAR
 VB
 VC
 VE
 VEN
 VER
 VES
+VET
 VG
 VI
 VIA
@@ -1837,15 +1839,14 @@ WB
 WC
 WD
 WE
-WER
 WF
+WG
 WI
 WIE
 WIN
 WL
 WM
 WO
-WP
 WR
 WS
 WW
@@ -1893,7 +1894,6 @@ YS
 YT
 Ya
 Yan
-Yang
 Ye
 Yo
 Yosh
@@ -1902,6 +1902,7 @@ Yu
 Z
 ZA
 ZE
+ZEN
 ZI
 ZN
 ZO
@@ -1958,6 +1959,7 @@ aci
 aciones
 ació
 ación
+acord
 acqua
 act
 action
@@ -2151,6 +2153,7 @@ ang
 anga
 angan
 angel
+angl
 ango
 ani
 ania
@@ -2187,6 +2190,7 @@ ants
 anu
 anud
 anunci
+anwalt
 any
 anza
 ap
@@ -2413,13 +2417,13 @@ baya
 baz
 bb
 bba
-bbe
 bbi
 bble
 bby
 bd
 be
 beat
+beauftragte
 beba
 bec
 beck
@@ -2446,9 +2450,9 @@ ber
 bera
 beratung
 bere
-bereich
 berg
 berger
+bergs
 beri
 bern
 berri
@@ -2652,6 +2656,7 @@ bál
 bán
 bár
 bás
+bär
 bæk
 bé
 béis
@@ -2684,6 +2689,7 @@ cami
 camp
 can
 cana
+cancer
 cand
 cando
 cane
@@ -2850,7 +2856,6 @@ cijo
 cil
 cili
 cilla
-cim
 cima
 cimento
 cimiento
@@ -3059,7 +3064,6 @@ cute
 cuti
 cy
 cycle
-cycling
 cz
 czesny
 czyk
@@ -3132,7 +3136,6 @@ debat
 dec
 deep
 defini
-deg
 dega
 deira
 deiro
@@ -3295,7 +3298,6 @@ drome
 dron
 dru
 drug
-dry
 ds
 dt
 du
@@ -3375,7 +3377,6 @@ educa
 educació
 ee
 eed
-eel
 een
 eer
 ef
@@ -3502,6 +3503,7 @@ ens
 ensa
 ense
 enses
+ensis
 enstein
 ent
 enta
@@ -3526,7 +3528,6 @@ ené
 ení
 eo
 ep
-epe
 epi
 equilibra
 equilibri
@@ -3563,7 +3564,6 @@ ers
 ert
 erte
 erto
-eru
 ery
 ería
 es
@@ -3780,6 +3780,8 @@ filtr
 fin
 fina
 final
+finale
+financ
 financi
 finanz
 fine
@@ -3891,7 +3893,7 @@ fér
 fí
 fíci
 fón
-fö
+förderung
 g
 ga
 gaard
@@ -3948,17 +3950,15 @@ gawa
 gay
 gaz
 ge
+geb
 ged
 gel
 gele
 geli
 gelin
 gels
-gelt
 gem
 geme
-gemeinde
-gemeinschaft
 gen
 gence
 gend
@@ -4073,7 +4073,6 @@ grad
 grade
 grado
 graf
-grafi
 gram
 grama
 gran
@@ -4166,6 +4165,7 @@ haf
 haga
 hagen
 hai
+hain
 hair
 hal
 hala
@@ -4175,6 +4175,7 @@ halle
 hallen
 halter
 ham
+hama
 hammer
 han
 hana
@@ -4203,6 +4204,7 @@ hawk
 hay
 haya
 haz
+hd
 he
 hea
 head
@@ -4297,7 +4299,6 @@ hotel
 hou
 houd
 house
-hout
 hov
 hová
 how
@@ -4325,6 +4326,7 @@ hus
 hy
 há
 hán
+hä
 hé
 hér
 hó
@@ -4346,6 +4348,7 @@ iano
 iar
 ias
 iat
+iau
 ib
 iba
 ibe
@@ -4393,11 +4396,11 @@ identifi
 ider
 ides
 idi
-iding
 idio
 idir
 ido
 idos
+ids
 idu
 idé
 ie
@@ -4419,7 +4422,6 @@ ieron
 iers
 iert
 ierten
-ierung
 ies
 iese
 iet
@@ -4507,6 +4509,7 @@ illo
 illon
 illy
 ilo
+ilor
 ils
 ilu
 ily
@@ -4656,6 +4659,7 @@ isa
 isan
 isch
 ische
+ischen
 ischer
 ise
 iseach
@@ -4674,10 +4678,12 @@ isio
 isip
 iska
 isla
+islam
 ism
 isma
 isme
 ismo
+ismus
 iso
 ison
 isque
@@ -4907,7 +4913,6 @@ ki
 kia
 kie
 kiewicz
-kih
 kill
 kim
 kin
@@ -4927,14 +4932,12 @@ kjær
 kk
 kka
 kkari
-kl
 klas
 kle
 kler
 klusi
 km
 ko
-kol
 kola
 kom
 kon
@@ -4964,13 +4967,12 @@ kron
 ks
 ksa
 ksana
-kse
 ksi
-kt
 ktion
 ktor
 ku
 kuba
+kul
 kull
 kun
 kunst
@@ -5008,6 +5010,7 @@ lado
 laf
 lag
 laga
+lage
 lago
 lagos
 lah
@@ -5112,6 +5115,7 @@ leigh
 lein
 leit
 lej
+lek
 lel
 lela
 lem
@@ -5180,6 +5184,7 @@ lie
 lier
 lies
 life
+lift
 lifting
 lig
 liga
@@ -5375,6 +5380,7 @@ lóg
 lógica
 lógico
 lón
+lö
 lú
 lü
 m
@@ -5632,6 +5638,7 @@ model
 moder
 modern
 modo
+modul
 moji
 mol
 moli
@@ -5690,7 +5697,6 @@ mpu
 mput
 ms
 mu
-mud
 mula
 mulo
 mult
@@ -5738,6 +5744,7 @@ nad
 nada
 nade
 nado
+naga
 nah
 najua
 nak
@@ -5804,7 +5811,6 @@ nel
 nell
 nella
 nelli
-nello
 nen
 neo
 ner
@@ -5913,7 +5919,6 @@ nost
 nosti
 not
 nota
-note
 nou
 nov
 nova
@@ -6020,11 +6025,13 @@ ogram
 ográfica
 ográfico
 oh
+ohemi
 oi
 oil
 oir
 oj
 oja
+oje
 ojo
 ok
 oka
@@ -6049,7 +6056,6 @@ olog
 ologia
 ology
 ología
-olon
 olu
 oly
 olás
@@ -6103,7 +6109,6 @@ onto
 ony
 oo
 oooo
-oor
 op
 opa
 ope
@@ -6127,7 +6132,6 @@ ordin
 ordina
 ordinador
 ordine
-ordnung
 ore
 oren
 ores
@@ -6166,6 +6170,7 @@ osis
 oslav
 oso
 osos
+ossa
 ost
 osta
 osti
@@ -6253,7 +6258,6 @@ pang
 pano
 pant
 panta
-pap
 papa
 par
 para
@@ -6293,7 +6297,6 @@ pec
 pecia
 ped
 peda
-pedagog
 pedi
 pedia
 pel
@@ -6365,6 +6368,7 @@ pien
 pier
 pies
 piga
+pija
 pil
 pila
 pili
@@ -6452,6 +6456,7 @@ pop
 popular
 por
 pora
+pore
 port
 porta
 portal
@@ -6611,6 +6616,7 @@ quad
 quadra
 qual
 quam
+quar
 quart
 que
 queira
@@ -6669,6 +6675,7 @@ rage
 ragon
 ragu
 rah
+rahman
 rai
 rain
 rais
@@ -6807,6 +6814,7 @@ rese
 resh
 resistent
 resor
+respect
 respons
 resse
 rest
@@ -6814,7 +6822,6 @@ restaurant
 reste
 ret
 reta
-retan
 rete
 reti
 reto
@@ -6959,7 +6966,6 @@ roga
 rogen
 roid
 roj
-rojen
 roka
 rol
 roll
@@ -7104,7 +7110,6 @@ samt
 san
 sana
 sang
-sani
 sanitari
 sano
 sant
@@ -7295,6 +7300,7 @@ sivu
 size
 sió
 sión
+sjö
 sk
 ska
 skat
@@ -7361,7 +7367,6 @@ specific
 specta
 spel
 sper
-sphere
 spi
 spicio
 spiel
@@ -7380,6 +7385,7 @@ sport
 sposo
 spot
 spr
+sprache
 spray
 spre
 spur
@@ -7408,7 +7414,6 @@ staat
 stabil
 stad
 stadt
-stag
 staje
 stal
 stan
@@ -7537,7 +7542,6 @@ sy
 syk
 symbol
 syn
-sys
 sz
 szt
 sá
@@ -7613,6 +7617,7 @@ tasuna
 tat
 tata
 tate
+tati
 tation
 tato
 tau
@@ -7642,6 +7647,7 @@ tele
 teli
 tella
 telli
+telling
 telo
 tem
 tema
@@ -7745,6 +7751,7 @@ til
 tila
 tilan
 tile
+tili
 till
 tim
 tima
@@ -7899,7 +7906,6 @@ tsch
 tse
 tsen
 tsu
-tsua
 tt
 tta
 tte
@@ -7962,7 +7968,6 @@ tár
 társ
 tás
 táv
-tä
 tänd
 té
 tél
@@ -8061,6 +8066,7 @@ ulu
 uló
 um
 uma
+uman
 umas
 umba
 umbi
@@ -8395,6 +8401,7 @@ wa
 wad
 wah
 wahi
+wahl
 wal
 wald
 walk
@@ -8471,6 +8478,7 @@ worth
 wr
 ws
 wu
+wur
 www
 wy
 x
@@ -8596,7 +8604,6 @@ zem
 zen
 zene
 zentrum
-zep
 zer
 zero
 zes
@@ -8655,7 +8662,6 @@ zze
 zzi
 zzo
 zzy
-zzz
 zá
 zán
 zár
@@ -8681,6 +8687,7 @@ zón
 À
 Àngel
 Á
+ÁL
 ÁN
 ÁS
 Â
@@ -8689,6 +8696,7 @@ zón
 ÉN
 Í
 ÍA
+ÍN
 ÍS
 ÍT
 Ñ
@@ -8697,6 +8705,7 @@ zón
 Ó
 ÓN
 Ö
+ÖK
 ÖN
 ×
 Ú
@@ -8754,7 +8763,6 @@ zón
 ç
 ça
 ço
-çon
 ção
 è
 ència
@@ -8795,7 +8803,6 @@ zón
 éticos
 év
 éz
-ê
 ë
 ël
 ì
@@ -8868,12 +8875,10 @@ zón
 ök
 öl
 öld
-öm
 ön
 ör
 örf
 ört
-ös
 österreich
 öt
 ött
@@ -8891,10 +8896,12 @@ zón
 ús
 út
 ü
+üh
 ühl
 ül
 ün
 ür
+ütt
 ütz
 ć
 č
@@ -8905,6 +8912,7 @@ zón
 š
 ša
 €
+⃝
 ▁
 ▁!
 ▁"
@@ -8919,7 +8927,6 @@ zón
 ▁("
 ▁(*)
 ▁(+
-▁(=
 ▁(@
 ▁)
 ▁*
@@ -8964,7 +8971,6 @@ zón
 ▁API
 ▁APP
 ▁AR
-▁ARM
 ▁ART
 ▁AS
 ▁ASEAN
@@ -9033,7 +9039,6 @@ zón
 ▁Adidas
 ▁Administra
 ▁Administración
-▁Administration
 ▁Administrativ
 ▁Adnan
 ▁Adobe
@@ -9065,7 +9070,6 @@ zón
 ▁Agency
 ▁Agenda
 ▁Agent
-▁Agentur
 ▁Agosto
 ▁Agra
 ▁Agri
@@ -9399,7 +9403,6 @@ zón
 ▁Aureli
 ▁Aurora
 ▁Aus
-▁Ausbildung
 ▁Auschwitz
 ▁Austin
 ▁Australia
@@ -9438,6 +9441,7 @@ zón
 ▁Aziz
 ▁B
 ▁BA
+▁BAL
 ▁BAR
 ▁BAS
 ▁BB
@@ -9622,6 +9626,7 @@ zón
 ▁Bernhard
 ▁Berry
 ▁Bert
+▁Beruf
 ▁Berufs
 ▁Bes
 ▁Best
@@ -9667,6 +9672,7 @@ zón
 ▁Bitcoin
 ▁Biz
 ▁Bizkaia
+▁Björn
 ▁Bla
 ▁Black
 ▁Blade
@@ -9802,7 +9808,6 @@ zón
 ▁Bro
 ▁Broadway
 ▁Brod
-▁Brom
 ▁Bron
 ▁Brook
 ▁Brooklyn
@@ -9825,7 +9830,6 @@ zón
 ▁Buda
 ▁Budapest
 ▁Budd
-▁Budget
 ▁Budi
 ▁Buena
 ▁Bueno
@@ -9865,7 +9869,6 @@ zón
 ▁Bé
 ▁Bó
 ▁Bö
-▁Bör
 ▁Bú
 ▁Bü
 ▁Bürger
@@ -10393,7 +10396,6 @@ zón
 ▁Cre
 ▁Crea
 ▁Cream
-▁Creative
 ▁Cred
 ▁Credit
 ▁Creek
@@ -10472,6 +10474,7 @@ zón
 ▁DJ
 ▁DM
 ▁DO
+▁DP
 ▁DR
 ▁DS
 ▁DSGVO
@@ -10635,7 +10638,6 @@ zón
 ▁Dimitri
 ▁Din
 ▁Dina
-▁Dinam
 ▁Dinamo
 ▁Dinas
 ▁Dini
@@ -10657,6 +10659,7 @@ zón
 ▁Disc
 ▁Disciplin
 ▁Discovery
+▁Disease
 ▁Disney
 ▁Display
 ▁Dispo
@@ -10731,6 +10734,7 @@ zón
 ▁Dru
 ▁Druck
 ▁Drug
+▁Drum
 ▁Du
 ▁Dua
 ▁Dual
@@ -10929,7 +10933,6 @@ zón
 ▁Entre
 ▁Entretanto
 ▁Entrevista
-▁Entwicklung
 ▁Envia
 ▁Ep
 ▁Epi
@@ -10952,7 +10955,6 @@ zón
 ▁Ero
 ▁Erre
 ▁Error
-▁Erste
 ▁Es
 ▁Esa
 ▁Esca
@@ -11069,14 +11071,12 @@ zón
 ▁Ezen
 ▁F
 ▁FA
-▁FAC
 ▁FAR
 ▁FBI
 ▁FC
 ▁FE
 ▁FED
 ▁FEDER
-▁FER
 ▁FF
 ▁FI
 ▁FIA
@@ -11216,7 +11216,6 @@ zón
 ▁Finanz
 ▁Find
 ▁Fine
-▁Finger
 ▁Finland
 ▁Finn
 ▁Fiorentina
@@ -11365,6 +11364,7 @@ zón
 ▁Funda
 ▁Fundació
 ▁Fundación
+▁Fundament
 ▁Fundamental
 ▁Fung
 ▁Funk
@@ -11494,7 +11494,6 @@ zón
 ▁Gest
 ▁Gestion
 ▁Gestió
-▁Gesundheit
 ▁Get
 ▁Gew
 ▁Gha
@@ -11687,6 +11686,7 @@ zón
 ▁HE
 ▁HER
 ▁HI
+▁HISTORIA
 ▁HO
 ▁HP
 ▁HR
@@ -11718,7 +11718,6 @@ zón
 ▁Hakim
 ▁Hal
 ▁Halep
-▁Half
 ▁Hali
 ▁Hall
 ▁Halle
@@ -11726,7 +11725,6 @@ zón
 ▁Ham
 ▁Hamas
 ▁Hamburg
-▁Hamid
 ▁Hamilton
 ▁Hammer
 ▁Hampton
@@ -11832,6 +11830,7 @@ zón
 ▁Hij
 ▁Hil
 ▁Hilde
+▁Hilfe
 ▁Hill
 ▁Hillary
 ▁Hills
@@ -12008,6 +12007,7 @@ zón
 ▁Ignacio
 ▁Igor
 ▁Igual
+▁Ik
 ▁Ikea
 ▁Il
 ▁Ili
@@ -12097,7 +12097,6 @@ zón
 ▁Integr
 ▁Integra
 ▁Integral
-▁Integration
 ▁Intel
 ▁Intelligence
 ▁Intens
@@ -12203,6 +12202,7 @@ zón
 ▁Java
 ▁Javier
 ▁Jay
+▁Jaya
 ▁Jaz
 ▁Jazz
 ▁Je
@@ -12436,11 +12436,11 @@ zón
 ▁Kid
 ▁Kids
 ▁Kiel
+▁Kies
 ▁Kiev
 ▁Kil
 ▁Kill
 ▁Kim
-▁Kimi
 ▁Kin
 ▁Kind
 ▁Kinder
@@ -12469,10 +12469,10 @@ zón
 ▁Klima
 ▁Klin
 ▁Klo
-▁Kloster
 ▁Klu
 ▁Klub
 ▁Km
+▁Knapp
 ▁Knight
 ▁Kno
 ▁Ko
@@ -12557,6 +12557,7 @@ zón
 ▁Kä
 ▁Kär
 ▁Kö
+▁Köln
 ▁König
 ▁Kü
 ▁L
@@ -12641,6 +12642,7 @@ zón
 ▁Le
 ▁Lea
 ▁Lead
+▁Leader
 ▁League
 ▁Learning
 ▁Leben
@@ -12794,6 +12796,7 @@ zón
 ▁Lorenzo
 ▁Los
 ▁Lot
+▁Lotte
 ▁Lotus
 ▁Lou
 ▁Louis
@@ -12856,6 +12859,7 @@ zón
 ▁Lí
 ▁López
 ▁Lö
+▁Lög
 ▁Lü
 ▁M
 ▁MA
@@ -12864,6 +12868,7 @@ zón
 ▁MAN
 ▁MAR
 ▁MAS
+▁MAT
 ▁MAX
 ▁MB
 ▁MBA
@@ -13163,7 +13168,6 @@ zón
 ▁Metal
 ▁Metall
 ▁Meteor
-▁Meter
 ▁Metro
 ▁Metropol
 ▁Metropolitan
@@ -13367,6 +13371,7 @@ zón
 ▁Muller
 ▁Mult
 ▁Multi
+▁Multimedia
 ▁Mun
 ▁Mund
 ▁Mundial
@@ -13407,6 +13412,7 @@ zón
 ▁Már
 ▁Más
 ▁Máy
+▁Mä
 ▁Mé
 ▁Médico
 ▁Méndez
@@ -13544,6 +13550,7 @@ zón
 ▁Nieder
 ▁Niels
 ▁Nielsen
+▁Niet
 ▁Nigeria
 ▁Night
 ▁Niin
@@ -13557,6 +13564,7 @@ zón
 ▁Nina
 ▁Ning
 ▁Nintendo
+▁Nis
 ▁Nissan
 ▁Nit
 ▁Nivel
@@ -13636,7 +13644,6 @@ zón
 ▁ONG
 ▁ONU
 ▁OP
-▁OR
 ▁OS
 ▁OT
 ▁Oak
@@ -13659,6 +13666,7 @@ zón
 ▁Od
 ▁Oda
 ▁Odd
+▁Oder
 ▁Of
 ▁Oferta
 ▁Off
@@ -13868,7 +13876,6 @@ zón
 ▁Pand
 ▁Panda
 ▁Panel
-▁Pang
 ▁Pani
 ▁Panorama
 ▁Panta
@@ -14033,6 +14040,7 @@ zón
 ▁Pic
 ▁Picasso
 ▁Pick
+▁Picture
 ▁Pictures
 ▁Pie
 ▁Pien
@@ -14074,7 +14082,6 @@ zón
 ▁Plas
 ▁Plat
 ▁Plataforma
-▁Platinum
 ▁Platz
 ▁Play
 ▁PlayStation
@@ -14214,6 +14221,7 @@ zón
 ▁Product
 ▁Production
 ▁Prof
+▁Profesi
 ▁Profesional
 ▁Profesor
 ▁Programa
@@ -14281,7 +14289,6 @@ zón
 ▁Pá
 ▁Página
 ▁Pár
-▁Pää
 ▁Pé
 ▁Pérez
 ▁Pí
@@ -14341,6 +14348,7 @@ zón
 ▁RTV
 ▁RU
 ▁Ra
+▁Raa
 ▁Rab
 ▁Rabi
 ▁Rac
@@ -14390,6 +14398,7 @@ zón
 ▁Rapid
 ▁Ras
 ▁Rash
+▁Rashid
 ▁Rasmus
 ▁Rasmussen
 ▁Rast
@@ -14406,7 +14415,6 @@ zón
 ▁Raza
 ▁Re
 ▁Read
-▁Reader
 ▁Real
 ▁Realiza
 ▁Rebecca
@@ -14438,6 +14446,7 @@ zón
 ▁Regen
 ▁Regi
 ▁Regina
+▁Region
 ▁Regional
 ▁Regione
 ▁Registr
@@ -14448,6 +14457,7 @@ zón
 ▁Rehabilita
 ▁Rei
 ▁Reich
+▁Reiki
 ▁Rein
 ▁Reino
 ▁Reis
@@ -14636,7 +14646,6 @@ zón
 ▁Rum
 ▁Rumani
 ▁Run
-▁Rund
 ▁Runner
 ▁Rup
 ▁Rural
@@ -14724,6 +14733,8 @@ zón
 ▁Sabri
 ▁Sac
 ▁Sach
+▁Sache
+▁Sachsen
 ▁Sacra
 ▁Sad
 ▁Sada
@@ -15019,12 +15030,12 @@ zón
 ▁Sinn
 ▁Sinne
 ▁Sino
+▁Sint
 ▁Sir
 ▁Siri
 ▁Siria
 ▁Sistema
 ▁Sit
-▁Site
 ▁Sitges
 ▁Siti
 ▁Situ
@@ -15090,7 +15101,7 @@ zón
 ▁Son
 ▁Song
 ▁Sonic
-▁Sonne
+▁Sonnen
 ▁Sono
 ▁Sony
 ▁Sop
@@ -15146,7 +15157,6 @@ zón
 ▁Sri
 ▁St
 ▁Sta
-▁Staats
 ▁Stad
 ▁Stadium
 ▁Stadt
@@ -15228,6 +15238,7 @@ zón
 ▁Stuttgart
 ▁Style
 ▁Styr
+▁Stö
 ▁Su
 ▁Sua
 ▁Sub
@@ -15328,7 +15339,6 @@ zón
 ▁TRA
 ▁TRI
 ▁TS
-▁TT
 ▁TU
 ▁TUR
 ▁TV
@@ -15336,7 +15346,6 @@ zón
 ▁Taal
 ▁Tab
 ▁Taba
-▁Table
 ▁Tac
 ▁Tad
 ▁Tag
@@ -15418,7 +15427,6 @@ zón
 ▁Tell
 ▁Tem
 ▁Tema
-▁Temel
 ▁Temer
 ▁Temp
 ▁Temperatur
@@ -15590,7 +15598,6 @@ zón
 ▁Transfer
 ▁Transforma
 ▁Transit
-▁Translation
 ▁Transport
 ▁Tras
 ▁Trata
@@ -15657,6 +15664,7 @@ zón
 ▁Título
 ▁Tó
 ▁Tú
+▁Türk
 ▁U
 ▁UAB
 ▁UC
@@ -15714,7 +15722,6 @@ zón
 ▁United
 ▁Univers
 ▁Universal
-▁Universe
 ▁Universidad
 ▁Universidade
 ▁Universit
@@ -15799,6 +15806,7 @@ zón
 ▁Varga
 ▁Vari
 ▁Varia
+▁Variante
 ▁Vario
 ▁Vas
 ▁Vasco
@@ -15823,7 +15831,6 @@ zón
 ▁Venez
 ▁Venezuela
 ▁Vent
-▁Ventil
 ▁Venus
 ▁Ver
 ▁Vera
@@ -15954,7 +15961,6 @@ zón
 ▁Wa
 ▁Wad
 ▁Waffen
-▁Wag
 ▁Wagner
 ▁Wah
 ▁Wahl
@@ -15973,7 +15979,6 @@ zón
 ▁Wan
 ▁Wand
 ▁Wandel
-▁Wander
 ▁Wang
 ▁Wann
 ▁Want
@@ -16039,6 +16044,7 @@ zón
 ▁Wild
 ▁Wilhelm
 ▁Will
+▁Willem
 ▁William
 ▁Williams
 ▁Willie
@@ -16188,7 +16194,6 @@ zón
 ▁Zu
 ▁Zub
 ▁Zuckerberg
-▁Zug
 ▁Zugang
 ▁Zul
 ▁Zum
@@ -17062,8 +17067,8 @@ zón
 ▁bestia
 ▁beta
 ▁bi
+▁bibe
 ▁bibli
-▁biblio
 ▁biblioteca
 ▁bicarbonat
 ▁bici
@@ -17411,7 +17416,6 @@ zón
 ▁cause
 ▁cauta
 ▁cautela
-▁cave
 ▁cavi
 ▁caz
 ▁caída
@@ -17559,7 +17563,6 @@ zón
 ▁civil
 ▁civile
 ▁civiliza
-▁cl
 ▁cla
 ▁clan
 ▁clandestin
@@ -17988,7 +17991,6 @@ zón
 ▁continue
 ▁continuo
 ▁continúa
-▁conto
 ▁contorno
 ▁contra
 ▁contract
@@ -18225,6 +18227,7 @@ zón
 ▁curiosidade
 ▁curioso
 ▁curricular
+▁curriculum
 ▁currículo
 ▁curs
 ▁cursa
@@ -18415,7 +18418,6 @@ zón
 ▁deriva
 ▁derivados
 ▁dermatit
-▁dermatolog
 ▁derrota
 ▁des
 ▁desa
@@ -18682,7 +18684,6 @@ zón
 ▁do
 ▁dob
 ▁doble
-▁doc
 ▁doce
 ▁docente
 ▁doctor
@@ -19583,7 +19584,6 @@ zón
 ▁fosil
 ▁fot
 ▁foto
-▁fotografi
 ▁fotografia
 ▁fotografía
 ▁fotografías
@@ -19960,6 +19960,7 @@ zón
 ▁hack
 ▁hacker
 ▁hacía
+▁hada
 ▁hag
 ▁haga
 ▁hai
@@ -20890,6 +20891,7 @@ zón
 ▁lograr
 ▁logro
 ▁logística
+▁lomba
 ▁long
 ▁longe
 ▁longitud
@@ -21156,6 +21158,7 @@ zón
 ▁melo
 ▁melon
 ▁membran
+▁membre
 ▁membres
 ▁meme
 ▁memor
@@ -21263,7 +21266,6 @@ zón
 ▁minerale
 ▁mini
 ▁miniatur
-▁minic
 ▁minim
 ▁minimalist
 ▁minimi
@@ -21405,6 +21407,7 @@ zón
 ▁movimiento
 ▁moz
 ▁mozos
+▁mozzarella
 ▁mp
 ▁mu
 ▁much
@@ -21503,7 +21506,6 @@ zón
 ▁nas
 ▁nata
 ▁natal
-▁nato
 ▁natural
 ▁naturales
 ▁naturaleza
@@ -21768,7 +21770,6 @@ zón
 ▁op
 ▁opciones
 ▁opción
-▁open
 ▁oper
 ▁opera
 ▁operacion
@@ -22179,7 +22180,6 @@ zón
 ▁petróleo
 ▁pey
 ▁phi
-▁photo
 ▁pi
 ▁pia
 ▁pianist
@@ -22886,6 +22886,7 @@ zón
 ▁querido
 ▁quería
 ▁qui
+▁quia
 ▁quid
 ▁quien
 ▁quienes
@@ -23967,7 +23968,6 @@ zón
 ▁sólida
 ▁sólido
 ▁sólo
-▁són
 ▁sú
 ▁súper
 ▁t
@@ -24378,7 +24378,6 @@ zón
 ▁triste
 ▁triunfo
 ▁tro
-▁troca
 ▁trofe
 ▁trom
 ▁trombo
@@ -24459,6 +24458,7 @@ zón
 ▁ubicado
 ▁uc
 ▁uji
+▁ul
 ▁ulterior
 ▁ultim
 ▁ultima
@@ -24517,7 +24517,6 @@ zón
 ▁ut
 ▁ute
 ▁uten
-▁util
 ▁utili
 ▁utilidad
 ▁utiliza
@@ -24864,7 +24863,6 @@ zón
 ▁with
 ▁wo
 ▁won
-▁word
 ▁work
 ▁world
 ▁www
@@ -24979,22 +24977,24 @@ zón
 ▁Ţ
 ▁́
 ▁̈
+▁μ
 ▁€
 ▁€.
 ▁€/
 ▁→
 ▁■
 ▁▪
-▁►
 ▁●
 ▁
 ■
 □
+
 
 
 
 
 
+
 
 ️
 ￼

@@ -116,6 +116,7 @@ ADO
 ADU
 AE
 AF
+AFA
 AFP
 AG
 AGA
@@ -220,6 +221,7 @@ Alex
 Ali
 All
 Alle
+Alt
 Am
 Amazon
 Amb
@@ -240,7 +242,6 @@ Ap
 App
 Apple
 Ar
-Arabi
 Arch
 Archiv
 Arsenal
@@ -253,7 +254,6 @@ Associate
 At
 Atlant
 Au
-Auf
 Aug
 August
 Aus
@@ -288,11 +288,11 @@ BK
 BL
 BLA
 BLE
+BLUE
 BM
 BN
 BO
 BOR
-BOT
 BOX
 BP
 BR
@@ -304,7 +304,6 @@ BS
 BT
 BU
 BUD
-BUT
 BV
 BY
 Ba
@@ -499,6 +498,7 @@ DG
 DH
 DI
 DIC
+DIG
 DING
 DIS
 DJ
@@ -544,13 +544,13 @@ Diagnos
 Die
 Dienstleistungen
 Digital
-Din
 Direct
 Dis
 Do
 Dom
 Don
 Donald
+Download
 Dr
 Dream
 Drive
@@ -587,7 +587,6 @@ EI
 EIN
 EIS
 EIT
-EJ
 EK
 EL
 ELE
@@ -637,13 +636,13 @@ ETF
 ETH
 ETI
 ETS
-ETTER
 EU
 EUR
 EV
 EVA
 EVE
 EVER
+EVO
 EW
 EX
 EY
@@ -690,7 +689,6 @@ FER
 FF
 FG
 FI
-FIC
 FIN
 FK
 FL
@@ -744,10 +742,8 @@ GAR
 GAS
 GB
 GC
-GD
 GDP
 GE
-GEL
 GEM
 GEN
 GER
@@ -830,7 +826,6 @@ HER
 HF
 HH
 HI
-HIL
 HIM
 HING
 HK
@@ -1032,7 +1027,6 @@ Je
 Jes
 Ji
 Jo
-Job
 John
 Journal
 Ju
@@ -1099,7 +1093,6 @@ Kur
 KÖ
 L
 LA
-LAB
 LAG
 LAH
 LAIN
@@ -1434,7 +1427,6 @@ ORG
 ORI
 ORT
 OS
-OSA
 OSS
 OST
 OT
@@ -1498,7 +1490,6 @@ PH
 PI
 PIA
 PIC
-PIE
 PJ
 PL
 PLA
@@ -1537,7 +1528,6 @@ Par
 Para
 Park
 Part
-Partner
 Pas
 Pass
 Patri
@@ -1553,6 +1543,7 @@ Petr
 Ph
 Philip
 Philosoph
+Phone
 Photo
 Pi
 Pie
@@ -1654,7 +1645,6 @@ RNA
 RO
 ROC
 ROG
-ROL
 ROM
 RON
 ROS
@@ -1675,7 +1665,6 @@ Rad
 Radio
 Rah
 Ran
-Ras
 Ray
 Raz
 Re
@@ -1761,12 +1750,14 @@ SSR
 ST
 STA
 STAN
+STAR
 STE
 STEM
 STER
 STI
 STO
 STR
+STRA
 SU
 SV
 SW
@@ -1793,6 +1784,7 @@ Settings
 Sex
 Sh
 Sha
+Shabaab
 Share
 She
 Shi
@@ -1852,7 +1844,6 @@ T
 TA
 TAC
 TAG
-TAI
 TAL
 TAN
 TAR
@@ -1910,7 +1901,6 @@ TRA
 TRE
 TRI
 TRO
-TRY
 TS
 TSE
 TT
@@ -1992,7 +1982,6 @@ UK
 UKE
 UKU
 UL
-ULA
 ULE
 UM
 UMA
@@ -2001,6 +1990,7 @@ UN
 UNA
 UNC
 UND
+UNDE
 UNE
 UNG
 UNI
@@ -2041,7 +2031,6 @@ VC
 VE
 VEL
 VEN
-VENT
 VER
 VERS
 VES
@@ -2105,6 +2094,7 @@ WL
 WM
 WN
 WO
+WORLD
 WP
 WR
 WS
@@ -2151,7 +2141,6 @@ XO
 XP
 XT
 XX
-XXXX
 XY
 Y
 YA
@@ -2186,7 +2175,7 @@ ZI
 ZN
 ZO
 ZS
-ZV
+ZU
 ZZ
 Za
 Ze
@@ -2384,6 +2373,7 @@ amba
 ambi
 ambia
 ambu
+ambula
 ame
 ament
 amente
@@ -2460,6 +2450,7 @@ antic
 antis
 anto
 ants
+anwalt
 any
 anza
 ap
@@ -2486,6 +2477,7 @@ arch
 archae
 archi
 architecture
+archiv
 archive
 ard
 ardi
@@ -2705,6 +2697,7 @@ bby
 bc
 be
 beat
+beauftragte
 beauty
 bec
 beck
@@ -2760,7 +2753,6 @@ bi
 bia
 bian
 bib
-bibliothek
 bic
 bica
 bici
@@ -2831,6 +2823,7 @@ bo
 boa
 board
 bod
+boden
 body
 bog
 bok
@@ -2900,6 +2893,7 @@ bris
 brit
 bro
 brok
+bron
 brook
 brow
 bru
@@ -2942,6 +2936,7 @@ by
 byl
 byr
 byte
+bär
 bé
 bó
 bö
@@ -3282,7 +3277,6 @@ cto
 ctor
 ctos
 ctu
-ctum
 ctura
 ctus
 cu
@@ -3458,7 +3452,6 @@ different
 dig
 dige
 digital
-dii
 dijk
 dik
 dil
@@ -3536,6 +3529,7 @@ dov
 dova
 dow
 down
+download
 dr
 dra
 drag
@@ -3546,7 +3540,6 @@ dress
 dri
 drift
 drin
-dring
 driv
 drive
 dro
@@ -3786,6 +3779,7 @@ eran
 erant
 eras
 erat
+erd
 erde
 ere
 erek
@@ -3813,7 +3807,6 @@ error
 ers
 ert
 erte
-erung
 ery
 ería
 es
@@ -4023,6 +4016,7 @@ fina
 final
 financ
 financi
+finanz
 find
 finder
 fine
@@ -4137,8 +4131,7 @@ furi
 fus
 fusion
 fy
-fé
-fö
+förderung
 g
 ga
 gaard
@@ -4196,10 +4189,8 @@ geh
 geist
 gel
 gels
-gelt
 gem
 geme
-gemeinschaft
 gen
 gence
 gend
@@ -4217,11 +4208,9 @@ ger
 gera
 geri
 geria
-gericht
 gerichte
 gers
 ges
-gesch
 gesellschaft
 gesetz
 gestion
@@ -4403,6 +4392,7 @@ hage
 hagen
 hai
 hail
+hain
 hair
 hak
 haka
@@ -4515,6 +4505,7 @@ hid
 hida
 hier
 high
+hiko
 hil
 hila
 hild
@@ -4541,7 +4532,6 @@ hk
 hl
 hla
 hle
-hlen
 hli
 hlo
 hm
@@ -4759,6 +4749,7 @@ ignor
 igo
 igra
 igu
+igung
 ih
 ii
 ij
@@ -4867,7 +4858,6 @@ infect
 inflammation
 info
 inform
-informati
 information
 ing
 inga
@@ -4921,7 +4911,6 @@ interes
 international
 internet
 interpret
-intervention
 inti
 into
 intrigue
@@ -5048,6 +5037,7 @@ itud
 itus
 ity
 itz
+itza
 ität
 ité
 iu
@@ -5142,7 +5132,6 @@ jour
 journal
 journalist
 joy
-jp
 jpg
 ju
 judi
@@ -5251,6 +5240,7 @@ kit
 kita
 kja
 kjær
+kk
 kka
 kkal
 kkari
@@ -5277,7 +5267,6 @@ kom
 kon
 kone
 kong
-kontakt
 kop
 kor
 koro
@@ -5302,7 +5291,6 @@ krank
 kre
 kreis
 kri
-krieg
 krishna
 krit
 kron
@@ -5318,6 +5306,7 @@ ku
 kul
 kula
 kull
+kultur
 kum
 kumar
 kun
@@ -5401,6 +5390,7 @@ lassung
 last
 lasting
 lat
+lata
 late
 later
 lateral
@@ -5452,6 +5442,7 @@ lei
 leigh
 lein
 leis
+leistung
 leit
 lek
 lem
@@ -5514,7 +5505,6 @@ lichen
 liches
 lici
 licit
-licita
 lick
 lico
 lid
@@ -5581,6 +5571,7 @@ lite
 liter
 liti
 litz
+lius
 liv
 live
 liver
@@ -5654,6 +5645,7 @@ loos
 lop
 lope
 lopp
+loqui
 lor
 los
 lose
@@ -5712,7 +5704,6 @@ lé
 lí
 lín
 ló
-lö
 lü
 m
 mAh
@@ -5759,6 +5750,7 @@ mane
 mani
 mania
 mann
+manns
 mans
 mant
 map
@@ -5824,6 +5816,7 @@ medi
 media
 medic
 medicin
+mee
 meen
 meet
 meg
@@ -6051,7 +6044,6 @@ mysl
 mán
 mäki
 mé
-mén
 món
 mü
 n
@@ -6065,7 +6057,6 @@ nag
 nagar
 nah
 nahme
-nai
 naire
 naise
 nak
@@ -6131,6 +6122,7 @@ nell
 nella
 nelle
 nelli
+nema
 nen
 nent
 neo
@@ -6516,6 +6508,7 @@ outlook
 ouvre
 ov
 ova
+ovac
 oval
 ovan
 ovat
@@ -6826,7 +6819,6 @@ prav
 pre
 preci
 pred
-preis
 prem
 prema
 premi
@@ -7019,7 +7011,6 @@ rapport
 raq
 rar
 rare
-rari
 ras
 rash
 rasti
@@ -7204,7 +7195,6 @@ rink
 rino
 rio
 rion
-rios
 rious
 rip
 rique
@@ -7273,7 +7263,6 @@ rop
 rope
 ror
 ros
-rosa
 rose
 rosi
 rot
@@ -7297,6 +7286,7 @@ rro
 rrr
 rry
 rs
+rsa
 rse
 rst
 rt
@@ -7371,6 +7361,7 @@ sam
 sama
 samba
 same
+samo
 samt
 san
 sana
@@ -7407,6 +7398,7 @@ schal
 schau
 sche
 scheid
+schein
 schen
 scher
 schi
@@ -7704,7 +7696,6 @@ ssero
 sses
 sset
 ssi
-ssica
 ssie
 ssimi
 ssin
@@ -7747,10 +7738,12 @@ ste
 sted
 stedt
 steen
+steig
 stein
 stel
 stell
 stelle
+stellen
 stellung
 stem
 stemming
@@ -7877,7 +7870,7 @@ syn
 sys
 system
 sz
-szczu
+szt
 szy
 sä
 sí
@@ -7905,6 +7898,7 @@ tal
 tala
 tale
 talent
+taler
 tali
 talk
 tall
@@ -8196,7 +8190,6 @@ trage
 training
 trait
 tral
-tram
 tran
 trans
 transfer
@@ -8270,6 +8263,7 @@ tual
 tuan
 tuar
 tub
+tube
 tud
 tui
 tul
@@ -8289,7 +8283,6 @@ tures
 turi
 turing
 tus
-tut
 tv
 tva
 tw
@@ -8312,6 +8305,7 @@ tán
 tä
 tänd
 té
+tés
 tó
 u
 ua
@@ -8707,6 +8701,7 @@ wada
 wag
 wah
 wahi
+wahl
 waj
 wak
 wal
@@ -8731,6 +8726,7 @@ warm
 wart
 warte
 was
+wasser
 wat
 watch
 water
@@ -8738,7 +8734,6 @@ wati
 way
 ways
 waz
-wazi
 wb
 wd
 we
@@ -8961,12 +8956,15 @@ zeli
 zem
 zen
 zene
+zentr
 zentrum
 zep
 zer
 zero
 zes
+zet
 zett
+zeug
 zga
 zh
 zhi
@@ -8978,7 +8976,6 @@ zidi
 zie
 zier
 zig
-zij
 zik
 zil
 zin
@@ -8994,6 +8991,7 @@ zko
 zky
 zle
 zne
+zni
 zny
 zo
 zola
@@ -9024,7 +9022,6 @@ zzy
 °
 É
 Ö
-ÖK
 ÖN
 ×
 Ü
@@ -9041,6 +9038,7 @@ zzy
 ão
 ä
 äh
+äl
 älä
 än
 är
@@ -9155,9 +9153,9 @@ zzy
 ▁&
 ▁'
 ▁(
+▁(!)
 ▁("
 ▁(+
-▁(=
 ▁(@
 ▁)
 ▁*
@@ -9165,7 +9163,6 @@ zzy
 ▁-
 ▁/
 ▁:
-▁;
 ▁<
 ▁=
 ▁>
@@ -9249,6 +9246,7 @@ zzy
 ▁Abstract
 ▁Abu
 ▁Abubakar
+▁Aby
 ▁Ac
 ▁Academic
 ▁Academy
@@ -9321,7 +9319,6 @@ zzy
 ▁Agency
 ▁Agenda
 ▁Agent
-▁Agentur
 ▁Agnes
 ▁Agra
 ▁Agreement
@@ -9415,6 +9412,7 @@ zzy
 ▁Also
 ▁Alt
 ▁Alta
+▁Alte
 ▁Alter
 ▁Alternative
 ▁Although
@@ -9663,7 +9661,6 @@ zzy
 ▁Aureli
 ▁Aurora
 ▁Aus
-▁Ausbildung
 ▁Auschwitz
 ▁Aussage
 ▁Austin
@@ -9677,7 +9674,6 @@ zzy
 ▁Auto
 ▁Automat
 ▁Automobil
-▁Autor
 ▁Av
 ▁Ava
 ▁Available
@@ -9950,7 +9946,6 @@ zzy
 ▁Bi
 ▁Bianca
 ▁Bianco
-▁Biar
 ▁Bibi
 ▁Bible
 ▁Bieber
@@ -10036,7 +10031,6 @@ zzy
 ▁Bog
 ▁Boga
 ▁Bogdan
-▁Bogotá
 ▁Bogu
 ▁Boh
 ▁Bohemia
@@ -10118,6 +10112,7 @@ zzy
 ▁Breaking
 ▁Breast
 ▁Breath
+▁Breivik
 ▁Bremen
 ▁Brenda
 ▁Brenn
@@ -10515,7 +10510,6 @@ zzy
 ▁Cita
 ▁Citi
 ▁Citizen
-▁Citroen
 ▁City
 ▁Ciudad
 ▁Civic
@@ -10767,7 +10761,6 @@ zzy
 ▁Czech
 ▁Cá
 ▁Cé
-▁César
 ▁Cô
 ▁D
 ▁DA
@@ -11203,6 +11196,7 @@ zzy
 ▁Eile
 ▁Ein
 ▁Eindhoven
+▁Eine
 ▁Einrichtung
 ▁Einstein
 ▁Eis
@@ -11288,6 +11282,7 @@ zzy
 ▁Er
 ▁Era
 ▁Erasmus
+▁Erd
 ▁Erdogan
 ▁Eric
 ▁Ericsson
@@ -11411,7 +11406,6 @@ zzy
 ▁FO
 ▁FOR
 ▁FR
-▁FRA
 ▁FRANC
 ▁FRE
 ▁FREE
@@ -11816,7 +11810,6 @@ zzy
 ▁Ges
 ▁Gesellschaft
 ▁Gest
-▁Gesundheit
 ▁Get
 ▁Getting
 ▁Gew
@@ -11828,6 +11821,7 @@ zzy
 ▁Gho
 ▁Ghosh
 ▁Ghost
+▁Ghulam
 ▁Gi
 ▁Gia
 ▁Gian
@@ -12011,6 +12005,7 @@ zzy
 ▁Göteborg
 ▁Gü
 ▁Gün
+▁Gür
 ▁H
 ▁HA
 ▁HAL
@@ -12095,6 +12090,7 @@ zzy
 ▁Hansen
 ▁Happ
 ▁Happy
+▁Haq
 ▁Har
 ▁Harald
 ▁Haram
@@ -12356,7 +12352,6 @@ zzy
 ▁INC
 ▁IND
 ▁INDIA
-▁INFO
 ▁INFORMA
 ▁ING
 ▁INS
@@ -12374,6 +12369,7 @@ zzy
 ▁IT
 ▁IV
 ▁IX
+▁IZ
 ▁Ia
 ▁Ian
 ▁Ibiza
@@ -12609,6 +12605,7 @@ zzy
 ▁Jefferson
 ▁Jeffrey
 ▁Jeg
+▁Jehovah
 ▁Jelen
 ▁Jen
 ▁Jenkins
@@ -12639,6 +12636,7 @@ zzy
 ▁Jobs
 ▁Joe
 ▁Joel
+▁Jog
 ▁Johan
 ▁Johann
 ▁Johanna
@@ -12766,6 +12764,7 @@ zzy
 ▁Kali
 ▁Kalla
 ▁Kalle
+▁Kalli
 ▁Kam
 ▁Kama
 ▁Kamal
@@ -12810,7 +12809,6 @@ zzy
 ▁Kaspar
 ▁Kat
 ▁Kata
-▁Katarina
 ▁Kate
 ▁Katha
 ▁Katherine
@@ -12977,6 +12975,7 @@ zzy
 ▁Kreis
 ▁Krem
 ▁Kreml
+▁Kreuz
 ▁Kri
 ▁Krieg
 ▁Kris
@@ -13278,7 +13277,6 @@ zzy
 ▁Loft
 ▁Log
 ▁Logi
-▁Login
 ▁Logo
 ▁Loh
 ▁Lois
@@ -13474,7 +13472,6 @@ zzy
 ▁Maka
 ▁Make
 ▁Maks
-▁Maksim
 ▁Maku
 ▁Mal
 ▁Mala
@@ -13643,6 +13640,7 @@ zzy
 ▁Medical
 ▁Medicina
 ▁Medicine
+▁Medien
 ▁Mediterrane
 ▁Medium
 ▁Medvedev
@@ -13728,6 +13726,7 @@ zzy
 ▁Michael
 ▁Michal
 ▁Michel
+▁Michelangelo
 ▁Michelin
 ▁Michelle
 ▁Michigan
@@ -13746,6 +13745,7 @@ zzy
 ▁Mikael
 ▁Mike
 ▁Mikel
+▁Mikkel
 ▁Mikko
 ▁Mikl
 ▁Miko
@@ -13807,6 +13807,7 @@ zzy
 ▁Mitsubishi
 ▁Mitt
 ▁Mitte
+▁Mittel
 ▁Mix
 ▁Mladi
 ▁Mo
@@ -13917,7 +13918,6 @@ zzy
 ▁Mufti
 ▁Mug
 ▁Muh
-▁Muha
 ▁Muhammad
 ▁Muhammed
 ▁Muk
@@ -13931,6 +13931,7 @@ zzy
 ▁Muller
 ▁Mult
 ▁Multi
+▁Multimedia
 ▁Mum
 ▁Mumbai
 ▁Mums
@@ -13973,6 +13974,7 @@ zzy
 ▁Myth
 ▁Má
 ▁Már
+▁Mä
 ▁Mé
 ▁Méndez
 ▁México
@@ -14035,7 +14037,6 @@ zzy
 ▁Name
 ▁Nan
 ▁Nancy
-▁Nang
 ▁Nano
 ▁Napa
 ▁Napi
@@ -14212,7 +14213,6 @@ zzy
 ▁O
 ▁OB
 ▁OC
-▁OD
 ▁OEM
 ▁OF
 ▁OFF
@@ -14307,6 +14307,7 @@ zzy
 ▁Op
 ▁Opel
 ▁Open
+▁Oper
 ▁Opera
 ▁Operation
 ▁Operator
@@ -14693,7 +14694,6 @@ zzy
 ▁Pod
 ▁Podcast
 ▁Poetry
-▁Pogo
 ▁Poi
 ▁Point
 ▁Pois
@@ -14831,7 +14831,6 @@ zzy
 ▁Products
 ▁Produkt
 ▁Produkte
-▁Produktion
 ▁Prof
 ▁Professional
 ▁Professor
@@ -14957,7 +14956,6 @@ zzy
 ▁RS
 ▁RSS
 ▁RT
-▁RTL
 ▁RTÉ
 ▁RU
 ▁Ra
@@ -15103,7 +15101,6 @@ zzy
 ▁Renault
 ▁Rend
 ▁Rene
-▁Reng
 ▁Rent
 ▁René
 ▁Rep
@@ -15335,7 +15332,6 @@ zzy
 ▁SEO
 ▁SEP
 ▁SER
-▁SERVICE
 ▁SF
 ▁SG
 ▁SH
@@ -15387,6 +15383,7 @@ zzy
 ▁Sabri
 ▁Sac
 ▁Sach
+▁Sache
 ▁Sachsen
 ▁Sacra
 ▁Sad
@@ -15807,6 +15804,7 @@ zzy
 ▁Song
 ▁Songs
 ▁Sonic
+▁Sonnen
 ▁Sono
 ▁Sony
 ▁Soo
@@ -16097,11 +16095,13 @@ zzy
 ▁TC
 ▁TD
 ▁TE
+▁TEM
 ▁TG
 ▁TH
 ▁THE
 ▁TI
 ▁TIME
+▁TIP
 ▁TL
 ▁TM
 ▁TN
@@ -16508,7 +16508,6 @@ zzy
 ▁Ukrain
 ▁Ukraine
 ▁Ul
-▁Ulla
 ▁Ulrich
 ▁Ultimate
 ▁Ultra
@@ -16536,6 +16535,7 @@ zzy
 ▁Universe
 ▁Universiti
 ▁University
+▁Universität
 ▁Uno
 ▁Unter
 ▁Unternehmen
@@ -16896,6 +16896,7 @@ zzy
 ▁Winter
 ▁Wir
 ▁Wireless
+▁Wirtschafts
 ▁Wis
 ▁Wisconsin
 ▁Wish
@@ -16959,6 +16960,7 @@ zzy
 ▁Xin
 ▁Xu
 ▁Y
+▁YA
 ▁YE
 ▁YOU
 ▁YOUR
@@ -17050,7 +17052,6 @@ zzy
 ▁Zub
 ▁Zucker
 ▁Zuckerberg
-▁Zug
 ▁Zugang
 ▁Zukunft
 ▁Zul
@@ -17335,6 +17336,7 @@ zzy
 ▁anatomi
 ▁ancestral
 ▁and
+▁andere
 ▁anderen
 ▁ang
 ▁ange
@@ -18829,7 +18831,6 @@ zzy
 ▁delimita
 ▁deliver
 ▁delivery
-▁dell
 ▁della
 ▁delta
 ▁delu
@@ -19021,6 +19022,7 @@ zzy
 ▁dispute
 ▁disrupt
 ▁disse
+▁disserta
 ▁dissi
 ▁disso
 ▁distance
@@ -20001,7 +20003,6 @@ zzy
 ▁give
 ▁giveaway
 ▁given
-▁giver
 ▁gives
 ▁giving
 ▁gla
@@ -20889,6 +20890,7 @@ zzy
 ▁laminat
 ▁lamp
 ▁lan
+▁lance
 ▁land
 ▁landing
 ▁lands
@@ -20963,6 +20965,7 @@ zzy
 ▁len
 ▁length
 ▁lenti
+▁leo
 ▁leopard
 ▁les
 ▁lesbian
@@ -21073,6 +21076,7 @@ zzy
 ▁long
 ▁longe
 ▁longer
+▁longitud
 ▁loo
 ▁look
 ▁looked
@@ -21946,7 +21950,6 @@ zzy
 ▁oven
 ▁over
 ▁overall
-▁ovu
 ▁own
 ▁owner
 ▁owners
@@ -22039,6 +22042,7 @@ zzy
 ▁pas
 ▁pasado
 ▁pass
+▁passa
 ▁passage
 ▁passe
 ▁passed
@@ -22080,13 +22084,13 @@ zzy
 ▁pays
 ▁país
 ▁países
-▁pdf
 ▁pe
 ▁pea
 ▁peace
 ▁peaks
 ▁peculiar
 ▁ped
+▁pedagog
 ▁pedagogi
 ▁pedal
 ▁pede
@@ -22161,7 +22165,6 @@ zzy
 ▁pest
 ▁peste
 ▁pet
-▁peter
 ▁peti
 ▁petit
 ▁petite
@@ -22873,7 +22876,6 @@ zzy
 ▁reflect
 ▁reflex
 ▁reform
-▁reforma
 ▁refr
 ▁refresh
 ▁refrigera
@@ -22946,7 +22948,6 @@ zzy
 ▁remunera
 ▁ren
 ▁rena
-▁renal
 ▁render
 ▁rendere
 ▁rendez
@@ -23077,7 +23078,6 @@ zzy
 ▁rhy
 ▁ri
 ▁rib
-▁ribo
 ▁rice
 ▁rich
 ▁riche
@@ -23103,6 +23103,7 @@ zzy
 ▁ris
 ▁risk
 ▁riski
+▁risque
 ▁rit
 ▁ritual
 ▁rival
@@ -24936,7 +24937,6 @@ zzy
 ▁zum
 ▁zur
 ▁zusammen
-▁{
 ▁~
 ▁¡
 ▁£
@@ -24949,6 +24949,7 @@ zzy
 ▁Á
 ▁Álvarez
 ▁Ángel
+▁Ä
 ▁Å
 ▁Århus
 ▁É
@@ -24973,7 +24974,6 @@ zzy
 ▁Š
 ▁Ţ
 ▁že
-▁̈
 ▁Ε
 ▁в
 ▁и

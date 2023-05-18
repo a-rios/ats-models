@@ -125,7 +125,6 @@ CA
 CC
 CE
 CH
-CI
 CIS
 CO
 COM
@@ -227,12 +226,9 @@ G
 GA
 GB
 GE
-GF
 GI
 GT
 GUE
-GV
-Ga
 Gar
 Gazprom
 Ge
@@ -280,6 +276,7 @@ Jo
 Ju
 Jährige
 K
+KI
 Ka
 Ke
 Ki
@@ -289,7 +286,6 @@ Kon
 Kre
 L
 LA
-LC
 LS
 LT
 La
@@ -327,6 +323,7 @@ Mon
 Mu
 My
 N
+NA
 NG
 NL
 NO
@@ -347,7 +344,6 @@ OM
 OMS
 ONU
 OP
-ORG
 OS
 Ob
 Occident
@@ -433,7 +429,6 @@ Sport
 St
 Sta
 Star
-Ste
 Stra
 Straße
 Stream
@@ -447,7 +442,6 @@ TE
 TF
 TH
 THE
-TM
 TP
 TS
 TT
@@ -467,7 +461,6 @@ Ti
 To
 Toutes
 Tra
-Tur
 U
 UE
 US
@@ -488,6 +481,7 @@ V
 VB
 VID
 VP
+Val
 Var
 Ver
 Verhältnis
@@ -618,7 +612,6 @@ agriculture
 ah
 ai
 aide
-aider
 aient
 ail
 ailleurs
@@ -704,7 +697,6 @@ ando
 ane
 ang
 ange
-angebote
 ango
 ani
 ania
@@ -818,7 +810,6 @@ asi
 assa
 asse
 assemble
-assemblée
 assenza
 asset
 assist
@@ -871,7 +862,6 @@ au
 audi
 auf
 aufnahme
-auftrag
 aug
 augmentation
 aujourd
@@ -972,7 +962,6 @@ bes
 bet
 beth
 betrieb
-bewegung
 beziehung
 bezüglich
 bi
@@ -1061,6 +1050,7 @@ bris
 bro
 bru
 bruch
+bry
 bré
 brücke
 bs
@@ -1210,7 +1200,6 @@ cial
 ciano
 cias
 cicli
-cid
 cida
 cidas
 cident
@@ -1273,7 +1262,6 @@ clu
 club
 clusi
 clé
-cm
 cn
 co
 cogni
@@ -1374,6 +1362,7 @@ cés
 cí
 cía
 có
+cómo
 cón
 cú
 d
@@ -1536,6 +1525,7 @@ eaux
 eb
 ebe
 ec
+eccezione
 ecchia
 ech
 ecido
@@ -1920,7 +1910,6 @@ flu
 flug
 fluss
 fläche
-flüge
 fo
 fol
 fold
@@ -2061,7 +2050,6 @@ geleitet
 gels
 gelt
 gelöst
-geme
 gemeinde
 gemeinschaft
 gemäß
@@ -2280,7 +2268,6 @@ hil
 hilfe
 hin
 hinder
-hir
 histoire
 hiver
 hl
@@ -2289,7 +2276,6 @@ hlen
 hm
 hne
 hnen
-hni
 hnung
 ho
 hockey
@@ -2329,7 +2315,6 @@ hé
 hér
 hôpital
 hö
-höf
 höhe
 hör
 hören
@@ -2508,6 +2493,7 @@ incendi
 inchi
 inci
 incontro
+increment
 ind
 indagine
 inde
@@ -2714,6 +2700,7 @@ izo
 izza
 izzare
 izzata
+izzate
 izzati
 izzato
 izzazione
@@ -2893,7 +2880,6 @@ laufen
 laus
 law
 lay
-lb
 lberg
 lbstverständlich
 le
@@ -3226,7 +3212,6 @@ mitta
 mittel
 mitten
 mium
-ml
 mm
 mma
 mme
@@ -3285,6 +3270,7 @@ mètre
 mé
 média
 mén
+mér
 même
 mít
 mó
@@ -3298,7 +3284,6 @@ na
 nach
 nacht
 nacional
-nade
 nah
 nahme
 naire
@@ -3587,6 +3572,7 @@ orio
 orna
 orno
 oro
+orra
 ors
 ort
 orto
@@ -4033,8 +4019,8 @@ rifi
 rig
 right
 ril
+rila
 rili
-rilla
 rillo
 rimin
 rin
@@ -4064,6 +4050,7 @@ rla
 rle
 rli
 rlo
+rma
 rmaßen
 rme
 rmi
@@ -4159,7 +4146,6 @@ sab
 sagen
 sagt
 sai
-sak
 sal
 sam
 same
@@ -4224,7 +4210,6 @@ schutz
 schwe
 schwer
 schä
-schädigung
 schätze
 schätzung
 schütz
@@ -4489,7 +4474,6 @@ sto
 stock
 stoff
 stoffe
-stoffen
 ston
 stone
 stop
@@ -4884,6 +4868,7 @@ uge
 ugh
 ught
 ugu
+ui
 uille
 uit
 uk
@@ -4997,6 +4982,7 @@ vata
 vati
 ve
 ved
+vedere
 veg
 vel
 ven
@@ -5012,7 +4998,6 @@ venue
 venuto
 ver
 vera
-veranstaltung
 verb
 verband
 verbrauch
@@ -5091,6 +5076,7 @@ vita
 viv
 vo
 voc
+vocation
 voi
 voir
 vol
@@ -5178,7 +5164,6 @@ wick
 wid
 wide
 wie
-wier
 wiesen
 wig
 will
@@ -5244,6 +5229,7 @@ ys
 yó
 z
 za
+zada
 zado
 zahl
 zahlen
@@ -5734,7 +5720,6 @@ züge
 ▁Arbeitgeber
 ▁Arbeitnehmer
 ▁Arbeits
-▁Arbeitsplatz
 ▁Archiv
 ▁Are
 ▁Arena
@@ -5803,7 +5788,6 @@ züge
 ▁Australia
 ▁Australian
 ▁Austria
-▁Auswahl
 ▁Auswirkungen
 ▁Aut
 ▁Auto
@@ -5921,7 +5905,6 @@ züge
 ▁Beruf
 ▁Berufs
 ▁Bes
-▁Beschwerde
 ▁Beschäftigte
 ▁Beschäftigung
 ▁Besi
@@ -6217,13 +6200,13 @@ züge
 ▁Como
 ▁Comp
 ▁Company
-▁Computer
 ▁Comune
 ▁Comuni
 ▁Comunidad
 ▁Con
 ▁Conce
 ▁Conf
+▁Confe
 ▁Confer
 ▁Conference
 ▁Congo
@@ -6328,6 +6311,7 @@ züge
 ▁Dec
 ▁December
 ▁Deci
+▁Declara
 ▁Def
 ▁Defensa
 ▁Del
@@ -6365,6 +6349,7 @@ züge
 ▁Deutschland
 ▁Deux
 ▁Development
+▁Devo
 ▁Dezember
 ▁Di
 ▁Dia
@@ -6767,6 +6752,7 @@ züge
 ▁Fu
 ▁Fue
 ▁Fuente
+▁Fuerza
 ▁Fund
 ▁Fundación
 ▁Funk
@@ -6839,7 +6825,7 @@ züge
 ▁Generation
 ▁Genova
 ▁Gent
-▁Geo
+▁Georg
 ▁George
 ▁Georgi
 ▁Georgia
@@ -6968,6 +6954,7 @@ züge
 ▁H
 ▁HO
 ▁Ha
+▁Haa
 ▁Haar
 ▁Hab
 ▁Hace
@@ -7107,7 +7094,6 @@ züge
 ▁Ihnen
 ▁Ihr
 ▁Ihre
-▁Ihrem
 ▁Ihren
 ▁Ihrer
 ▁Il
@@ -7295,6 +7281,7 @@ züge
 ▁Kapital
 ▁Kar
 ▁Kara
+▁Kardashian
 ▁Karl
 ▁Karriere
 ▁Karten
@@ -7312,6 +7299,7 @@ züge
 ▁Ken
 ▁Kenn
 ▁Kenntnis
+▁Kenya
 ▁Ker
 ▁Kern
 ▁Kevin
@@ -7360,13 +7348,11 @@ züge
 ▁Kommunen
 ▁Kommunikation
 ▁Komp
-▁Kompetenz
 ▁Kon
 ▁Konf
 ▁Konflikt
 ▁Kong
 ▁Kontakt
-▁Kontroll
 ▁Kontrolle
 ▁Konzept
 ▁Konzern
@@ -7558,6 +7544,7 @@ züge
 ▁Ly
 ▁Lyn
 ▁Lyon
+▁Lä
 ▁Länder
 ▁Ländern
 ▁Lé
@@ -7637,6 +7624,7 @@ züge
 ▁Massimo
 ▁Master
 ▁Mat
+▁Mate
 ▁Material
 ▁Math
 ▁Matt
@@ -7663,6 +7651,7 @@ züge
 ▁Medio
 ▁Mediterrane
 ▁Medizin
+▁Medvedev
 ▁Meer
 ▁Mega
 ▁Meghan
@@ -8041,6 +8030,7 @@ züge
 ▁Paolo
 ▁Pap
 ▁Papa
+▁Paper
 ▁Papier
 ▁Par
 ▁Para
@@ -8107,6 +8097,7 @@ züge
 ▁Photograph
 ▁Pi
 ▁Pia
+▁Piazza
 ▁Pic
 ▁Pie
 ▁Pier
@@ -8283,6 +8274,7 @@ züge
 ▁Rang
 ▁Rangers
 ▁Rap
+▁Rapid
 ▁Ras
 ▁Rat
 ▁Rate
@@ -8669,7 +8661,6 @@ züge
 ▁Sport
 ▁Sports
 ▁Spr
-▁Sprach
 ▁Sprache
 ▁Spre
 ▁Spring
@@ -8791,7 +8782,6 @@ züge
 ▁T
 ▁TV
 ▁Ta
-▁Tab
 ▁Tabel
 ▁Tag
 ▁Tage
@@ -9073,7 +9063,6 @@ züge
 ▁Verlauf
 ▁Verletzung
 ▁Verlust
-▁Vermögen
 ▁Verordnung
 ▁Verpflichtung
 ▁Vers
@@ -10066,6 +10055,7 @@ züge
 ▁auto
 ▁autobus
 ▁automat
+▁automatic
 ▁automobile
 ▁automobilis
 ▁automóvil
@@ -10122,6 +10112,7 @@ züge
 ▁avrà
 ▁avuto
 ▁avvicina
+▁avviene
 ▁award
 ▁aware
 ▁awareness
@@ -10628,7 +10619,6 @@ züge
 ▁casi
 ▁caso
 ▁casos
-▁casse
 ▁cast
 ▁casual
 ▁cat
@@ -11049,7 +11039,6 @@ züge
 ▁complètement
 ▁complément
 ▁componente
-▁componenti
 ▁comporta
 ▁comportamento
 ▁comportamiento
@@ -11081,7 +11070,6 @@ züge
 ▁compétences
 ▁compétent
 ▁compétition
-▁comunale
 ▁comune
 ▁comuni
 ▁comunica
@@ -11156,6 +11144,7 @@ züge
 ▁conferencia
 ▁conferenza
 ▁conferma
+▁confess
 ▁confi
 ▁confiance
 ▁confianza
@@ -12052,6 +12041,7 @@ züge
 ▁distancia
 ▁distanza
 ▁distin
+▁distinct
 ▁distingue
 ▁distintas
 ▁distintos
@@ -12730,6 +12720,7 @@ züge
 ▁estos
 ▁estoy
 ▁estrategia
+▁estratégico
 ▁estrella
 ▁estructura
 ▁estu
@@ -13225,6 +13216,7 @@ züge
 ▁francesa
 ▁francese
 ▁franchi
+▁franchise
 ▁franco
 ▁francés
 ▁französisch
@@ -13315,7 +13307,6 @@ züge
 ▁future
 ▁futuro
 ▁fácil
-▁fährt
 ▁fällt
 ▁fé
 ▁fédéral
@@ -13328,7 +13319,6 @@ züge
 ▁för
 ▁fördern
 ▁fútbol
-▁fühlen
 ▁fühlt
 ▁führen
 ▁führt
@@ -13572,6 +13562,7 @@ züge
 ▁goberna
 ▁gobernador
 ▁gobierno
+▁gode
 ▁goes
 ▁going
 ▁gol
@@ -13903,6 +13894,7 @@ züge
 ▁humanos
 ▁humor
 ▁hun
+▁hunder
 ▁hundred
 ▁hur
 ▁hurt
@@ -14071,6 +14063,7 @@ züge
 ▁incrementa
 ▁incrementar
 ▁incremento
+▁increíble
 ▁incur
 ▁ind
 ▁indagini
@@ -14196,6 +14189,7 @@ züge
 ▁installation
 ▁installé
 ▁instance
+▁instancia
 ▁instant
 ▁instead
 ▁institucional
@@ -14330,6 +14324,7 @@ züge
 ▁ir
 ▁iranian
 ▁irland
+▁ironi
 ▁irre
 ▁irregular
 ▁is
@@ -14765,6 +14760,7 @@ züge
 ▁looked
 ▁looking
 ▁looks
+▁lor
 ▁loro
 ▁lors
 ▁lorsqu
@@ -15517,6 +15513,7 @@ züge
 ▁neuf
 ▁neuro
 ▁neutral
+▁neve
 ▁never
 ▁new
 ▁news
@@ -16165,6 +16162,7 @@ züge
 ▁personale
 ▁personales
 ▁personali
+▁personally
 ▁personalmente
 ▁personas
 ▁persone
@@ -16598,6 +16596,7 @@ züge
 ▁prevale
 ▁prevede
 ▁prevención
+▁prevenir
 ▁prevenire
 ▁prevent
 ▁prevenzione
@@ -16732,6 +16731,7 @@ züge
 ▁professional
 ▁professionale
 ▁professionisti
+▁professionnel
 ▁professionnelle
 ▁professionnels
 ▁professor
@@ -16762,6 +16762,7 @@ züge
 ▁projets
 ▁prolong
 ▁prom
+▁promesa
 ▁promet
 ▁prominent
 ▁promis
@@ -17106,7 +17107,6 @@ züge
 ▁raisons
 ▁rally
 ▁ram
-▁ramp
 ▁ran
 ▁rang
 ▁range
@@ -17186,13 +17186,13 @@ züge
 ▁recente
 ▁recentemente
 ▁recently
+▁recep
 ▁recette
 ▁recevoir
 ▁rechaza
 ▁recherche
 ▁recht
 ▁rechts
-▁rechtzeitig
 ▁reci
 ▁recibe
 ▁recibido
@@ -17310,6 +17310,7 @@ züge
 ▁reicht
 ▁rein
 ▁reitera
+▁reivindica
 ▁rejoindre
 ▁rela
 ▁relacionadas
@@ -17514,7 +17515,6 @@ züge
 ▁returned
 ▁reuni
 ▁reuniones
-▁reunir
 ▁reunión
 ▁revanche
 ▁reveal
@@ -17865,7 +17865,6 @@ züge
 ▁schon
 ▁school
 ▁schools
-▁schreiben
 ▁schreibt
 ▁schrieb
 ▁schriftlich
@@ -18414,6 +18413,7 @@ züge
 ▁sportif
 ▁sportive
 ▁sports
+▁sposa
 ▁spot
 ▁sprach
 ▁spre
@@ -18441,6 +18441,7 @@ züge
 ▁stage
 ▁stagione
 ▁stake
+▁stal
 ▁stammt
 ▁stampa
 ▁stan
@@ -18980,6 +18981,7 @@ züge
 ▁torne
 ▁torneo
 ▁torno
+▁tort
 ▁tortur
 ▁tortura
 ▁total
@@ -19279,7 +19281,6 @@ züge
 ▁ustedes
 ▁usual
 ▁usually
-▁usuario
 ▁usuarios
 ▁utenti
 ▁utile
@@ -19527,6 +19528,7 @@ züge
 ▁visione
 ▁visit
 ▁visita
+▁visitantes
 ▁visitar
 ▁visite
 ▁visiteurs
@@ -19711,7 +19713,6 @@ züge
 ▁welche
 ▁welchen
 ▁welcher
-▁welches
 ▁welcome
 ▁well
 ▁weltweit
@@ -19885,7 +19886,6 @@ züge
 ▁§
 ▁©
 ▁«
-▁·
 ▁»
 ▁¿
 ▁À

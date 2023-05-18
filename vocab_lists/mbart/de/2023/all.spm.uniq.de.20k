@@ -18,7 +18,6 @@
 '
 (
 )
-)(
 ),
 ).
 ):
@@ -51,7 +50,6 @@
 2004
 2005
 2006
-2007
 2009
 2010
 2013
@@ -115,6 +113,7 @@ AM
 AMA
 AN
 ANA
+ANCE
 ANDA
 ANG
 ANO
@@ -135,7 +134,6 @@ AS
 ASA
 ASS
 AT
-ATION
 ATS
 AU
 AUS
@@ -155,7 +153,6 @@ Af
 Afrika
 Ag
 Ah
-Ai
 Air
 Ak
 Aktiv
@@ -227,14 +224,11 @@ BM
 BMW
 BN
 BO
-BOT
 BR
-BRA
 BS
 BT
 BU
 BV
-BY
 Ba
 Bab
 Back
@@ -302,7 +296,6 @@ CH
 CHA
 CHE
 CHEN
-CHER
 CHI
 CHO
 CI
@@ -334,7 +327,7 @@ Car
 Card
 Cast
 Cat
-Ce
+Cel
 Center
 Centr
 Ch
@@ -375,7 +368,6 @@ DA
 DAC
 DAI
 DAK
-DAN
 DAP
 DAV
 DB
@@ -456,13 +448,11 @@ EDO
 EE
 EF
 EG
-EGA
 EH
 EI
 EIN
 EIS
 EIT
-EJ
 EK
 EKA
 EL
@@ -612,7 +602,6 @@ GIN
 GIS
 GK
 GL
-GLE
 GM
 GN
 GO
@@ -623,7 +612,6 @@ GRE
 GRO
 GS
 GT
-GU
 GUE
 GUS
 GV
@@ -682,13 +670,11 @@ HM
 HN
 HO
 HP
-HQ
 HR
 HS
 HT
 HU
 HV
-HZ
 Ha
 Hab
 Hal
@@ -735,7 +721,6 @@ ICS
 ID
 IDA
 IDE
-IDI
 IE
 IEL
 IEN
@@ -752,7 +737,6 @@ IK
 IKO
 IL
 ILE
-ILI
 ILO
 IM
 IMA
@@ -771,22 +755,18 @@ IPO
 IQ
 IR
 IRA
-IRE
 IS
 ISA
 ISE
 ISS
 IT
 ITA
-ITE
-ITS
 IU
 IV
 IVI
 IZ
 Ich
 If
-Ik
 Il
 Im
 Image
@@ -811,23 +791,15 @@ Islam
 Israel
 It
 Italia
-Iz
 J
 JA
 JC
-JD
-JI
-JJ
 JK
 JM
-JN
 JO
-JP
 JR
 JS
-JT
 JU
-JUM
 Ja
 Jack
 Jag
@@ -835,7 +807,6 @@ Jak
 Jan
 Je
 Jes
-Ji
 Jo
 Job
 Johan
@@ -896,7 +867,6 @@ Kom
 Kommission
 Kompeten
 Kon
-Konfigur
 Kontakt
 Kor
 Korea
@@ -912,7 +882,6 @@ L
 LA
 LAG
 LAND
-LAS
 LB
 LC
 LD
@@ -941,8 +910,6 @@ LP
 LR
 LS
 LT
-LTA
-LTE
 LU
 LUS
 LV
@@ -976,6 +943,7 @@ Love
 Lu
 Luc
 Ly
+LÜ
 Lösung
 M
 MA
@@ -994,7 +962,6 @@ MF
 MG
 MH
 MI
-MIT
 MK
 ML
 MM
@@ -1009,7 +976,6 @@ MUS
 MV
 MW
 MX
-MY
 MZ
 Ma
 Mac
@@ -1099,8 +1065,6 @@ NGO
 NH
 NI
 NIC
-NIS
-NJ
 NK
 NL
 NN
@@ -1135,17 +1099,14 @@ Note
 Nov
 Now
 Nu
-Ny
 O
 OA
 OB
 OC
-OD
 ODA
 OG
 OH
 OK
-OKU
 OL
 OLA
 OM
@@ -1157,16 +1118,13 @@ OO
 OOL
 OP
 OPA
-OPS
 OR
 ORA
 ORG
 ORI
 OS
-OSI
 OSS
 OT
-OTE
 OUT
 OV
 OW
@@ -1189,7 +1147,6 @@ Opera
 Or
 Ord
 Organ
-Orient
 Original
 Os
 Out
@@ -1217,6 +1174,7 @@ POL
 PP
 PR
 PRESS
+PRI
 PS
 PT
 PUL
@@ -1302,6 +1260,7 @@ R
 RA
 RAF
 RAN
+RAS
 RAT
 RB
 RC
@@ -1314,6 +1273,7 @@ RF
 RG
 RI
 RIA
+RID
 RIS
 RK
 RL
@@ -1323,7 +1283,6 @@ RNA
 RO
 ROM
 RON
-ROS
 RP
 RR
 RS
@@ -1359,6 +1318,7 @@ Robert
 Rock
 Roll
 Rom
+Roma
 Roman
 Ros
 Royce
@@ -1367,6 +1327,7 @@ Run
 Rus
 S
 SA
+SAF
 SAP
 SAR
 SB
@@ -1403,12 +1364,10 @@ STA
 STAT
 STE
 STER
-STI
 SU
 SUV
 SV
 SW
-SX
 SZ
 Sa
 Sab
@@ -1441,6 +1400,7 @@ Sie
 Sign
 Sil
 Sim
+Single
 Sky
 Smart
 So
@@ -1503,17 +1463,16 @@ TG
 TH
 THE
 TI
+TIG
 TION
 TK
 TL
 TM
-TN
 TO
 TOM
 TON
 TOP
 TP
-TQ
 TR
 TRA
 TRE
@@ -1583,7 +1542,6 @@ UD
 UE
 UF
 UG
-UH
 UK
 UL
 ULE
@@ -1591,6 +1549,7 @@ UM
 UMA
 UN
 UND
+UNDE
 UNG
 UP
 UR
@@ -1598,7 +1557,6 @@ URE
 US
 USA
 USE
-UST
 UT
 UU
 UV
@@ -1614,14 +1572,12 @@ Universität
 Up
 Update
 Ur
-Ut
 V
 VA
 VAD
 VB
 VC
 VE
-VEN
 VER
 VG
 VI
@@ -1683,7 +1639,6 @@ WS
 WT
 WTO
 WW
-WY
 Wa
 Wal
 Wall
@@ -1713,8 +1668,6 @@ World
 Württemberg
 X
 XC
-XH
-XI
 XX
 XY
 Y
@@ -1722,21 +1675,18 @@ YN
 YO
 YR
 YS
-YT
 Ye
 Yo
+Yosh
 You
 Z
 ZA
 ZE
 ZEN
 ZER
-ZH
 ZI
 ZN
 ZO
-ZP
-ZS
 ZU
 ZV
 ZZ
@@ -1788,6 +1738,7 @@ ades
 adi
 adis
 ado
+ados
 adresse
 af
 aff
@@ -1951,6 +1902,7 @@ antis
 anto
 ants
 antwortung
+anum
 anwalt
 any
 anza
@@ -2015,6 +1967,7 @@ arti
 artig
 artikel
 aru
+arum
 ary
 arzt
 as
@@ -2024,6 +1977,7 @@ ash
 ashi
 asi
 asia
+asis
 assa
 asse
 assemble
@@ -2050,6 +2004,7 @@ ati
 atie
 atin
 ating
+atio
 ation
 ations
 atis
@@ -2078,6 +2033,7 @@ auto
 automat
 autonomie
 autor
+autre
 aux
 av
 ava
@@ -2230,6 +2186,7 @@ bg
 bgesehen
 bh
 bha
+bhu
 bi
 bia
 bian
@@ -2253,7 +2210,6 @@ bildung
 bile
 bili
 bilis
-bility
 bin
 bina
 bind
@@ -2298,7 +2254,6 @@ blon
 blu
 blue
 blätter
-bn
 bo
 board
 bod
@@ -2309,6 +2264,7 @@ bogen
 bol
 bola
 bold
+boli
 bolo
 bomb
 bon
@@ -2464,6 +2420,7 @@ center
 cer
 ces
 cess
+cf
 ch
 cha
 chaffung
@@ -2522,7 +2479,6 @@ ci
 cia
 cial
 cic
-cid
 cie
 cient
 cin
@@ -2549,7 +2505,6 @@ cks
 ckt
 cku
 cky
-cl
 cla
 clan
 cle
@@ -2559,7 +2514,6 @@ clu
 club
 clusi
 cm
-cn
 co
 coach
 cock
@@ -2607,6 +2561,7 @@ cu
 cula
 cum
 cup
+cur
 curi
 cus
 cut
@@ -2643,6 +2598,7 @@ dan
 dana
 dant
 dar
+dari
 das
 dat
 date
@@ -2724,7 +2680,6 @@ dia
 diagnos
 dian
 dic
-did
 dida
 die
 diel
@@ -2817,6 +2772,7 @@ dring
 dro
 drog
 drom
+drome
 dron
 dru
 druck
@@ -2837,7 +2793,6 @@ dur
 durch
 durchschnittlich
 dus
-dv
 dw
 dy
 dyn
@@ -3101,7 +3056,6 @@ esc
 esco
 escu
 ese
-eseen
 esen
 esh
 esha
@@ -3119,6 +3073,7 @@ este
 esten
 ester
 esti
+esto
 estre
 estro
 estä
@@ -3215,6 +3170,7 @@ fanta
 far
 fare
 fari
+fart
 fas
 fase
 fassen
@@ -3228,6 +3184,7 @@ fc
 fe
 feat
 feder
+feed
 fehler
 fei
 feier
@@ -3246,12 +3203,12 @@ fera
 ferd
 fere
 ferien
+ferm
 fers
 fertig
 fes
 fest
 festival
-fet
 fett
 ff
 ffa
@@ -3273,6 +3230,7 @@ fig
 fighter
 figur
 fik
+fika
 fil
 file
 filia
@@ -3290,6 +3248,7 @@ find
 finden
 finder
 finger
+fini
 finn
 fir
 fire
@@ -3324,6 +3283,7 @@ flüssig
 fn
 fo
 fod
+fokus
 fol
 fold
 folge
@@ -3402,6 +3362,7 @@ funktionen
 fur
 fus
 fusion
+fy
 fähig
 fähigkeit
 fähr
@@ -3455,6 +3416,7 @@ garan
 garanti
 gard
 garde
+gare
 gari
 garten
 gas
@@ -3465,6 +3427,7 @@ gation
 gatta
 gau
 gawa
+gaz
 gb
 gde
 ge
@@ -3757,6 +3720,7 @@ haltung
 ham
 hammer
 han
+hana
 hand
 handel
 handi
@@ -3826,7 +3790,6 @@ heu
 heure
 hey
 hez
-hh
 hi
 hib
 hid
@@ -3908,7 +3871,6 @@ hta
 hte
 hti
 html
-http
 https
 htu
 hu
@@ -3925,7 +3887,7 @@ hung
 hur
 hus
 hut
-hv
+hver
 hwe
 hy
 hya
@@ -4027,7 +3989,6 @@ ifa
 ife
 iff
 ifi
-ification
 ified
 ifik
 ifikation
@@ -4070,7 +4031,6 @@ ikh
 iki
 ikin
 iko
-ikon
 ikos
 iks
 ikud
@@ -4097,6 +4057,7 @@ ille
 iller
 illes
 illi
+illian
 illion
 illo
 illon
@@ -4177,6 +4138,7 @@ inn
 inne
 innen
 inni
+innova
 innovation
 ino
 inos
@@ -4209,7 +4171,6 @@ io
 iol
 ion
 ional
-ione
 ionis
 ions
 ior
@@ -4285,6 +4246,7 @@ istika
 istin
 istische
 isto
+iston
 ists
 it
 ita
@@ -4368,7 +4330,6 @@ jar
 jas
 jat
 jau
-jd
 je
 jede
 jek
@@ -4384,7 +4345,6 @@ jia
 jin
 jing
 jis
-jk
 jo
 job
 jobb
@@ -4396,8 +4356,6 @@ jord
 jos
 journal
 journalist
-joy
-jp
 jpg
 js
 ju
@@ -4530,6 +4488,7 @@ kirche
 kis
 kistan
 kit
+kita
 kjær
 kk
 kka
@@ -4698,6 +4657,7 @@ kta
 kte
 kten
 kter
+ktet
 kti
 ktion
 kto
@@ -4797,10 +4757,12 @@ lap
 laps
 lar
 lara
+lare
 lari
 las
 lase
 lash
+lassa
 lasse
 lassen
 lassung
@@ -4815,6 +4777,7 @@ later
 lateral
 lati
 lation
+lato
 lau
 laud
 lauf
@@ -4824,12 +4787,9 @@ laus
 lav
 law
 lay
-laza
 lb
 lberg
 lbstverständlich
-lc
-lci
 ld
 lda
 lde
@@ -4877,6 +4837,7 @@ lekt
 lektion
 lektor
 lel
+lele
 lem
 lement
 lemme
@@ -4930,7 +4891,6 @@ lia
 lian
 liance
 lib
-liber
 liberal
 libet
 libri
@@ -5018,7 +4978,6 @@ lix
 liz
 liza
 lize
-lj
 lja
 ljak
 lk
@@ -5195,6 +5154,7 @@ mando
 mane
 mang
 mani
+mania
 mann
 manns
 mans
@@ -5256,6 +5216,7 @@ media
 medizin
 mee
 meer
+meh
 mehr
 mei
 meid
@@ -5309,7 +5270,6 @@ mette
 meye
 mez
 mg
-mh
 mi
 mia
 mic
@@ -5541,6 +5501,7 @@ ndung
 ne
 neb
 ned
+neen
 nega
 nehm
 nehmen
@@ -5592,6 +5553,7 @@ nice
 nici
 nick
 nico
+nicu
 nie
 nier
 nies
@@ -5625,6 +5587,7 @@ niz
 nja
 nje
 njeni
+nji
 nju
 nk
 nka
@@ -5671,6 +5634,7 @@ nski
 nsä
 nt
 nta
+ntar
 ntas
 nte
 ntellektuel
@@ -5752,6 +5716,7 @@ oi
 oiden
 oir
 oire
+oise
 oj
 ok
 oka
@@ -5767,6 +5732,7 @@ oli
 olin
 olla
 olle
+ollo
 ollywood
 olo
 olog
@@ -5779,6 +5745,7 @@ oly
 om
 oma
 omat
+omba
 ombe
 ombo
 ome
@@ -5978,7 +5945,6 @@ pause
 pavil
 pay
 paz
-pc
 pdf
 pe
 pea
@@ -6001,6 +5967,7 @@ penge
 pens
 pensa
 pension
+people
 per
 peri
 perin
@@ -6061,6 +6028,7 @@ ping
 pion
 pir
 pira
+pire
 piri
 pis
 piste
@@ -6272,6 +6240,7 @@ quil
 quin
 quis
 quisition
+quita
 quo
 quot
 quote
@@ -6295,6 +6264,8 @@ radu
 raf
 rag
 rage
+ragon
+ragu
 rah
 rai
 raich
@@ -6393,12 +6364,14 @@ reisen
 reita
 reiten
 reiz
+rej
 rek
 rekord
 rel
 rela
 release
 relevant
+religio
 rell
 rella
 rem
@@ -6481,6 +6454,7 @@ ril
 rile
 rilla
 rim
+rime
 rimi
 rimin
 rin
@@ -6618,6 +6592,7 @@ ruth
 rv
 rve
 ry
+ryn
 rys
 rz
 rza
@@ -6657,6 +6632,7 @@ sak
 saka
 saker
 sal
+sala
 salon
 sam
 sama
@@ -6824,6 +6800,7 @@ shi
 shin
 shing
 ship
+shir
 shire
 shirt
 shit
@@ -6856,6 +6833,7 @@ sier
 sig
 sign
 signal
+signatur
 signif
 sik
 sika
@@ -6959,6 +6937,7 @@ spannen
 spar
 spe
 spec
+speed
 speicher
 spek
 spekt
@@ -7157,6 +7136,7 @@ stwie
 stwo
 sty
 style
+styr
 stä
 städte
 ställ
@@ -7263,7 +7243,6 @@ tara
 tare
 tari
 taria
-tarin
 tas
 tase
 tat
@@ -7286,6 +7265,7 @@ technisch
 technologie
 teck
 ted
+teen
 tega
 tegi
 teh
@@ -7310,6 +7290,7 @@ tella
 tellen
 teller
 telli
+telling
 telt
 tem
 temp
@@ -7411,7 +7392,6 @@ tik
 tika
 tiko
 til
-tile
 tili
 till
 tim
@@ -7449,8 +7429,10 @@ tiv
 tiva
 tive
 tives
+tivi
 tivo
 tje
+tjes
 tk
 tka
 tke
@@ -7459,7 +7441,6 @@ tla
 tland
 tle
 tler
-tli
 tlich
 tma
 tne
@@ -7646,7 +7627,6 @@ ucci
 uce
 uch
 ucht
-uci
 uck
 ud
 uda
@@ -7758,6 +7738,7 @@ urre
 urri
 urs
 urta
+uru
 urus
 ury
 us
@@ -7782,7 +7763,6 @@ usten
 usz
 ut
 uta
-utan
 ute
 uten
 uter
@@ -7818,7 +7798,6 @@ vali
 vall
 valle
 valu
-vam
 van
 vang
 vano
@@ -7831,8 +7810,6 @@ varia
 variant
 vas
 vat
-vc
-vd
 ve
 ved
 vede
@@ -7840,6 +7817,7 @@ vedere
 vedi
 vel
 vela
+veld
 velli
 ven
 vend
@@ -7890,6 +7868,7 @@ vert
 verte
 verti
 vertrag
+verunt
 verwaltung
 verz
 ves
@@ -7920,8 +7899,10 @@ villa
 ville
 vin
 vina
+vine
 ving
 vini
+vino
 vio
 vir
 vira
@@ -8006,7 +7987,6 @@ watch
 water
 way
 ways
-wb
 wd
 we
 web
@@ -8047,7 +8027,6 @@ wesen
 west
 wet
 wettbewerb
-wg
 wi
 wich
 wick
@@ -8059,6 +8038,7 @@ wier
 wiesen
 wiet
 wig
+wijk
 wil
 wili
 will
@@ -8135,9 +8115,9 @@ xl
 xo
 xon
 xt
-xu
 xus
 xx
+xxx
 xy
 y
 ya
@@ -8147,7 +8127,6 @@ yan
 yana
 yang
 yar
-yb
 ych
 yd
 ye
@@ -8319,8 +8298,6 @@ zähl
 zón
 zü
 züge
-{
-}
 §
 ©
 ­
@@ -8328,13 +8305,12 @@ züge
 °
 ·
 Ä
-ÄN
-ÄR
 É
 Ö
 ÖN
 ÖR
 Ü
+ÜL
 ÜN
 ÜR
 ß
@@ -8460,6 +8436,7 @@ züge
 üß
 ć
 č
+čić
 ŠKO
 š
 ǀ
@@ -8479,9 +8456,7 @@ züge
 ▁(
 ▁(!)
 ▁("
-▁(*
 ▁(+
-▁(=
 ▁(@
 ▁)
 ▁*
@@ -8489,6 +8464,7 @@ züge
 ▁-
 ▁/
 ▁:
+▁;
 ▁<
 ▁=
 ▁>
@@ -8517,6 +8493,7 @@ züge
 ▁ANG
 ▁AP
 ▁APA
+▁APP
 ▁AR
 ▁AS
 ▁ASC
@@ -8526,7 +8503,6 @@ züge
 ▁ATP
 ▁AU
 ▁AV
-▁AZ
 ▁Aar
 ▁Aaron
 ▁Ab
@@ -8630,7 +8606,6 @@ züge
 ▁Akademi
 ▁Akademik
 ▁Akan
-▁Aki
 ▁Akkor
 ▁Akku
 ▁Akt
@@ -8912,6 +8887,7 @@ züge
 ▁Asi
 ▁Asia
 ▁Aspekte
+▁Assim
 ▁Assist
 ▁Association
 ▁Asta
@@ -9019,6 +8995,7 @@ züge
 ▁Aziz
 ▁B
 ▁BA
+▁BAL
 ▁BAS
 ▁BAT
 ▁BB
@@ -9031,7 +9008,6 @@ züge
 ▁BH
 ▁BI
 ▁BIL
-▁BIO
 ▁BL
 ▁BM
 ▁BMW
@@ -9040,6 +9016,7 @@ züge
 ▁BP
 ▁BR
 ▁BS
+▁BT
 ▁BU
 ▁BY
 ▁Ba
@@ -9083,6 +9060,7 @@ züge
 ▁Ball
 ▁Balti
 ▁Baltic
+▁Baltimore
 ▁Bam
 ▁Bambi
 ▁Ban
@@ -9223,7 +9201,6 @@ züge
 ▁Bern
 ▁Berna
 ▁Bernard
-▁Bernardo
 ▁Bernhard
 ▁Berry
 ▁Bert
@@ -9260,6 +9237,7 @@ züge
 ▁Betriebs
 ▁Betroffene
 ▁Bett
+▁Better
 ▁Bevölkerung
 ▁Bewegung
 ▁Beweis
@@ -9611,8 +9589,10 @@ züge
 ▁Carp
 ▁Carra
 ▁Carter
+▁Carvalho
 ▁Cas
 ▁Casa
+▁Casal
 ▁Case
 ▁Cash
 ▁Casino
@@ -9774,6 +9754,7 @@ züge
 ▁Colin
 ▁Coll
 ▁Colle
+▁Collection
 ▁College
 ▁Colli
 ▁Collins
@@ -9792,6 +9773,7 @@ züge
 ▁Commission
 ▁Committee
 ▁Common
+▁Communi
 ▁Communication
 ▁Community
 ▁Comp
@@ -9805,6 +9787,7 @@ züge
 ▁Connect
 ▁Conrad
 ▁Cons
+▁Conserva
 ▁Constantin
 ▁Consulting
 ▁Conta
@@ -9817,7 +9800,6 @@ züge
 ▁Contra
 ▁Control
 ▁Cook
-▁Cookies
 ▁Cool
 ▁Cooper
 ▁Cop
@@ -9873,7 +9855,6 @@ züge
 ▁Current
 ▁Cy
 ▁Cyber
-▁Cyn
 ▁Cyr
 ▁Cze
 ▁Cé
@@ -9891,6 +9872,7 @@ züge
 ▁DES
 ▁DF
 ▁DH
+▁DHA
 ▁DHL
 ▁DI
 ▁DIE
@@ -10123,6 +10105,7 @@ züge
 ▁Dom
 ▁Dome
 ▁Domina
+▁Domingo
 ▁Domini
 ▁Dominic
 ▁Domino
@@ -10330,6 +10313,7 @@ züge
 ▁Elizabeth
 ▁Elke
 ▁Ella
+▁Elle
 ▁Ellen
 ▁Eller
 ▁Elles
@@ -10447,6 +10431,7 @@ züge
 ▁Et
 ▁Eta
 ▁Etats
+▁Ethereum
 ▁Etiket
 ▁Ett
 ▁Eu
@@ -10506,7 +10491,6 @@ züge
 ▁Ez
 ▁F
 ▁FA
-▁FB
 ▁FBI
 ▁FC
 ▁FE
@@ -10543,6 +10527,7 @@ züge
 ▁Faktor
 ▁Fakult
 ▁Fal
+▁Fala
 ▁Falcon
 ▁Falk
 ▁Fall
@@ -10658,6 +10643,7 @@ züge
 ▁Fis
 ▁Fisch
 ▁Fischer
+▁Fish
 ▁Fisk
 ▁Fit
 ▁Fitness
@@ -10722,6 +10708,7 @@ züge
 ▁Forschung
 ▁Forschungs
 ▁Fort
+▁Forte
 ▁Fortschritt
 ▁Fortuna
 ▁Fortune
@@ -10773,6 +10760,7 @@ züge
 ▁Fremd
 ▁Fren
 ▁French
+▁Fresh
 ▁Freud
 ▁Freude
 ▁Freund
@@ -10847,7 +10835,6 @@ züge
 ▁GSM
 ▁GT
 ▁GTA
-▁GU
 ▁Ga
 ▁Gab
 ▁Gaba
@@ -11185,7 +11172,6 @@ züge
 ▁Gür
 ▁H
 ▁HA
-▁HARI
 ▁HBO
 ▁HC
 ▁HD
@@ -11290,6 +11276,7 @@ züge
 ▁Hawaii
 ▁Hawk
 ▁Hay
+▁Haz
 ▁Hazard
 ▁He
 ▁Hea
@@ -11443,6 +11430,7 @@ züge
 ▁Hos
 ▁Hospital
 ▁Host
+▁Hostel
 ▁Hot
 ▁Hotel
 ▁Hoteller
@@ -11520,10 +11508,8 @@ züge
 ▁IKEA
 ▁IKT
 ▁IM
-▁IMP
 ▁IN
 ▁IND
-▁INFO
 ▁ING
 ▁INS
 ▁INTER
@@ -11730,9 +11716,9 @@ züge
 ▁Jahrzehnt
 ▁Jak
 ▁Jakarta
-▁Jako
 ▁Jakob
 ▁Jakub
+▁Jal
 ▁Jam
 ▁Jamal
 ▁James
@@ -11853,6 +11839,7 @@ züge
 ▁Jump
 ▁Jun
 ▁Juncker
+▁June
 ▁Jung
 ▁Juni
 ▁Junior
@@ -12001,6 +11988,7 @@ züge
 ▁Keller
 ▁Kelly
 ▁Kem
+▁Kemal
 ▁Kemp
 ▁Ken
 ▁Kend
@@ -12024,6 +12012,7 @@ züge
 ▁Kh
 ▁Kha
 ▁Khal
+▁Khalifa
 ▁Khan
 ▁Kho
 ▁Ki
@@ -12286,6 +12275,7 @@ züge
 ▁LGBT
 ▁LI
 ▁LIFE
+▁LIVE
 ▁LL
 ▁LP
 ▁LU
@@ -12428,7 +12418,6 @@ züge
 ▁Lib
 ▁Liber
 ▁Liberal
-▁Liberty
 ▁Libre
 ▁Licht
 ▁Lidl
@@ -12564,6 +12553,7 @@ züge
 ▁Lund
 ▁Lung
 ▁Lup
+▁Lur
 ▁Lust
 ▁Lut
 ▁Luther
@@ -12597,7 +12587,6 @@ züge
 ▁MAI
 ▁MAN
 ▁MB
-▁MC
 ▁MD
 ▁ME
 ▁MED
@@ -12714,6 +12703,7 @@ züge
 ▁Marc
 ▁Marcel
 ▁Marcell
+▁Marcelo
 ▁March
 ▁Marcin
 ▁Marco
@@ -12911,6 +12901,7 @@ züge
 ▁Micro
 ▁Microsoft
 ▁Mid
+▁Middel
 ▁Middle
 ▁Mie
 ▁Miel
@@ -13040,6 +13031,7 @@ züge
 ▁Monica
 ▁Monika
 ▁Monitor
+▁Monkey
 ▁Mono
 ▁Monroe
 ▁Monster
@@ -13082,7 +13074,6 @@ züge
 ▁Mou
 ▁Mount
 ▁Mountain
-▁Mourinho
 ▁Move
 ▁Moy
 ▁Mozart
@@ -13167,7 +13158,6 @@ züge
 ▁NGO
 ▁NH
 ▁NHL
-▁NI
 ▁NO
 ▁NS
 ▁NU
@@ -13205,6 +13195,7 @@ züge
 ▁Nas
 ▁Nasa
 ▁Nat
+▁Nata
 ▁Natal
 ▁Natalia
 ▁Nathan
@@ -13342,7 +13333,6 @@ züge
 ▁Now
 ▁Nr
 ▁Nu
-▁Nueva
 ▁Nuk
 ▁Nulla
 ▁Nummer
@@ -13448,7 +13438,6 @@ züge
 ▁Option
 ▁Or
 ▁Ora
-▁Oral
 ▁Orang
 ▁Orange
 ▁Orbán
@@ -13542,7 +13531,6 @@ züge
 ▁Palm
 ▁Palma
 ▁Palo
-▁Palu
 ▁Pam
 ▁Pan
 ▁Pana
@@ -13576,7 +13564,6 @@ züge
 ▁Parlamentar
 ▁Paro
 ▁Part
-▁Parte
 ▁Partei
 ▁Parti
 ▁Partner
@@ -13628,7 +13615,6 @@ züge
 ▁Pea
 ▁Peace
 ▁Peak
-▁Pearl
 ▁Peda
 ▁Pedersen
 ▁Pedro
@@ -13762,8 +13748,10 @@ züge
 ▁Platz
 ▁Play
 ▁PlayStation
+▁Playboy
 ▁Player
 ▁Playstation
+▁Plaza
 ▁Ple
 ▁Pli
 ▁Plo
@@ -13794,7 +13782,6 @@ züge
 ▁Polis
 ▁Politi
 ▁Politic
-▁Political
 ▁Politik
 ▁Politiker
 ▁Polizei
@@ -13859,6 +13846,7 @@ züge
 ▁Price
 ▁Pride
 ▁Prie
+▁Prim
 ▁Prima
 ▁Prime
 ▁Primo
@@ -13952,7 +13940,6 @@ züge
 ▁Python
 ▁Pä
 ▁Pär
-▁Pää
 ▁Pé
 ▁Pérez
 ▁Pö
@@ -13985,7 +13972,6 @@ züge
 ▁RA
 ▁RE
 ▁REC
-▁REG
 ▁RF
 ▁RH
 ▁RM
@@ -14128,6 +14114,7 @@ züge
 ▁Renault
 ▁Rend
 ▁Rene
+▁Reng
 ▁Renk
 ▁Rent
 ▁René
@@ -14173,6 +14160,7 @@ züge
 ▁Rhe
 ▁Rhein
 ▁Rheinland
+▁Rho
 ▁Rhod
 ▁Rhy
 ▁Ri
@@ -14182,6 +14170,7 @@ züge
 ▁Rica
 ▁Ricardo
 ▁Ricci
+▁Rice
 ▁Rich
 ▁Richard
 ▁Richter
@@ -14190,6 +14179,7 @@ züge
 ▁Rico
 ▁Rid
 ▁Rie
+▁Rien
 ▁Rif
 ▁Rig
 ▁Riga
@@ -14346,6 +14336,7 @@ züge
 ▁SZ
 ▁Sa
 ▁Saa
+▁Saad
 ▁Saar
 ▁Saat
 ▁Sab
@@ -14357,6 +14348,7 @@ züge
 ▁Sache
 ▁Sachen
 ▁Sachsen
+▁Sacra
 ▁Sad
 ▁Saddam
 ▁Saf
@@ -14593,7 +14585,6 @@ züge
 ▁Session
 ▁Set
 ▁Seu
-▁Seven
 ▁Sever
 ▁Sevilla
 ▁Sex
@@ -14611,6 +14602,7 @@ züge
 ▁Shanghai
 ▁Shar
 ▁Share
+▁Sharma
 ▁Sharon
 ▁Shaw
 ▁She
@@ -14710,6 +14702,7 @@ züge
 ▁Smith
 ▁Smo
 ▁Snack
+▁Snapchat
 ▁Sneaker
 ▁Snow
 ▁So
@@ -14717,7 +14710,6 @@ züge
 ▁Sobald
 ▁Soccer
 ▁Social
-▁Sociedad
 ▁Society
 ▁Sof
 ▁Sofa
@@ -14738,6 +14730,7 @@ züge
 ▁Solo
 ▁Solutions
 ▁Som
+▁Somali
 ▁Somalia
 ▁Sommer
 ▁Son
@@ -14842,6 +14835,7 @@ züge
 ▁Stand
 ▁Standard
 ▁Standort
+▁Stanford
 ▁Stanley
 ▁Star
 ▁Starbucks
@@ -14903,6 +14897,7 @@ züge
 ▁Stop
 ▁Stor
 ▁Store
+▁Stories
 ▁Storm
 ▁Story
 ▁Str
@@ -14984,6 +14979,7 @@ züge
 ▁Susan
 ▁Susanne
 ▁Sushi
+▁Susi
 ▁Sut
 ▁Suu
 ▁Suzuki
@@ -15033,7 +15029,6 @@ züge
 ▁TK
 ▁TL
 ▁TO
-▁TP
 ▁TRI
 ▁TS
 ▁TT
@@ -15066,6 +15061,7 @@ züge
 ▁Tallinn
 ▁Tam
 ▁Tama
+▁Tamil
 ▁Tampa
 ▁Tampere
 ▁Tan
@@ -15192,6 +15188,7 @@ züge
 ▁Tief
 ▁Tier
 ▁Tiere
+▁Ties
 ▁Tiger
 ▁Tik
 ▁Til
@@ -15225,6 +15222,7 @@ züge
 ▁Toilet
 ▁Tokio
 ▁Tol
+▁Tolkien
 ▁Toll
 ▁Tom
 ▁Tomas
@@ -15234,6 +15232,7 @@ züge
 ▁Tong
 ▁Toni
 ▁Tony
+▁Too
 ▁Tool
 ▁Tools
 ▁Top
@@ -15437,7 +15436,6 @@ züge
 ▁Utrecht
 ▁V
 ▁VAR
-▁VE
 ▁VER
 ▁VG
 ▁VI
@@ -15567,7 +15565,6 @@ züge
 ▁Vettel
 ▁Vi
 ▁Via
-▁Vic
 ▁Vice
 ▁Victor
 ▁Victoria
@@ -15779,6 +15776,7 @@ züge
 ▁Whit
 ▁White
 ▁Who
+▁Why
 ▁Wi
 ▁Wichtig
 ▁Wick
@@ -15955,6 +15953,7 @@ züge
 ▁Zlatko
 ▁Zo
 ▁Zombie
+▁Zon
 ▁Zone
 ▁Zoo
 ▁Zoom
@@ -16026,6 +16025,7 @@ züge
 ▁ad
 ▁adapt
 ▁add
+▁adipisicing
 ▁administration
 ▁administrative
 ▁adopt
@@ -16478,7 +16478,6 @@ züge
 ▁bot
 ▁box
 ▁boy
-▁bp
 ▁br
 ▁bra
 ▁brachte
@@ -16490,6 +16489,7 @@ züge
 ▁brauchen
 ▁brauchst
 ▁braucht
+▁bravo
 ▁bre
 ▁brei
 ▁breite
@@ -16561,12 +16561,12 @@ züge
 ▁co
 ▁coa
 ▁coach
-▁com
 ▁commun
 ▁community
 ▁computer
 ▁con
 ▁conflict
+▁consectetur
 ▁content
 ▁control
 ▁cool
@@ -16642,6 +16642,7 @@ züge
 ▁della
 ▁dello
 ▁dem
+▁demand
 ▁demo
 ▁demografi
 ▁demokrat
@@ -16698,7 +16699,6 @@ züge
 ▁digitale
 ▁dikt
 ▁diktator
-▁diplom
 ▁diplomat
 ▁diplomati
 ▁dir
@@ -16710,6 +16710,7 @@ züge
 ▁diskrimin
 ▁diskut
 ▁diskutiert
+▁district
 ▁divers
 ▁diverse
 ▁diversi
@@ -16766,6 +16767,7 @@ züge
 ▁dürfte
 ▁e
 ▁eBay
+▁ea
 ▁eben
 ▁ebenfalls
 ▁ebenso
@@ -17120,6 +17122,7 @@ züge
 ▁force
 ▁forces
 ▁fordert
+▁foreign
 ▁form
 ▁forma
 ▁formal
@@ -17308,7 +17311,6 @@ züge
 ▁geo
 ▁geografi
 ▁geologi
-▁geometri
 ▁geopolit
 ▁gepflegt
 ▁geplant
@@ -17575,6 +17577,7 @@ züge
 ▁hinta
 ▁hinter
 ▁hinzu
+▁hipp
 ▁his
 ▁histori
 ▁historische
@@ -17600,7 +17603,6 @@ züge
 ▁horizontal
 ▁hormon
 ▁horren
-▁how
 ▁hre
 ▁http
 ▁https
@@ -17645,7 +17647,6 @@ züge
 ▁iPad
 ▁iPhone
 ▁ich
-▁id
 ▁ide
 ▁ideal
 ▁ideale
@@ -17667,6 +17668,7 @@ züge
 ▁ikon
 ▁il
 ▁illegal
+▁illustre
 ▁illustri
 ▁im
 ▁ima
@@ -17851,6 +17853,7 @@ züge
 ▁kau
 ▁kaufen
 ▁kaum
+▁kb
 ▁ke
 ▁keh
 ▁kein
@@ -18012,6 +18015,7 @@ züge
 ▁kre
 ▁kreativ
 ▁kreative
+▁kredit
 ▁kreis
 ▁krem
 ▁kreu
@@ -18095,6 +18099,7 @@ züge
 ▁leben
 ▁lebt
 ▁leckere
+▁ledig
 ▁lediglich
 ▁leer
 ▁leg
@@ -18150,7 +18155,6 @@ züge
 ▁links
 ▁liquid
 ▁liste
-▁lit
 ▁lita
 ▁literar
 ▁litt
@@ -18240,6 +18244,7 @@ züge
 ▁massive
 ▁mat
 ▁materi
+▁material
 ▁materie
 ▁mau
 ▁max
@@ -18284,7 +18289,6 @@ züge
 ▁merke
 ▁merken
 ▁mes
-▁meta
 ▁metall
 ▁meteorologi
 ▁meter
@@ -18317,6 +18321,7 @@ züge
 ▁minimalist
 ▁minus
 ▁minuten
+▁minuti
 ▁mir
 ▁mis
 ▁miser
@@ -18356,6 +18361,7 @@ züge
 ▁monet
 ▁monetar
 ▁mono
+▁monopol
 ▁mont
 ▁monta
 ▁monumental
@@ -18373,13 +18379,11 @@ züge
 ▁multi
 ▁multimedia
 ▁multiple
-▁multipli
 ▁mund
 ▁munt
 ▁mur
 ▁mus
 ▁musi
-▁musik
 ▁musikal
 ▁muslim
 ▁muss
@@ -18456,7 +18460,6 @@ züge
 ▁new
 ▁news
 ▁next
-▁ng
 ▁ni
 ▁nicht
 ▁nichts
@@ -18475,16 +18478,15 @@ züge
 ▁non
 ▁nor
 ▁nord
-▁norm
 ▁normal
 ▁normale
 ▁normativ
 ▁nostalgi
 ▁not
 ▁notwendig
-▁nova
 ▁now
 ▁nu
+▁nuclear
 ▁nueva
 ▁nuklear
 ▁null
@@ -18556,7 +18558,6 @@ züge
 ▁organ
 ▁organisator
 ▁organisiert
-▁organization
 ▁orient
 ▁oriental
 ▁origin
@@ -18645,6 +18646,7 @@ züge
 ▁philosophi
 ▁pho
 ▁physio
+▁pi
 ▁picture
 ▁pie
 ▁pika
@@ -18697,6 +18699,7 @@ züge
 ▁positiv
 ▁positive
 ▁post
+▁postal
 ▁poste
 ▁posts
 ▁postul
@@ -18757,6 +18760,7 @@ züge
 ▁promo
 ▁prompt
 ▁propag
+▁propagand
 ▁proportion
 ▁prosper
 ▁protek
@@ -18959,6 +18963,7 @@ züge
 ▁royal
 ▁ru
 ▁rud
+▁rue
 ▁ruh
 ▁ruhig
 ▁ruin
@@ -19037,6 +19042,7 @@ züge
 ▁se
 ▁sechs
 ▁security
+▁sed
 ▁see
 ▁seg
 ▁sehe
@@ -19072,7 +19078,6 @@ züge
 ▁seriös
 ▁servi
 ▁service
-▁ses
 ▁setzen
 ▁setzt
 ▁seu
@@ -19105,6 +19110,7 @@ züge
 ▁sind
 ▁sing
 ▁sinn
+▁sinni
 ▁sinnvoll
 ▁sit
 ▁situation
@@ -19124,6 +19130,7 @@ züge
 ▁sodass
 ▁sofern
 ▁sofort
+▁soft
 ▁sog
 ▁sogar
 ▁sogenannte
@@ -19328,6 +19335,7 @@ züge
 ▁süd
 ▁t
 ▁ta
+▁tabell
 ▁tabu
 ▁tad
 ▁tag
@@ -19362,12 +19370,12 @@ züge
 ▁tele
 ▁telefon
 ▁telefonisch
+▁temperament
 ▁tempor
 ▁ten
 ▁tend
 ▁ter
 ▁termin
-▁terra
 ▁territorial
 ▁terror
 ▁terrorist
@@ -19412,6 +19420,7 @@ züge
 ▁tot
 ▁total
 ▁totale
+▁totes
 ▁touch
 ▁tour
 ▁tourist
@@ -19464,7 +19473,6 @@ züge
 ▁tue
 ▁tun
 ▁tune
-▁tung
 ▁turbulent
 ▁turn
 ▁tut
@@ -19537,8 +19545,10 @@ züge
 ▁ursprünglich
 ▁urte
 ▁us
+▁use
 ▁usual
 ▁usw
+▁ut
 ▁utopi
 ▁v
 ▁va
@@ -19673,11 +19683,9 @@ züge
 ▁virtu
 ▁virtuel
 ▁virtuelle
-▁vis
 ▁vision
 ▁visu
 ▁visuel
-▁vita
 ▁vital
 ▁vo
 ▁vol
@@ -19972,10 +19980,8 @@ züge
 ▁Š
 ▁Še
 ▁́
-▁̈
 ▁€
 ▁€.
-▁→
 ▁−
 ▁■
 ▁▪
@@ -19985,16 +19991,10 @@ züge
 ▁●
 ▁
 □
-
 
-
-
 
 
 
-
-
-
 
 ︎
 ️

@@ -44,6 +44,7 @@ $
 2005
 2006
 2007
+2016
 2017
 2018
 2019
@@ -91,7 +92,6 @@ AH
 AI
 AIDS
 AIN
-AIR
 AK
 AKA
 AL
@@ -330,7 +330,6 @@ Class
 Claude
 Cloud
 Co
-Code
 Col
 Cola
 Com
@@ -347,7 +346,6 @@ Cu
 Cycl
 D
 DA
-DAN
 DAY
 DB
 DC
@@ -505,7 +503,6 @@ Fe
 Fer
 Fi
 File
-Finan
 Find
 First
 Fit
@@ -513,6 +510,7 @@ Flor
 Fo
 Food
 For
+Form
 Forum
 Fra
 France
@@ -548,7 +546,6 @@ GP
 GR
 GRA
 GRE
-GRO
 GS
 GT
 GUE
@@ -699,7 +696,6 @@ IRA
 IRE
 IS
 ISA
-ISE
 ISH
 ISI
 ISS
@@ -725,7 +721,6 @@ India
 Info
 Information
 Instagram
-Institut
 Inter
 International
 Invest
@@ -760,6 +755,7 @@ KAZ
 KE
 KER
 KF
+KH
 KI
 KING
 KIP
@@ -779,8 +775,6 @@ Kel
 Ki
 Kir
 Ko
-Kor
-Kr
 Ku
 Kur
 KÖ
@@ -851,7 +845,6 @@ M
 MA
 MAIL
 MAN
-MAR
 MAS
 MB
 MC
@@ -909,7 +902,6 @@ Me
 MeToo
 Med
 Media
-Mel
 Men
 Mer
 Met
@@ -1149,7 +1141,6 @@ RC
 RD
 RE
 REA
-RED
 REE
 REM
 REN
@@ -1240,6 +1231,7 @@ SO
 SON
 SP
 SPA
+SPORT
 SR
 SS
 SSA
@@ -1446,7 +1438,6 @@ VAN
 VB
 VC
 VE
-VEN
 VER
 VET
 VG
@@ -1461,9 +1452,7 @@ VR
 VT
 Va
 Val
-Var
 Ve
-Ven
 Ver
 Vi
 Vir
@@ -1572,7 +1561,6 @@ accord
 account
 ace
 ach
-acha
 ache
 acht
 aci
@@ -1710,7 +1698,6 @@ ander
 andi
 ando
 andra
-andro
 ane
 ang
 anga
@@ -1758,7 +1745,6 @@ ar
 ara
 aran
 arb
-arbeit
 arch
 archae
 archi
@@ -1776,7 +1762,6 @@ ari
 aria
 aring
 ario
-arium
 ark
 arkiv
 arm
@@ -1952,6 +1937,7 @@ bern
 berri
 berry
 bert
+berto
 bes
 best
 bet
@@ -2001,6 +1987,7 @@ ble
 bler
 bles
 bli
+blick
 blind
 bling
 blo
@@ -2023,6 +2010,7 @@ bomb
 bon
 bond
 bone
+bong
 boo
 boob
 book
@@ -2100,6 +2088,7 @@ bw
 by
 byl
 byte
+bö
 bü
 c
 ca
@@ -2225,12 +2214,12 @@ chou
 chron
 cht
 chten
-chter
 chu
 chy
 ci
 cia
 cial
+cian
 cic
 cid
 cide
@@ -2315,6 +2304,7 @@ come
 commerce
 communica
 communication
+como
 comp
 company
 competent
@@ -2460,7 +2450,6 @@ del
 dele
 deli
 dell
-della
 dem
 demo
 democrat
@@ -2477,7 +2466,6 @@ dern
 ders
 des
 design
-desk
 dest
 det
 determina
@@ -2503,6 +2491,7 @@ dice
 dict
 did
 die
+dienst
 dier
 dies
 diff
@@ -2859,6 +2848,7 @@ expert
 explica
 explo
 exploitation
+expo
 export
 express
 extra
@@ -3322,7 +3312,6 @@ hero
 hes
 hesi
 het
-heter
 heu
 hev
 hew
@@ -3569,6 +3558,7 @@ imagina
 imagine
 ime
 imi
+imin
 imit
 imize
 immat
@@ -3916,6 +3906,8 @@ kul
 kula
 kumar
 kun
+kunst
+kup
 kur
 kura
 kus
@@ -4308,6 +4300,7 @@ mena
 mend
 mene
 meni
+meno
 mens
 ment
 mental
@@ -4327,7 +4320,6 @@ meta
 meter
 metre
 metric
-meye
 mg
 mi
 mia
@@ -4758,6 +4750,7 @@ opera
 operativ
 opi
 opo
+opp
 ops
 opter
 option
@@ -5181,6 +5174,7 @@ raf
 rag
 rage
 ragon
+ragu
 rah
 rai
 raid
@@ -5214,7 +5208,6 @@ rar
 ras
 rash
 rat
-rata
 rate
 rath
 rati
@@ -5701,7 +5694,6 @@ song
 sons
 soon
 sor
-sorge
 sort
 sorti
 sou
@@ -5809,7 +5801,6 @@ sthetic
 sti
 stic
 stick
-stift
 stig
 stige
 stil
@@ -5857,6 +5848,7 @@ stry
 ström
 stu
 stub
+studie
 stum
 stup
 stur
@@ -6328,6 +6320,7 @@ untur
 unu
 uomo
 up
+upi
 upp
 ups
 ur
@@ -6596,6 +6589,7 @@ white
 wi
 wich
 wick
+wid
 wide
 width
 wie
@@ -6633,6 +6627,7 @@ writer
 writing
 ws
 wu
+wur
 www
 wy
 wyn
@@ -6712,10 +6707,12 @@ za
 zad
 zale
 zan
+zano
 zar
 zbek
 ze
 zed
+zeit
 zek
 zel
 zem
@@ -6775,7 +6772,6 @@ zzy
 ço
 ção
 è
-èche
 ère
 ès
 é
@@ -6846,6 +6842,7 @@ zzy
 ▁ABC
 ▁AC
 ▁AD
+▁ADA
 ▁ADHD
 ▁AE
 ▁AF
@@ -7140,7 +7137,6 @@ zzy
 ▁Ap
 ▁Apa
 ▁Apart
-▁Apartments
 ▁Apollo
 ▁App
 ▁Apple
@@ -7369,7 +7365,6 @@ zzy
 ▁Barry
 ▁Bart
 ▁Bas
-▁Basa
 ▁Base
 ▁Basel
 ▁Bash
@@ -7437,7 +7432,6 @@ zzy
 ▁Bent
 ▁Benz
 ▁Ber
-▁Beratung
 ▁Bere
 ▁Berg
 ▁Bergen
@@ -7655,6 +7649,7 @@ zzy
 ▁Budapest
 ▁Budd
 ▁Budget
+▁Bueno
 ▁Buenos
 ▁Buffalo
 ▁Buffet
@@ -7680,7 +7675,6 @@ zzy
 ▁Bus
 ▁Bush
 ▁Business
-▁Buss
 ▁But
 ▁Button
 ▁Buy
@@ -7707,7 +7701,6 @@ zzy
 ▁CF
 ▁CH
 ▁CHA
-▁CHF
 ▁CHI
 ▁CI
 ▁CIA
@@ -7723,7 +7716,6 @@ zzy
 ▁CP
 ▁CR
 ▁CS
-▁CSR
 ▁CT
 ▁CU
 ▁CV
@@ -8422,7 +8414,6 @@ zzy
 ▁Dung
 ▁Dur
 ▁Durant
-▁Duration
 ▁During
 ▁Dutch
 ▁Duterte
@@ -8654,7 +8645,6 @@ zzy
 ▁Experiment
 ▁Expert
 ▁Explo
-▁Explorer
 ▁Expo
 ▁Export
 ▁Express
@@ -8679,13 +8669,13 @@ zzy
 ▁FO
 ▁FOR
 ▁FREE
+▁FU
 ▁Fa
 ▁Fab
 ▁Fabi
 ▁Fac
 ▁Face
 ▁Facebook
-▁Fach
 ▁Fact
 ▁Factor
 ▁Factory
@@ -8960,6 +8950,7 @@ zzy
 ▁Gary
 ▁Gas
 ▁Gast
+▁Gastro
 ▁Gat
 ▁Gate
 ▁Gates
@@ -9116,7 +9107,6 @@ zzy
 ▁Group
 ▁Grove
 ▁Growth
-▁Groß
 ▁Gru
 ▁Grub
 ▁Grund
@@ -9627,6 +9617,7 @@ zzy
 ▁Jak
 ▁Jakarta
 ▁Jakob
+▁Jal
 ▁Jam
 ▁Jama
 ▁Jamal
@@ -9917,6 +9908,7 @@ zzy
 ▁Konrad
 ▁Konstantin
 ▁Koo
+▁Kop
 ▁Kor
 ▁Korea
 ▁Korean
@@ -9947,6 +9939,7 @@ zzy
 ▁Krishna
 ▁Krist
 ▁Kristen
+▁Kristi
 ▁Kristin
 ▁Kristo
 ▁Kro
@@ -9958,6 +9951,7 @@ zzy
 ▁Kumar
 ▁Kun
 ▁Kunden
+▁Kunst
 ▁Kup
 ▁Kur
 ▁Kurd
@@ -10002,6 +9996,7 @@ zzy
 ▁Ladies
 ▁Lady
 ▁Lage
+▁Lager
 ▁Lago
 ▁Lagu
 ▁Lahore
@@ -10092,6 +10087,7 @@ zzy
 ▁Leon
 ▁Leonard
 ▁Leonardo
+▁Leopard
 ▁Leopold
 ▁Les
 ▁Let
@@ -10225,6 +10221,7 @@ zzy
 ▁Lue
 ▁Lufthansa
 ▁Lug
+▁Luigi
 ▁Luis
 ▁Luiz
 ▁Luka
@@ -10236,6 +10233,7 @@ zzy
 ▁Luna
 ▁Lund
 ▁Lung
+▁Lup
 ▁Lut
 ▁Luther
 ▁Lux
@@ -10623,7 +10621,6 @@ zzy
 ▁Mongolia
 ▁Moni
 ▁Monica
-▁Monika
 ▁Monitor
 ▁Monkey
 ▁Mono
@@ -10745,6 +10742,7 @@ zzy
 ▁NU
 ▁NY
 ▁Na
+▁Nabi
 ▁Nad
 ▁Nadal
 ▁Nadu
@@ -10782,6 +10780,7 @@ zzy
 ▁Nav
 ▁Navarro
 ▁Navig
+▁Navigation
 ▁Nawaz
 ▁Naz
 ▁Nazar
@@ -10885,6 +10884,7 @@ zzy
 ▁Novo
 ▁Novosti
 ▁Now
+▁Nr
 ▁Nu
 ▁Number
 ▁Numer
@@ -10951,7 +10951,6 @@ zzy
 ▁Olli
 ▁Olsen
 ▁Olu
-▁Olymp
 ▁Olympia
 ▁Olympic
 ▁Om
@@ -11071,6 +11070,7 @@ zzy
 ▁Palace
 ▁Palacio
 ▁Pale
+▁Palermo
 ▁Palestin
 ▁Pali
 ▁Palm
@@ -11137,6 +11137,7 @@ zzy
 ▁Paw
 ▁Pay
 ▁PayPal
+▁Paz
 ▁Pe
 ▁Pea
 ▁Peace
@@ -11186,7 +11187,6 @@ zzy
 ▁Petit
 ▁Petr
 ▁Petra
-▁Petri
 ▁Petro
 ▁Petrol
 ▁Pey
@@ -11791,7 +11791,6 @@ zzy
 ▁SOL
 ▁SOS
 ▁SP
-▁SPA
 ▁SPD
 ▁SPF
 ▁SR
@@ -11801,7 +11800,6 @@ zzy
 ▁STR
 ▁SU
 ▁SUV
-▁SV
 ▁SW
 ▁Sa
 ▁Saa
@@ -11824,6 +11822,7 @@ zzy
 ▁Sahara
 ▁Sai
 ▁Said
+▁Sail
 ▁Sain
 ▁Sains
 ▁Saint
@@ -11842,6 +11841,7 @@ zzy
 ▁Salt
 ▁Salva
 ▁Salvador
+▁Salz
 ▁Salzburg
 ▁Sam
 ▁Sama
@@ -11851,6 +11851,7 @@ zzy
 ▁Sami
 ▁Samo
 ▁Samsung
+▁Samu
 ▁Samuel
 ▁San
 ▁Sana
@@ -12265,6 +12266,7 @@ zzy
 ▁Stewart
 ▁Sti
 ▁Stick
+▁Stig
 ▁Still
 ▁Sto
 ▁Stock
@@ -12303,7 +12305,6 @@ zzy
 ▁Stu
 ▁Stuart
 ▁Student
-▁Studien
 ▁Studies
 ▁Studio
 ▁Studios
@@ -12397,7 +12398,6 @@ zzy
 ▁TE
 ▁TH
 ▁THE
-▁TIME
 ▁TL
 ▁TO
 ▁TOP
@@ -12508,6 +12508,7 @@ zzy
 ▁Tex
 ▁Texas
 ▁Text
+▁Textil
 ▁Th
 ▁Tha
 ▁Thai
@@ -12699,6 +12700,7 @@ zzy
 ▁UNI
 ▁UNICEF
 ▁UP
+▁UPS
 ▁US
 ▁USA
 ▁USB
@@ -12894,6 +12896,7 @@ zzy
 ▁Von
 ▁Vor
 ▁Vos
+▁Vou
 ▁Voyage
 ▁Vu
 ▁Vuitton
@@ -12905,7 +12908,6 @@ zzy
 ▁WE
 ▁WHO
 ▁WI
-▁WP
 ▁WWF
 ▁Wa
 ▁Wad
@@ -13069,6 +13071,7 @@ zzy
 ▁Xu
 ▁Y
 ▁YOU
+▁YOUR
 ▁Ya
 ▁Yadav
 ▁Yahoo
@@ -14266,7 +14269,6 @@ zzy
 ▁commodi
 ▁common
 ▁commun
-▁commune
 ▁communi
 ▁communication
 ▁communiqué
@@ -14555,7 +14557,6 @@ zzy
 ▁cron
 ▁cross
 ▁crowd
-▁crowdfunding
 ▁cru
 ▁cruci
 ▁crucial
@@ -14603,6 +14604,7 @@ zzy
 ▁cyber
 ▁cycle
 ▁cyn
+▁cyst
 ▁d
 ▁da
 ▁dab
@@ -14806,7 +14808,6 @@ zzy
 ▁din
 ▁dine
 ▁diners
-▁ding
 ▁dinner
 ▁dinosaur
 ▁dio
@@ -15386,7 +15387,6 @@ zzy
 ▁feeling
 ▁fees
 ▁feet
-▁fei
 ▁fel
 ▁fell
 ▁fellow
@@ -15879,6 +15879,7 @@ zzy
 ▁hat
 ▁hate
 ▁hau
+▁haute
 ▁have
 ▁haven
 ▁having
@@ -16350,6 +16351,7 @@ zzy
 ▁itin
 ▁its
 ▁itself
+▁j
 ▁ja
 ▁jab
 ▁jack
@@ -17182,7 +17184,6 @@ zzy
 ▁notre
 ▁nou
 ▁nous
-▁nova
 ▁novel
 ▁novice
 ▁now
@@ -17384,6 +17385,7 @@ zzy
 ▁pana
 ▁pancake
 ▁pande
+▁pane
 ▁panel
 ▁pani
 ▁panne
@@ -17468,6 +17470,7 @@ zzy
 ▁peaks
 ▁peculiar
 ▁ped
+▁pedagogi
 ▁pedal
 ▁pede
 ▁pediatr
@@ -17881,6 +17884,7 @@ zzy
 ▁prono
 ▁prop
 ▁propaga
+▁propagand
 ▁propaganda
 ▁proper
 ▁properly
@@ -17984,6 +17988,7 @@ zzy
 ▁quantum
 ▁quart
 ▁quarter
+▁quartier
 ▁quasi
 ▁que
 ▁quest
@@ -19669,7 +19674,6 @@ zzy
 ▁vene
 ▁venera
 ▁vent
-▁vente
 ▁ventilation
 ▁ventilator
 ▁venture
@@ -19812,7 +19816,6 @@ zzy
 ▁wearing
 ▁weather
 ▁web
-▁webinar
 ▁website
 ▁websites
 ▁wedding
@@ -19961,7 +19964,6 @@ zzy
 ▁zoo
 ▁zoom
 ▁zu
-▁zum
 ▁zur
 ▁£
 ▁§
@@ -19994,7 +19996,5 @@ zzy
 
 
 
-
-
 
 ️

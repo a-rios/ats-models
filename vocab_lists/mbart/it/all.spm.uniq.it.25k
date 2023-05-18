@@ -42,6 +42,7 @@ $
 1972
 1977
 1981
+1990
 1992
 1993
 1994
@@ -149,7 +150,6 @@ ANG
 ANI
 ANIA
 ANNA
-ANNO
 ANO
 ANS
 ANTA
@@ -303,6 +303,7 @@ Ba
 Bab
 Back
 Bag
+Bahn
 Bal
 Ban
 Band
@@ -486,6 +487,7 @@ DT
 DU
 DV
 Da
+Dame
 Dan
 Daniel
 Dar
@@ -587,7 +589,6 @@ ESE
 ESI
 ESS
 EST
-ESTA
 ESTE
 ESTI
 ESTO
@@ -710,7 +711,6 @@ GB
 GC
 GDP
 GE
-GEL
 GEN
 GER
 GES
@@ -733,7 +733,6 @@ GP
 GR
 GRA
 GRE
-GRI
 GRO
 GS
 GT
@@ -949,7 +948,6 @@ Istituto
 It
 Italia
 J
-JAK
 JD
 JO
 JR
@@ -959,7 +957,6 @@ Je
 Jo
 John
 Ju
-Jul
 Jun
 Just
 K
@@ -984,6 +981,7 @@ Ke
 Key
 Ki
 Ko
+Kon
 Kr
 Kre
 Ku
@@ -1164,7 +1162,6 @@ Mul
 Mus
 Music
 My
-Mü
 N
 NA
 NAI
@@ -1235,7 +1232,6 @@ OG
 OH
 OI
 OK
-OKU
 OL
 OLA
 OLE
@@ -1333,7 +1329,6 @@ PIA
 PIC
 PIE
 PIL
-PJ
 PL
 PM
 PN
@@ -1447,6 +1442,7 @@ RED
 REG
 REM
 REN
+REP
 RES
 RET
 RF
@@ -1456,6 +1452,7 @@ RIA
 RIC
 RICA
 RID
+RIE
 RIO
 RIS
 RIT
@@ -1519,6 +1516,7 @@ SCH
 SCI
 SD
 SE
+SEL
 SEM
 SER
 SES
@@ -1573,6 +1571,7 @@ Sc
 Sch
 Science
 Se
+See
 Sen
 Ser
 Serie
@@ -1637,7 +1636,6 @@ TEAM
 TEC
 TECH
 TEL
-TEM
 TEN
 TER
 TES
@@ -1741,7 +1739,6 @@ UKI
 UL
 ULE
 ULI
-ULLA
 ULT
 UM
 UMA
@@ -1749,9 +1746,11 @@ UMI
 UN
 UNC
 UND
+UNDE
 UNE
 UNG
 UNI
+UNT
 UO
 UP
 UR
@@ -1819,6 +1818,7 @@ Ver
 Vi
 Via
 Video
+Vil
 Vir
 Vis
 Vision
@@ -1835,7 +1835,6 @@ WC
 WD
 WE
 WER
-WF
 WG
 WI
 WIE
@@ -1891,6 +1890,7 @@ You
 Z
 ZA
 ZE
+ZEN
 ZI
 ZIA
 ZIO
@@ -1898,6 +1898,7 @@ ZIONE
 ZIONI
 ZN
 ZO
+ZU
 ZV
 ZZ
 ZZA
@@ -1952,7 +1953,6 @@ account
 accumul
 ace
 ach
-acha
 ache
 acht
 aci
@@ -2138,7 +2138,6 @@ anca
 ance
 ances
 anche
-anci
 ancia
 and
 anda
@@ -2485,7 +2484,6 @@ bedi
 beg
 behindert
 bei
-bek
 bel
 beli
 bell
@@ -2865,7 +2863,6 @@ chor
 chou
 chov
 cht
-chte
 chten
 chter
 chu
@@ -3037,7 +3034,6 @@ craft
 crat
 crates
 cre
-cream
 creati
 cred
 credit
@@ -3080,7 +3076,6 @@ cultor
 cultura
 cultural
 culture
-culum
 cum
 cun
 cup
@@ -3191,7 +3186,6 @@ ders
 des
 desi
 design
-desk
 desse
 dest
 det
@@ -3320,7 +3314,6 @@ drag
 drau
 dre
 dri
-drin
 driv
 drive
 dro
@@ -3358,7 +3351,6 @@ duzione
 dw
 dy
 dys
-dz
 dze
 dzi
 dé
@@ -3371,6 +3363,7 @@ eau
 eb
 ebb
 ebben
+ebe
 ebi
 ec
 eca
@@ -3523,6 +3516,7 @@ eng
 eni
 enia
 enie
+enka
 enko
 enne
 eno
@@ -3586,6 +3580,7 @@ eria
 erie
 ering
 eris
+erit
 erland
 ern
 erna
@@ -3719,6 +3714,7 @@ facil
 fact
 factor
 fag
+fah
 fair
 fal
 fald
@@ -3731,7 +3727,6 @@ fani
 fano
 fant
 fanta
-faq
 far
 fara
 fare
@@ -3919,6 +3914,7 @@ fun
 fund
 fung
 funga
+funk
 funzi
 fur
 furi
@@ -3927,7 +3923,6 @@ fusion
 fuso
 fut
 fy
-fö
 g
 ga
 gaard
@@ -3981,6 +3976,7 @@ gay
 gaz
 gb
 ge
+geb
 ged
 gegner
 gel
@@ -3988,7 +3984,6 @@ geli
 gels
 gem
 geme
-gemeinde
 gen
 gence
 gend
@@ -4009,7 +4004,6 @@ geri
 geria
 gers
 ges
-gesch
 gesellschaft
 gesetz
 gesi
@@ -4214,6 +4208,7 @@ hat
 hau
 haus
 hausen
+havi
 he
 hea
 head
@@ -4239,6 +4234,7 @@ her
 here
 heri
 hero
+herr
 hesi
 het
 heu
@@ -4323,7 +4319,9 @@ hur
 hus
 hy
 höf
+höhe
 i
+iPad
 iPhone
 ia
 iac
@@ -4334,7 +4332,6 @@ iai
 iak
 ial
 iam
-iame
 iamo
 ian
 iana
@@ -4415,7 +4412,6 @@ ieri
 iero
 iers
 iert
-ierung
 ies
 iese
 iet
@@ -4625,7 +4621,6 @@ insta
 instagram
 install
 installazione
-institut
 insu
 int
 inta
@@ -4711,7 +4706,6 @@ isha
 ishi
 isi
 isia
-isierung
 isin
 ising
 isio
@@ -4883,6 +4877,7 @@ kari
 kas
 kash
 kasse
+kassen
 kate
 kay
 kaya
@@ -4933,11 +4928,11 @@ kka
 kla
 kle
 kler
+klusi
 km
 kn
 know
 ko
-kol
 kola
 koli
 kom
@@ -4958,6 +4953,7 @@ kr
 kra
 kram
 kran
+krank
 kre
 kreis
 kron
@@ -4979,7 +4975,6 @@ kw
 ky
 kä
 ké
-kö
 l
 la
 lab
@@ -4999,7 +4994,6 @@ lag
 laga
 lagan
 lage
-lager
 lago
 lagos
 lah
@@ -5101,14 +5095,13 @@ leh
 lei
 leigh
 lein
-lek
+leit
 lem
 lema
 lement
 lemme
 len
 lendi
-lending
 lene
 leng
 leni
@@ -5283,7 +5276,6 @@ lof
 log
 loga
 loge
-logen
 logi
 logia
 logic
@@ -5394,6 +5386,7 @@ malt
 mam
 man
 mana
+management
 manager
 mand
 manda
@@ -5691,7 +5684,6 @@ mu
 mula
 mult
 multi
-mum
 mun
 mund
 muni
@@ -6027,7 +6019,6 @@ oka
 oke
 oki
 oko
-oku
 ol
 ola
 olan
@@ -6234,7 +6225,6 @@ ovo
 ovski
 ovu
 ovy
-ová
 ové
 ow
 owa
@@ -6375,7 +6365,6 @@ pha
 phan
 pharma
 phe
-phen
 pher
 phi
 phil
@@ -6619,6 +6608,7 @@ ptic
 pto
 pu
 pub
+public
 publica
 publish
 puccino
@@ -7290,6 +7280,7 @@ sine
 sing
 singh
 sini
+sinn
 sins
 sio
 sion
@@ -7389,7 +7380,6 @@ spi
 spice
 spicio
 spie
-spiel
 spin
 spir
 spira
@@ -7437,7 +7427,6 @@ ssum
 ssy
 st
 sta
-staat
 stab
 stabil
 stad
@@ -7448,7 +7437,6 @@ stall
 stan
 stand
 standard
-standen
 standing
 stani
 stant
@@ -7547,6 +7535,7 @@ studi
 studio
 stufe
 stup
+stur
 sty
 style
 stätte
@@ -7902,6 +7891,7 @@ traction
 traf
 trag
 trage
+trait
 tral
 tram
 tran
@@ -8021,7 +8011,6 @@ tzer
 tà
 tá
 tán
-tänd
 té
 u
 ua
@@ -8068,7 +8057,6 @@ uit
 uk
 uke
 uki
-ukra
 ul
 ula
 ulan
@@ -8209,6 +8197,7 @@ utta
 utti
 utum
 uu
+uv
 uva
 uvat
 uvi
@@ -8332,6 +8321,7 @@ vert
 verta
 verte
 verti
+verwaltung
 very
 ves
 vesi
@@ -8358,7 +8348,6 @@ video
 vidi
 vido
 vie
-viel
 vien
 vier
 viera
@@ -8450,6 +8439,7 @@ vé
 w
 wa
 wahi
+wahl
 wak
 wal
 wald
@@ -8483,6 +8473,7 @@ weil
 wein
 weis
 weise
+weit
 wel
 well
 welt
@@ -8707,6 +8698,7 @@ zzi
 zzini
 zzo
 zá
+zón
 §
 ©
 ­
@@ -8739,13 +8731,11 @@ zá
 ä
 äh
 än
-är
 ärt
 ça
 çe
 ço
 è
-ène
 ère
 ès
 é
@@ -8804,6 +8794,7 @@ zá
 üm
 ün
 ür
+ütt
 ütz
 ć
 č
@@ -8852,6 +8843,7 @@ zá
 ▁ABC
 ▁AC
 ▁AD
+▁ADA
 ▁AE
 ▁AF
 ▁AFP
@@ -9143,7 +9135,6 @@ zá
 ▁Antonio
 ▁Antón
 ▁Anul
-▁Anwar
 ▁Any
 ▁Ao
 ▁Ap
@@ -9165,7 +9156,6 @@ zá
 ▁Arabi
 ▁Arabia
 ▁Aran
-▁Arbeit
 ▁Arbeits
 ▁Arc
 ▁Arch
@@ -9434,7 +9424,6 @@ zá
 ▁Beethoven
 ▁Beg
 ▁Beh
-▁Behinderung
 ▁Bei
 ▁Beijing
 ▁Bel
@@ -9634,7 +9623,6 @@ zá
 ▁Bran
 ▁Brand
 ▁Brasil
-▁Brass
 ▁Brat
 ▁Bratislava
 ▁Braun
@@ -9649,6 +9637,7 @@ zá
 ▁Brenn
 ▁Brent
 ▁Brexit
+▁Brez
 ▁Bri
 ▁Brian
 ▁Bridge
@@ -9678,6 +9667,7 @@ zá
 ▁Brug
 ▁Brun
 ▁Bruno
+▁Brussel
 ▁Brut
 ▁Bruxelles
 ▁Bryan
@@ -9733,7 +9723,6 @@ zá
 ▁CAP
 ▁CAR
 ▁CAS
-▁CASA
 ▁CAT
 ▁CB
 ▁CBS
@@ -9835,6 +9824,7 @@ zá
 ▁Capitol
 ▁Capo
 ▁Capri
+▁Captain
 ▁Car
 ▁Cara
 ▁Carbon
@@ -9989,7 +9979,6 @@ zá
 ▁Christopher
 ▁Chro
 ▁Chrome
-▁Chrysler
 ▁Chu
 ▁Chuck
 ▁Chun
@@ -10182,6 +10171,7 @@ zá
 ▁Cop
 ▁Copa
 ▁Copenhagen
+▁Copyright
 ▁Cor
 ▁Coral
 ▁Coraz
@@ -10266,6 +10256,7 @@ zá
 ▁Customer
 ▁Cy
 ▁Cyber
+▁Cyn
 ▁Cyr
 ▁Cé
 ▁D
@@ -10297,7 +10288,6 @@ zá
 ▁DS
 ▁DSGVO
 ▁DU
-▁DVD
 ▁DW
 ▁Da
 ▁Dach
@@ -10353,6 +10343,7 @@ zá
 ▁Dec
 ▁December
 ▁Deci
+▁Decora
 ▁Decreto
 ▁Deep
 ▁Def
@@ -10430,6 +10421,7 @@ zá
 ▁Die
 ▁Diego
 ▁Dienst
+▁Dienstleistung
 ▁Diesel
 ▁Diet
 ▁Diff
@@ -10513,6 +10505,7 @@ zá
 ▁Dopo
 ▁Dor
 ▁Dora
+▁Dorf
 ▁Dori
 ▁Dorot
 ▁Dortmund
@@ -10809,12 +10802,12 @@ zá
 ▁Ez
 ▁F
 ▁FA
-▁FAQ
 ▁FAR
 ▁FC
 ▁FE
 ▁FEB
 ▁FER
+▁FF
 ▁FI
 ▁FIA
 ▁FIFA
@@ -10988,7 +10981,6 @@ zá
 ▁Fog
 ▁Foi
 ▁Fol
-▁Folk
 ▁Follow
 ▁Fon
 ▁Fond
@@ -11106,6 +11098,7 @@ zá
 ▁GPS
 ▁GPU
 ▁GR
+▁GRA
 ▁GS
 ▁GSM
 ▁GT
@@ -11153,11 +11146,13 @@ zá
 ▁Garden
 ▁Gareth
 ▁Garri
+▁Garten
 ▁Gary
 ▁Gas
 ▁Gast
 ▁Gastro
 ▁Gat
+▁Gate
 ▁Gates
 ▁Gateway
 ▁Gau
@@ -11206,7 +11201,6 @@ zá
 ▁Gesellschaft
 ▁Gest
 ▁Gestion
-▁Gesundheit
 ▁Gesù
 ▁Get
 ▁Gew
@@ -11373,6 +11367,7 @@ zá
 ▁Gut
 ▁Guy
 ▁Guz
+▁Gwen
 ▁Gy
 ▁Győr
 ▁Gé
@@ -11411,6 +11406,7 @@ zá
 ▁Hadi
 ▁Haf
 ▁Hafta
+▁Haftung
 ▁Hag
 ▁Hahn
 ▁Hai
@@ -11464,6 +11460,7 @@ zá
 ▁Hawaii
 ▁Hawk
 ▁Hay
+▁Hazard
 ▁Hd
 ▁He
 ▁Hea
@@ -11471,7 +11468,6 @@ zá
 ▁Health
 ▁Heart
 ▁Heb
-▁Hebr
 ▁Hed
 ▁Hei
 ▁Heide
@@ -11523,6 +11519,7 @@ zá
 ▁Highland
 ▁Highlight
 ▁Hil
+▁Hilde
 ▁Hilfe
 ▁Hill
 ▁Hillary
@@ -11541,7 +11538,6 @@ zá
 ▁Hits
 ▁Ho
 ▁Hoch
-▁Hockey
 ▁Hod
 ▁Hoe
 ▁Hof
@@ -11550,6 +11546,7 @@ zá
 ▁Hol
 ▁Hold
 ▁Holding
+▁Holiday
 ▁Holl
 ▁Holland
 ▁Hollywood
@@ -11559,7 +11556,6 @@ zá
 ▁Holz
 ▁Hom
 ▁Home
-▁Homepage
 ▁Homo
 ▁Hon
 ▁Honda
@@ -11644,7 +11640,6 @@ zá
 ▁IN
 ▁INC
 ▁IND
-▁INFO
 ▁INFORMA
 ▁INTER
 ▁IP
@@ -11668,7 +11663,6 @@ zá
 ▁Idee
 ▁Ident
 ▁Identifica
-▁Idris
 ▁If
 ▁Ig
 ▁Iga
@@ -11961,6 +11955,7 @@ zá
 ▁K
 ▁KB
 ▁KE
+▁KER
 ▁KG
 ▁KI
 ▁KL
@@ -11999,7 +11994,6 @@ zá
 ▁Kar
 ▁Kara
 ▁Kardashian
-▁Karel
 ▁Karen
 ▁Kari
 ▁Karib
@@ -12063,6 +12057,7 @@ zá
 ▁Kick
 ▁Kid
 ▁Kids
+▁Kiel
 ▁Kiev
 ▁Kil
 ▁Kill
@@ -12105,6 +12100,7 @@ zá
 ▁Kok
 ▁Kol
 ▁Kola
+▁Kolle
 ▁Kolo
 ▁Kom
 ▁Kommer
@@ -12114,12 +12110,10 @@ zá
 ▁Konrad
 ▁Konstantin
 ▁Koop
-▁Kop
 ▁Kopf
 ▁Kor
 ▁Korea
 ▁Korean
-▁Koro
 ▁Kos
 ▁Kosovo
 ▁Kost
@@ -12194,6 +12188,7 @@ zá
 ▁LO
 ▁LOS
 ▁LU
+▁LV
 ▁La
 ▁Lab
 ▁Laba
@@ -12282,6 +12277,7 @@ zá
 ▁Leh
 ▁Lei
 ▁Leicester
+▁Leipzig
 ▁Leit
 ▁Lem
 ▁Len
@@ -12490,7 +12486,6 @@ zá
 ▁MEL
 ▁MERC
 ▁MG
-▁MHz
 ▁MI
 ▁MIL
 ▁MINI
@@ -12939,6 +12934,7 @@ zá
 ▁Montpellier
 ▁Montreal
 ▁Monument
+▁Moo
 ▁Mood
 ▁Moon
 ▁Moore
@@ -13139,6 +13135,7 @@ zá
 ▁New
 ▁Newcastle
 ▁News
+▁Newsletter
 ▁Newton
 ▁Next
 ▁Neymar
@@ -13272,6 +13269,7 @@ zá
 ▁Ogni
 ▁Oh
 ▁Ohio
+▁Ohr
 ▁Oil
 ▁Ok
 ▁Oklahoma
@@ -13405,6 +13403,7 @@ zá
 ▁PR
 ▁PRE
 ▁PRI
+▁PRIM
 ▁PRO
 ▁PS
 ▁PSD
@@ -13633,6 +13632,7 @@ zá
 ▁Piet
 ▁Pietro
 ▁Pig
+▁Pik
 ▁Pil
 ▁Pilot
 ▁Pin
@@ -13664,7 +13664,6 @@ zá
 ▁Platform
 ▁Platinum
 ▁Platon
-▁Platz
 ▁Play
 ▁PlayStation
 ▁Playboy
@@ -13851,6 +13850,7 @@ zá
 ▁Puc
 ▁Pul
 ▁Puli
+▁Pull
 ▁Puma
 ▁Pun
 ▁Punjab
@@ -13915,6 +13915,7 @@ zá
 ▁REC
 ▁RED
 ▁REG
+▁RES
 ▁RF
 ▁RI
 ▁RM
@@ -14030,6 +14031,7 @@ zá
 ▁Rei
 ▁Reich
 ▁Rein
+▁Reis
 ▁Reka
 ▁Rela
 ▁Relation
@@ -14102,7 +14104,6 @@ zá
 ▁Rif
 ▁Rig
 ▁Riga
-▁Right
 ▁Rights
 ▁Rihanna
 ▁Rim
@@ -14253,7 +14254,6 @@ zá
 ▁SPORT
 ▁SR
 ▁SS
-▁SSL
 ▁ST
 ▁STR
 ▁SU
@@ -14265,7 +14265,6 @@ zá
 ▁Sa
 ▁Saa
 ▁Saad
-▁Saar
 ▁Sab
 ▁Saba
 ▁Sabato
@@ -14588,7 +14587,6 @@ zá
 ▁Skor
 ▁Skri
 ▁Sky
-▁Skype
 ▁Sla
 ▁Slav
 ▁Sleep
@@ -14620,6 +14618,7 @@ zá
 ▁Social
 ▁Sociale
 ▁Socialista
+▁Sociedad
 ▁Society
 ▁Società
 ▁Sociolog
@@ -14661,7 +14660,6 @@ zá
 ▁Sou
 ▁Soul
 ▁Sound
-▁Source
 ▁South
 ▁Southampton
 ▁Southern
@@ -14793,7 +14791,6 @@ zá
 ▁Straße
 ▁Stre
 ▁Street
-▁Stress
 ▁Stri
 ▁Strik
 ▁Strip
@@ -14866,6 +14863,7 @@ zá
 ▁Svizzera
 ▁Swa
 ▁Swan
+▁Swarovski
 ▁Swe
 ▁Sweden
 ▁Swedish
@@ -15260,7 +15258,6 @@ zá
 ▁Ultra
 ▁Um
 ▁Uma
-▁Umgebung
 ▁Un
 ▁Una
 ▁Und
@@ -15340,6 +15337,7 @@ zá
 ▁Vanessa
 ▁Var
 ▁Vara
+▁Varga
 ▁Vari
 ▁Varia
 ▁Variante
@@ -15380,6 +15378,7 @@ zá
 ▁Vergi
 ▁Verifica
 ▁Verk
+▁Verkehrs
 ▁Verme
 ▁Verona
 ▁Veronica
@@ -15476,6 +15475,7 @@ zá
 ▁Von
 ▁Vor
 ▁Vos
+▁Vou
 ▁Vrij
 ▁Vu
 ▁Vuitton
@@ -15654,7 +15654,6 @@ zá
 ▁Yama
 ▁Yamaha
 ▁Yan
-▁Yana
 ▁Yang
 ▁Yar
 ▁Yara
@@ -15720,7 +15719,6 @@ zá
 ▁Zu
 ▁Zub
 ▁Zuckerberg
-▁Zug
 ▁Zugang
 ▁Zul
 ▁Zur
@@ -16082,6 +16080,7 @@ zá
 ▁anomali
 ▁anonim
 ▁another
+▁answer
 ▁ant
 ▁anta
 ▁antar
@@ -16350,6 +16349,7 @@ zá
 ▁autorizza
 ▁autostrad
 ▁av
+▁ava
 ▁available
 ▁aval
 ▁avance
@@ -16522,6 +16522,7 @@ zá
 ▁berg
 ▁berlin
 ▁bersa
+▁beschränkt
 ▁best
 ▁beste
 ▁bestia
@@ -17489,6 +17490,7 @@ zá
 ▁continu
 ▁continua
 ▁continuamente
+▁continuar
 ▁continuare
 ▁continue
 ▁continued
@@ -17692,7 +17694,6 @@ zá
 ▁croc
 ▁cron
 ▁cross
-▁crowd
 ▁crowdfunding
 ▁cru
 ▁crucial
@@ -17747,7 +17748,6 @@ zá
 ▁cut
 ▁cute
 ▁cv
-▁cy
 ▁cyber
 ▁cycle
 ▁d
@@ -17818,7 +17818,6 @@ zá
 ▁decline
 ▁decor
 ▁decora
-▁decorar
 ▁decorat
 ▁decorativ
 ▁decrease
@@ -17909,7 +17908,6 @@ zá
 ▁desktop
 ▁desse
 ▁dessert
-▁dest
 ▁desta
 ▁destabiliz
 ▁destin
@@ -18191,6 +18189,7 @@ zá
 ▁domestic
 ▁domicili
 ▁domicilio
+▁domin
 ▁domina
 ▁dominan
 ▁dominant
@@ -18390,7 +18389,6 @@ zá
 ▁elite
 ▁ella
 ▁elle
-▁ellen
 ▁elleni
 ▁elu
 ▁em
@@ -18748,6 +18746,7 @@ zá
 ▁fast
 ▁fastidio
 ▁fat
+▁fata
 ▁fatal
 ▁fate
 ▁fati
@@ -18830,7 +18829,6 @@ zá
 ▁fibro
 ▁fiction
 ▁fid
-▁fide
 ▁fidei
 ▁fidel
 ▁fiducia
@@ -19063,7 +19061,6 @@ zá
 ▁frig
 ▁frigo
 ▁frigorifer
-▁fris
 ▁fritt
 ▁fro
 ▁from
@@ -19407,6 +19404,7 @@ zá
 ▁h
 ▁ha
 ▁habitat
+▁hack
 ▁hacker
 ▁had
 ▁hai
@@ -19453,6 +19451,7 @@ zá
 ▁highly
 ▁him
 ▁hip
+▁hipp
 ▁his
 ▁historic
 ▁historical
@@ -19849,7 +19848,6 @@ zá
 ▁interior
 ▁interlocutor
 ▁intermedi
-▁intern
 ▁interna
 ▁internal
 ▁international
@@ -19990,6 +19988,7 @@ zá
 ▁just
 ▁justice
 ▁k
+▁kB
 ▁kW
 ▁kWh
 ▁ka
@@ -20876,6 +20875,7 @@ zá
 ▁multiple
 ▁multipli
 ▁mum
+▁mun
 ▁muni
 ▁municipal
 ▁municipi
@@ -23035,6 +23035,7 @@ zá
 ▁saranno
 ▁sare
 ▁sarebbe
+▁sarta
 ▁sarà
 ▁sata
 ▁satellit
@@ -23379,6 +23380,7 @@ zá
 ▁sintomi
 ▁sir
 ▁siri
+▁sistem
 ▁sistema
 ▁sistemi
 ▁sit
@@ -23672,14 +23674,12 @@ zá
 ▁standing
 ▁stanno
 ▁stanza
-▁stap
 ▁star
 ▁stare
 ▁start
 ▁started
 ▁starting
 ▁startup
-▁stat
 ▁stata
 ▁state
 ▁statement
@@ -23942,6 +23942,7 @@ zá
 ▁talk
 ▁tall
 ▁talo
+▁talp
 ▁talu
 ▁tam
 ▁tamil
@@ -24244,7 +24245,6 @@ zá
 ▁tout
 ▁toward
 ▁towards
-▁town
 ▁tr
 ▁tra
 ▁traballa
@@ -24674,6 +24674,7 @@ zá
 ▁veste
 ▁vesti
 ▁vet
+▁veter
 ▁veteran
 ▁veterinar
 ▁veti
@@ -24921,6 +24922,7 @@ zá
 ▁xxx
 ▁y
 ▁ya
+▁yard
 ▁ye
 ▁year
 ▁years
@@ -24978,12 +24980,10 @@ zá
 ▁Š
 ▁Še
 ▁Ţ
-▁̈
 ▁μ
 ▁€
 ▁€.
 ▁€/
-▁→
 ▁■
 ▁▪
 ▁●

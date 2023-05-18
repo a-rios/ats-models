@@ -1,5 +1,6 @@
 !
 !"
+!)
 "
 ")
 "),
@@ -225,6 +226,7 @@ CF
 CG
 CH
 CHE
+CHI
 CHO
 CI
 CIS
@@ -263,7 +265,6 @@ Ci
 Claude
 Club
 Co
-Code
 Col
 Com
 Commerce
@@ -291,7 +292,6 @@ DH
 DI
 DIC
 DL
-DM
 DO
 DP
 DR
@@ -384,6 +384,7 @@ Ex
 Expert
 F
 FA
+FAR
 FB
 FC
 FE
@@ -471,7 +472,6 @@ HAN
 HEL
 HER
 HING
-HK
 HL
 HO
 HP
@@ -498,6 +498,7 @@ Holstein
 Hor
 How
 Hu
+Hub
 Hy
 I
 IA
@@ -521,8 +522,9 @@ INGER
 IO
 IP
 IR
-IRE
+IRA
 IS
+ISA
 ISS
 IT
 ITA
@@ -531,7 +533,6 @@ IV
 IVA
 Ich
 If
-Ik
 Il
 Im
 Imp
@@ -621,7 +622,6 @@ MA
 MAS
 MB
 MC
-MD
 ME
 MEDIA
 MEN
@@ -687,7 +687,6 @@ NC
 ND
 NE
 NG
-NH
 NI
 NL
 NO
@@ -695,7 +694,6 @@ NOV
 NP
 NR
 NS
-NT
 NV
 NY
 NZ
@@ -721,6 +719,7 @@ OC
 OG
 OK
 OLA
+OLI
 OM
 OMS
 ON
@@ -797,6 +796,7 @@ Pero
 Person
 Peter
 Pfalz
+Ph
 Photo
 Pi
 Pierre
@@ -851,10 +851,10 @@ RM
 RN
 RNA
 RO
-RP
 RR
 RS
 RT
+RUN
 RV
 RW
 RY
@@ -901,6 +901,7 @@ SU
 SV
 SW
 Sa
+Sab
 Saint
 Sal
 Sam
@@ -967,7 +968,6 @@ TP
 TS
 TT
 TV
-TW
 TX
 TY
 Ta
@@ -1006,11 +1006,9 @@ UC
 UCI
 UE
 UG
-UK
 UL
 UM
 UN
-UND
 UNG
 UP
 UR
@@ -1068,7 +1066,6 @@ WF
 WG
 WI
 WM
-WN
 WO
 WR
 WS
@@ -1095,7 +1092,6 @@ Win
 Wir
 With
 Wo
-Work
 Württemberg
 X
 Y
@@ -1492,6 +1488,7 @@ ards
 are
 area
 aren
+arena
 ares
 arg
 argent
@@ -3269,6 +3266,7 @@ fru
 frut
 fs
 ft
+fta
 fte
 ften
 fter
@@ -3641,6 +3639,7 @@ haf
 haft
 hafte
 hagen
+hai
 hal
 halb
 hale
@@ -3675,7 +3674,6 @@ have
 haven
 hawk
 hay
-hd
 he
 hea
 head
@@ -3966,7 +3964,6 @@ ild
 ile
 ilen
 iler
-ilha
 ili
 iling
 ilio
@@ -4113,7 +4110,6 @@ inski
 insta
 install
 installation
-installazione
 installer
 instant
 institut
@@ -4685,7 +4681,6 @@ lera
 lere
 leri
 lerin
-lerne
 les
 lesen
 lesi
@@ -4807,7 +4802,6 @@ liver
 liz
 liza
 lizar
-lk
 ll
 lla
 llan
@@ -5014,7 +5008,6 @@ math
 mati
 matic
 matica
-matik
 mato
 matricula
 may
@@ -5180,6 +5173,7 @@ moc
 mod
 modell
 modern
+modo
 moi
 mol
 moli
@@ -5262,7 +5256,6 @@ mín
 mít
 mó
 món
-mö
 möglich
 möglichkeiten
 möglichst
@@ -5482,6 +5475,7 @@ ntino
 ntis
 nto
 nts
+ntu
 nu
 nud
 null
@@ -5797,6 +5791,7 @@ pakt
 pal
 pala
 pan
+panda
 pande
 pani
 pano
@@ -5892,6 +5887,7 @@ phon
 phone
 phor
 phos
+photo
 phy
 pi
 pia
@@ -6098,6 +6094,7 @@ protec
 prove
 provi
 provo
+prox
 prozess
 pru
 prä
@@ -6781,7 +6778,6 @@ sey
 sfrist
 sh
 sha
-shan
 she
 shed
 shell
@@ -6880,7 +6876,6 @@ smo
 so
 soci
 social
-sod
 sol
 sola
 sole
@@ -7338,7 +7333,6 @@ therapeut
 therapie
 therapy
 thi
-thik
 thing
 think
 thir
@@ -7350,7 +7344,6 @@ thri
 thro
 through
 thy
-thèque
 thé
 thérapie
 ti
@@ -7510,7 +7503,6 @@ treff
 treffen
 treiben
 tren
-trend
 tres
 tress
 treten
@@ -7845,7 +7837,6 @@ vare
 vari
 varia
 variant
-varo
 vas
 vasta
 vat
@@ -8757,6 +8748,7 @@ züge
 ▁Airways
 ▁Ajax
 ▁Ak
+▁Akademi
 ▁Aktion
 ▁Aktiv
 ▁Aktivitäten
@@ -8905,7 +8897,6 @@ züge
 ▁Anschluss
 ▁Ansicht
 ▁Ansonsten
-▁Ansprechpartner
 ▁Anspruch
 ▁Ansprüche
 ▁Ant
@@ -8921,7 +8912,6 @@ züge
 ▁Antrag
 ▁Antwort
 ▁Antworten
-▁Antón
 ▁Anwendung
 ▁Any
 ▁Anzahl
@@ -9106,6 +9096,7 @@ züge
 ▁BO
 ▁BR
 ▁BRU
+▁BT
 ▁Ba
 ▁Bab
 ▁Baby
@@ -9150,7 +9141,6 @@ züge
 ▁Barba
 ▁Barbara
 ▁Barber
-▁Barbie
 ▁Barcelo
 ▁Barcelona
 ▁Bari
@@ -9166,7 +9156,6 @@ züge
 ▁Barça
 ▁Bas
 ▁Base
-▁Basel
 ▁Basil
 ▁Basilica
 ▁Basis
@@ -9334,6 +9323,7 @@ züge
 ▁Bla
 ▁Black
 ▁Blair
+▁Blake
 ▁Blanc
 ▁Blanca
 ▁Blanche
@@ -9516,6 +9506,7 @@ züge
 ▁CI
 ▁CIA
 ▁CIG
+▁CL
 ▁CN
 ▁CNN
 ▁CO
@@ -10097,6 +10088,7 @@ züge
 ▁Dil
 ▁Dim
 ▁Dimension
+▁Dimitri
 ▁Din
 ▁Dina
 ▁Dinge
@@ -10655,7 +10647,6 @@ züge
 ▁Folge
 ▁Folgen
 ▁Follow
-▁Fon
 ▁Fond
 ▁Fonda
 ▁Fondazione
@@ -10760,6 +10751,7 @@ züge
 ▁Funk
 ▁Funktion
 ▁Fur
+▁Fusion
 ▁Future
 ▁Fuß
 ▁Fußball
@@ -10850,7 +10842,6 @@ züge
 ▁Gegner
 ▁Geh
 ▁Geheimnis
-▁Gehirn
 ▁Geist
 ▁Gel
 ▁Geld
@@ -11180,7 +11171,6 @@ züge
 ▁Hell
 ▁Helm
 ▁Helmut
-▁Help
 ▁Helsinki
 ▁Hem
 ▁Hen
@@ -11389,7 +11379,6 @@ züge
 ▁Indian
 ▁Indiana
 ▁Indien
-▁Individual
 ▁Indon
 ▁Indonesia
 ▁Industria
@@ -11500,6 +11489,7 @@ züge
 ▁Italien
 ▁Italy
 ▁Ivan
+▁Ivo
 ▁Iz
 ▁J
 ▁JA
@@ -11637,7 +11627,6 @@ züge
 ▁Jürgen
 ▁K
 ▁KB
-▁KP
 ▁Ka
 ▁Kab
 ▁Kaba
@@ -11766,7 +11755,6 @@ züge
 ▁Kleidung
 ▁Klein
 ▁Kli
-▁Klient
 ▁Klima
 ▁Klin
 ▁Klinik
@@ -12079,6 +12067,7 @@ züge
 ▁Logistik
 ▁Logo
 ▁Loh
+▁Lok
 ▁Lokal
 ▁Lola
 ▁Lombard
@@ -12335,7 +12324,6 @@ züge
 ▁McC
 ▁McDonald
 ▁McG
-▁McLaren
 ▁Me
 ▁Mecklenburg
 ▁Med
@@ -12451,6 +12439,7 @@ züge
 ▁Mind
 ▁Minder
 ▁Mindest
+▁Mine
 ▁Mineral
 ▁Mini
 ▁Minister
@@ -12597,7 +12586,6 @@ züge
 ▁Musical
 ▁Musik
 ▁Musk
-▁Muskel
 ▁Muslim
 ▁Muss
 ▁Must
@@ -12751,7 +12739,6 @@ züge
 ▁Night
 ▁Nik
 ▁Niko
-▁Nikol
 ▁Nikola
 ▁Nina
 ▁Ning
@@ -12923,6 +12910,7 @@ züge
 ▁Orient
 ▁Oriental
 ▁Oriente
+▁Origin
 ▁Original
 ▁Orlando
 ▁Orleans
@@ -13226,6 +13214,7 @@ züge
 ▁Port
 ▁Porta
 ▁Portal
+▁Porte
 ▁Porto
 ▁Portu
 ▁Portugal
@@ -13330,6 +13319,7 @@ züge
 ▁Protocol
 ▁Protokoll
 ▁Provin
+▁Province
 ▁Provincia
 ▁Provincial
 ▁Prozent
@@ -13831,7 +13821,6 @@ züge
 ▁Schlüssel
 ▁Schmerz
 ▁Schmidt
-▁Schmuck
 ▁Schnee
 ▁Schneider
 ▁Schnell
@@ -13923,6 +13912,7 @@ züge
 ▁Selon
 ▁Sem
 ▁Semana
+▁Semi
 ▁Sempre
 ▁Sen
 ▁Senado
@@ -13942,7 +13932,6 @@ züge
 ▁Serena
 ▁Serge
 ▁Sergej
-▁Sergi
 ▁Sergio
 ▁Seri
 ▁Serie
@@ -14032,6 +14021,7 @@ züge
 ▁Sir
 ▁Siria
 ▁Sistema
+▁Site
 ▁Situ
 ▁Situation
 ▁Sitz
@@ -14099,6 +14089,7 @@ züge
 ▁Sou
 ▁Soul
 ▁Sound
+▁Source
 ▁South
 ▁Southern
 ▁Soviet
@@ -14164,7 +14155,6 @@ züge
 ▁Staff
 ▁Staffel
 ▁Stahl
-▁Stal
 ▁Stalin
 ▁Stamm
 ▁Stamp
@@ -14227,7 +14217,6 @@ züge
 ▁Store
 ▁Storm
 ▁Story
-▁Str
 ▁Stra
 ▁Straf
 ▁Strand
@@ -14546,6 +14535,7 @@ züge
 ▁Tot
 ▁Total
 ▁Tottenham
+▁Touch
 ▁Toujours
 ▁Toulouse
 ▁Tour
@@ -14613,6 +14603,7 @@ züge
 ▁Turki
 ▁Turn
 ▁Turnier
+▁Tut
 ▁Tuttavia
 ▁Tutte
 ▁Tutti
@@ -14887,6 +14878,7 @@ züge
 ▁Vlad
 ▁Vladimir
 ▁Vo
+▁Vodafone
 ▁Vogel
 ▁Voi
 ▁Voice
@@ -15090,7 +15082,6 @@ züge
 ▁Wy
 ▁Wähle
 ▁Während
-▁Wände
 ▁Wärme
 ▁Wörter
 ▁Wünsche
@@ -15138,6 +15129,7 @@ züge
 ▁Zahn
 ▁Zapo
 ▁Zar
+▁Zara
 ▁Zaragoza
 ▁Ze
 ▁Zealand
@@ -15335,7 +15327,6 @@ züge
 ▁acquis
 ▁acquista
 ▁acquistare
-▁acredita
 ▁across
 ▁act
 ▁acte
@@ -15594,6 +15585,7 @@ züge
 ▁alerta
 ▁algo
 ▁algorithm
+▁algoritm
 ▁alguien
 ▁alguna
 ▁algunas
@@ -15928,6 +15920,7 @@ züge
 ▁appunto
 ▁apre
 ▁aprecia
+▁aprende
 ▁aprender
 ▁aprendi
 ▁aprendizaje
@@ -16511,7 +16504,6 @@ züge
 ▁bekommen
 ▁bekommt
 ▁bel
-▁bela
 ▁belast
 ▁bele
 ▁beleid
@@ -16577,6 +16569,7 @@ züge
 ▁besi
 ▁besitzen
 ▁besitzt
+▁beso
 ▁besoin
 ▁besoins
 ▁besondere
@@ -16892,6 +16885,7 @@ züge
 ▁cabinet
 ▁cable
 ▁cabo
+▁cacao
 ▁caccia
 ▁cache
 ▁cad
@@ -17858,6 +17852,7 @@ züge
 ▁congela
 ▁congratula
 ▁congrega
+▁conjuga
 ▁conjunta
 ▁conjunto
 ▁conmemora
@@ -18448,7 +18443,6 @@ züge
 ▁dalla
 ▁dalle
 ▁dallo
-▁dam
 ▁dama
 ▁damage
 ▁damals
@@ -18659,6 +18653,7 @@ züge
 ▁dennoch
 ▁denomina
 ▁denominado
+▁dental
 ▁dentist
 ▁dentro
 ▁denuncia
@@ -19734,7 +19729,6 @@ züge
 ▁entwickeln
 ▁entwickelt
 ▁envelop
-▁envia
 ▁enviado
 ▁enviar
 ▁envie
@@ -21733,6 +21727,7 @@ züge
 ▁impianti
 ▁impiega
 ▁implant
+▁implantación
 ▁implement
 ▁implementa
 ▁implementar
@@ -21948,6 +21943,7 @@ züge
 ▁inférieur
 ▁ing
 ▁ingen
+▁inglesa
 ▁inglese
 ▁inglés
 ▁ingredientes
@@ -22097,6 +22093,7 @@ züge
 ▁interes
 ▁interesa
 ▁interesadas
+▁interesado
 ▁interesados
 ▁interesante
 ▁intereses
@@ -22993,7 +22990,6 @@ züge
 ▁mali
 ▁malo
 ▁mam
-▁mama
 ▁maman
 ▁mamma
 ▁man
@@ -23376,7 +23372,6 @@ züge
 ▁min
 ▁mina
 ▁mind
-▁minder
 ▁mindestens
 ▁mine
 ▁minera
@@ -24305,6 +24300,7 @@ züge
 ▁ottenuto
 ▁otti
 ▁ottima
+▁ottimizza
 ▁ottimo
 ▁ottobre
 ▁ou
@@ -26748,6 +26744,7 @@ züge
 ▁rock
 ▁roda
 ▁rodea
+▁rodil
 ▁roi
 ▁roj
 ▁roja
@@ -27531,7 +27528,9 @@ züge
 ▁slightly
 ▁slip
 ▁slogan
+▁slot
 ▁slova
+▁sloven
 ▁slow
 ▁slowly
 ▁slu
@@ -27632,7 +27631,6 @@ züge
 ▁sollte
 ▁sollten
 ▁solo
-▁sols
 ▁soltanto
 ▁solucionar
 ▁soluciones
@@ -27982,6 +27980,7 @@ züge
 ▁strikt
 ▁string
 ▁strip
+▁stro
 ▁stroke
 ▁strong
 ▁stru
@@ -29144,6 +29143,7 @@ züge
 ▁vegeta
 ▁vegetables
 ▁vegetal
+▁vehement
 ▁vehicle
 ▁vehicles
 ▁vehículo
@@ -29828,7 +29828,6 @@ züge
 ▁zwölf
 ▁zählen
 ▁zählt
-▁{
 ▁¡
 ▁£
 ▁§
@@ -29997,4 +29996,5 @@ züge
 ▁
 
 
+
 

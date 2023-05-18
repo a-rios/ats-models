@@ -1303,6 +1303,7 @@ HR
 HRA
 HS
 HT
+HTML
 HU
 HUB
 HUN
@@ -1407,7 +1408,6 @@ IJE
 IJI
 IK
 IKA
-IKAN
 IKE
 IKI
 IKK
@@ -1577,7 +1577,6 @@ JI
 JJ
 JK
 JM
-JN
 JO
 JP
 JPG
@@ -1647,7 +1646,6 @@ KK
 KL
 KLA
 KLE
-KLI
 KM
 KN
 KO
@@ -1855,7 +1853,6 @@ Lyk
 LÉ
 LÓ
 LÜ
-Lösung
 M
 MA
 MAG
@@ -2015,6 +2012,7 @@ Mus
 Music
 My
 Myanmar
+MÄ
 Mü
 N
 NA
@@ -2115,7 +2113,6 @@ National
 Natur
 Nav
 Ne
-Nederland
 Nem
 Net
 New
@@ -2994,6 +2991,7 @@ Type
 TÁR
 TÄ
 TÉ
+TÜ
 Türk
 Türkiye
 U
@@ -3191,6 +3189,7 @@ Vo
 Vojvod
 Vol
 Vor
+VÄ
 W
 WA
 WAK
@@ -4386,8 +4385,8 @@ bes
 besc
 besi
 best
+bestand
 beste
-bestimmungen
 bestätigung
 besuch
 beszél
@@ -4464,6 +4463,7 @@ bind
 binda
 binder
 binding
+bindung
 bine
 bing
 bini
@@ -4529,6 +4529,7 @@ blon
 blu
 blue
 bly
+blätter
 blé
 bn
 bo
@@ -4943,6 +4944,7 @@ cht
 chte
 chten
 chter
+chtige
 chtung
 chu
 chung
@@ -5352,7 +5354,6 @@ daten
 dati
 dating
 dato
-datum
 dau
 dauer
 dav
@@ -5515,6 +5516,7 @@ dija
 dijk
 dik
 dika
+diko
 dil
 dila
 dilar
@@ -5588,6 +5590,7 @@ dlo
 dna
 dne
 dni
+dnik
 dno
 do
 dob
@@ -6033,6 +6036,7 @@ enregistrement
 ens
 ensa
 ense
+enseignement
 ensemble
 enses
 ensi
@@ -6116,7 +6120,6 @@ erie
 erien
 eriet
 erii
-erija
 erima
 erin
 ering
@@ -6311,7 +6314,6 @@ eza
 eze
 ezen
 ezer
-ezett
 ezh
 ezi
 ező
@@ -6335,7 +6337,7 @@ factor
 fada
 fag
 fah
-fahren
+fahrer
 fahrt
 fahrzeug
 fail
@@ -6566,7 +6568,6 @@ for
 forbindelse
 force
 ford
-fordern
 fore
 forening
 foreningen
@@ -6673,7 +6674,6 @@ fähig
 fähigkeit
 fähr
 fäl
-fälle
 færdig
 fé
 fér
@@ -6826,7 +6826,6 @@ gerecht
 geri
 geria
 gericht
-gerichte
 gers
 geräte
 ges
@@ -6845,7 +6844,6 @@ gestellt
 gestion
 gesundheit
 get
-getragen
 getreten
 gevoer
 gewalt
@@ -7000,7 +6998,6 @@ graf
 graff
 grafi
 grafic
-grafik
 gram
 grama
 gramm
@@ -7110,7 +7107,6 @@ gy
 gyan
 gyel
 gym
-gyn
 gyr
 gá
 gán
@@ -7411,6 +7407,7 @@ hold
 holder
 holdt
 hole
+holen
 holi
 holm
 holt
@@ -7674,7 +7671,6 @@ ies
 iese
 iet
 ieties
-iešu
 if
 ifa
 ife
@@ -7751,7 +7747,6 @@ iju
 ik
 ika
 ikal
-ikan
 ikas
 ikat
 ike
@@ -8063,7 +8058,6 @@ invest
 investissement
 iny
 inzi
-inä
 inā
 io
 ioara
@@ -8370,6 +8364,7 @@ izki
 izma
 izmi
 izo
+izol
 izou
 izu
 izza
@@ -8873,7 +8868,6 @@ konsult
 konsum
 kontakt
 konto
-kontroll
 konvention
 kool
 koop
@@ -8945,7 +8939,6 @@ kriva
 kro
 krom
 kron
-krot
 krov
 kru
 kry
@@ -9029,13 +9022,13 @@ kw
 kwa
 kwe
 kwenza
-kwi
 ky
 kyl
 kz
 ká
 kás
 kä
+kän
 käs
 kå
 kæmpe
@@ -9775,6 +9768,7 @@ magnet
 magyar
 mah
 maha
+mahal
 mai
 maid
 mail
@@ -10435,6 +10429,7 @@ neem
 neet
 nega
 nego
+nehm
 nehmen
 nehmer
 nei
@@ -11338,7 +11333,6 @@ pero
 pers
 person
 personal
-personen
 personer
 perspektiv
 perä
@@ -11490,6 +11484,7 @@ pli
 plic
 plica
 plication
+plik
 plika
 plin
 plo
@@ -11681,7 +11676,6 @@ prod
 produc
 producent
 product
-produkt
 produkte
 produktion
 profe
@@ -12253,7 +12247,6 @@ rinha
 rinho
 rini
 rink
-rinko
 rinn
 rino
 rinta
@@ -12498,6 +12491,7 @@ rão
 rä
 ränd
 rät
+rätt
 räum
 räume
 räumen
@@ -12641,7 +12635,6 @@ schicht
 schie
 schied
 schiff
-schilder
 schirm
 schlag
 schließ
@@ -12650,15 +12643,12 @@ schluss
 schluß
 schläge
 schlüsse
-schmerz
 school
 schop
 schot
 schreib
 schreiben
-schreibung
 schrift
-schränke
 schul
 schuld
 schule
@@ -12667,6 +12657,7 @@ schutz
 schwe
 schwer
 schä
+schädigung
 schön
 schütz
 sci
@@ -12777,6 +12768,7 @@ sex
 sexual
 sexuell
 sey
+sfrist
 sh
 sha
 shab
@@ -12853,7 +12845,6 @@ sider
 sidi
 sidor
 sie
-siehe
 sien
 sier
 sies
@@ -12930,7 +12921,6 @@ sjö
 sk
 ska
 skai
-skan
 skap
 skar
 skat
@@ -13051,7 +13041,6 @@ spel
 sper
 spett
 spetto
-spezifische
 sphere
 spi
 spice
@@ -13211,7 +13200,6 @@ still
 stille
 stiller
 stilling
-stimmen
 stimmt
 stimmung
 stimul
@@ -13312,7 +13300,6 @@ sty
 style
 styr
 styrelsen
-stä
 städte
 stände
 ständig
@@ -13391,7 +13378,6 @@ sys
 system
 sz
 sza
-szabad
 szak
 szcza
 szcze
@@ -13405,13 +13391,13 @@ szek
 szel
 szent
 szer
-sziget
 szko
 szt
 szter
 szy
 ság
 sä
+sänd
 sæt
 sé
 ség
@@ -13422,7 +13408,6 @@ sö
 sön
 sör
 sø
-sü
 sław
 sť
 sə
@@ -13461,6 +13446,7 @@ taka
 take
 taki
 tako
+takt
 tal
 tala
 talan
@@ -13681,7 +13667,6 @@ tez
 tezza
 th
 tha
-thach
 thai
 thair
 thal
@@ -14180,7 +14165,6 @@ tâ
 tä
 tänd
 tär
-tätigkeit
 té
 tér
 téri
@@ -14691,6 +14675,7 @@ verit
 verk
 verkehr
 verket
+vermögen
 vern
 vernd
 verne
@@ -15118,8 +15103,9 @@ wy
 wyl
 wyll
 wyn
-wyr
 wys
+wählt
+wärme
 wärts
 wässer
 wé
@@ -15407,6 +15393,7 @@ zili
 zim
 zima
 zimi
+zimmer
 zin
 zina
 zing
@@ -16372,7 +16359,6 @@ zə
 ▁Abhi
 ▁Abi
 ▁Abid
-▁Ablauf
 ▁Abo
 ▁Abon
 ▁About
@@ -16471,6 +16457,7 @@ zə
 ▁Afri
 ▁Africa
 ▁African
+▁Afrika
 ▁Afrikaner
 ▁Afrin
 ▁Afro
@@ -16712,7 +16699,7 @@ zə
 ▁Andy
 ▁Ane
 ▁Anerkennung
-▁Anfang
+▁Anfrage
 ▁Ang
 ▁Angebot
 ▁Angebote
@@ -16735,8 +16722,6 @@ zə
 ▁Anita
 ▁Anja
 ▁Ankara
-▁Anlage
-▁Anmeldung
 ▁Ann
 ▁Anna
 ▁Anne
@@ -16830,6 +16815,7 @@ zə
 ▁Arap
 ▁Arbeid
 ▁Arbeit
+▁Arbeiten
 ▁Arbeitgeber
 ▁Arbeitnehmer
 ▁Arbeits
@@ -16902,6 +16888,7 @@ zə
 ▁Arvi
 ▁Arvo
 ▁Ary
+▁Arzt
 ▁As
 ▁Asa
 ▁Asad
@@ -16995,7 +16982,6 @@ zə
 ▁Auschwitz
 ▁Ausflug
 ▁Auskunft
-▁Ausland
 ▁Ausnahme
 ▁Ausstellung
 ▁Austin
@@ -17300,6 +17286,7 @@ zə
 ▁Beck
 ▁Beckham
 ▁Bed
+▁Bedürfnisse
 ▁Bee
 ▁Beer
 ▁Beethoven
@@ -17314,7 +17301,6 @@ zə
 ▁Behinderung
 ▁Bei
 ▁Beijing
-▁Beim
 ▁Beispiel
 ▁Beitrag
 ▁Beiträge
@@ -17726,6 +17712,7 @@ zə
 ▁Bryn
 ▁Brz
 ▁Brø
+▁Brøndby
 ▁Brü
 ▁Brücke
 ▁Bu
@@ -18597,7 +18584,6 @@ zə
 ▁DIRE
 ▁DIRECT
 ▁DIS
-▁DISP
 ▁DIY
 ▁DJ
 ▁DK
@@ -18652,6 +18638,7 @@ zə
 ▁Damen
 ▁Damer
 ▁Damian
+▁Damit
 ▁Dan
 ▁Dana
 ▁Dance
@@ -18764,6 +18751,7 @@ zə
 ▁Denn
 ▁Denne
 ▁Dennis
+▁Dennoch
 ▁Dentro
 ▁Deo
 ▁Departament
@@ -19054,7 +19042,6 @@ zə
 ▁Durante
 ▁Duration
 ▁Durch
-▁Durchführung
 ▁During
 ▁Dus
 ▁Dusche
@@ -19212,13 +19199,14 @@ zə
 ▁Einar
 ▁Eindhoven
 ▁Eine
-▁Eingang
+▁Einkauf
 ▁Einkommen
 ▁Einrichtung
 ▁Einsatz
 ▁Einstein
 ▁Einstieg
 ▁Einwohner
+▁Einzel
 ▁Eis
 ▁Eisen
 ▁Eisteddfod
@@ -19503,7 +19491,6 @@ zə
 ▁Experience
 ▁Experiment
 ▁Expert
-▁Experten
 ▁Explica
 ▁Explo
 ▁Explorer
@@ -19974,9 +19961,7 @@ zə
 ▁Fy
 ▁Fyn
 ▁Fyr
-▁FÖR
 ▁Fá
-▁Fähigkeit
 ▁Fær
 ▁Fé
 ▁Fédération
@@ -19989,7 +19974,6 @@ zə
 ▁Fútbol
 ▁Fü
 ▁Führung
-▁Fünf
 ▁Für
 ▁G
 ▁GA
@@ -20136,6 +20120,7 @@ zə
 ▁Gem
 ▁Gemeinde
 ▁Gemeinsam
+▁Gemeinschaft
 ▁Gemüse
 ▁Gen
 ▁Gene
@@ -20152,6 +20137,7 @@ zə
 ▁Genom
 ▁Genova
 ▁Gent
+▁Genuss
 ▁Genç
 ▁Genève
 ▁Geo
@@ -20395,7 +20381,6 @@ zə
 ▁Grøn
 ▁Grün
 ▁Gründe
-▁Gründen
 ▁Gründung
 ▁Gu
 ▁Gua
@@ -20765,7 +20750,6 @@ zə
 ▁Hiri
 ▁His
 ▁Hispania
-▁Hispanio
 ▁Histori
 ▁Historia
 ▁Historic
@@ -21039,7 +21023,6 @@ zə
 ▁Ihnen
 ▁Ihr
 ▁Ihre
-▁Ihrem
 ▁Ihrer
 ▁Ihres
 ▁Ik
@@ -21929,6 +21912,7 @@ zə
 ▁Kombëtare
 ▁Komite
 ▁Kommentar
+▁Kommentare
 ▁Kommer
 ▁Kommun
 ▁Kommunal
@@ -22045,6 +22029,7 @@ zə
 ▁Krom
 ▁Kromě
 ▁Kron
+▁Kropp
 ▁Kru
 ▁Kry
 ▁Krye
@@ -22076,6 +22061,7 @@ zə
 ▁Kunden
 ▁Kung
 ▁Kunst
+▁Kunststoff
 ▁Kup
 ▁Kur
 ▁Kura
@@ -22228,6 +22214,7 @@ zə
 ▁Lassen
 ▁Last
 ▁Laste
+▁Lasten
 ▁Lat
 ▁Lata
 ▁Later
@@ -22304,9 +22291,10 @@ zə
 ▁Leif
 ▁Leik
 ▁Leipzig
-▁Leistung
 ▁Leistungen
+▁Leistungs
 ▁Leit
+▁Leita
 ▁Leitung
 ▁Lek
 ▁Lem
@@ -23175,6 +23163,7 @@ zə
 ▁Mina
 ▁Minas
 ▁Mind
+▁Minden
 ▁Minder
 ▁Mindest
 ▁Mine
@@ -23231,7 +23220,6 @@ zə
 ▁Mitt
 ▁Mitte
 ▁Mittel
-▁Mittelpunkt
 ▁Mix
 ▁Miš
 ▁Mladi
@@ -23284,7 +23272,6 @@ zə
 ▁Monaco
 ▁Monat
 ▁Monate
-▁Monaten
 ▁Moncler
 ▁Mond
 ▁Monday
@@ -23488,6 +23475,7 @@ zə
 ▁Möglichkeiten
 ▁Mör
 ▁Mø
+▁Møre
 ▁Mú
 ▁Música
 ▁Mü
@@ -23660,7 +23648,6 @@ zə
 ▁Negro
 ▁Nei
 ▁Neil
-▁Nein
 ▁Nej
 ▁Nek
 ▁Neka
@@ -23870,7 +23857,7 @@ zə
 ▁Nusrat
 ▁Nutri
 ▁Nutrition
-▁Nutzen
+▁Nutzer
 ▁Nvidia
 ▁Ny
 ▁Nya
@@ -24010,7 +23997,6 @@ zə
 ▁Oliy
 ▁Olli
 ▁Olma
-▁Olomouc
 ▁Olsen
 ▁Oltre
 ▁Olu
@@ -24377,7 +24363,6 @@ zə
 ▁Path
 ▁Pati
 ▁Patient
-▁Patienten
 ▁Pato
 ▁Patre
 ▁Patri
@@ -24466,6 +24451,7 @@ zə
 ▁Pere
 ▁Pereira
 ▁Perfect
+▁Perfekt
 ▁Perform
 ▁Performance
 ▁Perhaps
@@ -24580,7 +24566,6 @@ zə
 ▁Pilot
 ▁Pin
 ▁Pina
-▁Pinang
 ▁Pine
 ▁Ping
 ▁Pink
@@ -24865,6 +24850,7 @@ zə
 ▁Product
 ▁Production
 ▁Products
+▁Produkte
 ▁Produktion
 ▁Prof
 ▁Profesi
@@ -24903,6 +24889,7 @@ zə
 ▁Protest
 ▁Proto
 ▁Protocol
+▁Protokoll
 ▁Prov
 ▁Prova
 ▁Provence
@@ -24923,7 +24910,6 @@ zə
 ▁Président
 ▁Príncipe
 ▁Prüf
-▁Prüfung
 ▁Psalm
 ▁Psi
 ▁Psico
@@ -25082,7 +25068,6 @@ zə
 ▁RELA
 ▁REPORT
 ▁RES
-▁RESULT
 ▁RF
 ▁RFE
 ▁RFID
@@ -25261,7 +25246,6 @@ zə
 ▁Regel
 ▁Regen
 ▁Regi
-▁Regierung
 ▁Regina
 ▁Region
 ▁Regional
@@ -25283,7 +25267,6 @@ zə
 ▁Reis
 ▁Reise
 ▁Reisen
-▁Reiz
 ▁Rek
 ▁Reka
 ▁Rekord
@@ -25472,6 +25455,7 @@ zə
 ▁Rome
 ▁Romeo
 ▁Romero
+▁Romsdal
 ▁Román
 ▁România
 ▁Ron
@@ -25563,6 +25547,7 @@ zə
 ▁Rádio
 ▁Rákóczi
 ▁Rä
+▁Räume
 ▁Ré
 ▁Régi
 ▁République
@@ -25866,7 +25851,6 @@ zə
 ▁Schie
 ▁Schiff
 ▁Schl
-▁Schlaf
 ▁Schlag
 ▁Schle
 ▁Schleswig
@@ -25885,6 +25869,7 @@ zə
 ▁School
 ▁Schreib
 ▁Schreiben
+▁Schrift
 ▁Schritt
 ▁Schu
 ▁Schul
@@ -25969,7 +25954,6 @@ zə
 ▁Sein
 ▁Seine
 ▁Seit
-▁Seite
 ▁Seiten
 ▁Sek
 ▁Sekret
@@ -26543,7 +26527,6 @@ zə
 ▁Stuart
 ▁Stud
 ▁Student
-▁Studenten
 ▁Studi
 ▁Studie
 ▁Studien
@@ -26816,7 +26799,6 @@ zə
 ▁Tak
 ▁Taka
 ▁Take
-▁Takie
 ▁Tako
 ▁Tal
 ▁Tala
@@ -26933,6 +26915,7 @@ zə
 ▁Telugu
 ▁Tem
 ▁Tema
+▁Temat
 ▁Temel
 ▁Temer
 ▁Temp
@@ -27482,6 +27465,7 @@ zə
 ▁Urban
 ▁Urdu
 ▁Uri
+▁Urlaub
 ▁Ursache
 ▁Ursprung
 ▁Urteil
@@ -27649,7 +27633,6 @@ zə
 ▁Venus
 ▁Ver
 ▁Vera
-▁Veranstaltung
 ▁Verantwortung
 ▁Verbindung
 ▁Verde
@@ -27657,11 +27640,10 @@ zə
 ▁Verdi
 ▁Verein
 ▁Vereinbarung
-▁Vereinigte
 ▁Vereins
 ▁Vereniging
-▁Verfahren
 ▁Verfassung
+▁Verfügung
 ▁Verge
 ▁Vergi
 ▁Verhalten
@@ -27859,7 +27841,7 @@ zə
 ▁Vás
 ▁Vázquez
 ▁Vä
-▁Väli
+▁Välj
 ▁Välkommen
 ▁Vän
 ▁Väst
@@ -27969,6 +27951,7 @@ zə
 ▁Wege
 ▁Wei
 ▁Weight
+▁Weihnachts
 ▁Weil
 ▁Wein
 ▁Weise
@@ -28320,6 +28303,7 @@ zə
 ▁Zv
 ▁Zvez
 ▁Zvolen
+▁Zweck
 ▁Zwei
 ▁Zweifel
 ▁Zwischen
@@ -28645,7 +28629,6 @@ zə
 ▁ake
 ▁akin
 ▁aktiv
-▁aktivit
 ▁aktiviti
 ▁aktu
 ▁aktuell
@@ -29276,6 +29259,7 @@ zə
 ▁aura
 ▁aus
 ▁ausge
+▁ausgezeichnet
 ▁ausschließlich
 ▁aussi
 ▁austral
@@ -29542,7 +29526,6 @@ zə
 ▁bazo
 ▁be
 ▁beach
-▁beachten
 ▁beag
 ▁bear
 ▁beat
@@ -29641,6 +29624,7 @@ zə
 ▁beruflich
 ▁bes
 ▁besch
+▁beschlossen
 ▁beschränkt
 ▁beschäftigt
 ▁besi
@@ -29729,6 +29713,7 @@ zə
 ▁birthday
 ▁bis
 ▁bisa
+▁bisher
 ▁bisogna
 ▁bisogni
 ▁bisogno
@@ -29880,7 +29865,6 @@ zə
 ▁bras
 ▁brasil
 ▁brat
-▁brauchen
 ▁bravo
 ▁brazil
 ▁bre
@@ -31884,7 +31868,6 @@ zə
 ▁dine
 ▁diners
 ▁ding
-▁dinge
 ▁dini
 ▁dinner
 ▁dinosaur
@@ -32082,7 +32065,6 @@ zə
 ▁doigts
 ▁doing
 ▁doit
-▁doku
 ▁dokumenty
 ▁dol
 ▁dolari
@@ -32214,7 +32196,6 @@ zə
 ▁dron
 ▁drone
 ▁drop
-▁dros
 ▁dru
 ▁drug
 ▁drugo
@@ -32302,7 +32283,6 @@ zə
 ▁dí
 ▁dítě
 ▁dú
-▁dürfen
 ▁e
 ▁eBay
 ▁ea
@@ -32402,6 +32382,7 @@ zə
 ▁ego
 ▁eh
 ▁ehemalige
+▁eher
 ▁ehf
 ▁ei
 ▁eie
@@ -32557,6 +32538,7 @@ zə
 ▁enga
 ▁engage
 ▁engagement
+▁engagiert
 ▁engagé
 ▁engine
 ▁engineer
@@ -32643,7 +32625,6 @@ zə
 ▁ergonomi
 ▁eri
 ▁erit
-▁erkennen
 ▁erlaubt
 ▁erleben
 ▁ernst
@@ -32657,7 +32638,6 @@ zə
 ▁erro
 ▁error
 ▁errores
-▁erst
 ▁erste
 ▁eru
 ▁erudit
@@ -32832,7 +32812,6 @@ zə
 ▁evoca
 ▁evolu
 ▁evolve
-▁evt
 ▁ew
 ▁ex
 ▁exact
@@ -33436,7 +33415,6 @@ zə
 ▁formidable
 ▁formul
 ▁formula
-▁formulaire
 ▁formular
 ▁formulario
 ▁formule
@@ -33532,7 +33510,6 @@ zə
 ▁frit
 ▁fritt
 ▁fro
-▁froh
 ▁from
 ▁front
 ▁frontal
@@ -33680,7 +33657,6 @@ zə
 ▁gang
 ▁gant
 ▁ganz
-▁ganze
 ▁gap
 ▁gar
 ▁gara
@@ -33755,6 +33731,7 @@ zə
 ▁gelin
 ▁gelo
 ▁gem
+▁gemeinsame
 ▁gemi
 ▁gemäß
 ▁gen
@@ -34102,7 +34079,6 @@ zə
 ▁gull
 ▁gum
 ▁gumb
-▁gummi
 ▁gun
 ▁gund
 ▁gur
@@ -34155,7 +34131,6 @@ zə
 ▁hade
 ▁hadi
 ▁hafa
-▁haft
 ▁hag
 ▁hagi
 ▁haha
@@ -34179,6 +34154,7 @@ zə
 ▁hamma
 ▁han
 ▁hand
+▁handel
 ▁handi
 ▁handicap
 ▁handle
@@ -34251,6 +34227,7 @@ zə
 ▁heil
 ▁heim
 ▁heit
+▁heiß
 ▁heißt
 ▁hel
 ▁held
@@ -34513,6 +34490,7 @@ zə
 ▁ignorant
 ▁ignore
 ▁ihr
+▁ihre
 ▁ik
 ▁ikä
 ▁il
@@ -35043,6 +35021,7 @@ zə
 ▁ir
 ▁iranian
 ▁irgendwann
+▁irgendwie
 ▁irgendwo
 ▁iris
 ▁irland
@@ -35212,7 +35191,6 @@ zə
 ▁jung
 ▁junge
 ▁jungen
-▁juni
 ▁junior
 ▁jur
 ▁juri
@@ -35249,7 +35227,6 @@ zə
 ▁kala
 ▁kalah
 ▁kalan
-▁kalba
 ▁kale
 ▁kalla
 ▁kalu
@@ -35282,7 +35259,6 @@ zə
 ▁kate
 ▁kati
 ▁kato
-▁kaun
 ▁kayak
 ▁kaza
 ▁kb
@@ -35398,7 +35374,6 @@ zə
 ▁kor
 ▁kora
 ▁kore
-▁korpo
 ▁kosovar
 ▁kost
 ▁kostenlos
@@ -35492,6 +35467,7 @@ zə
 ▁lagun
 ▁laguntza
 ▁lai
+▁laik
 ▁laisse
 ▁laisser
 ▁lake
@@ -35967,7 +35943,6 @@ zə
 ▁luxe
 ▁luz
 ▁ly
-▁lyd
 ▁lymph
 ▁lyn
 ▁lyrics
@@ -36268,7 +36243,6 @@ zə
 ▁matu
 ▁matur
 ▁mature
-▁matériel
 ▁mau
 ▁mauris
 ▁max
@@ -36564,7 +36538,6 @@ zə
 ▁millenni
 ▁milles
 ▁milli
-▁milliers
 ▁million
 ▁millions
 ▁millise
@@ -36975,6 +36948,7 @@ zə
 ▁mó
 ▁mór
 ▁mö
+▁mü
 ▁n
 ▁na
 ▁naba
@@ -37000,7 +36974,6 @@ zə
 ▁nano
 ▁nap
 ▁narcis
-▁narod
 ▁narra
 ▁narrativa
 ▁nas
@@ -37189,6 +37162,7 @@ zə
 ▁niet
 ▁night
 ▁nihil
+▁niko
 ▁nim
 ▁nimi
 ▁nimic
@@ -37732,7 +37706,6 @@ zə
 ▁pais
 ▁paix
 ▁pak
-▁paket
 ▁pakistan
 ▁pal
 ▁pala
@@ -38641,6 +38614,7 @@ zə
 ▁praeter
 ▁prag
 ▁pragmat
+▁praktische
 ▁pranzo
 ▁prapa
 ▁pras
@@ -38913,7 +38887,6 @@ zə
 ▁production
 ▁products
 ▁produit
-▁produkt
 ▁produktion
 ▁produrre
 ▁produs
@@ -39183,6 +39156,7 @@ zə
 ▁publicar
 ▁publicat
 ▁publication
+▁publika
 ▁publique
 ▁publish
 ▁published
@@ -39258,7 +39232,6 @@ zə
 ▁puu
 ▁puzzle
 ▁può
-▁pw
 ▁py
 ▁pyl
 ▁pyramid
@@ -39863,7 +39836,6 @@ zə
 ▁responde
 ▁respondent
 ▁responder
-▁respondi
 ▁respons
 ▁responsabil
 ▁responsabile
@@ -39896,8 +39868,6 @@ zə
 ▁results
 ▁resum
 ▁resume
-▁resurs
-▁resurse
 ▁ret
 ▁reta
 ▁retail
@@ -40016,6 +39986,7 @@ zə
 ▁rigor
 ▁riguarda
 ▁riguardo
+▁rik
 ▁rilascia
 ▁rilascio
 ▁rilassa
@@ -40268,7 +40239,6 @@ zə
 ▁safety
 ▁sag
 ▁saga
-▁sagen
 ▁sagittis
 ▁sah
 ▁saha
@@ -40441,7 +40411,6 @@ zə
 ▁schade
 ▁schaffen
 ▁schafft
-▁schauen
 ▁scheda
 ▁schedule
 ▁schema
@@ -40513,7 +40482,6 @@ zə
 ▁season
 ▁seba
 ▁sec
-▁sechs
 ▁secolo
 ▁second
 ▁seconda
@@ -40890,7 +40858,6 @@ zə
 ▁sinh
 ▁sini
 ▁sinistra
-▁sinn
 ▁sinni
 ▁sino
 ▁sinonim
@@ -41415,6 +41382,7 @@ zə
 ▁ste
 ▁stea
 ▁steel
+▁steht
 ▁stein
 ▁stel
 ▁stella
@@ -41785,9 +41753,9 @@ zə
 ▁sí
 ▁síos
 ▁sól
+▁söö
 ▁súil
 ▁sûr
-▁süs
 ▁sąjunga
 ▁t
 ▁ta
@@ -42121,7 +42089,6 @@ zə
 ▁testat
 ▁teste
 ▁tester
-▁testet
 ▁testi
 ▁testimoni
 ▁testing
@@ -42189,7 +42156,6 @@ zə
 ▁throw
 ▁thu
 ▁thy
-▁thème
 ▁thé
 ▁théâtre
 ▁ti
@@ -43044,6 +43010,8 @@ zə
 ▁vers
 ▁versa
 ▁versatil
+▁versch
+▁verschiedene
 ▁verse
 ▁versi
 ▁version
@@ -43134,7 +43102,6 @@ zə
 ▁vii
 ▁vika
 ▁viking
-▁vikt
 ▁vil
 ▁vila
 ▁vile
@@ -43356,7 +43323,6 @@ zə
 ▁värld
 ▁vér
 ▁vérité
-▁vêtements
 ▁vì
 ▁ví
 ▁vía
@@ -43391,7 +43357,6 @@ zə
 ▁warga
 ▁warm
 ▁warrant
-▁warten
 ▁was
 ▁wasn
 ▁wat
@@ -43548,7 +43513,6 @@ zə
 ▁www
 ▁wyjaśni
 ▁wzor
-▁wählen
 ▁x
 ▁xD
 ▁xa
@@ -43661,7 +43625,6 @@ zə
 ▁zu
 ▁zucchero
 ▁zuen
-▁zuerst
 ▁zum
 ▁zur
 ▁zurück
@@ -43800,6 +43763,7 @@ zə
 ▁ô
 ▁ö
 ▁öffentliche
+▁öffentlichen
 ▁ø
 ▁øre
 ▁última
@@ -43908,7 +43872,6 @@ zə
 ▁
 □
 ▪
-▾
 ●
 ◦
 ⟂
@@ -43918,18 +43881,17 @@ zə
 ⬇
 
 
-
+
 
+
 
 
-
-
 
-
 
 
 
 
+
 
 
 

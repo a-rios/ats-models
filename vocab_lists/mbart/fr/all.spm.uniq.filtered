@@ -400,6 +400,7 @@ Ah
 Ai
 Air
 Ak
+Aktiv
 Aku
 Al
 Alamat
@@ -853,7 +854,6 @@ Dit
 Div
 Do
 Document
-Dokument
 Dollar
 Dom
 Don
@@ -994,7 +994,6 @@ ESTE
 ESTER
 ESTI
 ESTO
-ESZ
 ET
 ETA
 ETE
@@ -1241,6 +1240,7 @@ Green
 Gri
 Gro
 Group
+Gruppe
 Gu
 Guard
 Gymnasium
@@ -1396,7 +1396,6 @@ IJA
 IJI
 IK
 IKA
-IKAN
 IKE
 IKI
 IKK
@@ -1571,7 +1570,6 @@ JT
 JU
 JUM
 Ja
-Jaa
 Jack
 Jag
 Jak
@@ -1643,6 +1641,7 @@ KRI
 KS
 KSI
 KT
+KTI
 KTU
 KU
 KUL
@@ -1829,7 +1828,7 @@ Lu
 Luc
 Ly
 LÉ
-Lösung
+LÜ
 M
 MA
 MAG
@@ -2115,7 +2114,6 @@ Nuk
 Ny
 Nya
 NÁ
-NÄ
 NÉ
 O
 OA
@@ -2620,6 +2618,7 @@ SIS
 SIT
 SK
 SKA
+SKE
 SKI
 SKO
 SKRI
@@ -2806,6 +2805,7 @@ TELE
 TEM
 TEN
 TER
+TERA
 TES
 TET
 TEX
@@ -2951,7 +2951,6 @@ Type
 TÁR
 TÄ
 TÉ
-TÖ
 TÜ
 Türk
 Türkiye
@@ -3866,7 +3865,6 @@ appropria
 apprécie
 appui
 appuntamento
-april
 après
 apte
 aptitud
@@ -3993,6 +3991,7 @@ asan
 asca
 ascens
 ase
+asema
 ash
 asha
 ashi
@@ -4312,7 +4311,6 @@ bed
 beda
 bedarf
 bedi
-bedingungen
 bedrijf
 beg
 beh
@@ -4368,7 +4366,6 @@ bescherming
 besi
 best
 beste
-bestimmungen
 bestätigung
 besuch
 beszél
@@ -5340,7 +5337,6 @@ daten
 dati
 dating
 dato
-datum
 dau
 dauer
 daug
@@ -5510,7 +5506,6 @@ dili
 dilo
 dim
 dimension
-dimento
 dimo
 din
 dina
@@ -6106,7 +6101,6 @@ eria
 erie
 erien
 erii
-erija
 erima
 erin
 ering
@@ -6114,6 +6108,7 @@ eringen
 erings
 erint
 eris
+erit
 erius
 erken
 erland
@@ -6325,6 +6320,7 @@ fah
 fahren
 fahrer
 fahrt
+fahrzeug
 fail
 fair
 faire
@@ -6530,6 +6526,7 @@ foi
 fok
 fol
 fold
+folge
 folia
 folie
 folio
@@ -6547,7 +6544,6 @@ foot
 for
 force
 ford
-fordern
 fore
 form
 forma
@@ -6604,7 +6600,6 @@ frog
 from
 front
 fru
-frut
 fry
 frí
 fs
@@ -6648,7 +6643,6 @@ fähig
 fähigkeit
 fähr
 fäl
-fälle
 færdig
 fé
 fél
@@ -6775,6 +6769,7 @@ geht
 geir
 geist
 gel
+gelassen
 geld
 gele
 gelegd
@@ -6828,7 +6823,6 @@ gestellt
 gestion
 gesundheit
 get
-getragen
 getés
 gevoer
 gewalt
@@ -7084,7 +7078,6 @@ gxi
 gy
 gyan
 gym
-gyn
 gyr
 gá
 gán
@@ -7105,7 +7098,6 @@ géné
 gép
 gés
 gê
-gência
 gî
 gó
 gö
@@ -7138,7 +7130,6 @@ hadi
 haf
 hafa
 haft
-hafte
 hag
 haga
 hage
@@ -7634,7 +7625,6 @@ iden
 ident
 identifi
 identification
-identità
 identité
 ider
 ides
@@ -7920,7 +7910,6 @@ indi
 india
 indica
 indik
-indirizzo
 individu
 indo
 indra
@@ -8026,7 +8015,6 @@ inten
 inter
 interdisciplinar
 interes
-interessa
 interesse
 intermédiaire
 international
@@ -8165,7 +8153,6 @@ iskas
 iske
 iski
 isko
-iskus
 isla
 islam
 islav
@@ -8364,7 +8351,6 @@ izou
 izu
 izy
 izza
-izzazione
 iä
 ière
 ières
@@ -8616,11 +8602,9 @@ kalu
 kam
 kama
 kamer
-kamera
 kami
 kammer
 kamp
-kampagne
 kampen
 kampioen
 kan
@@ -8639,6 +8623,7 @@ kap
 kapa
 kapi
 kapital
+kapp
 kar
 kara
 karan
@@ -8894,7 +8879,6 @@ konsult
 konsum
 kontakt
 konto
-kontroll
 konvention
 kool
 koon
@@ -8970,7 +8954,6 @@ krok
 krom
 kron
 kroon
-krot
 krov
 kru
 kry
@@ -8991,6 +8974,7 @@ kt
 kta
 ktan
 kte
+kten
 kter
 kti
 ktion
@@ -9017,7 +9001,6 @@ kulu
 kum
 kuma
 kumar
-kumen
 kumi
 kumu
 kun
@@ -9065,6 +9048,7 @@ kän
 känd
 käs
 kää
+kå
 kål
 ké
 kék
@@ -10105,6 +10089,7 @@ micro
 mics
 mid
 mida
+middel
 midi
 mie
 miel
@@ -10203,7 +10188,6 @@ mo
 mobi
 mobil
 mobile
-mobiliar
 moc
 mod
 moda
@@ -10868,7 +10852,6 @@ ohet
 oi
 oibriú
 oid
-oida
 oidh
 oil
 oille
@@ -11290,7 +11273,6 @@ parent
 pari
 park
 parken
-parlament
 paro
 parol
 part
@@ -11384,7 +11366,6 @@ pero
 pers
 person
 personal
-personen
 perspektiv
 perä
 pes
@@ -11679,7 +11660,6 @@ prenant
 prend
 prendre
 pres
-presa
 present
 president
 presidente
@@ -11720,7 +11700,6 @@ process
 prod
 produc
 product
-produkt
 produkte
 produkter
 produktion
@@ -11836,6 +11815,7 @@ px
 py
 pyr
 pyt
+pá
 pár
 pä
 pät
@@ -12113,7 +12093,6 @@ reg
 regel
 regi
 region
-regionen
 register
 registra
 registre
@@ -12304,7 +12283,6 @@ rinha
 rinho
 rini
 rink
-rinko
 rinn
 rinner
 rino
@@ -12672,6 +12650,7 @@ scen
 sch
 schade
 schaff
+schaffen
 schaft
 schaften
 schal
@@ -12706,7 +12685,6 @@ schreib
 schreiben
 schreibung
 schrift
-schränke
 schul
 schuld
 schule
@@ -12715,6 +12693,7 @@ schutz
 schwe
 schwer
 schä
+schätzung
 schön
 schütz
 sci
@@ -12729,8 +12708,6 @@ scribi
 scrip
 script
 scription
-scritto
-scrivere
 scrivi
 scul
 sdag
@@ -12899,7 +12876,6 @@ sider
 sidi
 sidor
 sie
-siehe
 sien
 sier
 sies
@@ -13263,7 +13239,6 @@ stil
 still
 stille
 stiller
-stimmen
 stimmt
 stimmung
 stimul
@@ -13357,6 +13332,7 @@ stvo
 sty
 style
 styr
+styrelsen
 stä
 städte
 ständig
@@ -13433,7 +13409,6 @@ systeem
 system
 sz
 sza
-szabad
 szak
 szcza
 szczu
@@ -13445,7 +13420,6 @@ szek
 szel
 szen
 szent
-sziget
 szk
 szko
 szt
@@ -13462,7 +13436,6 @@ sí
 sî
 só
 sö
-sön
 sör
 sø
 sü
@@ -14298,7 +14271,6 @@ uesit
 uf
 ufa
 uff
-ufficio
 ufu
 ug
 uga
@@ -15060,7 +15032,6 @@ welt
 wen
 wend
 wende
-wendung
 weni
 wens
 went
@@ -15442,7 +15413,6 @@ zett
 zg
 zga
 zgar
-zgl
 zh
 zhi
 zhou
@@ -15574,7 +15544,6 @@ zí
 zó
 zón
 zü
-züge
 zā
 {
 }
@@ -16322,7 +16291,6 @@ zā
 ↘
 −
 ∙
-∞
 ≠
 ≤
 ≥
@@ -16358,6 +16326,7 @@ zā
 ▁/>
 ▁:
 ▁:)
+▁:-
 ▁;
 ▁<
 ▁=
@@ -16817,7 +16786,7 @@ zā
 ▁Anita
 ▁Anja
 ▁Ankara
-▁Anmeldung
+▁Anlage
 ▁Ann
 ▁Anna
 ▁Anne
@@ -16906,6 +16875,7 @@ zā
 ▁Arbeitgeber
 ▁Arbeitnehmer
 ▁Arbeits
+▁Arbeitsplatz
 ▁Arbejde
 ▁Arbitra
 ▁Arc
@@ -17376,7 +17346,6 @@ zā
 ▁Beck
 ▁Beckham
 ▁Bed
-▁Bedarf
 ▁Bedingungen
 ▁Bedirxan
 ▁Bedürfnisse
@@ -17395,7 +17364,6 @@ zā
 ▁Behinderung
 ▁Bei
 ▁Beijing
-▁Beim
 ▁Beispiel
 ▁Beiträge
 ▁Bek
@@ -17447,6 +17415,7 @@ zā
 ▁Berg
 ▁Bergen
 ▁Beri
+▁Bericht
 ▁Berisha
 ▁Berlin
 ▁Berliner
@@ -17474,13 +17443,13 @@ zā
 ▁Best
 ▁Beste
 ▁Bestellung
-▁Bestimmungen
 ▁Bestätigung
 ▁Bet
 ▁Beta
 ▁Beteiligung
 ▁Beth
 ▁Beton
+▁Betreiber
 ▁Betreuung
 ▁Betrieb
 ▁Betriebs
@@ -17491,7 +17460,9 @@ zā
 ▁Bevölkerung
 ▁Bewegung
 ▁Bewerbung
+▁Bewertung
 ▁Bewohner
+▁Bewusstsein
 ▁Bey
 ▁Beyaz
 ▁Beyonce
@@ -19249,6 +19220,7 @@ zā
 ▁Edi
 ▁Edin
 ▁Edinburgh
+▁Edirne
 ▁Edit
 ▁Edition
 ▁Editor
@@ -19269,6 +19241,7 @@ zā
 ▁Eerste
 ▁Ef
 ▁Efek
+▁Efendi
 ▁Effect
 ▁Effective
 ▁Eg
@@ -19295,9 +19268,7 @@ zā
 ▁Einblick
 ▁Eindhoven
 ▁Eine
-▁Eingang
 ▁Einheit
-▁Einkommen
 ▁Einrichtung
 ▁Einsatz
 ▁Einstein
@@ -19328,9 +19299,9 @@ zā
 ▁Elegan
 ▁Elegant
 ▁Elektr
-▁Elektri
 ▁Elektrik
 ▁Elektro
+▁Elektron
 ▁Elektronik
 ▁Element
 ▁Elena
@@ -19779,7 +19750,6 @@ zā
 ▁Fernandes
 ▁Fernandez
 ▁Fernando
-▁Fernseh
 ▁Fernández
 ▁Ferra
 ▁Ferrari
@@ -20065,7 +20035,6 @@ zā
 ▁Fy
 ▁Fyn
 ▁Fyr
-▁FÖR
 ▁Fá
 ▁Fær
 ▁Fé
@@ -20081,7 +20050,6 @@ zā
 ▁Fútbol
 ▁Fü
 ▁Führung
-▁Fünf
 ▁Für
 ▁Füße
 ▁G
@@ -20295,7 +20263,6 @@ zā
 ▁Gewalt
 ▁Gewerbe
 ▁Gewinn
-▁Gewähr
 ▁Gezi
 ▁Geç
 ▁Gh
@@ -20710,6 +20677,7 @@ zā
 ▁Harrison
 ▁Harry
 ▁Hart
+▁Harus
 ▁Harvard
 ▁Harvey
 ▁Has
@@ -20829,6 +20797,7 @@ zā
 ▁Herzen
 ▁Herzlich
 ▁Het
+▁Heute
 ▁Hev
 ▁Hewlett
 ▁Hey
@@ -20879,6 +20848,7 @@ zā
 ▁Hitz
 ▁Hizb
 ▁Hj
+▁Hjælp
 ▁Hl
 ▁Hlav
 ▁Ho
@@ -21137,9 +21107,7 @@ zā
 ▁Ihan
 ▁Ihnen
 ▁Ihr
-▁Ihre
 ▁Ihrem
-▁Ihrer
 ▁Ik
 ▁Ikea
 ▁Iki
@@ -21241,6 +21209,7 @@ zā
 ▁Inside
 ▁Insider
 ▁Insight
+▁Inspektor
 ▁Inspir
 ▁Inspira
 ▁Inspiration
@@ -21937,7 +21906,6 @@ zā
 ▁Kind
 ▁Kinder
 ▁Kindergarten
-▁Kindern
 ▁Kindle
 ▁Kine
 ▁King
@@ -22063,6 +22031,7 @@ zā
 ▁Kontroll
 ▁Konu
 ▁Konya
+▁Konzept
 ▁Konzert
 ▁Koo
 ▁Koop
@@ -22145,6 +22114,7 @@ zā
 ▁Kro
 ▁Krom
 ▁Kron
+▁Kropp
 ▁Kru
 ▁Kry
 ▁Krye
@@ -22176,6 +22146,7 @@ zā
 ▁Kunden
 ▁Kung
 ▁Kunst
+▁Kunststoff
 ▁Kuopio
 ▁Kup
 ▁Kupa
@@ -23337,8 +23308,6 @@ zā
 ▁Mitt
 ▁Mitte
 ▁Mittel
-▁Mittelpunkt
-▁Mittwoch
 ▁Mix
 ▁Miño
 ▁Mladi
@@ -23393,7 +23362,6 @@ zā
 ▁Mona
 ▁Monaco
 ▁Monat
-▁Monaten
 ▁Moncler
 ▁Mond
 ▁Monday
@@ -23605,6 +23573,7 @@ zā
 ▁Mör
 ▁Mø
 ▁Møller
+▁Møre
 ▁Mú
 ▁Música
 ▁Mû
@@ -23619,7 +23588,6 @@ zā
 ▁NA
 ▁NAB
 ▁NACIONAL
-▁NAG
 ▁NAK
 ▁NAM
 ▁NAS
@@ -23854,6 +23822,7 @@ zā
 ▁Nid
 ▁Nie
 ▁Nieder
+▁Niedersachsen
 ▁Niels
 ▁Nielsen
 ▁Niet
@@ -23991,7 +23960,6 @@ zā
 ▁Nusrat
 ▁Nutri
 ▁Nutrition
-▁Nutzen
 ▁Nutzer
 ▁Nvidia
 ▁Ny
@@ -24050,6 +24018,7 @@ zā
 ▁Ober
 ▁Obi
 ▁Object
+▁Objekt
 ▁Obr
 ▁Obra
 ▁Obradoiro
@@ -24338,7 +24307,6 @@ zā
 ▁PROCES
 ▁PRODU
 ▁PROFES
-▁PROFI
 ▁PROGRAM
 ▁PROJE
 ▁PROMO
@@ -24882,6 +24850,7 @@ zā
 ▁Pred
 ▁Prefer
 ▁Preis
+▁Prek
 ▁Prem
 ▁Prema
 ▁Premi
@@ -25128,6 +25097,7 @@ zā
 ▁Quem
 ▁Quer
 ▁Quest
+▁Questa
 ▁Queste
 ▁Questi
 ▁Question
@@ -25364,7 +25334,6 @@ zā
 ▁Reis
 ▁Reise
 ▁Reisen
-▁Reiz
 ▁Rek
 ▁Reka
 ▁Reklama
@@ -25555,6 +25524,7 @@ zā
 ▁Rome
 ▁Romeo
 ▁Romero
+▁Romsdal
 ▁Román
 ▁Române
 ▁România
@@ -25645,6 +25615,7 @@ zā
 ▁Rzecz
 ▁Rá
 ▁Rä
+▁Räume
 ▁Ré
 ▁Régi
 ▁République
@@ -25989,6 +25960,7 @@ zā
 ▁Schä
 ▁Schön
 ▁Schü
+▁Schüler
 ▁Sci
 ▁Science
 ▁Scientific
@@ -26687,6 +26659,7 @@ zā
 ▁Sunda
 ▁Sunday
 ▁Sundsvall
+▁Sungai
 ▁Sunnah
 ▁Sunny
 ▁Sunshine
@@ -26744,6 +26717,7 @@ zā
 ▁Sveta
 ▁Sveto
 ▁Svi
+▁Svizzera
 ▁Svo
 ▁Swa
 ▁Swami
@@ -27342,7 +27316,6 @@ zā
 ▁Try
 ▁Trà
 ▁Trá
-▁Trä
 ▁Très
 ▁Três
 ▁Trí
@@ -27537,12 +27510,11 @@ zā
 ▁União
 ▁Uno
 ▁Unser
-▁Unsere
 ▁Unter
 ▁Unterkunft
 ▁Unternehmen
-▁Unternehmens
 ▁Unternehmer
+▁Unterricht
 ▁Unterstützung
 ▁Untersuchung
 ▁Up
@@ -27726,7 +27698,7 @@ zā
 ▁Verder
 ▁Verdi
 ▁Verein
-▁Vereinigte
+▁Vereinbarung
 ▁Vereins
 ▁Vereniging
 ▁Verfassung
@@ -27937,6 +27909,7 @@ zā
 ▁Väg
 ▁Väl
 ▁Väli
+▁Välj
 ▁Vän
 ▁Väst
 ▁Västerås
@@ -28014,6 +27987,7 @@ zā
 ▁Warriors
 ▁Wars
 ▁Warto
+▁Warum
 ▁Was
 ▁Washington
 ▁Wasser
@@ -28096,6 +28070,7 @@ zā
 ▁Why
 ▁Wi
 ▁WiFi
+▁Wichtig
 ▁Wick
 ▁Wid
 ▁Wide
@@ -28312,6 +28287,7 @@ zā
 ▁Zahar
 ▁Zahid
 ▁Zahl
+▁Zahlung
 ▁Zahn
 ▁Zahra
 ▁Zaidi
@@ -28389,7 +28365,6 @@ zā
 ▁Zuckerberg
 ▁Zug
 ▁Zugang
-▁Zugriff
 ▁Zuhause
 ▁Zuid
 ▁Zukunft
@@ -28450,7 +28425,6 @@ zā
 ▁absol
 ▁absolument
 ▁absolut
-▁absolute
 ▁absolutely
 ▁absolv
 ▁absorb
@@ -28619,6 +28593,7 @@ zā
 ▁advocate
 ▁adéquat
 ▁aerodrom
+▁aeroport
 ▁aeropuerto
 ▁aeterna
 ▁af
@@ -28667,6 +28642,7 @@ zā
 ▁agnos
 ▁ago
 ▁agora
+▁agosto
 ▁agra
 ▁agradece
 ▁agrar
@@ -28723,6 +28699,7 @@ zā
 ▁akka
 ▁ako
 ▁aksi
+▁aktiv
 ▁aktivit
 ▁aktiviti
 ▁aktual
@@ -28791,6 +28768,7 @@ zā
 ▁allows
 ▁allé
 ▁alma
+▁almeno
 ▁almost
 ▁aloe
 ▁alone
@@ -28816,6 +28794,7 @@ zā
 ▁altijd
 ▁alto
 ▁altos
+▁altre
 ▁altres
 ▁altri
 ▁alu
@@ -28900,6 +28879,7 @@ zā
 ▁ang
 ▁ange
 ▁angel
+▁angemeldet
 ▁anges
 ▁anglais
 ▁angle
@@ -29259,6 +29239,7 @@ zā
 ▁auront
 ▁aus
 ▁ausge
+▁ausgezeichnet
 ▁aussi
 ▁austral
 ▁aut
@@ -29294,7 +29275,6 @@ zā
 ▁autorisé
 ▁autorit
 ▁autorités
-▁autorizza
 ▁autostrad
 ▁autour
 ▁autre
@@ -29302,7 +29282,6 @@ zā
 ▁aux
 ▁auxilia
 ▁auxquel
-▁außer
 ▁av
 ▁ava
 ▁avaient
@@ -29430,7 +29409,6 @@ zā
 ▁banca
 ▁bancaire
 ▁bancar
-▁bancario
 ▁banco
 ▁band
 ▁banda
@@ -29506,7 +29484,6 @@ zā
 ▁bazo
 ▁be
 ▁beach
-▁beachten
 ▁beag
 ▁bear
 ▁beat
@@ -29623,6 +29600,7 @@ zā
 ▁betul
 ▁between
 ▁bevat
+▁bewegen
 ▁beyond
 ▁bez
 ▁bh
@@ -29687,6 +29665,7 @@ zā
 ▁bis
 ▁bisa
 ▁bisher
+▁bisogna
 ▁bist
 ▁bit
 ▁bitcoin
@@ -30076,7 +30055,6 @@ zā
 ▁capabil
 ▁capable
 ▁capac
-▁capace
 ▁capacidad
 ▁capacita
 ▁capacitación
@@ -30348,8 +30326,6 @@ zā
 ▁chic
 ▁chica
 ▁chicken
-▁chiede
-▁chiedere
 ▁chief
 ▁chien
 ▁chiffre
@@ -30659,6 +30635,7 @@ zā
 ▁complaint
 ▁complement
 ▁complementar
+▁complemento
 ▁complet
 ▁complete
 ▁completed
@@ -31007,7 +30984,6 @@ zā
 ▁corpus
 ▁corre
 ▁correct
-▁corrente
 ▁correspon
 ▁correspond
 ▁corresponde
@@ -31286,6 +31262,7 @@ zā
 ▁dates
 ▁dati
 ▁dating
+▁dator
 ▁datos
 ▁datter
 ▁dau
@@ -31315,6 +31292,7 @@ zā
 ▁deci
 ▁decide
 ▁decided
+▁decidere
 ▁decidi
 ▁decidir
 ▁decision
@@ -31512,6 +31490,7 @@ zā
 ▁devis
 ▁devo
 ▁devoir
+▁devono
 ▁devra
 ▁devraient
 ▁devrait
@@ -31551,8 +31530,6 @@ zā
 ▁dicas
 ▁dice
 ▁dich
-▁dichiara
-▁dichiarazione
 ▁dicho
 ▁dicht
 ▁dici
@@ -31692,7 +31669,6 @@ zā
 ▁dispo
 ▁dispon
 ▁disponibili
-▁disponibilità
 ▁disponible
 ▁disponibles
 ▁disposa
@@ -31789,7 +31765,6 @@ zā
 ▁doit
 ▁doivent
 ▁dokter
-▁doku
 ▁dol
 ▁dolar
 ▁dolce
@@ -32060,7 +32035,6 @@ zā
 ▁economi
 ▁economic
 ▁economica
-▁economiche
 ▁economie
 ▁economische
 ▁economy
@@ -32099,7 +32073,6 @@ zā
 ▁effectué
 ▁effet
 ▁effetti
-▁effettuare
 ▁efficace
 ▁efficaci
 ▁effici
@@ -32128,6 +32101,7 @@ zā
 ▁einen
 ▁einer
 ▁eines
+▁einfach
 ▁eins
 ▁eis
 ▁either
@@ -32167,9 +32141,9 @@ zā
 ▁ell
 ▁ella
 ▁elle
-▁ellen
 ▁elles
 ▁ellos
+▁ells
 ▁els
 ▁else
 ▁elsewhere
@@ -32202,6 +32176,7 @@ zā
 ▁emozioni
 ▁emp
 ▁empat
+▁emphasis
 ▁empiri
 ▁employ
 ▁employee
@@ -32268,6 +32243,7 @@ zā
 ▁ensi
 ▁ensuite
 ▁ensure
+▁entdeckt
 ▁enten
 ▁entend
 ▁entende
@@ -32334,7 +32310,6 @@ zā
 ▁ergonomi
 ▁erhalten
 ▁eri
-▁erkennen
 ▁erlaubt
 ▁erleben
 ▁ernst
@@ -32389,8 +32364,10 @@ zā
 ▁essay
 ▁esse
 ▁essen
+▁essent
 ▁essential
 ▁essentielle
+▁essere
 ▁esses
 ▁est
 ▁esta
@@ -32484,7 +32461,6 @@ zā
 ▁evo
 ▁evoca
 ▁evolve
-▁evt
 ▁ew
 ▁ex
 ▁exact
@@ -32619,7 +32595,6 @@ zā
 ▁faca
 ▁face
 ▁facebook
-▁facendo
 ▁facere
 ▁fach
 ▁faci
@@ -32779,7 +32754,6 @@ zā
 ▁felt
 ▁fem
 ▁female
-▁femei
 ▁feminist
 ▁femme
 ▁femmes
@@ -32909,6 +32883,7 @@ zā
 ▁finit
 ▁finland
 ▁finn
+▁fino
 ▁fins
 ▁fiori
 ▁fios
@@ -33023,6 +32998,7 @@ zā
 ▁football
 ▁for
 ▁fora
+▁forbi
 ▁force
 ▁forced
 ▁forces
@@ -33048,7 +33024,6 @@ zā
 ▁formul
 ▁formula
 ▁formulaire
-▁formular
 ▁formule
 ▁foron
 ▁fort
@@ -33268,7 +33243,6 @@ zā
 ▁ganga
 ▁gani
 ▁gant
-▁ganze
 ▁gap
 ▁gar
 ▁gara
@@ -33342,7 +33316,6 @@ zā
 ▁geleverd
 ▁gelin
 ▁gem
-▁gemeinsam
 ▁gemeinsame
 ▁gemi
 ▁gen
@@ -33399,6 +33372,7 @@ zā
 ▁gestió
 ▁gesto
 ▁gestor
+▁gesunde
 ▁get
 ▁gets
 ▁getting
@@ -33429,7 +33403,6 @@ zā
 ▁ging
 ▁gioco
 ▁giorni
-▁giorno
 ▁gips
 ▁gir
 ▁gira
@@ -33661,6 +33634,7 @@ zā
 ▁gö
 ▁gü
 ▁gül
+▁gültig
 ▁günstig
 ▁głos
 ▁h
@@ -33722,7 +33696,6 @@ zā
 ▁han
 ▁hana
 ▁hand
-▁handel
 ▁handels
 ▁handelt
 ▁handen
@@ -34279,6 +34252,7 @@ zā
 ▁individuell
 ▁individuelle
 ▁indo
+▁indossa
 ▁induc
 ▁indul
 ▁indult
@@ -34326,7 +34300,6 @@ zā
 ▁ing
 ▁inga
 ▁inge
-▁ingen
 ▁ingrédients
 ▁inherent
 ▁inhibi
@@ -34346,6 +34319,7 @@ zā
 ▁innocent
 ▁innovant
 ▁innovation
+▁innovativ
 ▁innovative
 ▁inovasi
 ▁input
@@ -34410,7 +34384,6 @@ zā
 ▁intellige
 ▁intelligent
 ▁intend
-▁intende
 ▁intended
 ▁intens
 ▁intensa
@@ -34431,6 +34404,7 @@ zā
 ▁interdit
 ▁interes
 ▁interessant
+▁interesse
 ▁interest
 ▁interested
 ▁interesting
@@ -34783,7 +34757,6 @@ zā
 ▁katta
 ▁kau
 ▁kaua
-▁kaun
 ▁kav
 ▁kava
 ▁kawai
@@ -34798,6 +34771,7 @@ zā
 ▁keep
 ▁keeping
 ▁keer
+▁keh
 ▁kein
 ▁keine
 ▁keinen
@@ -34939,7 +34913,6 @@ zā
 ▁kor
 ▁kora
 ▁koron
-▁korpo
 ▁kort
 ▁korte
 ▁korun
@@ -34971,6 +34944,7 @@ zā
 ▁krimi
 ▁kristal
 ▁kristian
+▁kritis
 ▁kriz
 ▁kro
 ▁kron
@@ -34985,8 +34959,10 @@ zā
 ▁kula
 ▁kulay
 ▁kultur
+▁kultura
 ▁kum
 ▁kuma
+▁kun
 ▁kuna
 ▁kunda
 ▁kunde
@@ -35126,6 +35102,7 @@ zā
 ▁latte
 ▁lauda
 ▁laudantium
+▁laufen
 ▁laugh
 ▁launch
 ▁laut
@@ -35134,6 +35111,8 @@ zā
 ▁lavabo
 ▁lave
 ▁laver
+▁lavorare
+▁lavoro
 ▁law
 ▁laws
 ▁lawyer
@@ -35194,7 +35173,6 @@ zā
 ▁leng
 ▁lengo
 ▁length
-▁lenta
 ▁lente
 ▁lenti
 ▁leo
@@ -35485,6 +35463,7 @@ zā
 ▁lunga
 ▁lungo
 ▁luo
+▁luoghi
 ▁lup
 ▁lupa
 ▁lupo
@@ -35498,7 +35477,6 @@ zā
 ▁luz
 ▁ly
 ▁lycée
-▁lyd
 ▁lymph
 ▁lyn
 ▁lyrics
@@ -35510,7 +35488,6 @@ zā
 ▁lâche
 ▁lä
 ▁länder
-▁länger
 ▁läuft
 ▁lèvres
 ▁lé
@@ -36389,7 +36366,6 @@ zā
 ▁mâ
 ▁mân
 ▁mãe
-▁män
 ▁mè
 ▁mère
 ▁mètode
@@ -36458,7 +36434,6 @@ zā
 ▁nap
 ▁napa
 ▁narcis
-▁narod
 ▁narra
 ▁nas
 ▁nasa
@@ -36500,7 +36475,6 @@ zā
 ▁neben
 ▁nec
 ▁neces
-▁necessaria
 ▁necessarily
 ▁necessary
 ▁necessitat
@@ -36638,7 +36612,6 @@ zā
 ▁nombre
 ▁nombreuses
 ▁nombreux
-▁nome
 ▁nomen
 ▁nomes
 ▁nomi
@@ -36748,6 +36721,7 @@ zā
 ▁nunca
 ▁nung
 ▁nuo
+▁nuovamente
 ▁nuovo
 ▁nur
 ▁nurse
@@ -37088,6 +37062,7 @@ zā
 ▁padi
 ▁padre
 ▁padu
+▁paesi
 ▁pag
 ▁paga
 ▁page
@@ -37108,7 +37083,6 @@ zā
 ▁paix
 ▁pak
 ▁pake
-▁paket
 ▁pakistan
 ▁pakket
 ▁pako
@@ -37226,6 +37200,7 @@ zā
 ▁participation
 ▁participe
 ▁participer
+▁particolarmente
 ▁particular
 ▁particularly
 ▁particulier
@@ -37273,6 +37248,7 @@ zā
 ▁passionné
 ▁passiv
 ▁passo
+▁passt
 ▁passé
 ▁past
 ▁pasta
@@ -37382,7 +37358,6 @@ zā
 ▁pensiero
 ▁pensioen
 ▁pension
-▁pensione
 ▁penso
 ▁pensé
 ▁pensée
@@ -37430,6 +37405,7 @@ zā
 ▁permanent
 ▁permanente
 ▁permes
+▁permesso
 ▁permet
 ▁permettant
 ▁permette
@@ -37835,6 +37811,7 @@ zā
 ▁possible
 ▁possibly
 ▁posso
+▁possono
 ▁possède
 ▁post
 ▁posta
@@ -37944,7 +37921,6 @@ zā
 ▁premiér
 ▁pren
 ▁prend
-▁prende
 ▁prendre
 ▁prennent
 ▁preocupa
@@ -37979,7 +37955,6 @@ zā
 ▁prest
 ▁presta
 ▁prestation
-▁prestazioni
 ▁preste
 ▁presti
 ▁prestigi
@@ -38079,7 +38054,6 @@ zā
 ▁probléma
 ▁problématique
 ▁proc
-▁proceder
 ▁procedure
 ▁proceed
 ▁proces
@@ -38110,7 +38084,6 @@ zā
 ▁produir
 ▁produit
 ▁produits
-▁produkt
 ▁produktion
 ▁prof
 ▁profes
@@ -38231,6 +38204,7 @@ zā
 ▁protected
 ▁protection
 ▁protector
+▁proteg
 ▁protein
 ▁protest
 ▁protesta
@@ -38329,6 +38303,7 @@ zā
 ▁pu
 ▁puan
 ▁pub
+▁pubblici
 ▁puber
 ▁publi
 ▁public
@@ -38337,6 +38312,7 @@ zā
 ▁publication
 ▁publicist
 ▁publicité
+▁publika
 ▁publique
 ▁publish
 ▁published
@@ -38500,6 +38476,7 @@ zā
 ▁quiet
 ▁quilòmetres
 ▁quin
+▁quindi
 ▁quinque
 ▁quinta
 ▁quinto
@@ -38785,7 +38762,6 @@ zā
 ▁region
 ▁regional
 ▁regioni
-▁regis
 ▁regista
 ▁register
 ▁registered
@@ -38796,6 +38772,8 @@ zā
 ▁registro
 ▁región
 ▁regno
+▁regola
+▁regole
 ▁regra
 ▁regret
 ▁regroupe
@@ -38995,7 +38973,6 @@ zā
 ▁responde
 ▁respondent
 ▁responder
-▁respondi
 ▁respons
 ▁responsabil
 ▁responsabili
@@ -39034,7 +39011,6 @@ zā
 ▁result
 ▁resultats
 ▁results
-▁resurs
 ▁ret
 ▁reta
 ▁retail
@@ -39098,12 +39074,9 @@ zā
 ▁rica
 ▁rice
 ▁ricerca
-▁riceve
 ▁rich
 ▁riche
 ▁richesse
-▁richiede
-▁richiesta
 ▁rico
 ▁ricordi
 ▁rid
@@ -39123,7 +39096,6 @@ zā
 ▁rigor
 ▁rij
 ▁rik
-▁rilascia
 ▁rim
 ▁rin
 ▁ring
@@ -39133,9 +39105,11 @@ zā
 ▁ripo
 ▁ris
 ▁risc
+▁rischio
 ▁risi
 ▁risk
 ▁risorse
+▁rispetta
 ▁risposte
 ▁risque
 ▁risques
@@ -39145,6 +39119,7 @@ zā
 ▁rito
 ▁ritrova
 ▁ritual
+▁riu
 ▁rival
 ▁rive
 ▁river
@@ -39442,6 +39417,7 @@ zā
 ▁sar
 ▁sara
 ▁sare
+▁sarebbe
 ▁sari
 ▁sarà
 ▁sasa
@@ -39499,7 +39475,7 @@ zā
 ▁scene
 ▁sch
 ▁schaffen
-▁schauen
+▁schafft
 ▁schedule
 ▁scheme
 ▁scherm
@@ -39553,7 +39529,6 @@ zā
 ▁seba
 ▁sebe
 ▁sec
-▁sechs
 ▁second
 ▁seconda
 ▁secondaire
@@ -39722,6 +39697,7 @@ zā
 ▁sette
 ▁setter
 ▁setting
+▁settore
 ▁setup
 ▁seu
 ▁seul
@@ -40012,7 +39988,6 @@ zā
 ▁sofre
 ▁soft
 ▁software
-▁soggetti
 ▁sogn
 ▁soi
 ▁soient
@@ -40041,7 +40016,6 @@ zā
 ▁solide
 ▁solist
 ▁soll
-▁sollen
 ▁sollicit
 ▁solo
 ▁sols
@@ -40067,7 +40041,6 @@ zā
 ▁song
 ▁songs
 ▁sono
-▁sonst
 ▁sont
 ▁soon
 ▁sop
@@ -40169,7 +40142,6 @@ zā
 ▁sperm
 ▁sperma
 ▁spes
-▁spese
 ▁spezielle
 ▁spi
 ▁spiagge
@@ -40264,7 +40236,6 @@ zā
 ▁starting
 ▁startup
 ▁stat
-▁stata
 ▁state
 ▁statement
 ▁states
@@ -40298,7 +40269,6 @@ zā
 ▁ster
 ▁steriliz
 ▁steroid
-▁stessi
 ▁sti
 ▁stick
 ▁sticker
@@ -40607,7 +40577,6 @@ zā
 ▁sû
 ▁sûr
 ▁sü
-▁süs
 ▁sœur
 ▁t
 ▁ta
@@ -40868,7 +40837,6 @@ zā
 ▁teste
 ▁testen
 ▁tester
-▁testet
 ▁testi
 ▁testimoni
 ▁testing
@@ -41365,7 +41333,6 @@ zā
 ▁tí
 ▁tó
 ▁tô
-▁tö
 ▁tú
 ▁u
 ▁ubi
@@ -41446,7 +41413,6 @@ zā
 ▁unsere
 ▁unter
 ▁unterstützt
-▁unterwegs
 ▁until
 ▁unusual
 ▁up
@@ -41485,6 +41451,7 @@ zā
 ▁using
 ▁uso
 ▁usque
+▁ust
 ▁usu
 ▁usual
 ▁usually
@@ -41550,7 +41517,6 @@ zā
 ▁value
 ▁values
 ▁valut
-▁valuta
 ▁vam
 ▁vampir
 ▁van
@@ -41625,6 +41591,7 @@ zā
 ▁venenatis
 ▁venez
 ▁venga
+▁vengono
 ▁veni
 ▁veniam
 ▁venir
@@ -41701,7 +41668,6 @@ zā
 ▁vestimenta
 ▁vesz
 ▁vet
-▁veter
 ▁veteran
 ▁veterinar
 ▁veto
@@ -41758,7 +41724,6 @@ zā
 ▁view
 ▁views
 ▁vigent
-▁vigente
 ▁vigila
 ▁vigne
 ▁vigor
@@ -42028,7 +41993,6 @@ zā
 ▁warga
 ▁warm
 ▁warrant
-▁warten
 ▁was
 ▁wasn
 ▁wat
@@ -42134,13 +42098,11 @@ zā
 ▁winter
 ▁wir
 ▁wird
-▁wirkt
 ▁wirst
 ▁wis
 ▁wisdom
 ▁wish
 ▁wisi
-▁wissen
 ▁wist
 ▁wit
 ▁with
@@ -42510,7 +42472,6 @@ zā
 ▁ü
 ▁über
 ▁überall
-▁überhaupt
 ▁Ăn
 ▁Ć
 ▁Č
@@ -42605,7 +42566,6 @@ zā
 ▪
 ▶
 ►
-▾
 ◗
 ◦
 ◼
@@ -42618,20 +42578,19 @@ zā
 
 
 
-
 
 
 
 
-
-
+
 
-
-
 
 
 
+
+
 
+
 
 
 

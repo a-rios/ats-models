@@ -22,7 +22,6 @@ $
 '
 (
 (!)
-(*
 (?)
 )
 )(
@@ -202,7 +201,6 @@ ACA
 ACE
 ACH
 ACI
-ACIÓN
 ACT
 ACTIV
 AD
@@ -334,7 +332,6 @@ ARS
 ART
 ARTA
 ARTE
-ARU
 ARY
 AS
 ASA
@@ -452,7 +449,6 @@ Assad
 Assemblée
 Associate
 Association
-Associazione
 At
 Atlant
 Atom
@@ -1279,7 +1275,6 @@ HL
 HM
 HN
 HO
-HOD
 HOL
 HOLD
 HON
@@ -1391,7 +1386,6 @@ IJA
 IJI
 IK
 IKA
-IKAN
 IKE
 IKI
 IKK
@@ -1448,7 +1442,6 @@ IP
 IPA
 IPO
 IQ
-IQUE
 IR
 IRA
 IRAN
@@ -1584,7 +1577,6 @@ Ju
 Jul
 Jun
 Just
-JÄ
 Jährige
 Järve
 K
@@ -1599,7 +1591,6 @@ KARI
 KAS
 KAT
 KATA
-KATEGORI
 KAZ
 KB
 KE
@@ -1719,7 +1710,6 @@ LAND
 LANG
 LAP
 LAR
-LARI
 LAS
 LASH
 LAST
@@ -1875,7 +1865,6 @@ MEL
 MEN
 MENA
 MENT
-MENTE
 MENTO
 MER
 MES
@@ -2070,7 +2059,6 @@ NOG
 NOM
 NOR
 NOS
-NOSTI
 NOV
 NOVA
 NOW
@@ -2228,7 +2216,6 @@ OVO
 OW
 OWA
 OWE
-OWY
 OX
 OY
 OZ
@@ -2529,7 +2516,6 @@ RS
 RSA
 RSS
 RT
-RTI
 RU
 RUG
 RUM
@@ -3007,7 +2993,6 @@ ULA
 ULAN
 ULE
 ULI
-ULLA
 ULO
 ULT
 ULU
@@ -3234,7 +3219,6 @@ XA
 XC
 XD
 XE
-XH
 XI
 XII
 XIII
@@ -3329,7 +3313,6 @@ Zlatn
 Zo
 Zu
 [
-[/
 \
 ]
 ][
@@ -3717,7 +3700,6 @@ amour
 amp
 ampak
 ampi
-ampli
 ampu
 ams
 amu
@@ -3998,7 +3980,6 @@ assa
 assaggio
 assassinat
 asse
-assembla
 assemble
 assemblée
 assenza
@@ -4994,7 +4975,6 @@ cionado
 cional
 cione
 ciones
-cioni
 cios
 cioso
 cious
@@ -5272,6 +5252,7 @@ cü
 că
 d
 da
+daagse
 daan
 dab
 daba
@@ -5424,6 +5405,7 @@ dering
 dern
 ders
 des
+deset
 desh
 desi
 design
@@ -5516,7 +5498,6 @@ dilo
 dim
 dimension
 dimensional
-dimento
 dimo
 din
 dina
@@ -5680,6 +5661,7 @@ duci
 duct
 duction
 dud
+dug
 duga
 duh
 dui
@@ -6641,7 +6623,6 @@ frog
 from
 front
 fru
-frut
 fry
 frí
 fs
@@ -7736,7 +7717,6 @@ iden
 ident
 identifi
 identification
-identità
 ider
 ides
 idest
@@ -8022,7 +8002,6 @@ indi
 india
 indica
 indik
-indirizzo
 individu
 indo
 indra
@@ -8128,7 +8107,6 @@ inte
 integr
 integra
 intele
-intellekt
 intelligence
 inten
 inter
@@ -8171,7 +8149,6 @@ ione
 ionem
 iones
 ionis
-ionnaires
 ions
 ior
 ios
@@ -8479,7 +8456,6 @@ izy
 izza
 izzare
 izzate
-izzazione
 iä
 ière
 ières
@@ -8685,7 +8661,6 @@ jährige
 jährigen
 jän
 jär
-järn
 järvi
 jät
 jær
@@ -9211,6 +9186,7 @@ ktion
 kto
 ktor
 ktu
+ktör
 ku
 kua
 kub
@@ -9973,7 +9949,6 @@ lur
 lus
 luse
 lusi
-lusió
 lust
 lusta
 lustra
@@ -10193,7 +10168,6 @@ matig
 matik
 mato
 maton
-matta
 matu
 max
 may
@@ -10448,7 +10422,6 @@ mium
 mix
 miya
 miz
-mize
 mizi
 miä
 mjer
@@ -13080,8 +13053,6 @@ scribe
 scribi
 script
 scription
-scritto
-scrivere
 scul
 sdag
 sdorf
@@ -14752,7 +14723,6 @@ uese
 uf
 ufa
 uff
-ufficio
 ufgrund
 ufu
 ug
@@ -16631,6 +16601,7 @@ ző
 đ
 đe
 đi
+ē
 ēl
 ēs
 ētā
@@ -16864,7 +16835,6 @@ ző
 ⇨
 −
 ∙
-∞
 ∫
 ≡
 ≤
@@ -17604,6 +17574,7 @@ ző
 ▁Asturias
 ▁Asus
 ▁Asya
+▁Así
 ▁At
 ▁Ata
 ▁Atas
@@ -18871,7 +18842,6 @@ ző
 ▁China
 ▁Chine
 ▁Chinese
-▁Chinna
 ▁Chip
 ▁Chirurg
 ▁Chitt
@@ -19037,7 +19007,6 @@ ző
 ▁Command
 ▁Comme
 ▁Comment
-▁Comments
 ▁Commission
 ▁Committee
 ▁Common
@@ -19302,7 +19271,6 @@ ző
 ▁DIGITAL
 ▁DIN
 ▁DIRE
-▁DIRECT
 ▁DIS
 ▁DIY
 ▁DJ
@@ -19651,7 +19619,6 @@ ző
 ▁Dj
 ▁Dje
 ▁Dk
-▁Dkt
 ▁Dla
 ▁Dmitri
 ▁Dnes
@@ -20105,7 +20072,6 @@ ző
 ▁Epi
 ▁Epic
 ▁Epidemi
-▁Episcopus
 ▁Episod
 ▁Episode
 ▁Equi
@@ -21500,6 +21466,7 @@ ző
 ▁Hatta
 ▁Hau
 ▁Haug
+▁Haugesund
 ▁Hauk
 ▁Haupt
 ▁Hauptstadt
@@ -21728,6 +21695,7 @@ ző
 ▁Hoppa
 ▁Hor
 ▁Hora
+▁Hordaland
 ▁Hori
 ▁Horizon
 ▁Horizonte
@@ -22162,6 +22130,7 @@ ző
 ▁Issue
 ▁Ist
 ▁Istanbul
+▁Isto
 ▁Istri
 ▁István
 ▁Isus
@@ -22330,7 +22299,6 @@ ző
 ▁Jin
 ▁Jis
 ▁Jiří
-▁Jl
 ▁Jo
 ▁Joachim
 ▁Joan
@@ -23462,7 +23430,6 @@ ző
 ▁Lise
 ▁Lissabon
 ▁List
-▁Lista
 ▁Liste
 ▁Listen
 ▁Listo
@@ -23621,7 +23588,6 @@ ző
 ▁Lyric
 ▁Lyrics
 ▁Lys
-▁LÄ
 ▁Là
 ▁Lá
 ▁László
@@ -23885,7 +23851,6 @@ ző
 ▁Maq
 ▁Mar
 ▁Mara
-▁Marathi
 ▁Marathon
 ▁Marc
 ▁Marca
@@ -25283,7 +25248,6 @@ ző
 ▁POD
 ▁POL
 ▁POLI
-▁POLITI
 ▁POP
 ▁POR
 ▁PORT
@@ -25401,7 +25365,6 @@ ző
 ▁Pari
 ▁Parigi
 ▁Paris
-▁Pariz
 ▁Park
 ▁Parker
 ▁Parkinson
@@ -25493,7 +25456,6 @@ ző
 ▁Peale
 ▁Pearl
 ▁Peda
-▁Pedagogi
 ▁Pedersen
 ▁Pediatri
 ▁Pedig
@@ -26174,7 +26136,6 @@ ző
 ▁RELA
 ▁REPUBLIK
 ▁RES
-▁RESULT
 ▁RF
 ▁RFE
 ▁RFID
@@ -27751,7 +27712,6 @@ ző
 ▁Sunny
 ▁Sunshine
 ▁Sunt
-▁Suo
 ▁Suomen
 ▁Suomi
 ▁Sup
@@ -27930,7 +27890,6 @@ ző
 ▁TUR
 ▁TV
 ▁TVA
-▁TY
 ▁Ta
 ▁Taal
 ▁Tab
@@ -28071,6 +28030,7 @@ ző
 ▁Telekom
 ▁Telemark
 ▁Telenor
+▁Televi
 ▁Television
 ▁Televizi
 ▁Telia
@@ -29059,7 +29019,6 @@ ző
 ▁Vázquez
 ▁Vä
 ▁Väl
-▁Väli
 ▁Välj
 ▁Vän
 ▁Vär
@@ -29281,7 +29240,6 @@ ző
 ▁Wissenschaft
 ▁Wissenschaftler
 ▁Wit
-▁Witam
 ▁With
 ▁Without
 ▁Witte
@@ -29375,6 +29333,7 @@ ző
 ▁Xperia
 ▁Xu
 ▁Xunta
+▁Xxx
 ▁Y
 ▁YA
 ▁YANG
@@ -29415,7 +29374,6 @@ ző
 ▁Yet
 ▁Yi
 ▁Yli
-▁Ym
 ▁Yn
 ▁Yo
 ▁Yog
@@ -29448,7 +29406,6 @@ ző
 ▁Z
 ▁ZA
 ▁ZAGREB
-▁ZDA
 ▁Za
 ▁Zabal
 ▁Zach
@@ -29602,7 +29559,6 @@ ző
 ▁abo
 ▁abon
 ▁abonnement
-▁aborda
 ▁abort
 ▁about
 ▁above
@@ -29613,7 +29569,6 @@ ző
 ▁abschließen
 ▁absen
 ▁absent
-▁absol
 ▁absolument
 ▁absolut
 ▁absolute
@@ -29657,6 +29612,7 @@ ző
 ▁accumula
 ▁accurate
 ▁accusa
+▁accusamus
 ▁acea
 ▁acer
 ▁ach
@@ -29685,7 +29641,6 @@ ző
 ▁actress
 ▁actual
 ▁actually
-▁actuellement
 ▁acu
 ▁ad
 ▁ada
@@ -29810,7 +29765,6 @@ ző
 ▁aktive
 ▁aktivere
 ▁aktivist
-▁aktivit
 ▁aktiviti
 ▁aktu
 ▁aktual
@@ -29901,7 +29855,6 @@ ző
 ▁altro
 ▁alu
 ▁aluminium
-▁alumni
 ▁always
 ▁am
 ▁ama
@@ -30103,7 +30056,6 @@ ző
 ▁appropriate
 ▁approved
 ▁approximately
-▁apps
 ▁apri
 ▁après
 ▁aq
@@ -30209,8 +30161,6 @@ ző
 ▁assim
 ▁assist
 ▁assistance
-▁assistant
-▁assistent
 ▁assisti
 ▁asso
 ▁associa
@@ -30244,7 +30194,6 @@ ző
 ▁attendant
 ▁attenta
 ▁attention
-▁attesta
 ▁attitude
 ▁attorney
 ▁attract
@@ -30271,6 +30220,7 @@ ző
 ▁aufzu
 ▁aug
 ▁augue
+▁augusti
 ▁aujourd
 ▁auk
 ▁auprès
@@ -30304,6 +30254,7 @@ ző
 ▁auto
 ▁automat
 ▁automatic
+▁automatically
 ▁automatisch
 ▁automobil
 ▁automobile
@@ -30311,7 +30262,6 @@ ző
 ▁autor
 ▁autori
 ▁autorit
-▁autorizza
 ▁autre
 ▁autres
 ▁aux
@@ -30328,7 +30278,6 @@ ző
 ▁aval
 ▁avangard
 ▁avant
-▁avatar
 ▁avec
 ▁average
 ▁avez
@@ -30399,9 +30348,6 @@ ző
 ▁banana
 ▁banane
 ▁banc
-▁banca
-▁bancar
-▁bancario
 ▁band
 ▁banda
 ▁bandar
@@ -30570,7 +30516,6 @@ ző
 ▁beneficiar
 ▁benefit
 ▁benefits
-▁bener
 ▁benign
 ▁benim
 ▁benissimo
@@ -30713,7 +30658,6 @@ ző
 ▁bilder
 ▁bildet
 ▁bildu
-▁bili
 ▁bilin
 ▁bill
 ▁billig
@@ -30970,6 +30914,7 @@ ző
 ▁busy
 ▁but
 ▁butter
+▁button
 ▁buy
 ▁buz
 ▁bv
@@ -31035,7 +30980,6 @@ ző
 ▁capabil
 ▁capable
 ▁capac
-▁capace
 ▁capacita
 ▁capacitación
 ▁capacity
@@ -31085,7 +31029,6 @@ ző
 ▁casse
 ▁cast
 ▁castigat
-▁casting
 ▁casu
 ▁casual
 ▁cat
@@ -31118,7 +31061,6 @@ ző
 ▁celebration
 ▁celebrity
 ▁cell
-▁celle
 ▁celles
 ▁celui
 ▁cement
@@ -31127,6 +31069,7 @@ ző
 ▁cent
 ▁center
 ▁central
+▁centrale
 ▁centre
 ▁centres
 ▁centri
@@ -31137,14 +31080,12 @@ ző
 ▁cerc
 ▁cere
 ▁cereal
-▁cerebral
 ▁ceremoni
 ▁cert
 ▁certain
 ▁certainly
 ▁certains
 ▁certificate
-▁certification
 ▁cerve
 ▁ces
 ▁cet
@@ -31207,8 +31148,6 @@ ző
 ▁chiama
 ▁chiar
 ▁chic
-▁chiede
-▁chiedere
 ▁chief
 ▁chien
 ▁child
@@ -31284,7 +31223,6 @@ ző
 ▁civile
 ▁civili
 ▁civiliza
-▁civitate
 ▁cl
 ▁cla
 ▁claim
@@ -31429,7 +31367,6 @@ ző
 ▁competi
 ▁competition
 ▁competitive
-▁compila
 ▁complain
 ▁complaint
 ▁complemento
@@ -31487,7 +31424,6 @@ ző
 ▁conduct
 ▁conduit
 ▁conference
-▁conferma
 ▁confi
 ▁confiance
 ▁confidence
@@ -31500,6 +31436,7 @@ ző
 ▁confronta
 ▁confronti
 ▁conférence
+▁congratula
 ▁connaît
 ▁connaître
 ▁connect
@@ -31571,7 +31508,6 @@ ző
 ▁continued
 ▁continues
 ▁continuo
-▁conto
 ▁contra
 ▁contract
 ▁contractual
@@ -31622,7 +31558,6 @@ ző
 ▁corpus
 ▁corre
 ▁correct
-▁corrente
 ▁correspond
 ▁corresponde
 ▁corri
@@ -31666,7 +31601,6 @@ ző
 ▁crazy
 ▁cre
 ▁cream
-▁creat
 ▁create
 ▁created
 ▁creati
@@ -31742,7 +31676,6 @@ ző
 ▁curriculum
 ▁curry
 ▁curs
-▁curso
 ▁cursus
 ▁curta
 ▁custo
@@ -31953,7 +31886,6 @@ ző
 ▁demonstrat
 ▁demora
 ▁den
-▁dende
 ▁denen
 ▁denk
 ▁denke
@@ -31981,7 +31913,6 @@ ző
 ▁des
 ▁desa
 ▁desaparecido
-▁desayuno
 ▁descend
 ▁descri
 ▁describe
@@ -32001,7 +31932,6 @@ ző
 ▁desse
 ▁dessen
 ▁dessin
-▁dest
 ▁desta
 ▁destabiliz
 ▁destin
@@ -32021,7 +31951,6 @@ ző
 ▁determina
 ▁determine
 ▁detriment
-▁dette
 ▁detto
 ▁deutlich
 ▁deutsch
@@ -32068,8 +31997,6 @@ ző
 ▁diaspor
 ▁dicere
 ▁dich
-▁dichiara
-▁dichiarazione
 ▁dicho
 ▁dicht
 ▁dicit
@@ -32189,7 +32116,6 @@ ző
 ▁display
 ▁dispo
 ▁dispon
-▁disponibilità
 ▁disponible
 ▁disposa
 ▁disposi
@@ -32277,6 +32203,7 @@ ző
 ▁dolores
 ▁dolu
 ▁dom
+▁doma
 ▁domain
 ▁domaine
 ▁domestic
@@ -32485,7 +32412,6 @@ ző
 ▁economi
 ▁economic
 ▁economica
-▁economiche
 ▁economie
 ▁economy
 ▁ed
@@ -32525,7 +32451,6 @@ ző
 ▁effektiv
 ▁effet
 ▁effetti
-▁effettuare
 ▁efficace
 ▁efficiency
 ▁efficient
@@ -32590,6 +32515,7 @@ ző
 ▁einzu
 ▁eis
 ▁either
+▁eius
 ▁ej
 ▁ejakul
 ▁ek
@@ -32604,7 +32530,6 @@ ző
 ▁ele
 ▁election
 ▁elector
-▁electoral
 ▁electr
 ▁electric
 ▁electro
@@ -32747,7 +32672,6 @@ ző
 ▁enthalten
 ▁enthält
 ▁enti
-▁entier
 ▁entire
 ▁entirely
 ▁entlang
@@ -32890,6 +32814,7 @@ ző
 ▁esot
 ▁esp
 ▁espa
+▁espace
 ▁especial
 ▁especially
 ▁esque
@@ -32901,7 +32826,6 @@ ző
 ▁essentielle
 ▁essenziali
 ▁essere
-▁esset
 ▁est
 ▁establish
 ▁established
@@ -32992,7 +32916,6 @@ ző
 ▁excess
 ▁exchange
 ▁excited
-▁exciting
 ▁exclu
 ▁exclusive
 ▁excusa
@@ -33082,7 +33005,6 @@ ző
 ▁fac
 ▁face
 ▁facebook
-▁facendo
 ▁facere
 ▁fach
 ▁faci
@@ -33147,6 +33069,7 @@ ző
 ▁fantasi
 ▁fantast
 ▁fantastic
+▁fantastik
 ▁fantastisch
 ▁far
 ▁fare
@@ -33216,7 +33139,6 @@ ző
 ▁felt
 ▁fem
 ▁female
-▁femei
 ▁feminin
 ▁feminist
 ▁femme
@@ -33327,7 +33249,6 @@ ző
 ▁fir
 ▁fire
 ▁firm
-▁firma
 ▁firme
 ▁firmie
 ▁first
@@ -33445,7 +33366,6 @@ ző
 ▁formie
 ▁formul
 ▁formula
-▁formulaire
 ▁formular
 ▁formulier
 ▁fort
@@ -33599,7 +33519,6 @@ ző
 ▁fáil
 ▁fährt
 ▁fällt
-▁fält
 ▁får
 ▁fé
 ▁fédéral
@@ -33646,7 +33565,6 @@ ző
 ▁gang
 ▁ganga
 ▁gange
-▁gangen
 ▁gant
 ▁ganz
 ▁ganze
@@ -33720,7 +33638,6 @@ ző
 ▁gegen
 ▁gegenseitig
 ▁gegenüber
-▁gegn
 ▁gegründet
 ▁gehabt
 ▁gehad
@@ -33924,7 +33841,6 @@ ző
 ▁gin
 ▁ging
 ▁gingen
-▁giorno
 ▁gips
 ▁girl
 ▁girlfriend
@@ -33950,7 +33866,6 @@ ző
 ▁glatt
 ▁glaube
 ▁glauben
-▁glaz
 ▁gle
 ▁gleich
 ▁gleichen
@@ -34055,7 +33970,6 @@ ző
 ▁gris
 ▁gro
 ▁grob
-▁grond
 ▁gros
 ▁gross
 ▁grosse
@@ -34160,7 +34074,6 @@ ző
 ▁habita
 ▁habitants
 ▁habitu
-▁habitual
 ▁habt
 ▁hac
 ▁hack
@@ -34197,7 +34110,6 @@ ző
 ▁handel
 ▁handels
 ▁handelt
-▁handen
 ▁handi
 ▁handicap
 ▁handle
@@ -34747,7 +34659,6 @@ ző
 ▁indikator
 ▁indirect
 ▁indis
-▁individu
 ▁individual
 ▁individuals
 ▁individuel
@@ -34786,7 +34697,6 @@ ző
 ▁informa
 ▁informal
 ▁informat
-▁informatik
 ▁information
 ▁informations
 ▁informativ
@@ -34833,7 +34743,6 @@ ző
 ▁inser
 ▁insgesamt
 ▁inside
-▁insieme
 ▁insight
 ▁insigni
 ▁insist
@@ -34855,6 +34764,7 @@ ző
 ▁institution
 ▁instru
 ▁instructions
+▁instrui
 ▁instrument
 ▁instrumental
 ▁insu
@@ -34869,14 +34779,12 @@ ző
 ▁integrat
 ▁integration
 ▁integriert
-▁intel
 ▁intelege
 ▁intelekt
 ▁intellectu
 ▁intellige
 ▁intelligent
 ▁intend
-▁intende
 ▁intended
 ▁intens
 ▁intense
@@ -34946,6 +34854,7 @@ ző
 ▁invasi
 ▁invent
 ▁inventar
+▁inventore
 ▁invers
 ▁invert
 ▁invest
@@ -34981,7 +34890,6 @@ ző
 ▁irre
 ▁is
 ▁isa
-▁ish
 ▁isla
 ▁islam
 ▁islami
@@ -35013,9 +34921,7 @@ ző
 ▁itin
 ▁its
 ▁itself
-▁itt
 ▁itu
-▁ity
 ▁iu
 ▁iudica
 ▁iure
@@ -35121,7 +35027,6 @@ ző
 ▁jung
 ▁junge
 ▁jungen
-▁juni
 ▁junior
 ▁jur
 ▁juri
@@ -35589,7 +35494,6 @@ ző
 ▁kristal
 ▁kristall
 ▁krit
-▁kriter
 ▁kriti
 ▁kritik
 ▁kritis
@@ -35608,7 +35512,6 @@ ző
 ▁kub
 ▁kuba
 ▁kul
-▁kula
 ▁kulan
 ▁kulinar
 ▁kulmin
@@ -35705,6 +35608,7 @@ ző
 ▁laguntza
 ▁lah
 ▁lai
+▁laik
 ▁laisse
 ▁lake
 ▁laku
@@ -35755,6 +35659,7 @@ ző
 ▁latina
 ▁latte
 ▁lauda
+▁laudantium
 ▁laufen
 ▁laugh
 ▁launch
@@ -35912,13 +35817,10 @@ ző
 ▁life
 ▁lifestyle
 ▁lift
-▁lig
 ▁liga
 ▁lige
 ▁light
-▁ligi
 ▁ligne
-▁ligt
 ▁ligula
 ▁like
 ▁likely
@@ -35945,7 +35847,6 @@ ző
 ▁lingua
 ▁linguis
 ▁lini
-▁linie
 ▁link
 ▁links
 ▁liom
@@ -36009,7 +35910,6 @@ ző
 ▁logic
 ▁logik
 ▁logika
-▁login
 ▁logis
 ▁logistic
 ▁logistik
@@ -36055,7 +35955,6 @@ ző
 ▁lower
 ▁loyal
 ▁lu
-▁lua
 ▁luce
 ▁lucid
 ▁luck
@@ -36092,7 +35991,6 @@ ző
 ▁luxus
 ▁luz
 ▁ly
-▁lyd
 ▁lymph
 ▁lyn
 ▁là
@@ -36145,9 +36043,7 @@ ző
 ▁mafi
 ▁mag
 ▁magazin
-▁magazine
 ▁magen
-▁maggio
 ▁magic
 ▁magis
 ▁magistrat
@@ -36244,7 +36140,6 @@ ző
 ▁maq
 ▁mar
 ▁mara
-▁marad
 ▁marathon
 ▁marc
 ▁march
@@ -36305,7 +36200,6 @@ ző
 ▁materie
 ▁matern
 ▁math
-▁mati
 ▁matin
 ▁matri
 ▁matter
@@ -36439,7 +36333,6 @@ ző
 ▁mero
 ▁merveille
 ▁mes
-▁mese
 ▁meses
 ▁mesos
 ▁messa
@@ -36704,7 +36597,6 @@ ző
 ▁mostly
 ▁mot
 ▁mota
-▁mote
 ▁mother
 ▁motion
 ▁motiv
@@ -36868,7 +36760,6 @@ ző
 ▁nano
 ▁nap
 ▁narko
-▁narod
 ▁naroda
 ▁narra
 ▁nas
@@ -36879,7 +36770,6 @@ ző
 ▁nation
 ▁national
 ▁nationale
-▁nato
 ▁natoque
 ▁natur
 ▁natura
@@ -36888,6 +36778,7 @@ ző
 ▁naturali
 ▁nature
 ▁naturelle
+▁natus
 ▁natürlich
 ▁nauti
 ▁nav
@@ -36896,7 +36787,6 @@ ző
 ▁navigation
 ▁nazionale
 ▁nazist
-▁nder
 ▁ndi
 ▁ne
 ▁near
@@ -36907,7 +36797,6 @@ ző
 ▁neben
 ▁nec
 ▁neces
-▁necessaria
 ▁necessarily
 ▁necessary
 ▁necessitat
@@ -36921,7 +36810,6 @@ ző
 ▁nef
 ▁negativ
 ▁negative
-▁negativo
 ▁negle
 ▁negli
 ▁nego
@@ -36937,7 +36825,6 @@ ző
 ▁nek
 ▁nel
 ▁nell
-▁nelle
 ▁nem
 ▁nemen
 ▁nemo
@@ -36988,7 +36875,6 @@ ző
 ▁next
 ▁nez
 ▁ng
-▁nge
 ▁nh
 ▁ni
 ▁nia
@@ -37009,7 +36895,6 @@ ző
 ▁night
 ▁nih
 ▁nihil
-▁nik
 ▁niko
 ▁nikotin
 ▁nim
@@ -37023,7 +36908,6 @@ ző
 ▁niti
 ▁niveau
 ▁nivell
-▁niz
 ▁nje
 ▁njo
 ▁nju
@@ -37339,10 +37223,8 @@ ző
 ▁organise
 ▁organiseren
 ▁organisiert
-▁organism
 ▁organisé
 ▁organiz
-▁organiza
 ▁organization
 ▁orgasm
 ▁ori
@@ -37362,7 +37244,6 @@ ző
 ▁ost
 ▁osta
 ▁osteo
-▁ote
 ▁other
 ▁others
 ▁otherwise
@@ -37573,7 +37454,6 @@ ző
 ▁pays
 ▁paz
 ▁pc
-▁pct
 ▁pdf
 ▁pe
 ▁pea
@@ -37613,7 +37493,6 @@ ző
 ▁pense
 ▁pensiero
 ▁pension
-▁pensione
 ▁pent
 ▁pentru
 ▁people
@@ -37642,7 +37521,6 @@ ző
 ▁perfume
 ▁perhaps
 ▁period
-▁periode
 ▁perioden
 ▁periodic
 ▁permanent
@@ -37807,6 +37685,7 @@ ző
 ▁plata
 ▁plate
 ▁plateforme
+▁plates
 ▁platform
 ▁platin
 ▁platit
@@ -37890,7 +37769,6 @@ ző
 ▁poly
 ▁pom
 ▁pommes
-▁pomo
 ▁pomp
 ▁pon
 ▁pont
@@ -37947,7 +37825,6 @@ ző
 ▁post
 ▁posta
 ▁postal
-▁postale
 ▁postali
 ▁poste
 ▁posted
@@ -37987,6 +37864,7 @@ ző
 ▁practice
 ▁prae
 ▁praec
+▁praesentium
 ▁praeter
 ▁pragmat
 ▁prakti
@@ -38027,7 +37905,6 @@ ző
 ▁premiér
 ▁pren
 ▁prend
-▁prende
 ▁prenota
 ▁prensa
 ▁prep
@@ -38053,10 +37930,7 @@ ző
 ▁press
 ▁presse
 ▁pressi
-▁pression
-▁presso
 ▁pressure
-▁prestazioni
 ▁pret
 ▁pretend
 ▁pretium
@@ -38115,7 +37989,6 @@ ző
 ▁privilegi
 ▁privé
 ▁privée
-▁prix
 ▁pro
 ▁prob
 ▁proba
@@ -38130,7 +38003,6 @@ ző
 ▁problème
 ▁problèmes
 ▁proc
-▁proceder
 ▁procedure
 ▁proceed
 ▁proces
@@ -38172,7 +38044,6 @@ ző
 ▁professora
 ▁profi
 ▁profil
-▁profile
 ▁profili
 ▁profit
 ▁profitieren
@@ -38273,7 +38144,6 @@ ző
 ▁protégé
 ▁prou
 ▁proud
-▁prov
 ▁prove
 ▁proved
 ▁proven
@@ -38286,7 +38156,6 @@ ző
 ▁providing
 ▁provin
 ▁province
-▁provincia
 ▁provincial
 ▁provis
 ▁provision
@@ -38368,7 +38237,6 @@ ző
 ▁punktu
 ▁punt
 ▁pup
-▁pupil
 ▁pur
 ▁purchase
 ▁pure
@@ -38398,13 +38266,11 @@ ző
 ▁péri
 ▁période
 ▁pö
-▁pör
 ▁públicos
 ▁pü
 ▁před
 ▁pū
 ▁q
-▁qa
 ▁qas
 ▁qatar
 ▁qi
@@ -38414,6 +38280,7 @@ ző
 ▁quadra
 ▁quadri
 ▁quae
+▁quaerat
 ▁quaestio
 ▁qual
 ▁quali
@@ -38603,7 +38470,6 @@ ző
 ▁rechter
 ▁rechts
 ▁rechtzeitig
-▁reci
 ▁recipe
 ▁recipient
 ▁reciproc
@@ -38761,7 +38627,6 @@ ző
 ▁ren
 ▁rena
 ▁rend
-▁rende
 ▁render
 ▁rendez
 ▁rendit
@@ -38778,12 +38643,12 @@ ző
 ▁reparation
 ▁repe
 ▁repeat
+▁repellat
 ▁repellendus
 ▁reper
 ▁repeti
 ▁replace
 ▁repli
-▁replica
 ▁reply
 ▁repo
 ▁report
@@ -38875,7 +38740,6 @@ ző
 ▁restaurants
 ▁restauration
 ▁reste
-▁resten
 ▁restitu
 ▁resto
 ▁restri
@@ -38886,7 +38750,6 @@ ző
 ▁results
 ▁resum
 ▁resume
-▁resurs
 ▁ret
 ▁reta
 ▁retail
@@ -38929,12 +38792,9 @@ ző
 ▁rib
 ▁ribo
 ▁rice
-▁riceve
 ▁rich
 ▁riche
 ▁richesse
-▁richiede
-▁richiesta
 ▁richtet
 ▁richtig
 ▁richtige
@@ -38956,7 +38816,6 @@ ző
 ▁rights
 ▁rigid
 ▁rigor
-▁rilascia
 ▁rin
 ▁rind
 ▁ring
@@ -38977,7 +38836,6 @@ ző
 ▁riu
 ▁rival
 ▁river
-▁rivi
 ▁ro
 ▁roa
 ▁road
@@ -39013,7 +38871,6 @@ ző
 ▁room
 ▁rooms
 ▁root
-▁ropa
 ▁ros
 ▁rosa
 ▁rose
@@ -39035,7 +38892,6 @@ ző
 ▁royal
 ▁rozmawia
 ▁rre
-▁rrit
 ▁rs
 ▁ru
 ▁rua
@@ -39073,7 +38929,6 @@ ző
 ▁rust
 ▁rustic
 ▁rutrum
-▁ry
 ▁ryhty
 ▁rä
 ▁råd
@@ -39355,7 +39210,6 @@ ző
 ▁selber
 ▁selbst
 ▁select
-▁selected
 ▁selection
 ▁self
 ▁selfie
@@ -39380,6 +39234,7 @@ ző
 ▁sende
 ▁senden
 ▁sender
+▁sendes
 ▁sending
 ▁sene
 ▁seng
@@ -39402,7 +39257,6 @@ ző
 ▁sentence
 ▁sentiment
 ▁sentimental
-▁senza
 ▁seo
 ▁sep
 ▁separa
@@ -39428,7 +39282,6 @@ ző
 ▁seriously
 ▁seriös
 ▁serpent
-▁sert
 ▁servant
 ▁serve
 ▁served
@@ -39528,7 +39381,6 @@ ző
 ▁sieht
 ▁siempre
 ▁sien
-▁sier
 ▁sig
 ▁sight
 ▁sign
@@ -39591,6 +39443,7 @@ ző
 ▁sita
 ▁site
 ▁sites
+▁siti
 ▁sitt
 ▁sitten
 ▁sitting
@@ -39599,8 +39452,6 @@ ző
 ▁situat
 ▁situation
 ▁situations
-▁sitä
-▁sive
 ▁six
 ▁siz
 ▁size
@@ -39627,7 +39478,6 @@ ző
 ▁skip
 ▁skla
 ▁skle
-▁sko
 ▁skončil
 ▁skor
 ▁skr
@@ -39675,7 +39525,6 @@ ző
 ▁smo
 ▁smoking
 ▁smooth
-▁sms
 ▁smug
 ▁sna
 ▁snack
@@ -39710,7 +39559,6 @@ ző
 ▁sog
 ▁sogar
 ▁sogenannte
-▁soggetti
 ▁soi
 ▁soins
 ▁soir
@@ -39775,6 +39623,7 @@ ző
 ▁sorgfältig
 ▁sorgt
 ▁sorry
+▁sors
 ▁sort
 ▁sorte
 ▁sorti
@@ -39837,6 +39686,7 @@ ző
 ▁speciali
 ▁specialist
 ▁species
+▁specifi
 ▁specific
 ▁specifica
 ▁specifically
@@ -39950,6 +39800,7 @@ ző
 ▁stampa
 ▁stan
 ▁stand
+▁standa
 ▁standar
 ▁standard
 ▁standing
@@ -39966,7 +39817,6 @@ ző
 ▁startet
 ▁starting
 ▁stat
-▁stata
 ▁state
 ▁statement
 ▁states
@@ -40011,7 +39861,6 @@ ző
 ▁stereotyp
 ▁steril
 ▁steroid
-▁stessi
 ▁stets
 ▁sti
 ▁stick
@@ -40049,6 +39898,7 @@ ző
 ▁stor
 ▁storage
 ▁store
+▁stori
 ▁storia
 ▁storico
 ▁storie
@@ -40339,7 +40189,6 @@ ző
 ▁tale
 ▁talen
 ▁talent
-▁taler
 ▁talk
 ▁talking
 ▁tam
@@ -40441,7 +40290,6 @@ ző
 ▁telle
 ▁telling
 ▁tellus
-▁telt
 ▁tem
 ▁temo
 ▁temp
@@ -40452,7 +40300,6 @@ ző
 ▁temperature
 ▁temperaturen
 ▁tempi
-▁template
 ▁temple
 ▁tempo
 ▁tempor
@@ -40460,6 +40307,7 @@ ző
 ▁temporal
 ▁temporar
 ▁tempore
+▁temporibus
 ▁temps
 ▁tempus
 ▁ten
@@ -40468,7 +40316,6 @@ ző
 ▁tendenci
 ▁tender
 ▁tenebr
-▁tenen
 ▁tener
 ▁tenetur
 ▁tenido
@@ -40485,7 +40332,6 @@ ző
 ▁ter
 ▁tera
 ▁tere
-▁teren
 ▁teri
 ▁teria
 ▁term
@@ -40542,7 +40388,6 @@ ző
 ▁their
 ▁them
 ▁thema
-▁theme
 ▁themselves
 ▁then
 ▁theo
@@ -40577,7 +40422,6 @@ ző
 ▁throw
 ▁thu
 ▁thy
-▁thème
 ▁thé
 ▁théâtre
 ▁ti
@@ -40592,6 +40436,7 @@ ző
 ▁tiel
 ▁tien
 ▁tiene
+▁tient
 ▁tiers
 ▁ties
 ▁tight
@@ -40603,7 +40448,6 @@ ző
 ▁time
 ▁times
 ▁timid
-▁timme
 ▁timore
 ▁tin
 ▁tina
@@ -40621,7 +40465,6 @@ ző
 ▁tiri
 ▁tiro
 ▁tissu
-▁tisti
 ▁tit
 ▁titan
 ▁titel
@@ -40630,7 +40473,6 @@ ző
 ▁titre
 ▁tits
 ▁titul
-▁tiver
 ▁tj
 ▁tko
 ▁tl
@@ -40881,7 +40723,6 @@ ző
 ▁tur
 ▁turbo
 ▁turbulent
-▁turen
 ▁turi
 ▁turk
 ▁turn
@@ -41115,7 +40956,6 @@ ző
 ▁valuable
 ▁value
 ▁values
-▁valuta
 ▁vam
 ▁vampir
 ▁van
@@ -41141,7 +40981,6 @@ ző
 ▁vastuu
 ▁vat
 ▁vb
-▁vc
 ▁ve
 ▁vec
 ▁ved
@@ -41170,7 +41009,6 @@ ző
 ▁vene
 ▁venenatis
 ▁venez
-▁venga
 ▁vengono
 ▁veni
 ▁veniam
@@ -41288,7 +41126,6 @@ ző
 ▁vert
 ▁verta
 ▁verte
-▁vertel
 ▁verti
 ▁vertical
 ▁vertikal
@@ -41330,7 +41167,6 @@ ző
 ▁vida
 ▁vide
 ▁video
-▁videos
 ▁vides
 ▁vidi
 ▁vidu
@@ -41349,7 +41185,6 @@ ző
 ▁vietnam
 ▁view
 ▁views
-▁vigente
 ▁vigne
 ▁vigueur
 ▁vii
@@ -41438,7 +41273,6 @@ ző
 ▁volatil
 ▁vole
 ▁volen
-▁voler
 ▁volk
 ▁voll
 ▁volle
@@ -41458,6 +41292,8 @@ ző
 ▁volunteer
 ▁voluptas
 ▁voluptate
+▁voluptatem
+▁voluptatibus
 ▁vom
 ▁von
 ▁vond
@@ -41520,7 +41356,6 @@ ző
 ▁vz
 ▁vä
 ▁väg
-▁vêtements
 ▁või
 ▁völlig
 ▁w
@@ -41675,7 +41510,6 @@ ző
 ▁windows
 ▁wine
 ▁winkel
-▁winnen
 ▁winner
 ▁winter
 ▁wir
@@ -41764,7 +41598,6 @@ ző
 ▁xi
 ▁xin
 ▁xo
-▁xu
 ▁xx
 ▁xxx
 ▁y
@@ -41796,7 +41629,6 @@ ző
 ▁youth
 ▁youtube
 ▁yum
-▁yw
 ▁z
 ▁za
 ▁zag
@@ -41828,7 +41660,6 @@ ző
 ▁zes
 ▁zi
 ▁zic
-▁zich
 ▁zie
 ▁ziehen
 ▁zieht
@@ -41893,7 +41724,6 @@ ző
 ▁{
 ▁}
 ▁~
-▁
 ▁¡
 ▁£
 ▁§
@@ -42098,7 +41928,6 @@ ző
 ▁Český
 ▁Či
 ▁Čo
-▁Ču
 ▁české
 ▁Ďakujem
 ▁Đ
@@ -42184,13 +42013,11 @@ ző
 ▁▶
 ▁▷
 ▁►
-▁○
 ▁●
 ▁
 ■
 □
 ▸
-▾
 ◂
 ●
 ◦
@@ -42204,35 +42031,28 @@ ző
 
 
 
-
-
+
 
 
 
 
-
 
-
-
-
 
 
 
 
 
 
-
-
 
 
 
+
 
 
-
+
 
 
 
-
 
 
 
@@ -42240,13 +42060,10 @@ ző
 
 
 
-
 
-
 
 ︎
 ️
 🟢
 🡪
 🩸
-􀀀

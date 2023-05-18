@@ -50,6 +50,7 @@ $
 2009
 2010
 2014
+2015
 2016
 2017
 2018
@@ -111,6 +112,7 @@ AMI
 AMU
 AN
 ANA
+ANCE
 ANTE
 ANTI
 AP
@@ -118,14 +120,12 @@ APA
 AR
 ARA
 ARCH
-ARD
 ARE
 ARS
 ART
 AS
 ASE
 ASS
-AST
 AT
 ATA
 AU
@@ -191,7 +191,6 @@ BF
 BG
 BI
 BIL
-BIT
 BL
 BM
 BO
@@ -224,7 +223,6 @@ Bir
 Black
 Blue
 Bo
-Bol
 Bon
 Bor
 Bos
@@ -253,7 +251,6 @@ CET
 CF
 CG
 CH
-CHA
 CHE
 CHI
 CHO
@@ -296,6 +293,7 @@ Ce
 Centr
 Ch
 Cha
+Chan
 Char
 Che
 Chef
@@ -326,7 +324,6 @@ DC
 DD
 DE
 DEA
-DEF
 DEM
 DER
 DES
@@ -367,6 +364,7 @@ Dis
 Do
 Dom
 Don
+Dr
 Drive
 Du
 E
@@ -680,6 +678,7 @@ Kas
 Ke
 Ki
 Ko
+Kur
 KÖ
 L
 LA
@@ -694,7 +693,6 @@ LEA
 LER
 LES
 LF
-LG
 LI
 LIM
 LIV
@@ -762,6 +760,7 @@ Mar
 Marc
 Mari
 Maria
+Mark
 Mas
 Master
 Mat
@@ -812,6 +811,7 @@ NH
 NI
 NIC
 NL
+NN
 NO
 NOR
 NOS
@@ -841,7 +841,6 @@ Nu
 O
 OB
 OC
-OD
 ODA
 OG
 OGA
@@ -952,6 +951,7 @@ Pro
 Program
 Pu
 Q
+QA
 QU
 Qaeda
 Qu
@@ -1061,6 +1061,7 @@ St
 Sta
 Star
 Ste
+Str
 Stra
 Straße
 Stream
@@ -1096,6 +1097,7 @@ TO
 TOL
 TOM
 TON
+TOS
 TP
 TR
 TRO
@@ -1164,7 +1166,6 @@ USD
 USE
 UT
 UU
-Um
 Un
 Una
 Uni
@@ -1234,6 +1235,7 @@ Y
 YM
 YN
 YO
+YS
 Ya
 Yo
 You
@@ -1243,7 +1245,6 @@ ZE
 ZN
 Za
 Ze
-Zu
 [
 ]
 _
@@ -1333,6 +1334,7 @@ aire
 aires
 ais
 aj
+aja
 ajan
 ajo
 ak
@@ -1426,13 +1428,13 @@ andre
 andro
 ane
 ang
+angel
 ango
 ani
 ania
 anie
 anima
 anja
-ann
 anna
 anne
 ano
@@ -1450,6 +1452,7 @@ anti
 antis
 anto
 antoj
+ants
 anu
 anud
 anunci
@@ -1552,6 +1555,7 @@ atti
 atura
 au
 audi
+aug
 aus
 auto
 autor
@@ -1723,6 +1727,7 @@ blé
 bo
 boa
 board
+bog
 boga
 bol
 bola
@@ -1891,7 +1896,6 @@ cense
 cent
 centa
 cente
-center
 centes
 centi
 cento
@@ -2005,7 +2009,6 @@ ciu
 ció
 ción
 ck
-cka
 cke
 cken
 cker
@@ -2090,6 +2093,7 @@ cra
 crates
 cre
 cream
+creati
 cred
 credit
 cri
@@ -2761,7 +2765,6 @@ fol
 folio
 fon
 fond
-food
 foot
 for
 force
@@ -2878,6 +2881,7 @@ geno
 gens
 genti
 ger
+gera
 geri
 geria
 gers
@@ -3105,7 +3109,6 @@ hl
 hle
 hm
 hman
-hne
 ho
 hockey
 hof
@@ -3128,6 +3131,7 @@ hotel
 hou
 house
 hov
+hová
 how
 hr
 hre
@@ -3148,6 +3152,7 @@ há
 hé
 hér
 hó
+höf
 i
 ia
 iah
@@ -3205,7 +3210,6 @@ iel
 ien
 iendo
 ienne
-iens
 ient
 ientes
 ier
@@ -3408,8 +3412,6 @@ ische
 ischer
 ise
 iselle
-isen
-iser
 ises
 ish
 isha
@@ -3498,6 +3500,7 @@ izare
 izer
 izia
 izo
+izza
 ière
 iñ
 iña
@@ -3619,6 +3622,7 @@ kova
 kovic
 kowski
 kr
+kran
 kreis
 kron
 ks
@@ -3714,7 +3718,6 @@ leben
 lec
 lectiva
 lector
-lectual
 led
 lee
 leg
@@ -3800,10 +3803,8 @@ lima
 limit
 lin
 lina
-lind
 linda
 line
-liner
 lines
 ling
 lingen
@@ -3857,6 +3858,7 @@ lls
 llu
 lly
 llón
+lma
 lmente
 lni
 lo
@@ -3907,7 +3909,6 @@ lucina
 lud
 lugu
 lui
-lular
 lum
 lumina
 lun
@@ -4015,6 +4016,7 @@ mbala
 mbar
 mbara
 mbe
+mber
 mberg
 mbi
 mble
@@ -4066,6 +4068,7 @@ meridian
 mers
 mes
 mesa
+mese
 mesi
 met
 meta
@@ -4196,7 +4199,6 @@ mu
 mula
 mulo
 mult
-multi
 mun
 mund
 muni
@@ -4323,7 +4325,6 @@ nier
 nifica
 nig
 night
-nih
 nik
 nikov
 nim
@@ -4357,6 +4358,7 @@ no
 noc
 nol
 nom
+noma
 nomina
 nomo
 non
@@ -4376,6 +4378,7 @@ novic
 novo
 ns
 nsa
+nse
 nski
 nt
 nta
@@ -4441,7 +4444,6 @@ of
 ofa
 ofer
 off
-offre
 ofobi
 og
 oga
@@ -4725,7 +4727,6 @@ pie
 piece
 pien
 pier
-piga
 pil
 pilot
 pin
@@ -5000,6 +5001,7 @@ rano
 rant
 rante
 rap
+rapat
 rar
 rari
 ras
@@ -5216,6 +5218,7 @@ room
 rop
 ropa
 rope
+ror
 ros
 rosa
 rose
@@ -5550,6 +5553,7 @@ start
 stas
 stat
 stato
+statt
 ste
 sted
 stede
@@ -5640,6 +5644,7 @@ sus
 sy
 sz
 sá
+sä
 sé
 sí
 só
@@ -5698,6 +5703,7 @@ tase
 taseme
 tat
 tate
+tation
 te
 tea
 tear
@@ -5723,6 +5729,7 @@ tempo
 tempor
 ten
 tena
+tenberg
 tende
 tendemos
 tender
@@ -5763,6 +5770,7 @@ tha
 thal
 than
 the
+theater
 ther
 thi
 thri
@@ -6094,7 +6102,6 @@ use
 uses
 ush
 usi
-usias
 usio
 uso
 ussa
@@ -6177,7 +6184,6 @@ vej
 vel
 vela
 vella
-velli
 velo
 ven
 vena
@@ -6442,6 +6448,7 @@ zek
 zel
 zem
 zen
+zentrum
 zer
 zes
 zgar
@@ -6452,6 +6459,7 @@ zi
 zia
 zie
 zil
+zima
 zin
 zina
 zing
@@ -6501,7 +6509,6 @@ zón
 Í
 ÍA
 Ñ
-ÑO
 Ò
 Ó
 ÓN
@@ -6549,6 +6556,7 @@ zón
 áz
 ão
 ä
+än
 ärt
 ç
 ça
@@ -6665,6 +6673,7 @@ zón
 ütz
 č
 €
+⃝
 ▁
 ▁!
 ▁"
@@ -6778,7 +6787,6 @@ zón
 ▁Afg
 ▁Africa
 ▁African
-▁Afro
 ▁Ag
 ▁Aga
 ▁Agencia
@@ -6877,6 +6885,7 @@ zón
 ▁Ambiental
 ▁Ambiente
 ▁Amen
+▁Amer
 ▁America
 ▁American
 ▁Ami
@@ -7049,6 +7058,7 @@ zón
 ▁Auschwitz
 ▁Austin
 ▁Australia
+▁Australian
 ▁Austria
 ▁Auto
 ▁Autor
@@ -7076,6 +7086,7 @@ zón
 ▁Azerb
 ▁B
 ▁BA
+▁BAL
 ▁BB
 ▁BBC
 ▁BE
@@ -7362,7 +7373,6 @@ zón
 ▁Buch
 ▁Buck
 ▁Bud
-▁Buda
 ▁Budapest
 ▁Buena
 ▁Bueno
@@ -7371,7 +7381,6 @@ zón
 ▁Buffet
 ▁Bug
 ▁Buiten
-▁Bul
 ▁Bulgaria
 ▁Bull
 ▁Bun
@@ -7408,7 +7417,6 @@ zón
 ▁CDU
 ▁CE
 ▁CEIP
-▁CEN
 ▁CEO
 ▁CF
 ▁CH
@@ -7485,6 +7493,7 @@ zón
 ▁Capítulo
 ▁Car
 ▁Cara
+▁Caracter
 ▁Carbon
 ▁Card
 ▁Cardinal
@@ -7693,6 +7702,7 @@ zón
 ▁Collins
 ▁Colo
 ▁Colombia
+▁Colon
 ▁Colonia
 ▁Color
 ▁Colorado
@@ -7878,7 +7888,6 @@ zón
 ▁DO
 ▁DS
 ▁DU
-▁DVD
 ▁DW
 ▁Da
 ▁Dag
@@ -7967,7 +7976,6 @@ zón
 ▁Det
 ▁Determina
 ▁Detroit
-▁Deus
 ▁Deutsch
 ▁Deutsche
 ▁Deutschland
@@ -8004,6 +8012,7 @@ zón
 ▁Dis
 ▁Disc
 ▁Disciplin
+▁Discovery
 ▁Disney
 ▁Dispo
 ▁Disponible
@@ -8052,14 +8061,12 @@ zón
 ▁Drag
 ▁Dragon
 ▁Drake
-▁Drama
 ▁Dre
 ▁Dream
 ▁Drew
 ▁Drive
 ▁Dro
 ▁Drog
-▁Dru
 ▁Du
 ▁Dua
 ▁Dub
@@ -8152,7 +8159,6 @@ zón
 ▁Eh
 ▁Ei
 ▁Eibar
-▁Eiffel
 ▁Ein
 ▁Einstein
 ▁Eisen
@@ -8181,6 +8187,7 @@ zón
 ▁Els
 ▁Elvis
 ▁Em
+▁Email
 ▁Emanuel
 ▁Emer
 ▁Emil
@@ -8217,6 +8224,7 @@ zón
 ▁Entrevista
 ▁Envia
 ▁Ep
+▁Epi
 ▁Epidemi
 ▁Equi
 ▁Equip
@@ -8376,7 +8384,6 @@ zón
 ▁Federación
 ▁Federal
 ▁Federico
-▁Feedback
 ▁Feijóo
 ▁Fel
 ▁Feld
@@ -8513,7 +8520,6 @@ zón
 ▁Free
 ▁Frei
 ▁Fren
-▁Freud
 ▁Fri
 ▁Friday
 ▁Fried
@@ -8620,6 +8626,7 @@ zón
 ▁Georgi
 ▁Georgia
 ▁Ger
+▁Gera
 ▁Gerald
 ▁Gerard
 ▁Gerhard
@@ -8730,7 +8737,6 @@ zón
 ▁Gross
 ▁Group
 ▁Grove
-▁Groß
 ▁Gru
 ▁Grub
 ▁Grupo
@@ -8763,6 +8769,7 @@ zón
 ▁Gut
 ▁Guy
 ▁Guz
+▁Gwen
 ▁Gy
 ▁Gé
 ▁Gómez
@@ -8827,9 +8834,11 @@ zón
 ▁Hasta
 ▁Hat
 ▁Haug
+▁Haupt
 ▁Haus
 ▁Haut
 ▁Haw
+▁Hawa
 ▁Hawk
 ▁Hay
 ▁Haz
@@ -8851,7 +8860,6 @@ zón
 ▁Hell
 ▁Helm
 ▁Helmut
-▁Help
 ▁Helsinki
 ▁Hem
 ▁Hen
@@ -8960,7 +8968,6 @@ zón
 ▁Humanit
 ▁Humanos
 ▁Hun
-▁Hund
 ▁Hung
 ▁Hunt
 ▁Hunter
@@ -8973,7 +8980,6 @@ zón
 ▁Hyundai
 ▁Hz
 ▁Há
-▁Hä
 ▁Hän
 ▁Hé
 ▁Hér
@@ -8990,7 +8996,6 @@ zón
 ▁III
 ▁IL
 ▁IM
-▁IMP
 ▁IN
 ▁IND
 ▁ING
@@ -9265,7 +9270,6 @@ zón
 ▁Jó
 ▁Jörg
 ▁Jú
-▁Júnior
 ▁Jürgen
 ▁K
 ▁KB
@@ -9315,6 +9319,7 @@ zón
 ▁Keith
 ▁Kel
 ▁Kell
+▁Keller
 ▁Kelly
 ▁Kemp
 ▁Ken
@@ -9339,7 +9344,6 @@ zón
 ▁Kick
 ▁Kid
 ▁Kids
-▁Kiel
 ▁Kiev
 ▁Kil
 ▁Kill
@@ -9358,7 +9362,6 @@ zón
 ▁Kitchen
 ▁Kla
 ▁Klage
-▁Klar
 ▁Klaus
 ▁Kle
 ▁Klein
@@ -9402,6 +9405,7 @@ zón
 ▁Ku
 ▁Kul
 ▁Kun
+▁Kunst
 ▁Kup
 ▁Kur
 ▁Kurd
@@ -9479,6 +9483,7 @@ zón
 ▁Le
 ▁Lea
 ▁League
+▁Leben
 ▁Lebens
 ▁Lec
 ▁Lee
@@ -9806,7 +9811,6 @@ zón
 ▁Matteo
 ▁Matthew
 ▁Matthias
-▁Matti
 ▁Matu
 ▁Mau
 ▁Mauri
@@ -9871,7 +9875,6 @@ zón
 ▁Merkel
 ▁Mes
 ▁Mesa
-▁Mess
 ▁Messi
 ▁Mest
 ▁Met
@@ -9959,7 +9962,6 @@ zón
 ▁Moda
 ▁Mode
 ▁Model
-▁Moder
 ▁Modern
 ▁Modi
 ▁Modifica
@@ -9983,7 +9985,6 @@ zón
 ▁Monet
 ▁Mongolia
 ▁Monica
-▁Monika
 ▁Monitor
 ▁Mono
 ▁Monroe
@@ -10025,7 +10026,6 @@ zón
 ▁Mozart
 ▁Mr
 ▁Mu
-▁Mua
 ▁Mubarak
 ▁Much
 ▁Muchas
@@ -10039,6 +10039,7 @@ zón
 ▁Municipio
 ▁Mur
 ▁Mura
+▁Murat
 ▁Murphy
 ▁Murray
 ▁Mus
@@ -10094,7 +10095,6 @@ zón
 ▁Nag
 ▁Nah
 ▁Nairobi
-▁Naka
 ▁Nam
 ▁Nan
 ▁Nancy
@@ -10107,7 +10107,6 @@ zón
 ▁Natal
 ▁Natalia
 ▁Nathan
-▁Nation
 ▁National
 ▁Nations
 ▁Natur
@@ -10157,7 +10156,6 @@ zón
 ▁Nicole
 ▁Nicolás
 ▁Nie
-▁Nieder
 ▁Niels
 ▁Nielsen
 ▁Nigeria
@@ -10325,6 +10323,7 @@ zón
 ▁Oscar
 ▁Oslo
 ▁Oso
+▁Ost
 ▁Ot
 ▁Ota
 ▁Oto
@@ -10527,6 +10526,7 @@ zón
 ▁Philip
 ▁Philipp
 ▁Philippe
+▁Philips
 ▁Phillip
 ▁Phoenix
 ▁Photo
@@ -10588,6 +10588,7 @@ zón
 ▁Point
 ▁Pol
 ▁Pola
+▁Polar
 ▁Poli
 ▁Policia
 ▁Policía
@@ -11018,6 +11019,7 @@ zón
 ▁Régi
 ▁Río
 ▁Ró
+▁Rö
 ▁Rü
 ▁S
 ▁SA
@@ -11151,6 +11153,7 @@ zón
 ▁Schu
 ▁Schul
 ▁Schumacher
+▁Schw
 ▁Schwa
 ▁Schwarz
 ▁Schön
@@ -11242,7 +11245,6 @@ zón
 ▁Shin
 ▁Shir
 ▁Sho
-▁Shop
 ▁Short
 ▁Show
 ▁Shu
@@ -11388,7 +11390,6 @@ zón
 ▁Star
 ▁Starbucks
 ▁Stars
-▁Start
 ▁State
 ▁Station
 ▁Statist
@@ -11415,6 +11416,7 @@ zón
 ▁Stone
 ▁Stop
 ▁Store
+▁Stories
 ▁Story
 ▁Stra
 ▁Strange
@@ -11427,7 +11429,6 @@ zón
 ▁Stru
 ▁Stu
 ▁Stuart
-▁Studien
 ▁Studio
 ▁Studios
 ▁Stuttgart
@@ -11485,7 +11486,6 @@ zón
 ▁Süd
 ▁T
 ▁TA
-▁TB
 ▁TC
 ▁TE
 ▁TI
@@ -11879,6 +11879,7 @@ zón
 ▁Vera
 ▁Verde
 ▁Verdi
+▁Verein
 ▁Verge
 ▁Verona
 ▁Vers
@@ -11896,6 +11897,7 @@ zón
 ▁Vicente
 ▁Victor
 ▁Victoria
+▁Vid
 ▁Vida
 ▁Vidal
 ▁Video
@@ -12016,7 +12018,6 @@ zón
 ▁Werner
 ▁West
 ▁Westminster
-▁What
 ▁WhatsApp
 ▁Whatsapp
 ▁Wheel
@@ -12026,6 +12027,7 @@ zón
 ▁Wi
 ▁WiFi
 ▁Wick
+▁Wid
 ▁Wie
 ▁Wien
 ▁Wij
@@ -12056,7 +12058,6 @@ zón
 ▁Wolfgang
 ▁Woman
 ▁Women
-▁Wonder
 ▁Woo
 ▁Wood
 ▁Word
@@ -12100,6 +12101,7 @@ zón
 ▁Yang
 ▁Yar
 ▁Ye
+▁Yellow
 ▁Yemen
 ▁Yer
 ▁Yes
@@ -12151,6 +12153,7 @@ zón
 ▁Zugang
 ▁Zul
 ▁Zur
+▁Zy
 ▁[
 ▁]
 ▁_
@@ -12161,7 +12164,6 @@ zón
 ▁abajo
 ▁abandon
 ▁abandonar
-▁abdi
 ▁abdominal
 ▁aber
 ▁abertura
@@ -12914,6 +12916,7 @@ zón
 ▁batu
 ▁bau
 ▁baut
+▁baya
 ▁baza
 ▁baño
 ▁be
@@ -12981,6 +12984,7 @@ zón
 ▁blind
 ▁blockchain
 ▁blog
+▁blogue
 ▁bloque
 ▁blues
 ▁blus
@@ -13017,7 +13021,6 @@ zón
 ▁botón
 ▁boutique
 ▁box
-▁bp
 ▁bra
 ▁brasil
 ▁bravo
@@ -13231,7 +13234,6 @@ zón
 ▁castig
 ▁castiga
 ▁casting
-▁casu
 ▁casual
 ▁cata
 ▁catalana
@@ -14083,7 +14085,6 @@ zón
 ▁declare
 ▁declaró
 ▁declina
-▁decor
 ▁decora
 ▁decoración
 ▁decorar
@@ -14724,6 +14725,7 @@ zón
 ▁envolv
 ▁envolve
 ▁envío
+▁enzim
 ▁epi
 ▁epidemi
 ▁epilepsi
@@ -15032,6 +15034,7 @@ zón
 ▁factores
 ▁factura
 ▁faculta
+▁fair
 ▁fake
 ▁fal
 ▁fala
@@ -15106,6 +15109,7 @@ zón
 ▁ferro
 ▁ferrovia
 ▁fertil
+▁fest
 ▁feste
 ▁festiv
 ▁festival
@@ -16135,6 +16139,7 @@ zón
 ▁itin
 ▁iz
 ▁izquierda
+▁j
 ▁ja
 ▁jacuzzi
 ▁japon
@@ -16210,7 +16215,6 @@ zón
 ▁kilómetros
 ▁kit
 ▁km
-▁ko
 ▁kosovar
 ▁kur
 ▁l
@@ -19139,7 +19143,6 @@ zón
 ▁súper
 ▁t
 ▁ta
-▁tab
 ▁taba
 ▁tabac
 ▁taberna
@@ -19345,7 +19348,6 @@ zón
 ▁todavía
 ▁todo
 ▁todos
-▁told
 ▁toleran
 ▁toleranci
 ▁tolerant
@@ -19636,7 +19638,6 @@ zón
 ▁valoriza
 ▁vamos
 ▁van
-▁vand
 ▁vapor
 ▁var
 ▁vara
@@ -19985,7 +19986,6 @@ zón
 ▁útil
 ▁Še
 ▁́
-▁̈
 ▁€
 ▁€.
 ▁€/
