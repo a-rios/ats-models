@@ -217,7 +217,7 @@ python -m ats_models.finetune_mbart \
 combination of 2 of these options:
 --src_lang src-lang \
 --tgt_lang tgt-lang \
---tgt_tags_included \
+--src_tags_included \
 --tgt_tags_included \
 ```
 
