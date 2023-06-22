@@ -34,7 +34,7 @@ from typing import Optional, Union
 from functools import partial
 
 from .data import CustomDatasetForInference, CustomInferenceDatasetUZHJson, CustomBartDatasetForInference, CustomBartInferenceDatasetUZHJson
-from .finetune_mbart import MBartTrainer, remove_special_tokens
+from .finetune_mbart import remove_special_tokens
 from .metrics import label_smoothed_nll_loss, get_eval_scores
 
 from transformers.generation.beam_search import BeamSearchScorer

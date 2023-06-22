@@ -169,7 +169,7 @@ def create_reduced_vocab_model(
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Convert BART to LongBART. Replaces BART encoder's SelfAttnetion with LongformerSelfAttention")
+    parser = argparse.ArgumentParser(description="Trim mt5's vocabulary to the given list of items.")
     parser.add_argument(
         '--base_model',
         type=str,
