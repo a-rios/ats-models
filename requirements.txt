@@ -6,3 +6,4 @@ rouge_score
 sacrebleu
 datasets
 sentencepiece
+bs4

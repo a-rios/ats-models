@@ -31,7 +31,7 @@ import datasets
 from typing import Optional, Union
 from functools import partial
 
-from .t5_data import T5Dataset, T5ForInference
+from .t5_data import T5Dataset, T5DatasetForInference
 from .finetune_mbart import remove_special_tokens
 from .metrics import label_smoothed_nll_loss, get_eval_scores
 
@@ -61,8 +61,8 @@ class Inference(pl.LightningModule):
         self.args = args
 
         self.tokenizer = T5Tokenizer.from_pretrained(self.args.tokenizer, use_fast=True)
-        self.model = LongT5ForConditionalGeneration.from_pretrained(self.args.from_pretrained, config=self.config)
-        self.config = LongT5Config.from_pretrained(self.args.from_pretrained)
+        self.config = LongT5Config.from_pretrained(self.args.model_path)
+        self.model = LongT5ForConditionalGeneration.from_pretrained(self.args.model_path, config=self.config)
 
         self.max_input_len = self.args.max_input_len if self.args.max_input_len is not None else self.config.max_encoder_position_embeddings
         self.max_output_len = self.args.max_output_len if self.args.max_output_len is not None else self.config.max_decoder_position_embeddings
@@ -76,7 +76,7 @@ class Inference(pl.LightningModule):
         self.test_step_outputs = []
 
     def test_step(self, batch, batch_nb):
-        model.eval():
+        self.model.eval()
 
         input_ids, ref = batch
         input_ids, attention_mask = T5DatasetForInference.get_attention_mask(input_ids, self.tokenizer.pad_token_id)
@@ -200,7 +200,7 @@ class Inference(pl.LightningModule):
     def forward(self):
         pass
 
-    def set_test_set(self, test_set: Union[CustomDatasetForInference, CustomBartDatasetForInference]):
+    def set_test_set(self, test_set: T5DatasetForInference):
         self.test_set = test_set
 
     def _get_dataloader(self, current_dataloader, split_name, is_train):

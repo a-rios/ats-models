@@ -91,7 +91,7 @@ class T5Dataset(Dataset):
         return input_ids, attention_mask
 
 
-class T5ForInference(T5Dataset):
+class T5DatasetForInference(T5Dataset):
     def __init__(self,
                  src_file:str,
                  tgt_file: Optional[str],
