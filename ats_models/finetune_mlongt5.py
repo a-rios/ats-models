@@ -37,6 +37,7 @@ from .t5_data import T5Dataset
 from .metrics import label_smoothed_nll_loss, get_eval_scores
 from .finetune_mbart import LitProgressBar, remove_special_tokens
 
+from peft import get_peft_config, get_peft_model, LoraConfig, TaskType, LoraModel
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
@@ -46,6 +47,13 @@ class T5Trainer(pl.LightningModule):
     def __init__(self, params):
         super().__init__()
         self.args = params
+
+        if self.args.lora:
+            self.lora_config = LoraConfig(peft_type="LORA",
+                                        task_type="SEQ_2_SEQ_LM",
+                                        r=self.args.lora_r, lora_alpha=self.args.lora_alpa,
+                                        target_modules=self.args.target_modules,
+                                        lora_dropout=self.args.lora_dropout)
 
         if self.args.from_pretrained is not None:
             self._set_config()
@@ -64,7 +72,13 @@ class T5Trainer(pl.LightningModule):
 
     def _load_pretrained(self):
         self.tokenizer = T5Tokenizer.from_pretrained(self.args.tokenizer, use_fast=True)
-        self.model = LongT5ForConditionalGeneration.from_pretrained(self.args.from_pretrained, config=self.config)
+        model = LongT5ForConditionalGeneration.from_pretrained(self.args.from_pretrained, config=self.config)
+        if self.args.lora: # doesn't work (yet) LongT5, see here: https://github.com/huggingface/peft/issues/522
+            model.enable_input_require_grads()
+            self.model = get_peft_model(model, self.lora_config)
+            self.model.print_trainable_parameters()
+        else:
+            self.model = model
 
     def _set_config(self):
         self.config = LongT5Config.from_pretrained(self.args.from_pretrained)
@@ -251,6 +265,13 @@ class T5Trainer(pl.LightningModule):
         parser.add_argument("--pretrained_ckpt", type=str, default=None, help="Continue fine-tuning a trained checkpoint but start training from scratch, i.e. parameters, but not optimizer/lr schedulers etc.")
         parser.add_argument("--from_pretrained", type=str, default=None,  help="Path to a checkpoint to load model weights but not training state")
         parser.add_argument("--num_sanity_val_steps", type=int, default=0,  help="Number of evaluation sanity steps to run before starting the training. Default: 0.")
+
+        # lora
+        parser.add_argument("--lora", action="store_true",  help="Use LoRa for fine-tuning.")
+        parser.add_argument("--lora_targets", type=str, nargs='+', default=["k", "q", "v"], help="Parameters to fine-tune with LoRa. Default: ['k', 'q', 'v']")
+        parser.add_argument("--lora_alpa", type=int,  default=32, help="LoRa alpha")
+        parser.add_argument("--lora_r", type=int,  default=8, help="LoRa r")
+        parser.add_argument("--lora_dropout", type=float,  default=0.01, help="LoRa dropout")
 
         #data
         parser.add_argument("--train_source", type=str, default=None,  help="Path to the source train file.")
