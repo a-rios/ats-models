@@ -14,12 +14,19 @@ Note:
 import torch
 from rouge_score import rouge_scorer
 import sacrebleu
+from typing import Optional
 
-def label_smoothed_nll_loss(lprobs, target, epsilon, ignore_index=-100):
+def label_smoothed_nll_loss(lprobs, target, epsilon, pad_id:Optional[int], ignore_index=-100):
     """From fairseq"""
     if target.dim() == lprobs.dim() - 1:
         target = target.unsqueeze(-1)
-    nll_loss = -lprobs.gather(dim=-1, index=target)
+    if pad_id is not None:
+        # torch.set_printoptions(threshold=10_000)
+        valid_label_indices = torch.where((target!=ignore_index), target, torch.full_like(target, fill_value=pad_id))
+        # print(test)
+        nll_loss = -lprobs.gather(dim=-1, index=valid_label_indices)
+    else:
+        nll_loss = -lprobs.gather(dim=-1, index=target)
     smooth_loss = -lprobs.sum(dim=-1, keepdim=True)
     if ignore_index is not None:
         pad_mask = target.eq(ignore_index)

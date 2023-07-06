@@ -198,7 +198,7 @@ def main():
         type=str,
         help='List of subword entries to keep in new model (one token per line).'
     )
-    parser.add_argument("--print-params",
+    parser.add_argument("--print_params",
                         action='store_true',
                         help="Print parameter names and shapes.")
 

@@ -29,7 +29,8 @@ from pytorch_lightning.callbacks import TQDMProgressBar, LearningRateMonitor
 from pytorch_lightning.strategies import DDPStrategy
 
 import logging
-from transformers import T5Tokenizer, LongT5ForConditionalGeneration,  LongT5Config
+# from transformers import T5Tokenizer, LongT5ForConditionalGeneration,  LongT5Config
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, AutoConfig
 import datasets
 from typing import Optional, Union
 from functools import partial
@@ -51,8 +52,8 @@ class T5Trainer(pl.LightningModule):
         if self.args.lora:
             self.lora_config = LoraConfig(peft_type="LORA",
                                         task_type="SEQ_2_SEQ_LM",
-                                        r=self.args.lora_r, lora_alpha=self.args.lora_alpa,
-                                        target_modules=self.args.target_modules,
+                                        r=self.args.lora_r, lora_alpha=self.args.lora_alpha,
+                                        target_modules=self.args.lora_targets,
                                         lora_dropout=self.args.lora_dropout)
 
         if self.args.from_pretrained is not None:
@@ -71,8 +72,8 @@ class T5Trainer(pl.LightningModule):
         self.validation_step_outputs = []
 
     def _load_pretrained(self):
-        self.tokenizer = T5Tokenizer.from_pretrained(self.args.tokenizer, use_fast=True)
-        model = LongT5ForConditionalGeneration.from_pretrained(self.args.from_pretrained, config=self.config)
+        self.tokenizer = AutoTokenizer.from_pretrained(self.args.tokenizer, use_fast=True)
+        model = AutoModelForSeq2SeqLM.from_pretrained(self.args.from_pretrained, config=self.config)
         if self.args.lora: # doesn't work (yet) LongT5, see here: https://github.com/huggingface/peft/issues/522
             model.enable_input_require_grads()
             self.model = get_peft_model(model, self.lora_config)
@@ -81,7 +82,7 @@ class T5Trainer(pl.LightningModule):
             self.model = model
 
     def _set_config(self):
-        self.config = LongT5Config.from_pretrained(self.args.from_pretrained)
+        self.config = AutoConfig.from_pretrained(self.args.from_pretrained)
         self.config.attention_dropout = self.args.attention_dropout
         self.config.dropout = self.args.dropout
         self.config.activation_dropout = self.args.activation_dropout
@@ -269,7 +270,7 @@ class T5Trainer(pl.LightningModule):
         # lora
         parser.add_argument("--lora", action="store_true",  help="Use LoRa for fine-tuning.")
         parser.add_argument("--lora_targets", type=str, nargs='+', default=["k", "q", "v"], help="Parameters to fine-tune with LoRa. Default: ['k', 'q', 'v']")
-        parser.add_argument("--lora_alpa", type=int,  default=32, help="LoRa alpha")
+        parser.add_argument("--lora_alpha", type=int,  default=32, help="LoRa alpha")
         parser.add_argument("--lora_r", type=int,  default=8, help="LoRa r")
         parser.add_argument("--lora_dropout", type=float,  default=0.01, help="LoRa dropout")
 
@@ -485,7 +486,7 @@ def main(args):
 
 
 if __name__ == "__main__":
-    main_arg_parser = argparse.ArgumentParser(description="Fine-tune mlongT5")
+    main_arg_parser = argparse.ArgumentParser(description="Fine-tune T5 type models")
     parser = T5Trainer.add_model_specific_args(main_arg_parser, os.getcwd())
     args = parser.parse_args()
     main(args)
