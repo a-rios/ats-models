@@ -16,7 +16,7 @@ from rouge_score import rouge_scorer
 import sacrebleu
 from typing import Optional
 
-def label_smoothed_nll_loss(lprobs, target, epsilon, pad_id:Optional[int], ignore_index=-100):
+def label_smoothed_nll_loss(lprobs, target, epsilon, pad_id:Optional[int]=None, ignore_index=-100):
     """From fairseq"""
     if target.dim() == lprobs.dim() - 1:
         target = target.unsqueeze(-1)

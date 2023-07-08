@@ -26,7 +26,10 @@ from pytorch_lightning.loggers import TensorBoardLogger, WandbLogger
 from pytorch_lightning.callbacks import TQDMProgressBar
 from pytorch_lightning.strategies import DDPStrategy
 
-from transformers import T5Tokenizer, LongT5ForConditionalGeneration,  LongT5Config
+# from transformers import T5Tokenizer, LongT5ForConditionalGeneration,  LongT5Config
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, AutoConfig
+from peft import get_peft_config, get_peft_model, LoraConfig, PeftModel
+
 import datasets
 from typing import Optional, Union
 from functools import partial
@@ -60,9 +63,13 @@ class Inference(pl.LightningModule):
         super().__init__()
         self.args = args
 
-        self.tokenizer = T5Tokenizer.from_pretrained(self.args.tokenizer, use_fast=True)
-        self.config = LongT5Config.from_pretrained(self.args.model_path)
-        self.model = LongT5ForConditionalGeneration.from_pretrained(self.args.model_path, config=self.config)
+        self.tokenizer = AutoTokenizer.from_pretrained(self.args.tokenizer, use_fast=True)
+        self.config = AutoConfig.from_pretrained(self.args.model_path)
+        if self.args.lora:
+            base_model = AutoModelForSeq2SeqLM.from_pretrained(args.model_path)
+            self.model = PeftModel.from_pretrained(base_model, args.model_path)
+        else:
+            self.model = AutoModelForSeq2SeqLM.from_pretrained(self.args.model_path, config=self.config)
 
         self.max_input_len = self.args.max_input_len if self.args.max_input_len is not None else self.config.max_encoder_position_embeddings
         self.max_output_len = self.args.max_output_len if self.args.max_output_len is not None else self.config.max_decoder_position_embeddings
@@ -223,6 +230,7 @@ class Inference(pl.LightningModule):
         parser.add_argument("--model_path", type=str, metavar='PATH', help="Path to the checkpoint directory or model name")
         parser.add_argument("--checkpoint_name", type=str, help="Checkpoint in model_path to use.")
         parser.add_argument("--tokenizer", type=str, help="Path to the tokenizer directory.")
+        parser.add_argument("--lora", action="store_true",  help="LoRa model (load base model + adapter.")
 
         #data
         parser.add_argument("--test_source", type=str, default=None, help="Path to the source test file.")
@@ -278,12 +286,15 @@ def main(args):
         Path(args.translation).unlink()
 
     checkpoint_path=os.path.join(args.model_path, args.checkpoint_name)
+    # if args.lora: # TODO
+    #     base_model = AutoModelForSeq2SeqLM.from_pretrained(args.model_path)
+    #     model = PeftModel.from_pretrained(base_model, args.model_path)
+    # else:
     inference_model = Inference.load_from_checkpoint(checkpoint_path, args=args)
 
     if args.print_params:
-        for name, param in simplifier.named_parameters():
-            if param.requires_grad:
-                print(name + ":" + str(param.data.shape))
+        for name, param in inference_model.named_parameters():
+            print(name + ":" + str(param.shape))
         exit(0)
 
 

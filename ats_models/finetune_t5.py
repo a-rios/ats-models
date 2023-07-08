@@ -38,7 +38,7 @@ from .t5_data import T5Dataset
 from .metrics import label_smoothed_nll_loss, get_eval_scores
 from .finetune_mbart import LitProgressBar, remove_special_tokens
 
-from peft import get_peft_config, get_peft_model, LoraConfig, TaskType, LoraModel
+from peft import get_peft_config, get_peft_model, LoraConfig, TaskType, LoraModel, PeftModel
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
@@ -179,7 +179,7 @@ class T5Trainer(pl.LightningModule):
         return self.validation_step(batch, batch_nb)
 
     def on_test_epoch_end(self):
-        self.validation_epoch_end(outputs)
+        self.on_validation_epoch_end()
 
     def configure_optimizers(self):
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=self.args.lr)
@@ -194,27 +194,65 @@ class T5Trainer(pl.LightningModule):
         interval = "step" if args.val_check_interval is not None else "epoch"
         frequency = args.val_check_interval if args.val_check_interval is not None else args.check_val_every_n_epoch
 
-        lr_scheduler_config = {
-            "scheduler": self.scheduler,
-            # The unit of the scheduler's step size, could also be 'step'.
-            # 'epoch' updates the scheduler on epoch end whereas 'step'
-            # updates it after a optimizer update.
-            "interval": interval,
-            # How many epochs/steps should pass between calls to
-            # `scheduler.step()`. 1 corresponds to updating the learning
-            # rate after every epoch/step.
-            "frequency": frequency,
-            # Metric to to monitor for schedulers like `ReduceLROnPlateau`
-            "monitor": self.args.early_stopping_metric,
-            # If set to `True`, will enforce that the value specified 'monitor'
-            # is available when the scheduler is updated, thus stopping
-            # training if not found. If set to `False`, it will only produce a warning
-            "strict": True,
-            # If using the `LearningRateMonitor` callback to monitor the
-            # learning rate progress, this keyword can be used to specify
-            # a custom logged name
-            "name": "plateauLR",
-        }
+        if self.args.lr_scheduler == "plateau":
+            lr_scheduler_config = {
+                "scheduler": self.scheduler,
+                # The unit of the scheduler's step size, could also be 'step'.
+                # 'epoch' updates the scheduler on epoch end whereas 'step'
+                # updates it after a optimizer update.
+                "interval": interval,
+                # How many epochs/steps should pass between calls to
+                # `scheduler.step()`. 1 corresponds to updating the learning
+                # rate after every epoch/step.
+                "frequency": frequency,
+                # Metric to to monitor for schedulers like `ReduceLROnPlateau`
+                "monitor": self.args.early_stopping_metric,
+                # If set to `True`, will enforce that the value specified 'monitor'
+                # is available when the scheduler is updated, thus stopping
+                # training if not found. If set to `False`, it will only produce a warning
+                "strict": True,
+                # If using the `LearningRateMonitor` callback to monitor the
+                # learning rate progress, this keyword can be used to specify
+                # a custom logged name
+                "name": "plateauLR",
+            }
+        elif self.args.lr_scheduler == "cosine":
+            self.scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(self.optimizer, T_max=self.args.cosine_Tmax, verbose=True)
+            lr_scheduler_config = {
+                "scheduler": self.scheduler,
+                # The unit of the scheduler's step size, could also be 'step'.
+                # 'epoch' updates the scheduler on epoch end whereas 'step'
+                # updates it after a optimizer update.
+                "interval": interval,
+                # How many epochs/steps should pass between calls to
+                # `scheduler.step()`. 1 corresponds to updating the learning
+                # rate after every epoch/step.
+                # "frequency": frequency,
+                # If using the `LearningRateMonitor` callback to monitor the
+                # learning rate progress, this keyword can be used to specify
+                # a custom logged name
+                "name": "CosineAnnealingLR",
+            }
+        elif self.args.lr_scheduler == "cosine_wr": # cosine annealing with warm restarts
+            self.scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(self.optimizer, T_0=self.args.cosine_T_0, T_mult=self.args.cosine_T_mult, verbose=True)
+            lr_scheduler_config = {
+                "scheduler": self.scheduler,
+                # The unit of the scheduler's step size, could also be 'step'.
+                # 'epoch' updates the scheduler on epoch end whereas 'step'
+                # updates it after a optimizer update.
+                "interval": interval,
+                # How many epochs/steps should pass between calls to
+                # `scheduler.step()`. 1 corresponds to updating the learning
+                # rate after every epoch/step.
+                # "frequency": frequency,
+                # If using the `LearningRateMonitor` callback to monitor the
+                # learning rate progress, this keyword can be used to specify
+                # a custom logged name
+                "name": "CosineAnnealingWarmRestarts",
+            }
+        else:
+            print(f"Unsupported learning rate scheduler: {self.args.lr_scheduler}. Use one of 'cosine', 'multistep', 'plateau', 'cyclic'.")
+            exit(1)
         return [self.optimizer], [lr_scheduler_config]
 
     def set_datasets(self, train_set: T5Dataset, dev_set: T5Dataset, test_set: Optional[T5Dataset]):
@@ -308,6 +346,10 @@ class T5Trainer(pl.LightningModule):
 
         # Optimization params:
         #parser.add_argument("--warmup", type=int, default=1000, help="Number of warmup steps")
+        parser.add_argument("--lr_scheduler", type=str, default="cosine", help="torch scheduler: 'cosine': CosineAnnealingLR, cosine_wr: CosineAnnealingWarmRestarts ,'plateau': ReduceLROnPlateau")
+        parser.add_argument("--cosine_Tmax", type=int, default=10, help="t_max (maximum number of iterations/epochs) for cosine annealing scheduler.")
+        parser.add_argument("--cosine_T_mult", type=int, default=1, help="t_mult (factor that increases T_i after each restart) for cosine annealing scheduler with warm restarts. Default: 1.")
+        parser.add_argument("--cosine_T_0", type=int, default=1000, help="t_0 (number of iterations for the first restart) for cosine annealing scheduler with warm restarts. Default: 1000.")
         parser.add_argument("--lr", type=float, default=0.00003, help="Initial learning rate")
         parser.add_argument("--check_val_every_n_epoch", type=int, default=None, help="How often to check the validation set in number of epochs.")
         parser.add_argument("--val_check_interval", type=int, help="How often to check the validation set in number of updates.")
@@ -373,13 +415,15 @@ def main(args):
                         prefix=args.prefix)
 
 
-    test_set = T5Dataset(src_file=args.test_source,
-                         tgt_file=args.test_target,
-                         name="test",
-                         tokenizer=model.tokenizer,
-                         max_input_len=args.max_input_len,
-                         max_output_len=args.max_output_len,
-                         prefix=args.prefix)
+    test_set=None
+    if args.test_source is not None:
+        test_set = T5Dataset(src_file=args.test_source,
+                            tgt_file=args.test_target,
+                            name="test",
+                            tokenizer=model.tokenizer,
+                            max_input_len=args.max_input_len,
+                            max_output_len=args.max_output_len,
+                            prefix=args.prefix)
 
     model.set_datasets(train_set=train_set, dev_set=dev_set, test_set=test_set)
 
@@ -481,8 +525,17 @@ def main(args):
         trainer.fit(model)
     else:
         trainer.fit(model)
-    trainer.test(model)
+
+    if test_set is not None:
+        trainer.test(model)
     print("Training ended. Best checkpoint {}.".format(trainer.checkpoint_callback.best_model_path))
+
+    if args.lora:
+        save_path=f"{args.save_dir}/{args.save_prefix}/lora_merged"
+        print(f"saving merged model to.. {save_path}")
+        merged_model = model.model.merge_and_unload()
+        os.mkdir(save_path)
+        merged_model.save_pretrained(save_path)
 
 
 if __name__ == "__main__":
