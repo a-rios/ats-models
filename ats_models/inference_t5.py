@@ -297,8 +297,6 @@ def main(args):
             print(name + ":" + str(param.shape))
         exit(0)
 
-
-
     test_set = T5DatasetForInference(src_file=args.test_source,
                                      tgt_file=args.test_target,
                                      name="test",

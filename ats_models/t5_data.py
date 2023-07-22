@@ -120,6 +120,10 @@ class T5DatasetForInference(T5Dataset):
     def __getitem__(self, idx):
         source = self.inputs[idx]
         reference = None
+        prefix = self.prefix
+
+        if self.prefix is not None:
+            source = f"{prefix} {source}"
 
         if self.reference is not None:
             reference = self.reference[idx]

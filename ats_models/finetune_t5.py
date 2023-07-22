@@ -63,7 +63,7 @@ class T5Trainer(pl.LightningModule):
 
         self.train_dataloader_object = self.val_dataloader_object = self.test_dataloader_object = None
         if self.args.resume_ckpt is not None:
-            self.current_checkpoint = re.search(r'checkpoint=(\d+)_', self.args.resume_ckpt).group(1)
+            self.current_checkpoint = int(re.search(r'checkpoint=(\d+)_', self.args.resume_ckpt).group(1))
         else:
             self.current_checkpoint = 0
         self.best_checkpoint = None
