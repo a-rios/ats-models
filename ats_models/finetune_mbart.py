@@ -78,10 +78,6 @@ class MBartTrainer(pl.LightningModule):
             self._load_pretrained()
 
         self.train_dataloader_object = self.val_dataloader_object = self.test_dataloader_object = None
-        if self.args.resume_ckpt is not None:
-            self.current_checkpoint = int(re.search(r'checkpoint=(\d+)_', self.args.resume_ckpt).group(1))
-        else:
-            self.current_checkpoint = 0
         self.best_checkpoint = None
         self.best_metric = 10000 if self.args.early_stopping_metric == 'vloss' else 0 ## keep track of best dev value of whatever metric is used in early stopping callback
         self.num_not_improved = 0
@@ -308,6 +304,12 @@ class MBartTrainer(pl.LightningModule):
         self.test_dataloader_object = self._get_dataloader(self.test_dataloader_object, 'test', is_train=False)
         return self.test_dataloader_object
 
+    def on_save_checkpoint(self, checkpoint) -> None:
+        checkpoint['ckpt_idx'] = self.current_checkpoint
+
+    def on_load_checkpoint(self, checkpoint) -> None:
+        self.current_checkpoint = checkpoint['ckpt_idx']
+
     @staticmethod
     def add_model_specific_args(parser, root_dir):
         parser.add_argument("--tokenizer", type=str, help="Path to the tokenizer directory.")
@@ -368,7 +370,7 @@ class MBartTrainer(pl.LightningModule):
         parser.add_argument("--max_steps", type=int, default=-1, help="Maximum number of steps (will stop training even if patience for early stopping has not been reached). Default: -1 (no maximum).")
         parser.add_argument("--early_stopping_metric", type=str, default='rougeL', help="Metric to be used for early stopping: vloss, rouge1, rouge2, rougeL, rougeLsum, bleu")
         parser.add_argument("--patience", type=int, default=10, help="Patience for early stopping.")
-        parser.add_argument("--lr_reduce_patience", type=int, default=8, help="Patience for LR reduction in Plateau scheduler.")
+        parser.add_argument("--lr_reduce_patience", type=int, default=8, help="Patience for LR reduction in Plateau scheduler. NOTE: if interval=steps, and lr_scheduler=ReduceLROnPlateau, frequency MUST be smaller than the number of batches per epoch, otherwise lr_scheduler.step() never gets called and lr is not reduced (because lightning calls step() in this case based on batch index, which is reset after each epoch).")
         parser.add_argument("--lr_reduce_factor", type=float, default=0.5, help="Learning rate reduce factor for Plateau scheduler.")
         parser.add_argument("--lr_cooldown", type=int, default=0, help="Cooldown for Plateau scheduler (number of epochs to wait before resuming normal operation after lr has been reduced.).")
         parser.add_argument("--disable_checkpointing", action='store_true', help="No logging or checkpointing")
@@ -580,8 +582,12 @@ def main(args):
         model.lr_mode='min'
     early_stop_callback = EarlyStopping(monitor=args.early_stopping_metric, min_delta=args.min_delta, patience=args.patience, verbose=True, mode=model.lr_mode) # metrics: val_loss, bleu, rougeL
 
-    checkpoint_name = "{{checkpoint:02d}}_{{{}".format(args.early_stopping_metric)
-    checkpoint_name += ':.5f}'
+    if args.check_val_every_n_epoch:
+        checkpoint_name = "{{epoch:02d}}_{{{}".format(args.early_stopping_metric)
+        checkpoint_name += ':.3f}'
+    else:
+        checkpoint_name = "{{epoch:02d}}_{{step:02d}}_{{{}".format(args.early_stopping_metric)
+        checkpoint_name += ':.3f}'
 
     checkpoint_callback = ModelCheckpoint(
         dirpath=os.path.join(args.save_dir, args.save_prefix),
