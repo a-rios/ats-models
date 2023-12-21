@@ -83,6 +83,8 @@ class MBartTrainer(pl.LightningModule):
         self.num_not_improved = 0
         self.save_hyperparameters()
         self.validation_step_outputs = []
+        if self.args.resume_ckpt is None:
+            self.current_checkpoint = 0
 
     def _load_pretrained(self):
         if self.args.model_type == 'mbart':
