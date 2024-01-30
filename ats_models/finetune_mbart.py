@@ -228,7 +228,7 @@ class MBartTrainer(pl.LightningModule):
         return self.validation_step(batch, batch_nb)
 
     def on_test_epoch_end(self):
-        self.validation_epoch_end(outputs)
+        self.on_validation_epoch_end(outputs)
 
     def configure_optimizers(self):
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=self.args.lr)
