@@ -164,6 +164,17 @@ class MBartTrainer(pl.LightningModule):
         self.log('lr', lr, on_step=True, on_epoch=True, prog_bar=True, logger=True)
         return loss
 
+    def on_train_start(self):
+        # Access the early stopping callback and print patience
+        early_stopping_callback = None
+        for callback in self.trainer.callbacks:
+            if isinstance(callback, EarlyStopping):
+                early_stopping_callback = callback
+                break
+
+        if early_stopping_callback:
+            print(f"Patience at the start of training: {early_stopping_callback.patience}")
+
     def validation_step(self, batch, batch_nb):
         for p in self.model.parameters():
             p.requires_grad = False
