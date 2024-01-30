@@ -79,6 +79,7 @@ class MBartTrainer(pl.LightningModule):
 
         self.train_dataloader_object = self.val_dataloader_object = self.test_dataloader_object = None
         self.best_checkpoint = None
+        self.current_checkpoint = 0
         self.best_metric = 10000 if self.args.early_stopping_metric == 'vloss' else 0 ## keep track of best dev value of whatever metric is used in early stopping callback
         self.num_not_improved = 0
         self.save_hyperparameters()
