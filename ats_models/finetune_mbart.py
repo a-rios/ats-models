@@ -84,6 +84,8 @@ class MBartTrainer(pl.LightningModule):
         self.num_not_improved = 0
         self.save_hyperparameters()
         self.validation_step_outputs = []
+        if self.args.resume_ckpt is None:
+            self.current_checkpoint = 0
 
     def _load_pretrained(self):
         if self.args.model_type == 'mbart':
@@ -227,7 +229,7 @@ class MBartTrainer(pl.LightningModule):
         return self.validation_step(batch, batch_nb)
 
     def on_test_epoch_end(self):
-        self.validation_epoch_end(outputs)
+        self.on_validation_epoch_end(outputs)
 
     def configure_optimizers(self):
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=self.args.lr)
