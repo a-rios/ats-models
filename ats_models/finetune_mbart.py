@@ -228,7 +228,7 @@ class MBartTrainer(pl.LightningModule):
         return self.validation_step(batch, batch_nb)
 
     def on_test_epoch_end(self):
-        self.on_validation_epoch_end(outputs)
+        self.on_validation_epoch_end()
 
     def configure_optimizers(self):
         self.optimizer = torch.optim.Adam(self.model.parameters(), lr=self.args.lr)
@@ -391,6 +391,7 @@ class MBartTrainer(pl.LightningModule):
         parser.add_argument("--print_params", action='store_true', help="Print parameter names and shapes.")
         parser.add_argument("--wandb", type=str, default=None, help="WandB project name to use if logging fine-tuning with WandB.")
         parser.add_argument("--wandb_entity", type=str, default=None, help="WandB account name to use if logging fine-tuning with WandB.")
+        parser.add_argument("--wandb_run", type=str, default=None, help="Run name for wandb (optional).")
 
         return parser
 
@@ -573,7 +574,7 @@ def main(args):
                 f.write(line.strip() + "\n")
 
     if args.wandb:
-        logger = WandbLogger(project=args.wandb, entity=args.wandb_entity)
+        logger = WandbLogger(project=args.wandb, entity=args.wandb_entity, name=args.wandb_run)
     else:
         logger = TensorBoardLogger(save_dir=os.path.join(args.save_dir, args.save_prefix), name="tensorboard_logs")
 

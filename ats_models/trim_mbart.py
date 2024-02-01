@@ -40,6 +40,7 @@ def trim_embedding_matrix_of_pretrained_model(
     logger.info("loading pretrained models and config...")
     model = MBartForConditionalGeneration.from_pretrained(pretrained_model_name_or_path=base_model, cache_dir=cache_dir)
     tokenizer = MBartTokenizer.from_pretrained(tokenizer, model_max_length=1024, cache_dir=cache_dir)
+    tokenizer.save_vocabulary(cache_dir)
     config = MBartConfig.from_pretrained(base_model, cache_dir=cache_dir)
     model.config = config
 
