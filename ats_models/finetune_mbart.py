@@ -79,6 +79,7 @@ class MBartTrainer(pl.LightningModule):
 
         self.train_dataloader_object = self.val_dataloader_object = self.test_dataloader_object = None
         self.best_checkpoint = None
+        self.current_checkpoint = 0
         self.best_metric = 10000 if self.args.early_stopping_metric == 'vloss' else 0 ## keep track of best dev value of whatever metric is used in early stopping callback
         self.num_not_improved = 0
         self.save_hyperparameters()
@@ -162,6 +163,21 @@ class MBartTrainer(pl.LightningModule):
         self.log('train-loss', loss, on_step=True, on_epoch=True, prog_bar=True, logger=True)
         self.log('lr', lr, on_step=True, on_epoch=True, prog_bar=True, logger=True)
         return loss
+
+    def on_train_start(self):
+        # Access the early stopping callback and modify patience
+        early_stopping_callback = None
+        for callback in self.trainer.callbacks:
+            if isinstance(callback, EarlyStopping):
+                early_stopping_callback = callback
+                break
+
+        if early_stopping_callback:
+            if early_stopping_callback.patience == self.args.patience:
+                print(f"\nPatience: {early_stopping_callback.patience}")
+            else:
+                early_stopping_callback.patience = self.args.patience
+                print(f"\nPatience changed to: {early_stopping_callback.patience}")
 
     def validation_step(self, batch, batch_nb):
         for p in self.model.parameters():
