@@ -646,7 +646,7 @@ def main(args):
         model.tokenizer = remove_special_tokens(model.tokenizer, args.remove_special_tokens_containing)
         print("special tokens after:", model.tokenizer.special_tokens_map)
 
-    model.tokenizer.save_pretrained(args.save_dir + "/" + args.save_prefix)
+    model.tokenizer.save_pretrained(os.path.join(args.save_dir, args.save_prefix))
     if args.resume_ckpt: # load complete checkpoint, weights, optimizer + lr_scheduler states
         trainer.fit(model, ckpt_path=args.resume_ckpt)
     elif args.pretrained_ckpt: # load parameter weights, but not optimizer/lr_scheduler states
@@ -658,6 +658,7 @@ def main(args):
         trainer.fit(model)
     trainer.test(model)
     print("Training ended. Best checkpoint {}.".format(trainer.checkpoint_callback.best_model_path))
+    os.symlink(trainer.checkpoint_callback.best_model_path, os.path.join(args.save_dir, args.save_prefix,"best.ckpt"))
 
 
 if __name__ == "__main__":

@@ -252,6 +252,7 @@ def main():
             init_embed = model.model.shared.weight[init_tag_id]
             with torch.no_grad():
                 model.model.shared.weight[new_tag_id] = init_embed
+        tokenizer.add_special_tokens({'additional_special_tokens': args.add_language_tags})
 
     if args.add_to_vocab is not None:
         print("adding new tokens to vocab")
