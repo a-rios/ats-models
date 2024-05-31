@@ -65,6 +65,7 @@ class T5Trainer(pl.LightningModule):
         self.best_checkpoint = None
         self.best_metric = 10000 if self.args.early_stopping_metric == 'vloss' else 0 ## keep track of best dev value of whatever metric is used in early stopping callback
         self.num_not_improved = 0
+        self.current_checkpoint = 0
         self.save_hyperparameters()
         self.validation_step_outputs = []
 
