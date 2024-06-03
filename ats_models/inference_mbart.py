@@ -101,6 +101,8 @@ class Inference(pl.LightningModule):
 
         if self.args.model_type == "mbart":
             input_ids, decoder_start_token_ids, ref = batch # ref: string; decoder_start_tokens: tgt_lang labels
+            logging.info(f"input_ids: {input_ids.shape}, decoder_start_token_ids: {decoder_start_token_ids.shape}, ref: {ref}")
+            logging.info(f"decoder_start_token_ids: {decoder_start_token_ids}")
             assert (decoder_start_token_ids is not None or self.test_set.tgt_lang is not None), "Need either reference with target labels or list of target labels (multilingual batches), else --tgt_lang needs to be set"
         else: # bart
             input_ids, ref = batch
@@ -144,6 +146,7 @@ class Inference(pl.LightningModule):
                             return_dict_in_generate=True if self.args.output_to_json else self.args.return_dict_in_generate
                             )
         generation_config.validate()
+        logging.info(f"generation_config: {generation_config}")
 
         if self.args.decode_with_fudge and self.args.fudge_lambda > 0:
             if decoder_start_token_ids is None:
@@ -168,6 +171,7 @@ class Inference(pl.LightningModule):
                                         )
 
         else: # no reference, need either decoder_start_tokens (--target_tags) for multilingual batches or --tgt_lang
+            logging.info(f"decoder_start_token_ids: {decoder_start_token_ids}")
             generated_ids = self.model.generate(input_ids=input_ids,
                                                 attention_mask=attention_mask,
                                                 generation_config=generation_config
