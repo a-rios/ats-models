@@ -164,6 +164,7 @@ class Inference(pl.LightningModule):
 
         elif decoder_start_token_ids is not None: # no reference but list of target language tags given
             #decoder_start_token_ids = torch.tensor([self.tokenizer.convert_tokens_to_ids(tag) for tag in decoder_start_tokens], device=input_ids.device).unsqueeze(1)
+            logging.info("elif decoder_start_token_ids is not None: # no reference but list of target language tags given")
             generated_ids = self.model.generate(input_ids=input_ids,
                                                 attention_mask=attention_mask,
                                                 generation_config=generation_config,
@@ -171,7 +172,7 @@ class Inference(pl.LightningModule):
                                         )
 
         else: # no reference, need either decoder_start_tokens (--target_tags) for multilingual batches or --tgt_lang
-            logging.info(f"decoder_start_token_ids: {decoder_start_token_ids}")
+            logging.info(f"else: no reference, need either decoder_start_tokens (--target_tags) for multilingual batches or --tgt_lang")
             generated_ids = self.model.generate(input_ids=input_ids,
                                                 attention_mask=attention_mask,
                                                 generation_config=generation_config
