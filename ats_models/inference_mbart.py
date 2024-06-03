@@ -462,7 +462,7 @@ def main(args):
                 exit(1)
 
     if args.print_params:
-        for name, param in simplifier.named_parameters():
+        for name, param in inference_model.named_parameters():
             if param.requires_grad:
                 print(name + ":" + str(param.data.shape))
         exit(0)
