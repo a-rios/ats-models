@@ -197,12 +197,14 @@ class CustomDatasetForInference(CustomDataset):
 
         assert src_lang is not None, "Source language tag needed: Either use --src_tags_included with input text where the first token in each line is the language tag, or use --src_lang to set the source language globally for all samples."
         self.tokenizer.src_lang= src_lang
+        logging.info(f"self.tokenizer.src_lang: {self.tokenizer.src_lang}")
         logging.info(f"decoder_start_token: {decoder_start_token}")
         decoder_start_token_id = self.tokenizer.convert_tokens_to_ids(decoder_start_token)
 
         logging.info(f"Source: {source}")
         input_ids = self.tokenizer(source, return_tensors="pt", max_length=self.max_input_len, truncation=True, padding=False)
         input_ids = input_ids['input_ids'].squeeze()
+        logging.info(f"Input_ids: {input_ids}")
 
         return input_ids, decoder_start_token_id, target # return reference here (string) + decoder_start_token
 
