@@ -447,7 +447,7 @@ def main(args):
         Path(args.translation).unlink()
 
     checkpoint_path=os.path.join(args.model_path, args.checkpoint_name)
-    inference_model = Inference.load_from_checkpoint(checkpoint_path)
+    inference_model = Inference.load_from_checkpoint(checkpoint_path, args=args)
     inference_model.eval()
 
     if args.decode_with_fudge:
