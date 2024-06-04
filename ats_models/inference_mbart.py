@@ -145,6 +145,7 @@ class Inference(pl.LightningModule):
                             output_scores=True if self.args.output_to_json else self.args.output_scores,
                             return_dict_in_generate=True if self.args.output_to_json else self.args.return_dict_in_generate
                             )
+        logging.info(f"generation_config: {generation_config}")
         generation_config.validate()
         logging.info(f"generation_config: {generation_config}")
 
