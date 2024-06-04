@@ -109,24 +109,24 @@ class Inference(pl.LightningModule):
             decoder_start_token_ids = None
         input_ids, attention_mask = CustomDatasetForInference.prepare_input(input_ids, self.args.is_long, self.config.attention_mode, self.config.attention_window, self.tokenizer.pad_token_id, self.config.global_attention_indices)
 
-        # decoder_start_token_id = None
+        decoder_start_token_id = None
         if decoder_start_token_ids is None: # if no per sample start token given, set decoder_start_token_id to tgt_lang for mbart or bos_token_id for bart
             decoder_start_token_id=self.tokenizer.convert_tokens_to_ids(self.testset.tgt_lang) if self.args.model_type == "mbart" else self.tokenizer.bos_token_id
 
         generation_config = GenerationConfig(
                             decoder_start_token_id=decoder_start_token_id,
-                            repetition_penalty=self.args.repetition_penalty,
-                            no_repeat_ngram_size=None,
+                            repetition_penalty=self.args.repetition_penalty if self.args.repetition_penalty is not None else 1.0,
+                            no_repeat_ngram_size=self.args.no_repeat_ngram_size if self.args.no_repeat_ngram_size is not None else 0,
                             encoder_no_repeat_ngram_size=None,
                             bad_words_ids=None,
                             min_length=0,
-                            max_length=self.args.max_output_len,
+                            max_length=self.model.config.max_length,
                             eos_token_id=self.model.config.eos_token_id,
                             pad_token_id=self.tokenizer.pad_token_id,
                             forced_bos_token_id=None,
                             forced_eos_token_id=None,
-                            num_beams=self.args.beam_size,
-                            nums_beam_groups=self.args.num_beam_groups,
+                            num_beams=self.model.config.num_beams,
+                            nums_beam_groups=1,
                             diversity_penalty=None,
                             remove_invalid_values=None,
                             exponential_decay_length_penalty=None,
@@ -134,16 +134,16 @@ class Inference(pl.LightningModule):
                             suppress_tokens=None,
                             begin_suppress_tokens=None,
                             forced_decoder_ids=None,
-                            top_k=self.args.top_k,
-                            top_p=self.args.top_p,
+                            top_k=self.model.config.top_k,
+                            top_p=self.model.config.top_p,
                             typical_p=self.args.typical_p,
-                            temperature=self.args.temperature,
-                            early_stopping=self.args.do_early_stopping,
+                            temperature=self.model.config.temperature,
+                            early_stopping=False,
                             use_cache=True,
-                            do_sample=self.args.do_sample,
-                            num_return_sequences=self.args.num_return_sequences,
-                            output_scores=True if self.args.output_to_json else self.args.output_scores,
-                            return_dict_in_generate=True if self.args.output_to_json else self.args.return_dict_in_generate
+                            do_sample=False,
+                            num_return_sequences=1,
+                            output_scores=False,
+                            return_dict_in_generate=False,
                             )
         generation_config.validate()
         logging.info(f"generation_config: {generation_config}")
