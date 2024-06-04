@@ -448,7 +448,7 @@ def main(args):
 
     checkpoint_path=os.path.join(args.model_path, args.checkpoint_name)
     # get model config
-    config = MBartConfig.from_pretrained(checkpoint_path)
+    config = MBartConfig.from_pretrained(args.model_path)
     inference_model = Inference.load_from_checkpoint(checkpoint_path, args=config)
     inference_model.eval()
 
