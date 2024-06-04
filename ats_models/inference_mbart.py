@@ -379,7 +379,7 @@ class Inference(pl.LightningModule):
 
 def main(args):
 
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(level=logging.DEBUG)
     logging.info(args)
 
     if Path(args.translation).is_file():
