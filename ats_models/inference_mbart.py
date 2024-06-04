@@ -116,7 +116,7 @@ class Inference(pl.LightningModule):
         generation_config = GenerationConfig(
                             decoder_start_token_id=decoder_start_token_id,
                             repetition_penalty=self.args.repetition_penalty if self.args.repetition_penalty is not None else 1.0,
-                            no_repeat_ngram_size=self.args.no_repeat_ngram_size if self.args.no_repeat_ngram_size is not None else 0,
+                            no_repeat_ngram_size=0,
                             encoder_no_repeat_ngram_size=None,
                             bad_words_ids=None,
                             min_length=0,
