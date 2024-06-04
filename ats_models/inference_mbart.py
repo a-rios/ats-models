@@ -501,6 +501,8 @@ def main(args):
                                                 src_tags_included=args.src_tags_included,
                                                 tgt_tags_included=args.tgt_tags_included,
                                                 target_tags=args.target_tags)
+            logging.info(f"test_set: {test_set}")
+
     else: # bart
         if args.test_jsons is not None:
             test_set = CustomBartInferenceDatasetUZHJson(json_files=args.test_jsons,
@@ -521,6 +523,7 @@ def main(args):
 
 
     inference_model.set_test_set(test_set)
+    logging.info(f"inf_model: {inference_model}")
     progress_bar_callback = TQDMProgressBar(refresh_rate=args.progress_bar_refresh_rate)
 
     trainer = pl.Trainer(accelerator=args.accelerator, devices=args.devices,
