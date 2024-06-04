@@ -104,9 +104,7 @@ class Inference(pl.LightningModule):
             logging.info(f"input_ids: {input_ids.shape}, decoder_start_token_ids: {decoder_start_token_ids.shape}, ref: {ref}")
             logging.info(f"decoder_start_token_ids: {decoder_start_token_ids}")
             assert (decoder_start_token_ids is not None or self.test_set.tgt_lang is not None), "Need either reference with target labels or list of target labels (multilingual batches), else --tgt_lang needs to be set"
-        else: # bart
-            input_ids, ref = batch
-            decoder_start_token_ids = None
+
         input_ids, attention_mask = CustomDatasetForInference.prepare_input(input_ids, self.args.is_long, self.config.attention_mode, self.config.attention_window, self.tokenizer.pad_token_id, self.config.global_attention_indices)
 
         decoder_start_token_id = None
@@ -148,89 +146,25 @@ class Inference(pl.LightningModule):
         generation_config.validate()
         logging.info(f"generation_config: {generation_config}")
 
-        if self.args.decode_with_fudge and self.args.fudge_lambda > 0:
-            if decoder_start_token_ids is None:
-                if self.args.model_type == "mbart":
-                    decoder_start_token_ids = self.tokenizer.convert_tokens_to_ids(self.testset.tgt_lang)
-                else: #bart
-                    decoder_start_token_ids = self.tokenizer.bos_token_id
-
-            generated_ids = self._decode_with_fudge(input_ids=input_ids,
-                                    attention_mask=attention_mask,
-                                    decoder_input_ids=decoder_start_token_ids,
-                                    device=input_ids.device,
-                                    generation_config=generation_config)
-
-
-        elif decoder_start_token_ids is not None: # no reference but list of target language tags given
+        if decoder_start_token_ids is not None: # no reference but list of target language tags given
             #decoder_start_token_ids = torch.tensor([self.tokenizer.convert_tokens_to_ids(tag) for tag in decoder_start_tokens], device=input_ids.device).unsqueeze(1)
             logging.info("elif decoder_start_token_ids is not None: # no reference but list of target language tags given")
             logging.info(f"generating ids with input_ids: {input_ids.shape}, attention_mask: {attention_mask.shape}, generation_config: {generation_config}, decoder_start_token_ids: {decoder_start_token_ids}")
-            generated_ids = self.model.generate(input_ids=input_ids,
-                                                attention_mask=attention_mask,
-                                                generation_config=generation_config,
-                                                decoder_input_ids=decoder_start_token_ids
-                                        )
-
-        else: # no reference, need either decoder_start_tokens (--target_tags) for multilingual batches or --tgt_lang
-            logging.info(f"else: no reference, need either decoder_start_tokens (--target_tags) for multilingual batches or --tgt_lang")
-            logging.info(f"generating ids with input_ids: {input_ids.shape}, attention_mask: {attention_mask.shape}, generation_config: {generation_config}")
-            generated_ids = self.model.generate(input_ids=input_ids,
-                                                attention_mask=attention_mask,
-                                                generation_config=generation_config
-                                            )
+            #generated_ids = self.model.generate(input_ids=input_ids,
+            #                                    generation_config=generation_config,
+            #                                    attention_mask=attention_mask,
+            #                                    decoder_input_ids=decoder_start_token_ids
+            #                            )
+            generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
+                                            use_cache=True, max_length=self.args.max_output_len,
+                                            num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_start_token_id=self.tokenizer.convert_tokens_to_ids(self.dev_set.tgt_lang))
+            
 
         if not self.args.output_to_json:
             generated_strs = self.tokenizer.batch_decode(generated_ids.tolist(), skip_special_tokens=True, clean_up_tokenization_spaces=True)
             with open(self.args.translation, 'a') as f:
                 for sample in generated_strs:
                     f.write(sample + "\n")
-
-            if self.test_set.reference is not None: # no ref = set of None
-                self.test_step_outputs.append(get_eval_scores(ref, generated_strs))
-            else:
-                self.test_step_outputs.append({'decoded' : generated_strs})
-
-        else:
-            # if running inference with self.args.batch_size
-            # > 1, we need to make sure we pair the correct input sequence
-            # with the correct returned hypotheses.
-            batch_hyp_strs = self.tokenizer.batch_decode(generated_ids.sequences.tolist(), skip_special_tokens=True, clean_up_tokenization_spaces=True)
-            #TODO: fix for beam_size=1
-            batch_hyp_scores = generated_ids.sequences_scores.tolist()
-            batch_source_strs = self.tokenizer.batch_decode(input_ids.tolist(), skip_special_tokens=True, clean_up_tokenization_spaces=True)
-
-            generated_strs = []
-
-            for batch_i in range(len(batch_source_strs)):
-                src_str = batch_source_strs[batch_i]
-                if self.test_set.reference:
-                    ref_str = ' '.join(ref[batch_i].split(' ')[1:]) if self.test_set.tgt_tags_included else ref[batch_i]
-                else:
-                    ref_str = None
-
-                # subselect only those hyps/scores for the
-                # relevant src string
-                hyps = batch_hyp_strs[batch_i:batch_i+self.args.num_return_sequences]
-                scores = batch_hyp_scores[batch_i:batch_i+self.args.num_return_sequences]
-
-                output_dict = {
-                    'src': src_str,
-                    'ref': ref_str,
-                    'hyps': [],
-                    }
-                # Ensure output hyps are sorted by
-                # overall NLL probability scores (smaller = better).
-                scored_hyps = {score: hyp for score, hyp in zip(scores, hyps)}
-                for i, score in enumerate(sorted(scored_hyps.keys(), reverse=True)):
-                    # add the 1-best hypothesis to generated_strs for evaluation
-                    if i == 0:
-                        generated_strs.append(scored_hyps[score])
-                    output_dict['hyps'].append({'score': score, 'hyp': scored_hyps[score]})
-
-                json_line = json.dumps(output_dict, ensure_ascii=False)
-                with open(self.args.translation, 'a') as f:
-                    f.write(json_line+"\n")
 
             if self.test_set.reference is not None: # no ref = set of None
                 self.test_step_outputs.append(get_eval_scores(ref, generated_strs))
