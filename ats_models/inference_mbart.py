@@ -442,14 +442,15 @@ class Inference(pl.LightningModule):
 
 def main(args):
 
+    logging.basicConfig(level=logging.INFO)
+    logging.info(args)
+
     if Path(args.translation).is_file():
         logging.info("Output file `{}` already exists and will be overwritten...".format(args.translation))
         Path(args.translation).unlink()
 
     checkpoint_path=os.path.join(args.model_path, args.checkpoint_name)
-    # get model config
-    config = MBartConfig.from_pretrained(args.model_path)
-    inference_model = Inference.load_from_checkpoint(checkpoint_path, args=config)
+    inference_model = Inference.load_from_checkpoint(checkpoint_path, args=args)
     inference_model.eval()
 
     if args.decode_with_fudge:
