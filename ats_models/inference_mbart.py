@@ -109,7 +109,7 @@ class Inference(pl.LightningModule):
             decoder_start_token_ids = None
         input_ids, attention_mask = CustomDatasetForInference.prepare_input(input_ids, self.args.is_long, self.config.attention_mode, self.config.attention_window, self.tokenizer.pad_token_id, self.config.global_attention_indices)
 
-        decoder_start_token_id = None
+        # decoder_start_token_id = None
         if decoder_start_token_ids is None: # if no per sample start token given, set decoder_start_token_id to tgt_lang for mbart or bos_token_id for bart
             decoder_start_token_id=self.tokenizer.convert_tokens_to_ids(self.testset.tgt_lang) if self.args.model_type == "mbart" else self.tokenizer.bos_token_id
 
@@ -145,7 +145,6 @@ class Inference(pl.LightningModule):
                             output_scores=True if self.args.output_to_json else self.args.output_scores,
                             return_dict_in_generate=True if self.args.output_to_json else self.args.return_dict_in_generate
                             )
-        logging.info(f"generation_config: {generation_config}")
         generation_config.validate()
         logging.info(f"generation_config: {generation_config}")
 
