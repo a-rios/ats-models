@@ -157,7 +157,6 @@ class Inference(pl.LightningModule):
             #                            )
             logging.info(f"self.tokenizer.convert_tokens_to_ids(self.test_set.tgt_lang): {self.tokenizer.convert_tokens_to_ids(self.test_set.tgt_lang)}")
             generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
-                                            use_cache=True, max_length=self.args.max_output_len,
                                             generation_config=generation_config, decoder_start_token_id=self.tokenizer.convert_tokens_to_ids(self.test_set.tgt_lang))
             
 
