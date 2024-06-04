@@ -155,9 +155,10 @@ class Inference(pl.LightningModule):
             #                                    attention_mask=attention_mask,
             #                                    decoder_input_ids=decoder_start_token_ids
             #                            )
+            logging.debug(f"self.tokenizer.convert_tokens_to_ids(self.test_set.tgt_lang): {self.tokenizer.convert_tokens_to_ids(self.test_set.tgt_lang)}")
             generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
                                             use_cache=True, max_length=self.args.max_output_len,
-                                            num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_start_token_id=self.tokenizer.convert_tokens_to_ids(self.test_set.tgt_lang))
+                                            generation_config=generation_config, decoder_start_token_id=self.tokenizer.convert_tokens_to_ids(self.test_set.tgt_lang))
             
 
         if not self.args.output_to_json:
