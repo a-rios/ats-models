@@ -123,10 +123,15 @@ class Inference(pl.LightningModule):
                             return_dict_in_generate=True if self.args.output_to_json else self.args.return_dict_in_generate
                             )
         generation_config.validate()
+        logging.info(f"Generation config: {generation_config}")
+        logging.info(f"Input ids: {input_ids}")
+        logging.info(f"Attention mask: {attention_mask}")
 
-        generated_ids = self.model.generate(input_ids=input_ids, attention_mask=attention_mask,
-                                            use_cache=True, max_length=self.args.max_output_len,
-                                            num_beams=self.args.beam_size, pad_token_id=self.tokenizer.pad_token_id, decoder_start_token_id=self.tokenizer.pad_token_id)
+        generated_ids = self.model.generate(input_ids=input_ids,
+                                                attention_mask=attention_mask,
+                                                generation_config=generation_config
+                                            )
+        logging.info(f"Generated ids: {generated_ids}")
 
         if not self.args.output_to_json:
             generated_strs = self.tokenizer.batch_decode(generated_ids.tolist(), skip_special_tokens=True, clean_up_tokenization_spaces=True)
