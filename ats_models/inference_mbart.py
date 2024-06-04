@@ -173,6 +173,7 @@ class Inference(pl.LightningModule):
 
         else: # no reference, need either decoder_start_tokens (--target_tags) for multilingual batches or --tgt_lang
             logging.info(f"else: no reference, need either decoder_start_tokens (--target_tags) for multilingual batches or --tgt_lang")
+            logging.info(f"generating ids with input_ids: {input_ids.shape}, attention_mask: {attention_mask.shape}, generation_config: {generation_config}")
             generated_ids = self.model.generate(input_ids=input_ids,
                                                 attention_mask=attention_mask,
                                                 generation_config=generation_config
@@ -453,44 +454,15 @@ def main(args):
     inference_model = Inference.load_from_checkpoint(checkpoint_path, args=args)
     inference_model.eval()
 
-    if args.decode_with_fudge:
-            if args.condition_model is not None:
-                # condition_model_ckpt = os.path.join(args.condition_model, "model_best.pth.tar")
-                condition_model_ckpt = os.path.join(args.condition_model, args.condition_model_checkpoint)
-                cp = torch.load(condition_model_ckpt) # map_location=self.args.device)
-                # model_args = cp['args']
-                model_args = cp['hyper_parameters']['params']
-                # conditioning_model = Model(model_args, inference_model.tokenizer.pad_token_id, len(inference_model.tokenizer))
-                conditioning_model = FudgeClassifier(model_args)
-                conditioning_model.load_state_dict(cp['state_dict'])
-                del cp
-                conditioning_model.eval()
-                inference_model.conditioning_model = conditioning_model
-            else:
-                print(f"--decode_with_fudge but path to --condition_model not set.")
-                exit(1)
-
     if args.print_params:
         for name, param in inference_model.named_parameters():
             if param.requires_grad:
                 print(name + ":" + str(param.data.shape))
         exit(0)
 
-
     if args.model_type == "mbart":
-        if args.test_jsons is not None:
-            test_set = CustomInferenceDatasetUZHJson(json_files=args.test_jsons,
-                                name="test",
-                                tokenizer=inference_model.tokenizer,
-                                max_input_len=args.max_input_len,
-                                max_output_len=args.max_output_len,
-                                src_lang=args.src_lang,
-                                tgt_lang=args.tgt_lang,
-                                remove_xml=args.remove_xml_in_json,
-                                remove_linebreaks=args.remove_linebreaks_in_json
-            )
-        else:
-            test_set = CustomDatasetForInference(src_file=args.test_source,
+
+        test_set = CustomDatasetForInference(src_file=args.test_source,
                                                 tgt_file=args.test_target,
                                                 name="test",
                                                 tokenizer=inference_model.tokenizer,
@@ -501,25 +473,7 @@ def main(args):
                                                 src_tags_included=args.src_tags_included,
                                                 tgt_tags_included=args.tgt_tags_included,
                                                 target_tags=args.target_tags)
-            logging.info(f"test_set: {test_set}")
-
-    else: # bart
-        if args.test_jsons is not None:
-            test_set = CustomBartInferenceDatasetUZHJson(json_files=args.test_jsons,
-                                name="test",
-                                tokenizer=inference_model.tokenizer,
-                                max_input_len=args.max_input_len,
-                                max_output_len=args.max_output_len,
-                                remove_xml=args.remove_xml_in_json,
-                                remove_linebreaks=args.remove_linebreaks_in_json
-            )
-        else:
-            test_set = CustomBartDatasetForInference(src_file=args.test_source,
-                                                tgt_file=args.test_target,
-                                                name="test",
-                                                tokenizer=inference_model.tokenizer,
-                                                max_input_len=args.max_input_len,
-                                                max_output_len=args.max_output_len)
+        logging.info(f"test_set: {test_set}")
 
 
     inference_model.set_test_set(test_set)
