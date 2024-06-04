@@ -125,6 +125,8 @@ class Inference(pl.LightningModule):
         generation_config.validate()
         logging.info(f"Generation config: {generation_config}")
         logging.info(f"Input ids: {input_ids}")
+        generated_strs = self.tokenizer.batch_decode(input_ids.tolist(), skip_special_tokens=True, clean_up_tokenization_spaces=True)
+        logging.info(f"Input strings: {generated_strs}")
         logging.info(f"Attention mask: {attention_mask}")
 
         generated_ids = self.model.generate(input_ids=input_ids,
