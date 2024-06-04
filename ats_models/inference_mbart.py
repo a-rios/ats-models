@@ -154,7 +154,7 @@ class Inference(pl.LightningModule):
 
             generated_ids = self._decode_with_fudge(input_ids=input_ids,
                                     attention_mask=attention_mask,
-                                    decoder_input_ids=decoder_start_token_ids,
+                                    decoder_start_token_id=decoder_start_token_ids,
                                     device=input_ids.device,
                                     generation_config=generation_config)
 
@@ -164,7 +164,7 @@ class Inference(pl.LightningModule):
             generated_ids = self.model.generate(input_ids=input_ids,
                                                 attention_mask=attention_mask,
                                                 generation_config=generation_config,
-                                                decoder_input_ids=decoder_start_token_ids
+                                                decoder_start_token_id=decoder_start_token_ids
                                         )
 
         else: # no reference, need either decoder_start_tokens (--target_tags) for multilingual batches or --tgt_lang
