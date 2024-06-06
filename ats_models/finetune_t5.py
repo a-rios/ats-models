@@ -105,6 +105,29 @@ class T5Trainer(pl.LightningModule):
                 lprobs, labels, self.args.label_smoothing, ignore_index=self.tokenizer.pad_token_id
             )
         return [loss]
+    
+    def on_train_start(self):
+        # Access the early stopping callback and modify patience
+        early_stopping_callback = None
+        for callback in self.trainer.callbacks:
+            if isinstance(callback, EarlyStopping):
+                early_stopping_callback = callback
+                break
+
+        if early_stopping_callback:
+            if early_stopping_callback.patience == self.args.patience:
+                print(f"\nPatience: {early_stopping_callback.patience}")
+            else:
+                early_stopping_callback.patience = self.args.patience
+                print(f"\nPatience changed to: {early_stopping_callback.patience}")
+
+        # Access the validation check interval and modify it
+        self.trainer.val_percent_check = self.args.val_percent_check
+        self.trainer.check_val_every_n_epoch = self.args.check_val_every_n_epoch
+
+        print(f"\nValidation percent check: {self.trainer.val_percent_check}")
+        print(f"Check val every n epoch: {self.trainer.check_val_every_n_epoch}")
+
 
     def training_step(self, batch, batch_nb):
         output = self.forward(*batch)
